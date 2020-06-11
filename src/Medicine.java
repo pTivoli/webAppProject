@@ -1,21 +1,22 @@
+import java.util.Date;
+
 public class Medicine {
-    private String receipt; //?? IT MUST BE CHANGED ASAP
-    private String expirationDate; //?? IT MUST BE CHANGED ASAP
+    private boolean receipt;
+    private Date ED; //?? IT MUST BE CHANGED ASAP
     private String name;
     private Integer code;
+    private float cost;
 
-    public String getReceipt() {
+    public boolean getReceipt() {
         return receipt;
     }
 
-    public void setReceipt(String receipt) {
-        this.receipt = receipt;
-    }
+    public void setReceipt(boolean receipt) { this.receipt = receipt; }
 
-    public String getExpirationDate() { return expirationDate; }
+    public Date getED() { return ED; }
 
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
+    public void setED(Date expirationDate) {
+        this.ED = expirationDate;
     }
 
     public String getName() {
@@ -33,4 +34,9 @@ public class Medicine {
     public void setCode(Integer code) {
         this.code = code;
     }
+
+    public float getCost() { return cost; }
+
+    public void setCost(float cost) { this.cost = cost; }
+
 }
