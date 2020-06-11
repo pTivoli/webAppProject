@@ -1,8 +1,8 @@
 public class Medicine {
     private String receipt; //?? IT MUST BE CHANGED ASAP
-    private String scandenza; //?? IT MUST BE CHANGED ASAP
+    private String expirationDate; //?? IT MUST BE CHANGED ASAP
     private String name;
-    private Integer codice;
+    private Integer code;
 
     public String getReceipt() {
         return receipt;
@@ -12,12 +12,10 @@ public class Medicine {
         this.receipt = receipt;
     }
 
-    public String getScandenza() {
-        return scandenza;
-    }
+    public String getExpirationDate() { return expirationDate; }
 
-    public void setScandenza(String scandenza) {
-        this.scandenza = scandenza;
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
     }
 
     public String getName() {
@@ -28,11 +26,11 @@ public class Medicine {
         this.name = name;
     }
 
-    public Integer getCodice() {
-        return codice;
+    public Integer getCode() {
+        return code;
     }
 
-    public void setCodice(Integer codice) {
-        this.codice = codice;
+    public void setCode(Integer code) {
+        this.code = code;
     }
 }

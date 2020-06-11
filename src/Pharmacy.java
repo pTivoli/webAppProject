@@ -1,32 +1,30 @@
 public class Pharmacy {
 
-    private String nome;
-    private String indirizzo;
-    private String telefono;
+    private String name;
+    private String address;
+    private String phoneNumber;
     private PharmacyDoctor pharmacyDoctor;
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getIndirizzo() {
-        return indirizzo;
+    public String getAddress() { return address; }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public void setIndirizzo(String indirizzo) {
-        this.indirizzo = indirizzo;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setPhoneNumber(String pN) {
+        this.phoneNumber = pN;
     }
 
     public PharmacyDoctor getPharmacyDoctor() {
