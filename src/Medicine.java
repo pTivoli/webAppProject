@@ -1,23 +1,22 @@
-public class Medicine {
-    private String receipt; //?? IT MUST BE CHANGED ASAP
-    private String scandenza; //?? IT MUST BE CHANGED ASAP
-    private String name;
-    private Integer codice;
+import java.util.Date;
 
-    public String getReceipt() {
+public class Medicine {
+    private boolean receipt;
+    private Date ED; //?? IT MUST BE CHANGED ASAP
+    private String name;
+    private Integer code;
+    private float cost;
+
+    public boolean getReceipt() {
         return receipt;
     }
 
-    public void setReceipt(String receipt) {
-        this.receipt = receipt;
-    }
+    public void setReceipt(boolean receipt) { this.receipt = receipt; }
 
-    public String getScandenza() {
-        return scandenza;
-    }
+    public Date getED() { return ED; }
 
-    public void setScandenza(String scandenza) {
-        this.scandenza = scandenza;
+    public void setED(Date expirationDate) {
+        this.ED = expirationDate;
     }
 
     public String getName() {
@@ -28,11 +27,16 @@ public class Medicine {
         this.name = name;
     }
 
-    public Integer getCodice() {
-        return codice;
+    public Integer getCode() {
+        return code;
     }
 
-    public void setCodice(Integer codice) {
-        this.codice = codice;
+    public void setCode(Integer code) {
+        this.code = code;
     }
+
+    public float getCost() { return cost; }
+
+    public void setCost(float cost) { this.cost = cost; }
+
 }
