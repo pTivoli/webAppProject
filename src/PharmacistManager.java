@@ -1,3 +1,5 @@
+
+
 public class PharmacistManager extends PharmacyDoctor{
 
     private boolean employee(Pharmacist pharmacist){
