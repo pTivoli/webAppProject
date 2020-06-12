@@ -34,7 +34,10 @@ public class REG extends Pharmacist{
             try {
                 Statement st = con.createStatement();
                 String queryPM = "INSERT INTO Persona VALUES('" + pharmacistManager.getCF() + "','" + pharmacistManager.getfName() + "','" + pharmacistManager.getlName() + "','" + pharmacistManager.getDOB() + "')";
+                String queryPM1 = "INSERT INTO Personale VALUES('" + pharmacistManager.getCF() + "','" + pharmacistManager.getfName() + "','" + pharmacistManager.getlName() + "','" + pharmacistManager.getDOB() + "')";
+
                 st.executeUpdate(queryPM);
+                st.executeUpdate(queryPM1);
             } catch (SQLException exe) {
                 throw exe;
             }
