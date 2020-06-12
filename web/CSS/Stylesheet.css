@@ -27,6 +27,10 @@ html, body{
     height: 100%;
     color: orange;
     text-align: center;
+    background-image: url("../IMG/chemicalLab.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #form p{
     font-size: 3em;
@@ -47,6 +51,8 @@ html, body{
     margin-bottom: 5vh;
     text-align: center;
     margin-top: 2vh;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50px 50px 50px 0px;
 }
 #form form input[type=submit]{
     background-color: orange;
