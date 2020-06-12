@@ -8,9 +8,27 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+      <title>PharmaPoint</title>
+      <link rel="stylesheet" href="CSS/Stylesheet.css"/>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-  $END$
+    <div id="aboveTheFoldContent">
+        <div id="text">
+            <p>WELCOME!</p>
+            <p>1000+ of pharmacies, 1 platform</p>
+        </div>
+    </div>
+    <div id="form">
+        <p>LOGIN</p>
+        <form>
+            MAIL<br>
+            <input type="email" placeholder="example@contoso.com" required><br>
+            PASSWORD<br>
+            <input type="password" placeholder="--------" required><br>
+            <input type="submit" value="SUBMIT"><br>
+        </form>
+    </div>
   </body>
 </html>
