@@ -52,9 +52,13 @@ create table Acquisto(
   cfPersonale CHAR(16),
   cfPersona CHAR(16),
   totale INTEGER,
+  CodRicettaAcquisto varchar(10),
+  codiceRegionaleMedico varchar(10),
+  CFMedico char(16),
   PRIMARY KEY (timest, mailPersonale, cfPersonale),
   FOREIGN KEY (cfPersona) REFERENCES Persona(codiceFiscale),
-  FOREIGN KEY (cfPersonale, mailPersonale) REFERENCES  Personale(personale_CFPersona, mail)
+  FOREIGN KEY (cfPersonale, mailPersonale) REFERENCES  Personale(personale_CFPersona, mail),
+  FOREIGN KEY (CodRicettaAcquisto, codiceRegionaleMedico, CFMedico) REFERENCES Ricetta(codiceRicetta, ricetta_Codice_Medico, ricetta_Medico_Persona)
 );
 
 create table Farmacia(
