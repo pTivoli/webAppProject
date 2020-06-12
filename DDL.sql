@@ -60,3 +60,7 @@ create table Farmacia(
   PRIMARY KEY (nome, indirizzo, cfPersonale, mailPersonale),
   FOREIGN KEY (cfPersonale, mailPersonale) REFERENCES Personale(personale_CFPersona, mail)
 );
+
+create TABLE test(
+  nome varhcar(30)
+);
