@@ -30,5 +30,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="struts1" level="project" />
     <orderEntry type="library" name="jstl-1.2" level="project" />
+    <orderEntry type="library" name="postgresql-42.2.14.jre7" level="project" />
   </component>
 </module>
