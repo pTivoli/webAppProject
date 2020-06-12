@@ -11,12 +11,12 @@ public class PharmacistManager extends PharmacyDoctor{
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "TivoliPatrick");
             try{
                 Statement st = con.createStatement();
-                String queryUtente = "INSERT INTO Persona VALUES ("+ pharmacist.getCF() +", "+ pharmacist.getfName() +", "+ pharmacist.getlName() +", "+pharmacist.getDOB()+")";
+                String queryUtente = "INSERT INTO Persona VALUES ('"+ pharmacist.getCF() +"',' "+ pharmacist.getfName() +"',' "+ pharmacist.getlName() +"','"+pharmacist.getDOB()+"')";
                 String queryPersonale;
                 if(pharmacist instanceof DeskOperator)
-                    queryPersonale = "INSERT INTO Personale VALUES ("+pharmacist.getEmail()+", "+pharmacist.getPwd()+", "+pharmacist.getCF()+", DO)";
+                    queryPersonale = "INSERT INTO Personale VALUES ('"+pharmacist.getEmail()+"',' "+pharmacist.getPwd()+"',' "+pharmacist.getCF()+"', 'DO')";
                 else
-                    queryPersonale = "INSERT INTO Personale VALUES ("+pharmacist.getEmail()+", "+pharmacist.getPwd()+", "+pharmacist.getCF()+", DF)";
+                    queryPersonale = "INSERT INTO Personale VALUES ('"+pharmacist.getEmail()+"', '"+pharmacist.getPwd()+"', '"+pharmacist.getCF()+"', 'DF')";
                 st.executeUpdate(queryUtente);
                 st.executeUpdate(queryPersonale);
             }catch(SQLException ex){
