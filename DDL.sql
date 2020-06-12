@@ -1,3 +1,7 @@
+/* faccio  VCS -> update project, dopo lavoro, dopo committo le modifiche VCS-> commit changes, poi pusho: CCS -> git ->pushamolo
+*/
+
+
 create table Persona(
   codiceFiscale char(16) primary key,
   nome varchar(20) not null,
@@ -55,12 +59,35 @@ create table Farmacia(
   nome VARCHAR(30),
   indirizzo VARCHAR(30),
   telefono VARCHAR(15),
-  cfPersonale CHAR(16),
-  mailPersonale VARCHAR(30),
-  PRIMARY KEY (nome, indirizzo, cfPersonale, mailPersonale),
-  FOREIGN KEY (cfPersonale, mailPersonale) REFERENCES Personale(personale_CFPersona, mail)
+  cfTitolare CHAR(16),
+  mailTitolare VARCHAR(30),
+  PRIMARY KEY (nome, indirizzo, cfTitolare, mailTitolare),
+  FOREIGN KEY (cfTitolare, mailTitolare) REFERENCES Personale(personale_CFPersona, mail)
 );
 
-create TABLE test(
-  nome varhcar(30)
+create TABLE Magazzino(
+  nomeFarmacia VARCHAR(30),
+  indirizzoFarmacia VARCHAR(30),
+  cfTitolareFarmacia CHAR(16),
+  mailTitolareFarmacia VARCHAR(30),
+  PRIMARY KEY (nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia, mailTitolareFarmacia) ,
+  FOREIGN KEY (nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia, mailTitolareFarmacia) REFERENCES Farmacia(nome, indirizzo, cfTitolare, mailTitolare)
+);
+
+CREATE TABLE Farmaco(
+  Codice  varchar(10),
+  Nome VARCHAR(20),
+  Prezzo decimal(5,2),
+  ObbligoRicetta boolean DEFAULT false,
+  Scadenza date
+);
+
+CREATE TABLE Messaggio(
+  Timestamp TIMESTAMP,
+  Testo VARCHAR(300),
+  mailPersonale varchar(30),
+  personale_CFPersonaM char(16),
+  PRIMARY KEY (Timestamp, mailPersonale, personale_CFPersonaM),
+  FOREIGN KEY (mailPersonale, personale_CFPersonaM) REFERENCES Persona(personale_CFPersona, mail)
+
 );
