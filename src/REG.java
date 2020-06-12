@@ -3,38 +3,46 @@ import java.sql.SQLException;
 import java.sql.DriverManager;
 import java.sql.Connection;
 
-public class REG {
+public class REG extends Pharmacist{
 
-    public boolean activatePharmacy(Pharmacy pharmacy) throws Exception{
+    public void activatePharmacy(Pharmacy pharmacy) throws Exception{
 
-        Class.forName("");
-        Connection con = DriverManager.getConnection("localhost/PharmaPoint", "postgresql", "Slashrocker1");
+        Class.forName("org.postgresql.Driver");
+        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "Slashrocker1");
 
         try {
             try {
                 Statement st = con.createStatement();
-                int value = st.executeUpdate("INSERT INTO USER_DETAILS(NAME,ADDRESS,PHONENUMBER,PHARMACYDOCTOR) "
-                        + "VALUES('"
-                        + pharmacy.getName()
-                        + "','"
-                        + pharmacy.getAddress()
-                        + "','"
-                        + pharmacy.getPhoneNumber()
-                        + "','"
-                        + pharmacy.getPharmacyDoctor() + "')");
+                String queryPharmacy = "INSERT INTO Farmacia VALUES('" + pharmacy.getName() + "','" + pharmacy.getAddress() + "','" + pharmacy.getPhoneNumber() + "','" + pharmacy.getPharmacyDoctor().getCF() +  "','" + pharmacy.getPharmacyDoctor().getEmail() + "')";
+                st.executeUpdate(queryPharmacy);
             } catch (SQLException ex) {
-                return false;
+                throw ex;
             }
             con.close();
-        } catch (Exception e){
-            return false;
+        } catch (Exception e) {
+            throw e;
         }
 
-        return true;
     }
 
-    public boolean activatePM(PharmacistManager pharmacistManager){
-        return  false;
+    public void activatePM(PharmacistManager pharmacistManager) throws Exception{
+
+        Class.forName("org.postgresql.Driver");
+        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "Slashrocker1");
+
+        try {
+            try {
+                Statement st = con.createStatement();
+                String queryPM = "INSERT INTO Persona VALUES('" + pharmacistManager.getCF() + "','" + pharmacistManager.getfName() + "','" + pharmacistManager.getlName() + "','" + pharmacistManager.getDOB() + "')";
+                st.executeUpdate(queryPM);
+            } catch (SQLException exe) {
+                throw exe;
+            }
+            con.close();
+        } catch (Exception e) {
+            throw e;
+        }
+
     }
 
     /* STATISTICS */
