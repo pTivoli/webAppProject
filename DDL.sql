@@ -75,19 +75,54 @@ create TABLE Magazzino(
 );
 
 CREATE TABLE Farmaco(
-  Codice  varchar(10),
+  Codice varchar(10),
   Nome VARCHAR(20),
-  Prezzo decimal(5,2),
+  Prezzo decimal(6,2),
   ObbligoRicetta boolean DEFAULT false,
-  Scadenza date
+  Scadenza date,
+  PRIMARY KEY (Codice)
 );
 
 CREATE TABLE Messaggio(
-  Timestamp TIMESTAMP,
+  Timest TIMESTAMP,
   Testo VARCHAR(300),
   mailPersonale varchar(30),
   personale_CFPersonaM char(16),
-  PRIMARY KEY (Timestamp, mailPersonale, personale_CFPersonaM),
+  PRIMARY KEY (Timest, mailPersonale, personale_CFPersonaM),
   FOREIGN KEY (mailPersonale, personale_CFPersonaM) REFERENCES Persona(personale_CFPersona, mail)
 
+);
+
+CREATE TABLE Destinatario_Messaggio(
+  mailPersonaleDest varchar(30),
+  cfPersonaleDest char(16),
+  cfPersonaleMitt char(16),
+  mailPersonaleMitt varchar(30),
+  TimestMesssaggio TIMESTAMP,
+  PRIMARY KEY (mailPersonaleDest, cfPersonaleDest, cfPersonaleMitt, mailPersonaleMitt, TimestMesssaggio),
+  FOREIGN KEY (mailPersonaleDest, cfPersonaleDest) REFERENCES Personale(personale_CFPersona, mail),
+  FOREIGN KEY (cfPersonaleMitt, mailPersonaleMitt, TimestMesssaggio) REFERENCES Messaggio(Timest, mailPersonale, personale_CFPersonaM)
+);
+
+CREATE TABLE Magazzino_Farmaco(
+  quantita integer,
+  nomeFarmaciaMagazzino VARCHAR(30),
+  indirizzoFarmaciaMagazzino VARCHAR(30),
+  cfTitolareFarmaciaMagazzino CHAR(16),
+  mailTitolareFarmaciaMagazzino VARCHAR(30),
+  codiceFarmaco varchar(10),
+  PRIMARY KEY (nomeFarmaciaMagazzino, indirizzoFarmaciaMagazzino, cfTitolareFarmaciaMagazzino, mailTitolareFarmaciaMagazzino, codiceFarmaco),
+  FOREIGN KEY (nomeFarmaciaMagazzino, indirizzoFarmaciaMagazzino, cfTitolareFarmaciaMagazzino, mailTitolareFarmaciaMagazzino) REFERENCES Magazzino(nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia, mailTitolareFarmacia),
+  FOREIGN KEY (codiceFarmaco) REFERENCES Farmaco(Codice)
+);
+
+CREATE TABLE Acquisto_Farmaco(
+  quantita integer,
+  timestAcquisto TIMESTAMP,
+  mailPersonaleAcqisto VARCHAR(30),
+  cfPersonaleAcquisto CHAR(16),
+  codiceFarmacoAcquisto varchar(10),
+  PRIMARY KEY (timestAcquisto, mailPersonaleAcquisto, cfPersonaleAcquisto, codiceFarmacoAcquisto),
+  FOREIGN KEY (timestAcquisto, mailPersonaleAcquisto, cfPersonaleAcquisto) REFERENCES Acquisto(times, mailPersonale, cfPersonale),
+  FOREIGN KEY (codiceFarmacoAcquisto) REFERENCES Farmaco(Codice)
 );
