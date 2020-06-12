@@ -13,7 +13,7 @@ public class REG extends Pharmacist{
         try {
             try {
                 Statement st = con.createStatement();
-                String queryPharmacy = "INSERT INTO Farmacia VALUES('" + pharmacy.getName() + "','" + pharmacy.getAddress() + "','" + pharmacy.getPhoneNumber() + "','" + pharmacy.getPharmacyDoctor().getCF() +  "','" + pharmacy.getPharmacyDoctor().getEmail() + "')";
+                String queryPharmacy = "INSERT INTO Farmacia VALUES('" + pharmacy.getName() + "','" + pharmacy.getAddress() + "','" + pharmacy.getPhoneNumber() + "','" + pharmacy.getPharmacyManager().getCF() +  "','" + pharmacy.getPharmacyManager().getEmail() + "')";
                 st.executeUpdate(queryPharmacy);
             } catch (SQLException ex) {
                 throw ex;
