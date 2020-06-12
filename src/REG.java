@@ -8,7 +8,7 @@ public class REG {
     public boolean activatePharmacy(Pharmacy pharmacy) throws Exception{
 
         Class.forName("");
-        Connection con = DriverManager.getConnection("localhost/PharmaPoint", "postgrsql", "Slashrocker1");
+        Connection con = DriverManager.getConnection("localhost/PharmaPoint", "postgresql", "Slashrocker1");
 
         try {
             try {
