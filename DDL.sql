@@ -35,8 +35,7 @@ create table Farmacia(
   telefono VARCHAR(15),
   cfTitolare CHAR(16),
   mailTitolare VARCHAR(30),
-  PRIMARY KEY (nome, indirizzo, cfTitolare),
-  FOREIGN KEY (cfTitolare, mailTitolare) REFERENCES Personale(personale_CFPersona, mailTitolare)
+  PRIMARY KEY (nome, indirizzo, cfTitolare)
 );
 
 create table Personale(
@@ -48,7 +47,6 @@ create table Personale(
   indirizzoFarmacia VARCHAR(30),
   CF_titolare_farmacia char(16),
   primary key(personale_CFPersona, mail),
-  foreign key(nomeFarmacia, indirizzoFarmacia, CF_titolare_farmacia) references Farmacia(nome, indirizzo, cfTitolare),
   foreign key (personale_CFPersona) references Persona(codiceFiscale),
   FOREIGN KEY (ruoloPersonale) REFERENCES Ruolo(nome)
 );
@@ -86,7 +84,7 @@ CREATE TABLE Messaggio(
   Testo VARCHAR(300),
   personale_Mitt char(16),
   personale_mail_mitt varchar(30),
-  PRIMARY KEY (Timest, personale_Mitt),
+  PRIMARY KEY (Timest, personale_Mitt, personale_mail_mitt),
   FOREIGN KEY (personale_Mitt, personale_mail_mitt) REFERENCES Personale(personale_CFPersona, mail)
 
 );
@@ -95,10 +93,11 @@ CREATE TABLE Destinatario_Messaggio(
   cfPersonaleDest char(16),
   mailPersonaleDest VARCHAR(30),
   cfPersonaleMitt char(16),
+  mailPersonaleMitt varchar(30),
   TimestMesssaggio TIMESTAMP,
   PRIMARY KEY ( cfPersonaleDest, cfPersonaleMitt, TimestMesssaggio),
   FOREIGN KEY (cfPersonaleDest, mailPersonaleDest) REFERENCES Personale(personale_CFPersona, mail),
-  FOREIGN KEY (TimestMesssaggio, cfPersonaleMitt) REFERENCES Messaggio(Timest, cfPersonaleMitt)
+  FOREIGN KEY (TimestMesssaggio, cfPersonaleMitt, mailPersonaleMitt) REFERENCES Messaggio(Timest, personale_Mitt, personale_mail_mitt)
 );
 
 CREATE TABLE Magazzino_Farmaco(
@@ -121,3 +120,6 @@ CREATE TABLE Acquisto_Farmaco(
   FOREIGN KEY (timestAcquisto, cfPersonaleAcquisto) REFERENCES Acquisto(timest, cfPersonale),
   FOREIGN KEY (codiceFarmacoAcquisto) REFERENCES Farmaco(Codice)
 );
+
+alter table Personale add foreign key(nomeFarmacia, indirizzoFarmacia, CF_titolare_farmacia) references Farmacia(nome, indirizzo, cfTitolare);
+alter table Farmacia add FOREIGN KEY (cfTitolare, mailTitolare) REFERENCES Personale(personale_CFPersona, mail);
