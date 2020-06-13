@@ -1,7 +1,6 @@
 /* faccio  VCS -> update project, dopo lavoro, dopo committo le modifiche VCS-> commit changes, poi pusho: CCS -> git ->pushamolo
 */
 
-
 create table Persona(
   codiceFiscale char(16) primary key,
   nome varchar(20) not null,
@@ -9,15 +8,12 @@ create table Persona(
   dataNascita date
 );
 
-
 create table Medico(
   codiceRegionale varchar(10),
   medico_CFPersona char(16),
   primary key(codiceRegionale, medico_CFPersona),
   foreign key (medico_CFPersona) references Persona(codiceFiscale)
-    on delete cascade --da valutare (può essere anche un paziente il medico)
 );
-
 
 create table Ricetta(
   codiceRicetta varchar(10),
@@ -29,7 +25,6 @@ create table Ricetta(
   foreign key (ricetta_Codice_Medico, ricetta_Medico_Persona) references Medico(codiceRegionale, medico_CFPersona)
 );
 
-
 create table Ruolo(
   nome VARCHAR(30) PRIMARY KEY
 );
@@ -39,8 +34,9 @@ create table Farmacia(
   indirizzo VARCHAR(30),
   telefono VARCHAR(15),
   cfTitolare CHAR(16),
+  mailTitolare VARCHAR(30),
   PRIMARY KEY (nome, indirizzo, cfTitolare),
-  FOREIGN KEY (cfTitolare) REFERENCES Personale(personale_CFPersona)
+  FOREIGN KEY (cfTitolare, mailTitolare) REFERENCES Personale(personale_CFPersona, mailTitolare)
 );
 
 create table Personale(
@@ -51,25 +47,22 @@ create table Personale(
   nomeFarmacia VARCHAR(30),
   indirizzoFarmacia VARCHAR(30),
   CF_titolare_farmacia char(16),
-  primary key(personale_CFPersona),
+  primary key(personale_CFPersona, mail),
   foreign key(nomeFarmacia, indirizzoFarmacia, CF_titolare_farmacia) references Farmacia(nome, indirizzo, cfTitolare),
   foreign key (personale_CFPersona) references Persona(codiceFiscale),
   FOREIGN KEY (ruoloPersonale) REFERENCES Ruolo(nome)
-    on delete cascade --same thing of before
 );
-
 
 create table Acquisto(
   timest TIMESTAMP,
   cfPersonale CHAR(16),
+  mailPersonale varchar(30),
   cfPersona CHAR(16),
   totale INTEGER,
   PRIMARY KEY (timest, cfPersonale),
   FOREIGN KEY (cfPersona) REFERENCES Persona(codiceFiscale),
-  FOREIGN KEY (cfPersonale) REFERENCES  Personale(personale_CFPersona)
+  FOREIGN KEY (cfPersonale, mailPersonale) REFERENCES  Personale(personale_CFPersona, mail)
 );
-
-
 
 create TABLE Magazzino(
   nomeFarmacia VARCHAR(30),
@@ -92,17 +85,19 @@ CREATE TABLE Messaggio(
   Timest TIMESTAMP,
   Testo VARCHAR(300),
   personale_Mitt char(16),
+  personale_mail_mitt varchar(30),
   PRIMARY KEY (Timest, personale_Mitt),
-  FOREIGN KEY (personale_Mitt) REFERENCES Personale(personale_CFPersona)
+  FOREIGN KEY (personale_Mitt, personale_mail_mitt) REFERENCES Personale(personale_CFPersona, mail)
 
 );
 
 CREATE TABLE Destinatario_Messaggio(
   cfPersonaleDest char(16),
+  mailPersonaleDest VARCHAR(30),
   cfPersonaleMitt char(16),
   TimestMesssaggio TIMESTAMP,
   PRIMARY KEY ( cfPersonaleDest, cfPersonaleMitt, TimestMesssaggio),
-  FOREIGN KEY (cfPersonaleDest) REFERENCES Personale(personale_CFPersona),
+  FOREIGN KEY (cfPersonaleDest, mailPersonaleDest) REFERENCES Personale(personale_CFPersona, mail),
   FOREIGN KEY (TimestMesssaggio, cfPersonaleMitt) REFERENCES Messaggio(Timest, cfPersonaleMitt)
 );
 
