@@ -103,7 +103,7 @@ CREATE TABLE Destinatario_Messaggio(
   TimestMesssaggio TIMESTAMP,
   PRIMARY KEY ( cfPersonaleDest, cfPersonaleMitt, TimestMesssaggio),
   FOREIGN KEY (cfPersonaleDest) REFERENCES Personale(personale_CFPersona),
-  FOREIGN KEY (TimestMesssaggio, cfPersonaleMitt) REFERENCES Messaggio(Timest, personale_CFPersonaM)
+  FOREIGN KEY (TimestMesssaggio, cfPersonaleMitt) REFERENCES Messaggio(Timest, cfPersonaleMitt)
 );
 
 CREATE TABLE Magazzino_Farmaco(
