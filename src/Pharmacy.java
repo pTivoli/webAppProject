@@ -3,7 +3,7 @@ public class Pharmacy {
     private String name;
     private String address;
     private String phoneNumber;
-    private PharmacyDoctor pharmacyDoctor;
+    private PharmacistManager pharmacyManager;
 
     public String getName() {
         return name;
@@ -27,12 +27,12 @@ public class Pharmacy {
         this.phoneNumber = pN;
     }
 
-    public PharmacyDoctor getPharmacyDoctor() {
-        return pharmacyDoctor;
+    public PharmacistManager getPharmacyManager() {
+        return pharmacyManager;
     }
 
-    public void setPharmacyDoctor(PharmacyDoctor pharmacyDoctor) {
-        this.pharmacyDoctor = pharmacyDoctor;
+    public void setPharmacyManager(PharmacistManager pharmacyDoctor) {
+        this.pharmacyManager = pharmacyDoctor;
     }
 
 }
