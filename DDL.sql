@@ -34,12 +34,25 @@ create table Ruolo(
   nome VARCHAR(30) PRIMARY KEY
 );
 
+create table Farmacia(
+  nome VARCHAR(30),
+  indirizzo VARCHAR(30),
+  telefono VARCHAR(15),
+  cfTitolare CHAR(16),
+  PRIMARY KEY (nome, indirizzo, cfTitolare),
+  FOREIGN KEY (cfTitolare) REFERENCES Personale(personale_CFPersona)
+);
+
 create table Personale(
   mail varchar(30),
   pwd varchar(20),
   personale_CFPersona char(16),
   ruoloPersonale VARCHAR(30),
-  primary key(personale_CFPersona, mail),
+  nomeFarmacia VARCHAR(30),
+  indirizzoFarmacia VARCHAR(30),
+  CF_titolare_farmacia char(16),
+  primary key(personale_CFPersona),
+  foreign key(nomeFarmacia, indirizzoFarmacia, CF_titolare_farmacia) references Farmacia(nome, indirizzo, cfTitolare),
   foreign key (personale_CFPersona) references Persona(codiceFiscale),
   FOREIGN KEY (ruoloPersonale) REFERENCES Ruolo(nome)
     on delete cascade --same thing of before
@@ -48,36 +61,22 @@ create table Personale(
 
 create table Acquisto(
   timest TIMESTAMP,
-  mailPersonale VARCHAR(30),
   cfPersonale CHAR(16),
   cfPersona CHAR(16),
   totale INTEGER,
-  CodRicettaAcquisto varchar(10),
-  codiceRegionaleMedico varchar(10),
-  CFMedico char(16),
-  PRIMARY KEY (timest, mailPersonale, cfPersonale),
+  PRIMARY KEY (timest, cfPersonale),
   FOREIGN KEY (cfPersona) REFERENCES Persona(codiceFiscale),
-  FOREIGN KEY (cfPersonale, mailPersonale) REFERENCES  Personale(personale_CFPersona, mail),
-  FOREIGN KEY (CodRicettaAcquisto, codiceRegionaleMedico, CFMedico) REFERENCES Ricetta(codiceRicetta, ricetta_Codice_Medico, ricetta_Medico_Persona)
+  FOREIGN KEY (cfPersonale) REFERENCES  Personale(personale_CFPersona)
 );
 
-create table Farmacia(
-  nome VARCHAR(30),
-  indirizzo VARCHAR(30),
-  telefono VARCHAR(15),
-  cfTitolare CHAR(16),
-  mailTitolare VARCHAR(30),
-  PRIMARY KEY (nome, indirizzo, cfTitolare, mailTitolare),
-  FOREIGN KEY (cfTitolare, mailTitolare) REFERENCES Personale(personale_CFPersona, mail)
-);
+
 
 create TABLE Magazzino(
   nomeFarmacia VARCHAR(30),
   indirizzoFarmacia VARCHAR(30),
   cfTitolareFarmacia CHAR(16),
-  mailTitolareFarmacia VARCHAR(30),
-  PRIMARY KEY (nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia, mailTitolareFarmacia) ,
-  FOREIGN KEY (nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia, mailTitolareFarmacia) REFERENCES Farmacia(nome, indirizzo, cfTitolare, mailTitolare)
+  PRIMARY KEY (nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia) ,
+  FOREIGN KEY (nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia) REFERENCES Farmacia(nome, indirizzo, cfTitolare)
 );
 
 CREATE TABLE Farmaco(
@@ -92,22 +91,19 @@ CREATE TABLE Farmaco(
 CREATE TABLE Messaggio(
   Timest TIMESTAMP,
   Testo VARCHAR(300),
-  mailPersonale varchar(30),
-  personale_CFPersonaM char(16),
-  PRIMARY KEY (Timest, mailPersonale, personale_CFPersonaM),
-  FOREIGN KEY (mailPersonale, personale_CFPersonaM) REFERENCES Personale(personale_CFPersona, mail)
+  personale_Mitt char(16),
+  PRIMARY KEY (Timest, personale_Mitt),
+  FOREIGN KEY (personale_Mitt) REFERENCES Personale(personale_CFPersona)
 
 );
 
 CREATE TABLE Destinatario_Messaggio(
-  mailPersonaleDest varchar(30),
   cfPersonaleDest char(16),
   cfPersonaleMitt char(16),
-  mailPersonaleMitt varchar(30),
   TimestMesssaggio TIMESTAMP,
-  PRIMARY KEY (mailPersonaleDest, cfPersonaleDest, cfPersonaleMitt, mailPersonaleMitt, TimestMesssaggio),
-  FOREIGN KEY (cfPersonaleDest, mailPersonaleDest) REFERENCES Personale(personale_CFPersona, mail),
-  FOREIGN KEY (TimestMesssaggio, mailPersonaleMitt, cfPersonaleMitt) REFERENCES Messaggio(Timest, mailPersonale, personale_CFPersonaM)
+  PRIMARY KEY ( cfPersonaleDest, cfPersonaleMitt, TimestMesssaggio),
+  FOREIGN KEY (cfPersonaleDest) REFERENCES Personale(personale_CFPersona),
+  FOREIGN KEY (TimestMesssaggio, cfPersonaleMitt) REFERENCES Messaggio(Timest, personale_CFPersonaM)
 );
 
 CREATE TABLE Magazzino_Farmaco(
@@ -115,20 +111,18 @@ CREATE TABLE Magazzino_Farmaco(
   nomeFarmaciaMagazzino VARCHAR(30),
   indirizzoFarmaciaMagazzino VARCHAR(30),
   cfTitolareFarmaciaMagazzino CHAR(16),
-  mailTitolareFarmaciaMagazzino VARCHAR(30),
   codiceFarmaco varchar(10),
-  PRIMARY KEY (nomeFarmaciaMagazzino, indirizzoFarmaciaMagazzino, cfTitolareFarmaciaMagazzino, mailTitolareFarmaciaMagazzino, codiceFarmaco),
-  FOREIGN KEY (nomeFarmaciaMagazzino, indirizzoFarmaciaMagazzino, cfTitolareFarmaciaMagazzino, mailTitolareFarmaciaMagazzino) REFERENCES Magazzino(nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia, mailTitolareFarmacia),
+  PRIMARY KEY (nomeFarmaciaMagazzino, indirizzoFarmaciaMagazzino, cfTitolareFarmaciaMagazzino, codiceFarmaco),
+  FOREIGN KEY (nomeFarmaciaMagazzino, indirizzoFarmaciaMagazzino, cfTitolareFarmaciaMagazzino) REFERENCES Magazzino(nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia),
   FOREIGN KEY (codiceFarmaco) REFERENCES Farmaco(Codice)
 );
 
 CREATE TABLE Acquisto_Farmaco(
   quantita integer,
   timestAcquisto TIMESTAMP,
-  mailPersonaleAcquisto VARCHAR(30),
   cfPersonaleAcquisto CHAR(16),
   codiceFarmacoAcquisto varchar(10),
-  PRIMARY KEY (timestAcquisto, mailPersonaleAcquisto, cfPersonaleAcquisto, codiceFarmacoAcquisto),
-  FOREIGN KEY (timestAcquisto, mailPersonaleAcquisto, cfPersonaleAcquisto) REFERENCES Acquisto(timest, mailPersonale, cfPersonale),
+  PRIMARY KEY (timestAcquisto, cfPersonaleAcquisto, codiceFarmacoAcquisto),
+  FOREIGN KEY (timestAcquisto, cfPersonaleAcquisto) REFERENCES Acquisto(timest, cfPersonale),
   FOREIGN KEY (codiceFarmacoAcquisto) REFERENCES Farmaco(Codice)
 );
