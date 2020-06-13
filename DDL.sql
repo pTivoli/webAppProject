@@ -12,7 +12,7 @@ create table Medico(
   codiceRegionale varchar(10),
   medico_CFPersona char(16),
   primary key(codiceRegionale, medico_CFPersona),
-  foreign key (medico_CFPersona) references Persona(codiceFiscale)
+  foreign key (medico_CFPersona) references Persona(codiceFiscale) on delete cascade on update cascade
 );
 
 create table Ricetta(
@@ -22,7 +22,7 @@ create table Ricetta(
   ricetta_Codice_Medico varchar(10),
   ricetta_Medico_Persona char(16),
   primary key(codiceRicetta, ricetta_Codice_Medico, ricetta_Medico_Persona),
-  foreign key (ricetta_Codice_Medico, ricetta_Medico_Persona) references Medico(codiceRegionale, medico_CFPersona)
+  foreign key (ricetta_Codice_Medico, ricetta_Medico_Persona) references Medico(codiceRegionale, medico_CFPersona) on delete set null on update cascade
 );
 
 create table Ruolo(
@@ -48,7 +48,7 @@ create table Personale(
   CF_titolare_farmacia char(16),
   primary key(personale_CFPersona, mail),
   foreign key (personale_CFPersona) references Persona(codiceFiscale),
-  FOREIGN KEY (ruoloPersonale) REFERENCES Ruolo(nome)
+  FOREIGN KEY (ruoloPersonale) REFERENCES Ruolo(nome) on delete set null on update cascade
 );
 
 create table Acquisto(
@@ -58,8 +58,8 @@ create table Acquisto(
   cfPersona CHAR(16),
   totale INTEGER,
   PRIMARY KEY (timest, cfPersonale),
-  FOREIGN KEY (cfPersona) REFERENCES Persona(codiceFiscale),
-  FOREIGN KEY (cfPersonale, mailPersonale) REFERENCES  Personale(personale_CFPersona, mail)
+  FOREIGN KEY (cfPersona) REFERENCES Persona(codiceFiscale) on delete set null on update cascade,
+  FOREIGN KEY (cfPersonale, mailPersonale) REFERENCES  Personale(personale_CFPersona, mail) on delete set null on update cascade
 );
 
 create TABLE Magazzino(
@@ -67,7 +67,7 @@ create TABLE Magazzino(
   indirizzoFarmacia VARCHAR(30),
   cfTitolareFarmacia CHAR(16),
   PRIMARY KEY (nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia) ,
-  FOREIGN KEY (nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia) REFERENCES Farmacia(nome, indirizzo, cfTitolare)
+  FOREIGN KEY (nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia) REFERENCES Farmacia(nome, indirizzo, cfTitolare) on delete cascade on update cascade
 );
 
 CREATE TABLE Farmaco(
@@ -85,7 +85,7 @@ CREATE TABLE Messaggio(
   personale_Mitt char(16),
   personale_mail_mitt varchar(30),
   PRIMARY KEY (Timest, personale_Mitt, personale_mail_mitt),
-  FOREIGN KEY (personale_Mitt, personale_mail_mitt) REFERENCES Personale(personale_CFPersona, mail)
+  FOREIGN KEY (personale_Mitt, personale_mail_mitt) REFERENCES Personale(personale_CFPersona, mail) on delete cascade on update cascade
 
 );
 
@@ -96,8 +96,8 @@ CREATE TABLE Destinatario_Messaggio(
   mailPersonaleMitt varchar(30),
   TimestMesssaggio TIMESTAMP,
   PRIMARY KEY ( cfPersonaleDest, cfPersonaleMitt, TimestMesssaggio),
-  FOREIGN KEY (cfPersonaleDest, mailPersonaleDest) REFERENCES Personale(personale_CFPersona, mail),
-  FOREIGN KEY (TimestMesssaggio, cfPersonaleMitt, mailPersonaleMitt) REFERENCES Messaggio(Timest, personale_Mitt, personale_mail_mitt)
+  FOREIGN KEY (cfPersonaleDest, mailPersonaleDest) REFERENCES Personale(personale_CFPersona, mail) on delete cascade on update cascade,
+  FOREIGN KEY (TimestMesssaggio, cfPersonaleMitt, mailPersonaleMitt) REFERENCES Messaggio(Timest, personale_Mitt, personale_mail_mitt) on delete cascade on update cascade
 );
 
 CREATE TABLE Magazzino_Farmaco(
@@ -107,8 +107,8 @@ CREATE TABLE Magazzino_Farmaco(
   cfTitolareFarmaciaMagazzino CHAR(16),
   codiceFarmaco varchar(10),
   PRIMARY KEY (nomeFarmaciaMagazzino, indirizzoFarmaciaMagazzino, cfTitolareFarmaciaMagazzino, codiceFarmaco),
-  FOREIGN KEY (nomeFarmaciaMagazzino, indirizzoFarmaciaMagazzino, cfTitolareFarmaciaMagazzino) REFERENCES Magazzino(nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia),
-  FOREIGN KEY (codiceFarmaco) REFERENCES Farmaco(Codice)
+  FOREIGN KEY (nomeFarmaciaMagazzino, indirizzoFarmaciaMagazzino, cfTitolareFarmaciaMagazzino) REFERENCES Magazzino(nomeFarmacia, indirizzoFarmacia, cfTitolareFarmacia) on delete cascade on update cascade,
+  FOREIGN KEY (codiceFarmaco) REFERENCES Farmaco(Codice) on delete cascade on update cascade
 );
 
 CREATE TABLE Acquisto_Farmaco(
@@ -117,9 +117,9 @@ CREATE TABLE Acquisto_Farmaco(
   cfPersonaleAcquisto CHAR(16),
   codiceFarmacoAcquisto varchar(10),
   PRIMARY KEY (timestAcquisto, cfPersonaleAcquisto, codiceFarmacoAcquisto),
-  FOREIGN KEY (timestAcquisto, cfPersonaleAcquisto) REFERENCES Acquisto(timest, cfPersonale),
-  FOREIGN KEY (codiceFarmacoAcquisto) REFERENCES Farmaco(Codice)
+  FOREIGN KEY (timestAcquisto, cfPersonaleAcquisto) REFERENCES Acquisto(timest, cfPersonale) on delete cascade on update cascade,
+  FOREIGN KEY (codiceFarmacoAcquisto) REFERENCES Farmaco(Codice) on delete cascade on update cascade
 );
 
-alter table Personale add foreign key(nomeFarmacia, indirizzoFarmacia, CF_titolare_farmacia) references Farmacia(nome, indirizzo, cfTitolare);
-alter table Farmacia add FOREIGN KEY (cfTitolare, mailTitolare) REFERENCES Personale(personale_CFPersona, mail);
+alter table Personale add foreign key(nomeFarmacia, indirizzoFarmacia, CF_titolare_farmacia) references Farmacia(nome, indirizzo, cfTitolare) on delete set null on update cascade;
+alter table Farmacia add FOREIGN KEY (cfTitolare, mailTitolare) REFERENCES Personale(personale_CFPersona, mail) on delete no action on update cascade;
