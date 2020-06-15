@@ -1,3 +1,5 @@
+package it.pointPharma.generalClasses;
+
 public class User {
 
     private String fName;

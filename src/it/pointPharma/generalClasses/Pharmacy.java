@@ -1,3 +1,5 @@
+package it.pointPharma.generalClasses;
+
 public class Pharmacy {
 
     private String name;

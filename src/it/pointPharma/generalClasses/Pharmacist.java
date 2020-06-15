@@ -1,3 +1,5 @@
+package it.pointPharma.generalClasses;
+
 public class Pharmacist extends User {
 
     private String email;

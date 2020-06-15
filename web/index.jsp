@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: patrich
+  it.pointPharma.generalClasses.User: patrich
   Date: 08/06/20
   Time: 23.13
   To change this template use File | Settings | File Templates.
@@ -22,11 +22,11 @@
     </div>
     <div id="form">
         <p>LOGIN</p>
-        <form>
+        <form action="login" method="POST">
             E-MAIL<br>
             <input type="email" placeholder="example@contoso.com" required><br>
             PASSWORD<br>
-            <input type="password" placeholder="--------" required><br>
+            <input type="password" placeholder="********" required><br>
             <input type="submit" value="SUBMIT"><br>
         </form>
     </div>

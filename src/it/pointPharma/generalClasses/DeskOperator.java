@@ -1,3 +1,5 @@
+package it.pointPharma.generalClasses;
+
 import java.util.LinkedList;
 
 
