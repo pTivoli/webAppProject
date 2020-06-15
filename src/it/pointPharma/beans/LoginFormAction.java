@@ -3,21 +3,29 @@ package it.pointPharma.beans;
 import it.pointPharma.DAOFormLogin.FormLoginDBAccess;
 import it.pointPharma.formBeans.UserData;
 import it.pointPharma.generalClasses.Pharmacist;
+import it.pointPharma.generalClasses.User;
 import org.apache.struts.action.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.NoSuchElementException;
 
 public class LoginFormAction extends Action {
 
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        UserData loginData = new UserData();
+        UserData loginData = (UserData) form;
         String password = loginData.getPassword();
-        FormLoginDBAccess formLoginDBAccess = new FormLoginDBAccess(loginData);
+        /* DB CONNECTION */
+        /*FormLoginDBAccess formLoginDBAccess = new FormLoginDBAccess(loginData);
         Pharmacist pharmacist = formLoginDBAccess.getPharmacist();
-        String role = formLoginDBAccess.getRole();
+        String role = formLoginDBAccess.getRole();*/
         ActionForward af = null;
-        if(password == pharmacist.getPwd()) {
+        /* START TEST */
+        Pharmacist pharmacist = new Pharmacist();
+        pharmacist.setPwd("ciaociao");
+        String role = "REG";
+        /* END TEST */
+        if(password.equals(pharmacist.getPwd())) {
             switch (role) {
                 case "REG":
                     af = mapping.findForward("REG");
