@@ -120,3 +120,6 @@ CREATE TABLE Acquisto_Farmaco(
   FOREIGN KEY (timestAcquisto, cfPersonaleAcquisto) REFERENCES Acquisto(timest, cfPersonale) on delete cascade on update cascade,
   FOREIGN KEY (codiceFarmacoAcquisto) REFERENCES Farmaco(Codice) on delete cascade on update cascade
 );
+
+alter table Personale add foreign key(nomeFarmacia, indirizzoFarmacia, CF_titolare_farmacia) references Farmacia(nome, indirizzo, cfTitolare) on delete set null on update cascade;
+alter table Farmacia add FOREIGN KEY (cfTitolare, mailTitolare) REFERENCES Personale(personale_CFPersona, mail) on delete no action on update cascade;

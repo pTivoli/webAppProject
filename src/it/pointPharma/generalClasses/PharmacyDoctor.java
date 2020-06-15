@@ -1,3 +1,5 @@
+package it.pointPharma.generalClasses;
+
 import java.util.Date;
 import java.util.LinkedList;
 import java.sql.Connection;

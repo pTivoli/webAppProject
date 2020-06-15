@@ -1,3 +1,5 @@
+package it.pointPharma.generalClasses;
+
 import java.sql.Statement;
 import java.sql.SQLException;
 import java.sql.DriverManager;
