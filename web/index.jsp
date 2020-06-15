@@ -23,7 +23,7 @@
     </div>
     <div id="form">
         <p>LOGIN</p>
-        <form action="login" method="POST">
+        <form action="login.do" method="POST">
             E-MAIL<br>
             <input type="email" placeholder="example@contoso.com" required><br>
             PASSWORD<br>

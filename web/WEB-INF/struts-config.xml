@@ -9,7 +9,7 @@
         <form-bean name="loginForm" type="it.pointPharma.formBeans.UserData"/>
     </form-beans>
     <action-mappings>
-        <action input="/index.jsp" name="loginForm" path="/index.jsp" type="it.pointPharma.beans.LoginFormAction">
+        <action input="/index.jsp" name="loginForm" path="/login" type="it.pointPharma.beans.LoginFormAction">
             <forward name="error" path="/index.jsp" /> <!--it must be changed?-->
             <forward name="REG" path="/JSP/REG.jsp" />
             <forward name="PM" path="/JSP/PM.jsp" />
