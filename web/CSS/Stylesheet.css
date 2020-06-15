@@ -3,6 +3,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* CSS Stylesheet */
 html, body{
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
 }
 #aboveTheFoldContent{
     width: 100%;
@@ -21,6 +22,15 @@ html, body{
     background-color: orange;
     font-size: 2em;
     margin-bottom: 15vh;
+}
+#aboveTheFoldContent #text a{
+    margin: auto;
+    text-align: center;
+    padding: 1vw;
+    color: white;
+    width: 42vw;
+    background-color: orange;
+    font-size: 2em;
 }
 #form{
     width: 100%;
