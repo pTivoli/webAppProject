@@ -18,6 +18,7 @@
         <div id="text">
             <p>WELCOME!</p>
             <p>1000+ pharmacies, 1 platform</p>
+            <a href="#form"> Sezione login</a>
         </div>
     </div>
     <div id="form">
@@ -30,5 +31,6 @@
             <input type="submit" value="SUBMIT"><br>
         </form>
     </div>
+
   </body>
 </html>
