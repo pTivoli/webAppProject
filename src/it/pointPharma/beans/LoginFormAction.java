@@ -24,7 +24,9 @@ public class LoginFormAction extends Action {
                     REG reg = new REG();
                     reg.setEmail(loginData.getEmail());
                     reg.setCF(formLoginDBAccess.getCF());
-                    // other parameters are missed
+                    reg.setDOB(formLoginDBAccess.getDob());
+                    reg.setfName(formLoginDBAccess.getFname());
+                    reg.setlName(formLoginDBAccess.getLname());
                     request.setAttribute("pharmacist", reg);
                     af = mapping.findForward("REG");
                     break;
@@ -32,7 +34,9 @@ public class LoginFormAction extends Action {
                     PharmacistManager pm = new PharmacistManager();
                     pm.setEmail(loginData.getEmail());
                     pm.setCF(formLoginDBAccess.getCF());
-                    // other parameters are missed
+                    pm.setDOB(formLoginDBAccess.getDob());
+                    pm.setfName(formLoginDBAccess.getFname());
+                    pm.setlName(formLoginDBAccess.getLname());
                     request.setAttribute("pharmacist", pm);
                     af = mapping.findForward("PM");
                     break;
@@ -40,7 +44,9 @@ public class LoginFormAction extends Action {
                     PharmacyDoctor pd = new PharmacyDoctor();
                     pd.setEmail(loginData.getEmail());
                     pd.setCF(formLoginDBAccess.getCF());
-                    // other parameters are missed
+                    pd.setDOB(formLoginDBAccess.getDob());
+                    pd.setfName(formLoginDBAccess.getFname());
+                    pd.setlName(formLoginDBAccess.getLname());
                     request.setAttribute("pharmacist", pd);
                     af = mapping.findForward("PD");
                     break;
@@ -48,7 +54,9 @@ public class LoginFormAction extends Action {
                     DeskOperator dop = new DeskOperator();
                     dop.setEmail(loginData.getEmail());
                     dop.setCF(formLoginDBAccess.getCF());
-                    // other parameters are missed
+                    dop.setDOB(formLoginDBAccess.getDob());
+                    dop.setfName(formLoginDBAccess.getFname());
+                    dop.setlName(formLoginDBAccess.getLname());
                     request.setAttribute("pharmacist", dop);
                     af = mapping.findForward("DO");
                     break;

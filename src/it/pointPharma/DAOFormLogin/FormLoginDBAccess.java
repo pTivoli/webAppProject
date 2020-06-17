@@ -10,12 +10,12 @@ public class FormLoginDBAccess {
     private Pharmacist pharmacist;
     private String role;
     private String cf;
+    private String dob;
+    private String fname;
+    private String lname;
 
     public FormLoginDBAccess(UserData userData) throws Exception {
         this.userDataIn = userData;
-        this.pharmacist = null;
-        this.role = null;
-        this.cf = null;
         this.getUserData();
     }
 
@@ -30,18 +30,25 @@ public class FormLoginDBAccess {
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
             try {
                 Statement st = con.createStatement();
-                String query = "SELECT * from Personale where mail='" + userDataIn.getEmail() + "'"; //MAIL IS VALIDATED FROM HTML 5, SQL-INJECTION AVOIDED
+                String query = "SELECT * FROM Personale JOIN Persona ON Persona.codicefiscale = Personale.personale_cfpersona WHERE mail='" + userDataIn.getEmail() + "'";
                 ResultSet ris = st.executeQuery(query);
                 String role = null;
                 String cf = null;
+                String dob = null;
+                String fname = null;
+                String lname = null;
+
                 Pharmacist pharmacistRetrieved = new Pharmacist();
                 pharmacistRetrieved.setEmail(userDataIn.getEmail());
                 while (ris.next()) {
                     pharmacistRetrieved.setPwd(ris.getString("pwd"));
                     role = ris.getString("ruoloPersonale");
                     cf = ris.getString("personale_cfpersona");
+                    dob = ris.getString("datanascita");
+                    fname = ris.getString("nome");
+                    lname = ris.getString("cognome");
                 }
-                setParameters(pharmacistRetrieved, role, cf);
+                setParameters(pharmacistRetrieved, role, cf, dob, fname, lname);
             } catch (SQLException e) {
                 throw new Exception("Error DB");
             }
@@ -51,10 +58,25 @@ public class FormLoginDBAccess {
         }
     }
 
-    private void setParameters(Pharmacist pharmacist, String ruolo, String cf) {
+    private void setParameters(Pharmacist pharmacist, String ruolo, String cf, String dob, String fname, String lname) {
         this.pharmacist = pharmacist;
         this.role = ruolo;
         this.cf = cf;
+        this.dob = dob;
+        this.fname = fname;
+        this.lname = lname;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public String getLname() {
+        return lname;
     }
 
     public Pharmacist getPharmacist() {
