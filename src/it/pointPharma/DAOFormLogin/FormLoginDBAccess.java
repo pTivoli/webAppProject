@@ -18,8 +18,7 @@ public class FormLoginDBAccess {
 
     public void getUserData() throws Exception {
         try{
-            Class.forName("org.postgresql.Driver");
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgres", "TivoliPatrick");
             try{
                 Statement st = con.createStatement();
                 String query = "SELECT mail, pwd, ruoloPersonale from Personale where mail='"+ userDataIn.getEmail() +"'"; //MAIL IS VALIDATED FROM HTML 5, SQL-INJECTION AVOIDED
@@ -28,11 +27,12 @@ public class FormLoginDBAccess {
                 pharmacistRetrieved.setEmail(userDataIn.getEmail());
                 pharmacistRetrieved.setPwd(ris.getString("pwd"));
                 setParameters(pharmacistRetrieved, role);
+                System.err.println("------------>SONO ARRIVATO QUA");
             }catch(SQLException ex){
                 throw new Exception("Error DB");
             }
             con.close();
-        }catch(Exception e){
+        }catch(SQLException e){
             throw new Exception("Error DB");
         }
     }

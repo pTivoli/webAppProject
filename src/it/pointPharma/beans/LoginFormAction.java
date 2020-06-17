@@ -16,14 +16,15 @@ public class LoginFormAction extends Action {
         UserData loginData = (UserData) form;
         String password = loginData.getPassword();
         /* DB CONNECTION */
-        /*FormLoginDBAccess formLoginDBAccess = new FormLoginDBAccess(loginData);
+        FormLoginDBAccess formLoginDBAccess = new FormLoginDBAccess(loginData);
+        formLoginDBAccess.getUserData();
         Pharmacist pharmacist = formLoginDBAccess.getPharmacist();
-        String role = formLoginDBAccess.getRole();*/
+        String role = formLoginDBAccess.getRole();
         ActionForward af = null;
         /* START TEST */
-        Pharmacist pharmacist = new Pharmacist();
+        /*Pharmacist pharmacist = new Pharmacist();
         pharmacist.setPwd("ciaociao");
-        String role = "REG";
+        String role = "REG";*/
         /* END TEST */
         if(password.equals(pharmacist.getPwd())) {
             switch (role) {
