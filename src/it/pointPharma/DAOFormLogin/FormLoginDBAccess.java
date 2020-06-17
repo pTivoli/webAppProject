@@ -17,18 +17,27 @@ public class FormLoginDBAccess {
     }
 
     public void getUserData() throws Exception {
+        /*
+            BE CAREFUL
+            Check out if in your directory there is the postgres driver class.
+            BE CAREFUL
+            Change the credential in getConnection.
+         */
         try{
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgres", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
             try{
                 Statement st = con.createStatement();
                 String query = "SELECT mail, pwd, ruoloPersonale from Personale where mail='"+ userDataIn.getEmail() +"'"; //MAIL IS VALIDATED FROM HTML 5, SQL-INJECTION AVOIDED
                 ResultSet ris = st.executeQuery(query);
+                String role = null;
                 Pharmacist pharmacistRetrieved = new Pharmacist();
                 pharmacistRetrieved.setEmail(userDataIn.getEmail());
-                pharmacistRetrieved.setPwd(ris.getString("pwd"));
+                while(ris.next()) {
+                    pharmacistRetrieved.setPwd(ris.getString("pwd"));
+                    role = ris.getString("ruoloPersonale");
+                }
                 setParameters(pharmacistRetrieved, role);
-                System.err.println("------------>SONO ARRIVATO QUA");
-            }catch(SQLException ex){
+            }catch(SQLException e){
                 throw new Exception("Error DB");
             }
             con.close();

@@ -15,17 +15,11 @@ public class LoginFormAction extends Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         UserData loginData = (UserData) form;
         String password = loginData.getPassword();
-        /* DB CONNECTION */
         FormLoginDBAccess formLoginDBAccess = new FormLoginDBAccess(loginData);
         formLoginDBAccess.getUserData();
         Pharmacist pharmacist = formLoginDBAccess.getPharmacist();
         String role = formLoginDBAccess.getRole();
         ActionForward af = null;
-        /* START TEST */
-        /*Pharmacist pharmacist = new Pharmacist();
-        pharmacist.setPwd("ciaociao");
-        String role = "REG";*/
-        /* END TEST */
         if(password.equals(pharmacist.getPwd())) {
             switch (role) {
                 case "REG":
