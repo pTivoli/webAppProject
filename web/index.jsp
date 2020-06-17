@@ -15,10 +15,11 @@
   </head>
   <body>
     <div id="aboveTheFoldContent">
+        <p>PharmaPoint</p>
         <div id="text">
             <p>WELCOME!</p>
             <p>1000+ pharmacies, 1 platform</p>
-            <a href="#form"> Sezione login</a>
+            <a href="#form">&#8623; LOGIN &#8623;</a>
         </div>
     </div>
     <div id="form">
