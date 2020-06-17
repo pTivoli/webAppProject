@@ -38,10 +38,4 @@ public class User {
     public void setDOB(String DOB) {
         this.DOB = DOB;
     }
-
-    /* It returns true if all the operations are done */
-    public boolean saveUserDB() {
-        return false;
-    }
-
 }
