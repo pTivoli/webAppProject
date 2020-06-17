@@ -16,9 +16,9 @@ create table Medico(
 );
 
 create table Ricetta(
-  codiceRicetta varchar(10),
+  codiceRicetta varchar(15),
   data date,
-  codiceFiscale char(11),        --per le persone giuridiche la lunghezza del cf è 16 caratteri
+  codiceFiscale char(16),        --per le persone giuridiche la lunghezza del cf è 16 caratteri
   ricetta_Codice_Medico varchar(10),
   ricetta_Medico_Persona char(16),
   primary key(codiceRicetta, ricetta_Codice_Medico, ricetta_Medico_Persona),
@@ -72,7 +72,7 @@ create TABLE Magazzino(
 
 CREATE TABLE Farmaco(
   Codice varchar(10),
-  Nome VARCHAR(20),
+  Nome VARCHAR(50),
   Prezzo decimal(6,2),
   ObbligoRicetta boolean DEFAULT false,
   Scadenza date,
