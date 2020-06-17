@@ -35,7 +35,7 @@ INSERT INTO farmacia VALUES ('Farmahappy', 'Via Garda 32', '03245676324', 'HTNTC
 
 --Personale
 INSERT INTO personale VALUES ('francesco.ferra99@gmail.com', 'frafryx05', 'HTNTCU65S54G532R', 'PM', 'Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R');
-INSERT INTO personale VALUES ('matteo.dormo@gmail.com', 'sonic98', 'DWAZZL90P66E868A', 'PD', 'Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R');
+INSERT INTO personale VALUES ('matteo.strawberry@gmail.com', 'sonic98', 'DWAZZL90P66E868A', 'PD', 'Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R');
 INSERT INTO personale VALUES ('davide.saxoph@gmail.com', 'saxofono', 'ZBWRGN88R31F826O', 'DO', 'Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R');
 INSERT INTO personale VALUES ('patrich.tivolotty@gmail.com', 'alanwalker', 'TVLPTR67L59A856P', 'PM', 'Pharmaon', 'Via Fiume 1', 'TVLPTR67L59A856P');
 INSERT INTO personale VALUES ('maria.sal@gmail.com', 'doom', 'QSPPTL31H46A087H', 'PD', 'Pharmaon', 'Via Fiume 1', 'TVLPTR67L59A856P');
@@ -45,7 +45,34 @@ INSERT INTO personale VALUES ('lore.appe@gmail.com', 'lovelega', 'LTFDCT70T49E74
 INSERT INTO personale VALUES ('andrea.blasf@gimail.com', 'germano1', 'BHNYNM85R56F883S', 'DO', 'Ciafarm', 'Via Garibaldi 23', 'XBSBVZ69M12H785L');
 
 --Acquisto
-INSERT INTO acquisto VALUES ('2016-06-22 19:10:25-07', 'BHNYNM85R56F883S', 'andrea.blasf@gimail.com', 'PBFNDV66D46A202L', 50,67);
+INSERT INTO acquisto VALUES ('22-02-2019 19:10:25-07', 'BHNYNM85R56F883S', 'andrea.blasf@gimail.com', 'PBFNDV66D46A202L', 50.67);
+INSERT INTO acquisto VALUES ('22-06-2016 17:10:25-07', 'DWAZZL90P66E868A', 'matteo.strawberry@gmail.com', 'SPLGDT91B51D385R', 27.00);
+INSERT INTO acquisto VALUES ('22-06-2020 12:15:24-07', 'NFQXHC75S14F130W', 'fabri.peroloo@gmail.com', 'GVDLRG40R55L093B', 12.60);
+
+--Magazzino
+INSERT INTO magazzino VALUES ('Pharmaon', 'Via Fiume 1', 'TVLPTR67L59A856P');
+INSERT INTO magazzino VALUES ('Ciafarm', 'Via Garibaldi 23', 'XBSBVZ69M12H785L');
+INSERT INTO magazzino VALUES ('Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R');
+
+--Farmaco
+INSERT INTO farmaco VALUES ('01AM', 'Amoxicillina', 15.00, True, '12-07-2021');
+INSERT INTO farmaco VALUES ('30GM', 'Gentamicina', 9.00, True, '12-08-2021');
+INSERT INTO farmaco VALUES ('27MC', 'Macladin', 16.00, True, '30-07-2021');
+INSERT INTO farmaco VALUES ('03DE', 'Deltacortene', 13.90 , True, '12-05-2021');
+INSERT INTO farmaco VALUES ('04DS', 'Desloratadina', 25.00, True, '28-08-2021');
+INSERT INTO farmaco VALUES ('98PA', 'Paracetamolo', 10.00, False, '10-12-2022');
+INSERT INTO farmaco VALUES ('08AC', 'Acido Acetilsalicinico', 8,50, False, '13-02-2021');
+INSERT INTO farmaco VALUES ('09AS', 'Acido Ascorbico ', 8,50, False, '13-02-2021');
+
+--Magazzino_Farmaco
+INSERT INTO Magazzino_Farmaco VALUES ('31', 'Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R', '01AM');
+INSERT INTO Magazzino_Farmaco VALUES ('12', 'Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R', '30GM');
+INSERT INTO Magazzino_Farmaco VALUES ('5', 'Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R', '27MC');
+INSERT INTO Magazzino_Farmaco VALUES ('26', 'Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R', '03ED');
+INSERT INTO Magazzino_Farmaco VALUES ('11', 'Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R', '04DS');
+INSERT INTO Magazzino_Farmaco VALUES ('1', 'Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R', '98PA');
+INSERT INTO Magazzino_Farmaco VALUES ('23', 'Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R', '08AC');
+INSERT INTO Magazzino_Farmaco VALUES ('7', 'Farmahappy', 'Via Garda 32', 'HTNTCU65S54G532R', '09AS');
 
 
 
