@@ -10,8 +10,21 @@ html, body{
     height: 100%;
     background-image: url("../IMG/homePage.webp");
 }
+#aboveTheFoldContent > p{
+    width: 42vw;
+    margin:auto;
+    padding: 1vw;
+    color: white;
+    border-radius: 0px 0px 45px 45px;
+    background-color: orange;
+    font-size: 2em;
+    text-align: center;
+    position: sticky;
+}
 #aboveTheFoldContent #text{
-    padding-top: 30vh;
+    padding-top: 20vh;
+    border-radius: 0px 0px 0px 0px;
+    position: static;
 }
 #aboveTheFoldContent #text p{
     margin: auto;
@@ -24,10 +37,13 @@ html, body{
     margin-bottom: 15vh;
 }
 #aboveTheFoldContent #text a{
+    text-decoration: none;
+    border-radius: 45px;
     margin: auto;
     text-align: center;
     padding: 1vw;
     color: white;
+    display: block;
     width: 42vw;
     background-color: orange;
     font-size: 2em;
