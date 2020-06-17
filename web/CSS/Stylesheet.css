@@ -86,3 +86,56 @@ html, body{
     padding: 2vh;
     font-size: 1em;
 }
+
+#err{
+    width: 100%;
+    height: 100%;
+    background-image: url("../IMG/covid.webp");
+    background-size: cover;
+    background-position: center;
+}
+#err > p{
+    width: 42vw;
+    margin:auto;
+    padding: 1vw;
+    border-radius: 0px 0px 45px 45px;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    position: sticky;
+    color: black;
+    background-color: #7E748C;
+    opacity: .83;
+}
+#err #text{
+    padding-top: 20vh;
+    border-radius: 0px 0px 0px 0px;
+    position: static;
+
+}
+#err #text p{
+    margin: auto;
+    text-align: center;
+    padding: 1vw;
+    width: 42vw;
+    font-size: 2em;
+    margin-bottom: 10vh;
+    background-color: #7E748C;
+    opacity: .87;
+    font-weight: bold;
+    color: black;
+}
+#err #text a{
+    text-decoration: none;
+    border-radius: 45px;
+    margin: auto;
+    text-align: center;
+    padding: 1vw;
+    display: block;
+    width: 42vw;
+    font-size: 2em;
+    background-color: #7E748C;
+    opacity: .87;
+    font-weight: bold;
+    color: black;
+}
