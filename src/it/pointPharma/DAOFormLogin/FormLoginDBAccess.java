@@ -2,6 +2,9 @@ package it.pointPharma.DAOFormLogin;
 
 import it.pointPharma.formBeans.UserData;
 import it.pointPharma.generalClasses.Pharmacist;
+import it.pointPharma.generalClasses.PharmacistManager;
+import it.pointPharma.generalClasses.Pharmacy;
+
 import java.sql.*;
 
 public class FormLoginDBAccess {
@@ -49,6 +52,32 @@ public class FormLoginDBAccess {
                     lname = ris.getString("cognome");
                 }
                 setParameters(pharmacistRetrieved, role, cf, dob, fname, lname);
+
+                /* creation of pharmacy query */
+                query = "SELECT * FROM FARMACIA JOIN PERSONALE ON Farmacia.nome = Personale.nomeFarmacia WHERE personale_CFPersona = '" + pharmacistRetrieved.getCF() + "'";
+                ris = st.executeQuery(query);
+                String name = null;
+                String address = null;
+                String phoneNumber = null;
+                String cfTit = null;
+
+                Pharmacy pharmacyRetrieved = new Pharmacy();
+                while(ris.next()){
+                    name = ris.getString("nomeFarmacia");
+                    address = ris.getString("indirizzo");
+                    phoneNumber = ris.getString("telefono");
+                    cfTit = ris.getString("cfTitolare");
+                }
+
+                pharmacyRetrieved.setName(name);
+                pharmacyRetrieved.setAddress(address);
+                pharmacyRetrieved.setPhoneNumber(phoneNumber);
+                //Pharmacist Manager needed in pharmacy, not sure whether to create a new one
+                //or create a function that, given a CF, returns the Pharmacy manager class
+                //the only obstacle is to get it from the database and manage to return
+                //either a new PharmMan or return the existing one
+
+
             } catch (SQLException e) {
                 throw new Exception("Error DB");
             }
