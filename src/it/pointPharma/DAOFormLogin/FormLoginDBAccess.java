@@ -2,7 +2,6 @@ package it.pointPharma.DAOFormLogin;
 
 import it.pointPharma.formBeans.UserData;
 import it.pointPharma.generalClasses.Pharmacist;
-import it.pointPharma.generalClasses.PharmacistManager;
 import it.pointPharma.generalClasses.Pharmacy;
 
 import java.sql.*;
@@ -16,6 +15,12 @@ public class FormLoginDBAccess {
     private String dob;
     private String fname;
     private String lname;
+
+    //Pharmacy
+    private String phName = null;
+    private String phAddress = null;
+    private String phPhoneNumber = null;
+    private String phCfTit = null;
 
     public FormLoginDBAccess(UserData userData) throws Exception {
         this.userDataIn = userData;
@@ -56,22 +61,19 @@ public class FormLoginDBAccess {
                 /* creation of pharmacy query */
                 query = "SELECT * FROM FARMACIA JOIN PERSONALE ON Farmacia.nome = Personale.nomeFarmacia WHERE personale_CFPersona = '" + pharmacistRetrieved.getCF() + "'";
                 ris = st.executeQuery(query);
-                String name = null;
-                String address = null;
-                String phoneNumber = null;
-                String cfTit = null;
+
 
                 Pharmacy pharmacyRetrieved = new Pharmacy();
                 while(ris.next()){
-                    name = ris.getString("nomeFarmacia");
-                    address = ris.getString("indirizzo");
-                    phoneNumber = ris.getString("telefono");
-                    cfTit = ris.getString("cfTitolare");
+                    phName = ris.getString("nomeFarmacia");
+                    phAddress = ris.getString("indirizzo");
+                    phPhoneNumber = ris.getString("telefono");
+                    phCfTit = ris.getString("cfTitolare");
                 }
 
-                pharmacyRetrieved.setName(name);
-                pharmacyRetrieved.setAddress(address);
-                pharmacyRetrieved.setPhoneNumber(phoneNumber);
+                pharmacyRetrieved.setName(phName);
+                pharmacyRetrieved.setAddress(phAddress);
+                pharmacyRetrieved.setPhoneNumber(phPhoneNumber);
                 //Pharmacist Manager needed in pharmacy, not sure whether to create a new one
                 //or create a function that, given a CF, returns the Pharmacy manager class
                 //the only obstacle is to get it from the database and manage to return
@@ -118,5 +120,21 @@ public class FormLoginDBAccess {
 
     public String getCF() {
         return this.cf;
+    }
+
+    public String getPhName(){
+        return this.phName;
+    }
+
+    public String getPhAddress(){
+        return this.phAddress;
+    }
+
+    public String getPhPhoneNumber(){
+        return this.phPhoneNumber;
+    }
+
+    public String getPhCfTit(){
+        return this.phCfTit;
     }
 }
