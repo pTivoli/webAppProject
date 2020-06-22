@@ -1,0 +1,42 @@
+body{
+    background-image: url("../IMG/homePage.webp");
+}
+#header{
+    width:100%;
+    height: auto;
+    display: block;
+}
+#pharmacist p{
+    padding: 12px;
+    background-color: orangered;
+    border-radius: 0px 25px 25px 0px;
+}
+#pharmacist p:first-child{
+    font-size: 2em;
+    padding: 12px;
+    background-color: orange;
+    border-radius: 0px 0px 25px 0px;
+}
+#pharmacist{
+    width: 40%;
+    float: left;
+}
+#pharmacy{
+    width: 30%;
+    float: right;
+}
+#pharmacy > p{
+    padding: 12px 0px 12px 12px;
+    background-color: orangered;
+    border-radius: 25px 0px 0px 25px;
+    width: auto;
+}
+#pharmacy p:first-child{
+    font-size: 2em;
+    padding: 12px 0px 12px 12px;
+    background-color: orange;
+    border-radius: 0px 0px 0px 25px;
+}
+#mainContent{
+    width:100%;
+}
