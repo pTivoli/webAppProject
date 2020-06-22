@@ -35,10 +35,11 @@
         <div id="mainContent">
             <form>
                 <input id="medicine" onkeyup="ajaxCall();" type="text" placeholder="Medicine">
-                <input type="submit" value="ADD">
-            </form>
+                <!--<input type="submit" value="ADD" disabled>-->
+            </form><br><br>
             <div id="suggestions">
-                PRINT:
+            </div>
+            <div id="cart">
             </div>
         </div>
         <script
@@ -47,25 +48,32 @@
                 crossorigin="anonymous"></script> <!-- SCARICATE IL CODICE PER FAVORE -->
         <script>
             function ajaxCall(){
-                $(document).ready(function() {
-                    $.ajax({
-                        type: "POST",
-                        url: "checkOutMedicines.do",
-                        data : {
-                            hint : $('#medicine').val()
-                        },
-                        success : function(responseText) {
-                            //$('#suggestions').text(responseText);
-                            $('#suggestions').html(createTable(responseText));
-                        }
+                if($('#medicine').val().length > 0) {
+                    $("#mainContent form input[type=submit]").prop("disabled", false);
+                    $(document).ready(function () {
+                        $.ajax({
+                            type: "POST",
+                            url: "checkOutMedicines.do",
+                            data: {
+                                hint: $('#medicine').val()
+                            },
+                            success: function (responseText) {
+                                //$('#suggestions').text(responseText);
+                                $('#suggestions').html(createTable(responseText));
+                            }
+                        });
                     });
-                });
+                }else{
+                    $("#mainContent form input[type=submit]").prop("disabled", true);
+                    $('#suggestions').html("");
+                }
             }
             function createTable(text){
                 var ris = "<table>";
                 text = text.split(";");
-                for(var i = 0; i < text.length; i+=2){
-                    ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td></tr>";
+                var i;
+                for(i = 0; i < text.length-1; i+=2){
+                    ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td><td><button>ADD</button></td></tr>";
                 }
                 ris += "</table>";
                 return ris;

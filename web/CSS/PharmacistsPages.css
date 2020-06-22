@@ -37,6 +37,44 @@ body{
     background-color: orange;
     border-radius: 0px 0px 0px 25px;
 }
+#suggestions{
+    width: 75%;
+    margin: auto;
+}
+#suggestions table{
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    border: 5px solid orangered;
+}
+#suggestions td{
+    border: 2px solid grey;
+    padding: 10px;
+}
 #mainContent{
     width:100%;
+}
+#mainContent form{
+    width: 75%;
+    margin: auto;
+}
+#mainContent input[type=text]{
+    /*width: 75%;*/
+    width: 100%;
+    background-color: white;
+    border: 0px;
+    border-bottom: 2px solid orange;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+}
+#suggestions button{
+    width: 24%;
+    background-color: orange;
+    border: 0px;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px 25px 10px 25px;
+    font-size: 1.2em;
 }
