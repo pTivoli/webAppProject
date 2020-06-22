@@ -16,6 +16,11 @@
             <forward name="PD" path="/JSP/PD.jsp" />
             <forward name="DO" path="/JSP/DO.jsp" />
         </action>
+        <action path="/checkOutMedicines"
+                type="it.pointPharma.beans.MedicineFinder"
+                scope="request"
+                input="/JSP/DO.jsp"
+                validate="false">
+        </action>
     </action-mappings>
-
 </struts-config>

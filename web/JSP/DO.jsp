@@ -33,7 +33,43 @@
             </div>
         </div>
         <div id="mainContent">
-            //forms will be there
+            <form>
+                <input id="medicine" onkeyup="ajaxCall();" type="text" placeholder="Medicine">
+                <input type="submit" value="ADD">
+            </form>
+            <div id="suggestions">
+                PRINT:
+            </div>
         </div>
+        <script
+                src="https://code.jquery.com/jquery-3.5.1.js"
+                integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+                crossorigin="anonymous"></script> <!-- SCARICATE IL CODICE PER FAVORE -->
+        <script>
+            function ajaxCall(){
+                $(document).ready(function() {
+                    $.ajax({
+                        type: "POST",
+                        url: "checkOutMedicines.do",
+                        data : {
+                            hint : $('#medicine').val()
+                        },
+                        success : function(responseText) {
+                            //$('#suggestions').text(responseText);
+                            $('#suggestions').html(createTable(responseText));
+                        }
+                    });
+                });
+            }
+            function createTable(text){
+                var ris = "<table>";
+                text = text.split(";");
+                for(var i = 0; i < text.length; i+=2){
+                    ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td></tr>";
+                }
+                ris += "</table>";
+                return ris;
+            }
+        </script>
     </body>
 </html>
