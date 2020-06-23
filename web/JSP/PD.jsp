@@ -54,6 +54,17 @@
         <p><button onclick="buyFn();" disabled>BUY</button></p><br/>
         <div id="objects"></div>
     </div>
+    <div id="registerUser">
+        CF<br>
+        <input id="cf" name="cf" type="text" required><br>
+        First Name<br>
+        <input id="fname"  name="fname" type="text" required><br>
+        Last Name<br>
+        <input id="lname"  name="lname" type="text" required><br>
+        Date Of Birth<br>
+        <input id="dob"  name="dob" type="date" required><br>
+        <button onclick="registerUser()">Submit</button>
+    </div>
 </div>
 <script
         src="https://code.jquery.com/jquery-3.5.1.js"
@@ -108,6 +119,23 @@
                 });
             });
         }
+    }
+    function registerUser(){
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                url: "registerUser.do",
+                data: {
+                    cf:     $("#cf").val(),
+                    fname:  $("#fname").val(),
+                    lname:  $("#lname").val(),
+                    dob:    $("#dob").val()
+                },
+                success: function () {
+                    alert("User saved!");
+                }
+            });
+        });
     }
     function createTable(text){
         var ris = "<table>";

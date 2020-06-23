@@ -15,11 +15,10 @@ public class PharmacyDoctor extends DeskOperator{
 
     public void registerUser(User user) throws Exception {
         try{
-            Class.forName("org.postgresql.Driver");
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "Slashrocker1");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
             try{
                 Statement st = con.createStatement();
-                String queryUtente = "INSERT INTO Persona VALUES ('"+ user.getCF() +"',' "+ user.getfName() +"',' "+ user.getlName() +"','"+user.getDOB()+"')";
+                String queryUtente = "INSERT INTO Persona VALUES ('"+user.getCF()+"','"+user.getfName()+"','"+user.getlName()+"','"+user.getDOB()+"')";
                 st.executeUpdate(queryUtente);
             }catch(SQLException ex){
                 throw new Exception("Error DB");
