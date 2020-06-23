@@ -23,6 +23,7 @@ public class LoginFormAction extends Action {
             pharm.setName(formLoginDBAccess.getPhName());
             pharm.setAddress(formLoginDBAccess.getPhAddress());
             pharm.setPhoneNumber(formLoginDBAccess.getPhPhoneNumber());
+            pharm.setPharmacyManager(new PharmacistManager());
             pharm.getPharmacyManager().setCF(formLoginDBAccess.getPhCfTit());
             pharm.getPharmacyManager().setEmail(formLoginDBAccess.getPhMailTit());
             request.setAttribute("pharmacy", pharm);

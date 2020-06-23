@@ -31,7 +31,7 @@ public class FormLoginDBAccess {
             Change the credential in getConnection.
          */
         try {
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "Slashrocker1");
             try {
                 Statement st = con.createStatement();
                 String query = "SELECT * FROM Personale JOIN Persona ON Persona.codicefiscale = Personale.personale_cfpersona JOIN Farmacia ON Farmacia.nome = Personale.nomeFarmacia WHERE mail = '" + userDataIn.getEmail() + "'";
@@ -52,7 +52,8 @@ public class FormLoginDBAccess {
                 String phMailTit = null;
 
                 Pharmacist pharmacistRetrieved = new Pharmacist();
-                PharmacistManager pM = pharmacy.getPharmacyManager();
+                /* FIX PM */
+                PharmacistManager pM = new PharmacistManager();
 
                 pharmacistRetrieved.setEmail(userDataIn.getEmail());
                 while (ris.next()) {
@@ -63,10 +64,10 @@ public class FormLoginDBAccess {
                     fname = ris.getString("nome");
                     lname = ris.getString("cognome");
 
-                    phName = ris.getString("nomeFarmacia");
+                    phName = ris.getString("nomefarmacia");
                     phAddress = ris.getString("indirizzo");
                     phPhoneNumber = ris.getString("telefono");
-                    phCfTit = ris.getString("cfTitolare");
+                    phCfTit = ris.getString("cftitolare");
                     phMailTit = ris.getString("mailtitolare");
                 }
                 setParameters(pharmacistRetrieved, role, cf, dob, fname, lname);
@@ -74,6 +75,7 @@ public class FormLoginDBAccess {
                 pM.setCF(phCfTit);
                 pM.setEmail(phMailTit);
 
+                pharmacy = new Pharmacy();
                 pharmacy.setName(phName);
                 pharmacy.setAddress(phAddress);
                 pharmacy.setPhoneNumber(phPhoneNumber);
