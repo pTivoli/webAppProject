@@ -37,7 +37,7 @@
                 <p>Pharmacy</p><br>
                 <p>Name: <%= pharmName%></p><br>
                 <p>Address: <%= pharmAddress%></p><br>
-                <p>Tel: <%= pharmPN%></p><br>
+                <p>Tel: <%= "+39" + pharmPN%></p><br>
                 <p>Mail PM: <%= pharmEmail%></p><br>
                 <p>PM CF: <%= pharmCFPM%></p><br>
             </div>
