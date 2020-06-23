@@ -18,8 +18,6 @@ public class FormLoginDBAccess {
     private String fname;
     private String lname;
 
-
-
     public FormLoginDBAccess(UserData userData) throws Exception {
         this.userDataIn = userData;
         this.getUserData();
