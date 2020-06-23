@@ -20,7 +20,11 @@
                 type="it.pointPharma.beans.MedicineFinder"
                 scope="request"
                 input="/JSP/DO.jsp"
-                validate="false">
-        </action>
+                validate="false"></action>
+        <action path="/buyMedicines"
+                type="it.pointPharma.beans.SellItemsGeneral"
+                scope="request"
+                input="/JSP/DO.jsp"
+                validate="false"></action>
     </action-mappings>
 </struts-config>

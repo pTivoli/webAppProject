@@ -99,11 +99,11 @@
                             data: {
                                 medicine: document.cookie
                             },
-                            success: function (responseText) {
+                            success: function () {
                                 alert("All the medicines are bought!");
-                                document.cookie = "";
+                                document.cookie = "medicine=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
                                 $('#suggestions').html("");
-                                $('#medicine').val = "";
+                                $('#medicine').val("");
                                 document.getElementById("objects").innerHTML = "";
                             }
                         });
