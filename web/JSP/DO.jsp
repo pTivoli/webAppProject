@@ -52,7 +52,7 @@
             </div>
             <div id="cart">
                 <p>CART</p><br/>
-                <p><button onclick="">BUY</button></p><br/>
+                <p><button onclick="buyFn();" disabled>BUY</button></p><br/>
                 <div id="objects"></div>
             </div>
         </div>
@@ -65,6 +65,7 @@
                 var obj = document.getElementById("objects").innerHTML;
                 document.getElementById("objects").innerHTML= obj + "<p>"+nameMed+"</p><br>";
                 if(document.cookie == ""){
+                    $("#cart button").prop("disabled", false);
                     document.cookie = "medicine=" + codeMed + "," + nameMed + ",";
                 }else{
                     document.cookie += codeMed + "," + nameMed + ",";
@@ -72,7 +73,6 @@
             }
             function ajaxCall(){
                 if($('#medicine').val().length > 0) {
-                    $("#mainContent form input[type=submit]").prop("disabled", false);
                     $(document).ready(function () {
                         $.ajax({
                             type: "POST",
@@ -87,8 +87,27 @@
                         });
                     });
                 }else{
-                    $("#mainContent form input[type=submit]").prop("disabled", true);
                     $('#suggestions').html("");
+                }
+            }
+            function buyFn(){
+                if(document.cookie != ""){
+                    $(document).ready(function () {
+                        $.ajax({
+                            type: "POST",
+                            url: "buyMedicines.do",
+                            data: {
+                                medicine: document.cookie
+                            },
+                            success: function () {
+                                alert("All the medicines are bought!");
+                                document.cookie = "medicine=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+                                $('#suggestions').html("");
+                                $('#medicine').val("");
+                                document.getElementById("objects").innerHTML = "";
+                            }
+                        });
+                    });
                 }
             }
             function createTable(text){

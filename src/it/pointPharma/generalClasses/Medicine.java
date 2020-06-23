@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class Medicine {
     private boolean receipt;
-    private Date ED; //?? IT MUST BE CHANGED ASAP
+    private Date ED;
     private String name;
-    private Integer code;
+    private String code;
     private float cost;
 
     public boolean getReceipt() {
@@ -29,11 +29,11 @@ public class Medicine {
         this.name = name;
     }
 
-    public Integer getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
