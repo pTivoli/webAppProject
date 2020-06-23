@@ -11,9 +11,7 @@ public class MedicineFinder extends Action {
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         try {
-
-            /* DISCLAIMER --- CHANGE DB PASSWORD */
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "Slashrocker1");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
             try {
                 Statement st = con.createStatement();
                 String hint = (String)request.getParameter("hint"); // TO BE MODIFIED
