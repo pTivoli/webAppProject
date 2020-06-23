@@ -56,7 +56,7 @@ create table Acquisto(
   cfPersonale CHAR(16),
   mailPersonale varchar(30),
   cfPersona CHAR(16),
-  totale INTEGER,
+  totale decimal(6,2),
   PRIMARY KEY (timest, cfPersonale),
   FOREIGN KEY (cfPersona) REFERENCES Persona(codiceFiscale) on delete set null on update cascade,
   FOREIGN KEY (cfPersonale, mailPersonale) REFERENCES  Personale(personale_CFPersona, mail) on delete set null on update cascade

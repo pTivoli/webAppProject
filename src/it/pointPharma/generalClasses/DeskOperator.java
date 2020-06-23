@@ -3,7 +3,8 @@ package it.pointPharma.generalClasses;
 import javax.servlet.http.HttpSession;
 import java.sql.*;
 import java.util.LinkedList;
-
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -21,8 +22,6 @@ public class DeskOperator extends Pharmacist {
                 float totalCost = 0;
                 for (Medicine m  : medicineLinkedList ){
                     totalCost += m.getCost();
-                    //queryMedPurchase = "INSERT INTO Acquisto_Farmaco VALUES()"
-
                     mqty = ("update magazzino_farmaco as mf " +
                             "set quantita = mf.quantita - 1 " +
                             "where mf.codiceFarmaco = (select distinct farmaco.codice " +
@@ -30,7 +29,12 @@ public class DeskOperator extends Pharmacist {
                             "join farmacia on magazzino_farmaco.nomeFarmaciaMagazzino = farmacia.nome " +
                             "join farmaco on magazzino_farmaco.codiceFarmaco = farmaco.codice " +
                             "where magazzino_farmaco.codiceFarmaco = '" + m.getCode() + "' and farmacia.nome = '" + pharmacy.getName() + "'");
+
                 }
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("/dd/MM/yyyy HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+                queryPurchase = ("INSERT INTO Acquisto VALUES('" + dtf + "', '" + this.getCF() + "', '" + this.getEmail() + "', null '" + totalCost + "'");
+
 
 
             } catch (SQLException e) {
