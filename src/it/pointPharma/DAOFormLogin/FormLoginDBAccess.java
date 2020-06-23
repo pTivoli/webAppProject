@@ -2,6 +2,9 @@ package it.pointPharma.DAOFormLogin;
 
 import it.pointPharma.formBeans.UserData;
 import it.pointPharma.generalClasses.Pharmacist;
+import it.pointPharma.generalClasses.PharmacistManager;
+import it.pointPharma.generalClasses.Pharmacy;
+
 import java.sql.*;
 
 public class FormLoginDBAccess {
@@ -13,6 +16,13 @@ public class FormLoginDBAccess {
     private String dob;
     private String fname;
     private String lname;
+
+    //Pharmacy
+    private String phName = null;
+    private String phAddress = null;
+    private String phPhoneNumber = null;
+    private String phCfTit = null;
+    private String phMailTit = null;
 
     public FormLoginDBAccess(UserData userData) throws Exception {
         this.userDataIn = userData;
@@ -30,7 +40,7 @@ public class FormLoginDBAccess {
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
             try {
                 Statement st = con.createStatement();
-                String query = "SELECT * FROM Personale JOIN Persona ON Persona.codicefiscale = Personale.personale_cfpersona WHERE mail='" + userDataIn.getEmail() + "'";
+                String query = "SELECT * FROM Personale JOIN Persona ON Persona.codicefiscale = Personale.personale_cfpersona JOIN Farmacia ON Farmacia.nome = Personale.nomeFarmacia WHERE mail = '" + userDataIn.getEmail() + "'";
                 ResultSet ris = st.executeQuery(query);
                 String role = null;
                 String cf = null;
@@ -47,8 +57,25 @@ public class FormLoginDBAccess {
                     dob = ris.getString("datanascita");
                     fname = ris.getString("nome");
                     lname = ris.getString("cognome");
+
+                    phName = ris.getString("nomeFarmacia");
+                    phAddress = ris.getString("indirizzo");
+                    phPhoneNumber = ris.getString("telefono");
+                    phCfTit = ris.getString("cfTitolare");
+                    phMailTit = ris.getString("mailtitolare");
                 }
                 setParameters(pharmacistRetrieved, role, cf, dob, fname, lname);
+
+                Pharmacy pharmacyRetrieved = new Pharmacy();
+                PharmacistManager pM = pharmacyRetrieved.getPharmacyManager();
+                pM.setCF(phCfTit);
+                pM.setEmail(phMailTit);
+
+                pharmacyRetrieved.setName(phName);
+                pharmacyRetrieved.setAddress(phAddress);
+                pharmacyRetrieved.setPhoneNumber(phPhoneNumber);
+                pharmacyRetrieved.setPharmacyManager(pM);
+
             } catch (SQLException e) {
                 throw new Exception("Error DB");
             }
@@ -89,5 +116,25 @@ public class FormLoginDBAccess {
 
     public String getCF() {
         return this.cf;
+    }
+
+    public String getPhName(){
+        return this.phName;
+    }
+
+    public String getPhAddress(){
+        return this.phAddress;
+    }
+
+    public String getPhPhoneNumber(){
+        return this.phPhoneNumber;
+    }
+
+    public String getPhCfTit(){
+        return this.phCfTit;
+    }
+
+    public String getPhMailTit(){
+        return this.phMailTit;
     }
 }

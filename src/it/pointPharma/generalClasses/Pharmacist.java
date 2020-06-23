@@ -21,7 +21,4 @@ public class Pharmacist extends User {
         this.pwd = pwd;
     }
 
-    public boolean savePhDB() {
-        return false;
-    }
 }
