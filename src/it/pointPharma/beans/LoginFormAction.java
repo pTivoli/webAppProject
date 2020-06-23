@@ -6,6 +6,7 @@ import it.pointPharma.generalClasses.*;
 import org.apache.struts.action.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.NoSuchElementException;
 
 public class LoginFormAction extends Action {
@@ -13,6 +14,7 @@ public class LoginFormAction extends Action {
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         UserData loginData = (UserData) form;
+        HttpSession session = request.getSession(true);
         String password = loginData.getPassword();
         FormLoginDBAccess formLoginDBAccess = new FormLoginDBAccess(loginData);
         String realPwd = formLoginDBAccess.getPharmacist().getPwd();
@@ -26,7 +28,7 @@ public class LoginFormAction extends Action {
             pharm.setPharmacyManager(new PharmacistManager());
             pharm.getPharmacyManager().setCF(formLoginDBAccess.getPhCfTit());
             pharm.getPharmacyManager().setEmail(formLoginDBAccess.getPhMailTit());
-            request.setAttribute("pharmacy", pharm);
+            session.setAttribute("pharmacy", pharm);
             switch (role) {
                 case "REG":
                     REG reg = new REG();
@@ -35,7 +37,7 @@ public class LoginFormAction extends Action {
                     reg.setDOB(formLoginDBAccess.getDob());
                     reg.setfName(formLoginDBAccess.getFname());
                     reg.setlName(formLoginDBAccess.getLname());
-                    request.setAttribute("pharmacist", reg);
+                    session.setAttribute("pharmacist", reg);
                     af = mapping.findForward("REG");
                     break;
                 case "PM":
@@ -45,7 +47,7 @@ public class LoginFormAction extends Action {
                     pm.setDOB(formLoginDBAccess.getDob());
                     pm.setfName(formLoginDBAccess.getFname());
                     pm.setlName(formLoginDBAccess.getLname());
-                    request.setAttribute("pharmacist", pm);
+                    session.setAttribute("pharmacist", pm);
                     af = mapping.findForward("PM");
                     break;
                 case "PD":
@@ -55,7 +57,7 @@ public class LoginFormAction extends Action {
                     pd.setDOB(formLoginDBAccess.getDob());
                     pd.setfName(formLoginDBAccess.getFname());
                     pd.setlName(formLoginDBAccess.getLname());
-                    request.setAttribute("pharmacist", pd);
+                    session.setAttribute("pharmacist", pd);
                     af = mapping.findForward("PD");
                     break;
                 case "DO":
@@ -65,7 +67,7 @@ public class LoginFormAction extends Action {
                     dop.setDOB(formLoginDBAccess.getDob());
                     dop.setfName(formLoginDBAccess.getFname());
                     dop.setlName(formLoginDBAccess.getLname());
-                    request.setAttribute("pharmacist", dop);
+                    session.setAttribute("pharmacist", dop);
                     af = mapping.findForward("DO");
                     break;
             }

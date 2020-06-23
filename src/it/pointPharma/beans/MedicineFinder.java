@@ -1,8 +1,10 @@
 package it.pointPharma.beans;
 
+import it.pointPharma.generalClasses.Pharmacy;
 import org.apache.struts.action.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.PrintWriter;
 import java.sql.*;
 import java.util.LinkedList;
@@ -14,14 +16,11 @@ public class MedicineFinder extends Action {
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
             try {
                 Statement st = con.createStatement();
-                String hint = (String)request.getParameter("hint"); // TO BE MODIFIED
-                String query = "SELECT distinct farmaco.codice, farmaco.nome from farmaco join Magazzino_Farmaco on Magazzino_Farmaco.codiceFarmaco = farmaco.codice where farmaco.nome ILIKE '%"+ hint +"%'";
-                        /*
-                        "!and Magazzino_Farmaco.nomeFarmaciaMagazzino = ''\n" + //PHARMA MISSED
-                        "!and Magazzino_Farmaco.indirizzoFarmaciaMagazzino = ''\n" +
-                        "!and Magazzino_Farmaco.cfTitolareFarmaciaMagazzino = ''";*/
+                String hint = (String)request.getParameter("hint");
+                HttpSession session = request.getSession(true);
+                Pharmacy ph = (Pharmacy)session.getAttribute("pharmacy");
+                String query = "SELECT distinct farmaco.codice, farmaco.nome from farmaco join Magazzino_Farmaco on Magazzino_Farmaco.codiceFarmaco = farmaco.codice where farmaco.nome ILIKE '%" + hint + "%' and Magazzino_Farmaco.nomeFarmaciaMagazzino = '"+ ph.getName() +"' and Magazzino_Farmaco.indirizzoFarmaciaMagazzino = '"+ ph.getAddress() +"' and Magazzino_Farmaco.cfTitolareFarmaciaMagazzino = '"+ ph.getPharmacyManager().getCF() +"' and scadenza > CURRENT_DATE and obbligoricetta = false";
                 ResultSet ris = st.executeQuery(query);
-                //LinkedList<String> lc = new LinkedList<String>();
                 String risString = "";
                 while(ris.next()){
                     risString = risString.concat(ris.getString("codice") + ";" + ris.getString("nome") + ";");

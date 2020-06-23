@@ -11,13 +11,13 @@
 </head>
 <body>
 <%
-    PharmacistManager deskOp = (PharmacistManager)request.getAttribute("pharmacist");
+    PharmacistManager deskOp = (PharmacistManager)session.getAttribute("pharmacist");
     String fname = deskOp.getfName();
     String lname = deskOp.getlName();
     String cf = deskOp.getCF();
     String email = deskOp.getEmail();
 
-    Pharmacy pharm = (Pharmacy)request.getAttribute("pharmacy");
+    Pharmacy pharm = (Pharmacy)session.getAttribute("pharmacy");
     String pharmName = pharm.getName();
     String pharmAddress = pharm.getAddress();
     String pharmPN = pharm.getPhoneNumber();
