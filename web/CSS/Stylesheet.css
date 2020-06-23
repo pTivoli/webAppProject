@@ -15,7 +15,7 @@ html, body{
     width: 42vw;
     margin:auto;
     padding: 1vw;
-    color: white;
+    color: black;
     border-radius: 0px 0px 45px 45px;
     background-color: orange;
     font-size: 2em;
@@ -31,7 +31,7 @@ html, body{
     margin: auto;
     text-align: center;
     padding: 1vw;
-    color: white;
+    color: black;
     width: 42vw;
     background-color: orange;
     font-size: 2em;
@@ -43,7 +43,7 @@ html, body{
     margin: auto;
     text-align: center;
     padding: 1vw;
-    color: white;
+    color: black;
     display: block;
     width: 42vw;
     background-color: orange;
