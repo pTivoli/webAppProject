@@ -18,7 +18,7 @@ public class PharmacyDoctor extends DeskOperator{
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
             try{
                 Statement st = con.createStatement();
-                String queryUtente = "INSERT INTO Persona VALUES ('"+user.getCF()+"','"+user.getfName()+"','"+user.getlName()+"','"+user.getDOB()+"')";
+                String queryUtente = "INSERT INTO Persona VALUES ('"+user.getCF()+"','"+user.getfName()+"','"+user.getlName()+"','"+user.getDOB()+"');";
                 st.executeUpdate(queryUtente);
             }catch(SQLException ex){
                 throw new Exception("Error DB");
