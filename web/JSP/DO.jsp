@@ -1,4 +1,5 @@
 <%@ page import="it.pointPharma.generalClasses.DeskOperator" %>
+<%@ page import="it.pointPharma.generalClasses.Pharmacy" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -15,6 +16,14 @@
             String lname = deskOp.getlName();
             String cf = deskOp.getCF();
             String email = deskOp.getEmail();
+
+            Pharmacy pharm = (Pharmacy)request.getAttribute("pharmacy");
+            String pharmName = pharm.getName();
+            String pharmAddress = pharm.getAddress();
+            String pharmPN = pharm.getPhoneNumber();
+            String pharmCFPM = pharm.getPharmacyManager().getCF();
+            String pharmEmail = pharm.getPharmacyManager().getEmail();
+
         %>
         <div id="header">
             <div id="pharmacist">
@@ -26,10 +35,11 @@
             </div>
             <div id="pharmacy">
                 <p>Pharmacy</p><br>
-                <p>Name: Default Pharmacy</p><br>
-                <p>Address: Default Address</p><br>
-                <p>Tel: +39 0123 45678</p><br>
-                <p>Mail PM: pm@gmail.com</p><br>
+                <p>Name: <%= pharmName%></p><br>
+                <p>Address: <%= pharmAddress%></p><br>
+                <p>Tel: <%= pharmPN%></p><br>
+                <p>Mail PM: <%= pharmEmail%></p><br>
+                <p>PM CF: <%= pharmCFPM%></p><br>
             </div>
         </div>
         <div id="mainContent">
