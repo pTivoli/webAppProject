@@ -33,13 +33,17 @@
             </div>
         </div>
         <div id="mainContent">
-            <form>
-                <input id="medicine" onkeyup="ajaxCall();" type="text" placeholder="Medicine">
-                <!--<input type="submit" value="ADD" disabled>-->
-            </form><br><br>
-            <div id="suggestions">
+            <div id="formBox">
+                <form>
+                    <input id="medicine" onkeyup="ajaxCall();" type="text" placeholder="Medicine">
+                </form><br><br>
+                <div id="suggestions">
+                </div>
             </div>
             <div id="cart">
+                <p>CART</p><br/>
+                <p><button onclick="">BUY</button></p><br/>
+                <div id="objects"></div>
             </div>
         </div>
         <script
@@ -47,6 +51,15 @@
                 integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
                 crossorigin="anonymous"></script> <!-- SCARICATE IL CODICE PER FAVORE -->
         <script>
+            function cookieCart(codeMed, nameMed){
+                var obj = document.getElementById("objects").innerHTML;
+                document.getElementById("objects").innerHTML= obj + "<p>"+nameMed+"</p><br>";
+                if(document.cookie == ""){
+                    document.cookie = "medicine=" + codeMed + "," + nameMed + ",";
+                }else{
+                    document.cookie += codeMed + "," + nameMed + ",";
+                }
+            }
             function ajaxCall(){
                 if($('#medicine').val().length > 0) {
                     $("#mainContent form input[type=submit]").prop("disabled", false);
@@ -73,7 +86,7 @@
                 text = text.split(";");
                 var i;
                 for(i = 0; i < text.length-1; i+=2){
-                    ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td><td><button>ADD</button></td></tr>";
+                    ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td><td><button onclick=\"cookieCart('" + text[i] + "','" + text[i + 1] + "')\">ADD</button></td></tr>";
                 }
                 ris += "</table>";
                 return ris;

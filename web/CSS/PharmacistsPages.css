@@ -1,5 +1,6 @@
 body{
     background-image: url("../IMG/homePage.webp");
+    background-attachment: fixed;
 }
 #header{
     width:100%;
@@ -31,7 +32,7 @@ body{
     border-radius: 25px 0px 0px 25px;
     width: auto;
 }
-#pharmacy p:first-child{
+#pharmacy>p:first-child{
     font-size: 2em;
     padding: 12px 0px 12px 12px;
     background-color: orange;
@@ -53,12 +54,16 @@ body{
 }
 #mainContent{
     width:100%;
+    display: inline-flex;
 }
-#mainContent form{
+#formBox{
+    width: 70%;
+}
+#formBox form{
     width: 75%;
     margin: auto;
 }
-#mainContent input[type=text]{
+#formBox input[type=text]{
     /*width: 75%;*/
     width: 100%;
     background-color: white;
@@ -70,11 +75,37 @@ body{
     font-size: 1.2em;
 }
 #suggestions button{
-    width: 24%;
+    width: auto;
     background-color: orange;
     border: 0px;
     border-radius: 25px;
     text-align: center;
     padding: 10px 25px 10px 25px;
+    font-size: 1.2em;
+}
+#cart{
+    width: 30%;
+    float: right;
+}
+#cart p{
+    padding: 12px 0px 12px 12px;
+    background-color: orangered;
+    border-radius: 25px 0px 0px 25px;
+    width: auto;
+}
+#cart>p:first-child{
+    font-size: 2em;
+    padding: 12px 0px 12px 12px;
+    background-color: orange;
+    border-radius: 0px 0px 0px 25px;
+}
+#cart>p>button{
+    background-color: orangered;
+    width: 100%;
+    border: 0px;
+    cursor: pointer;
+    color: black;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2em;
 }
