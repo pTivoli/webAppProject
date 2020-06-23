@@ -11,18 +11,12 @@ public class FormLoginDBAccess {
 
     private UserData userDataIn;
     private Pharmacist pharmacist;
+    private Pharmacy pharmacy;
     private String role;
     private String cf;
     private String dob;
     private String fname;
     private String lname;
-
-    //Pharmacy
-    private String phName = null;
-    private String phAddress = null;
-    private String phPhoneNumber = null;
-    private String phCfTit = null;
-    private String phMailTit = null;
 
     public FormLoginDBAccess(UserData userData) throws Exception {
         this.userDataIn = userData;
@@ -42,13 +36,24 @@ public class FormLoginDBAccess {
                 Statement st = con.createStatement();
                 String query = "SELECT * FROM Personale JOIN Persona ON Persona.codicefiscale = Personale.personale_cfpersona JOIN Farmacia ON Farmacia.nome = Personale.nomeFarmacia WHERE mail = '" + userDataIn.getEmail() + "'";
                 ResultSet ris = st.executeQuery(query);
+
+                //Pharmacist attributes
                 String role = null;
                 String cf = null;
                 String dob = null;
                 String fname = null;
                 String lname = null;
 
+                //Pharmacy attributes
+                String phName = null;
+                String phAddress = null;
+                String phPhoneNumber = null;
+                String phCfTit = null;
+                String phMailTit = null;
+
                 Pharmacist pharmacistRetrieved = new Pharmacist();
+                PharmacistManager pM = pharmacy.getPharmacyManager();
+
                 pharmacistRetrieved.setEmail(userDataIn.getEmail());
                 while (ris.next()) {
                     pharmacistRetrieved.setPwd(ris.getString("pwd"));
@@ -66,15 +71,13 @@ public class FormLoginDBAccess {
                 }
                 setParameters(pharmacistRetrieved, role, cf, dob, fname, lname);
 
-                Pharmacy pharmacyRetrieved = new Pharmacy();
-                PharmacistManager pM = pharmacyRetrieved.getPharmacyManager();
                 pM.setCF(phCfTit);
                 pM.setEmail(phMailTit);
 
-                pharmacyRetrieved.setName(phName);
-                pharmacyRetrieved.setAddress(phAddress);
-                pharmacyRetrieved.setPhoneNumber(phPhoneNumber);
-                pharmacyRetrieved.setPharmacyManager(pM);
+                pharmacy.setName(phName);
+                pharmacy.setAddress(phAddress);
+                pharmacy.setPhoneNumber(phPhoneNumber);
+                pharmacy.setPharmacyManager(pM);
 
             } catch (SQLException e) {
                 throw new Exception("Error DB");
@@ -119,22 +122,22 @@ public class FormLoginDBAccess {
     }
 
     public String getPhName(){
-        return this.phName;
+        return pharmacy.getName();
     }
 
     public String getPhAddress(){
-        return this.phAddress;
+        return pharmacy.getAddress();
     }
 
     public String getPhPhoneNumber(){
-        return this.phPhoneNumber;
+        return pharmacy.getPhoneNumber();
     }
 
     public String getPhCfTit(){
-        return this.phCfTit;
+        return pharmacy.getPharmacyManager().getCF();
     }
 
     public String getPhMailTit(){
-        return this.phMailTit;
+        return pharmacy.getPharmacyManager().getEmail();
     }
 }
