@@ -19,6 +19,13 @@ public class LoginFormAction extends Action {
         String role = formLoginDBAccess.getRole();
         ActionForward af = null;
         if(password.equals(realPwd)) {
+            Pharmacy pharm = new Pharmacy();
+            pharm.setName(formLoginDBAccess.getPhName());
+            pharm.setAddress(formLoginDBAccess.getPhAddress());
+            pharm.setPhoneNumber(formLoginDBAccess.getPhPhoneNumber());
+            pharm.getPharmacyManager().setCF(formLoginDBAccess.getPhCfTit());
+            pharm.getPharmacyManager().setEmail(formLoginDBAccess.getPhMailTit());
+            request.setAttribute("pharmacy", pharm);
             switch (role) {
                 case "REG":
                     REG reg = new REG();

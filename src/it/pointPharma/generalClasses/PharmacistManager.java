@@ -46,6 +46,7 @@ public class PharmacistManager extends PharmacyDoctor{
         }
     }
 
+
     /* STATISTICS */
 
 }
