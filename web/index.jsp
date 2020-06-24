@@ -10,7 +10,6 @@
   <head>
       <title>PharmaPoint</title>
       <link rel="stylesheet" href="CSS/Stylesheet.css"/>
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>

@@ -6,7 +6,6 @@
     <title>PharmaPoint - Desk Operator</title>
     <link rel="stylesheet" href="CSS/Stylesheet.css"/>
     <link rel="stylesheet" href="CSS/PharmacistsPages.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -66,10 +65,7 @@
         <button onclick="registerUser()">Submit</button>
     </div>
 </div>
-<script
-        src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-        crossorigin="anonymous"></script> <!-- SCARICATE IL CODICE PER FAVORE -->
+<script src="JS/JQuery.js"></script>
 <script>
     function cookieCart(codeMed, nameMed){
         var obj = document.getElementById("objects").innerHTML;
