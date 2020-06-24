@@ -31,5 +31,10 @@
                 scope="request"
                 input="/JSP/PD.jsp"
                 validate="false"></action>
+        <action path="/registerPharmacyAndPharmacistManager"
+                type="it.pointPharma.beans.RegisterPharmacyAndPharmacistManager"
+                scope="request"
+                input="/JSP/REG.jsp"
+                validate="false"></action>
     </action-mappings>
 </struts-config>

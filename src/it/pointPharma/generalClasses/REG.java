@@ -8,10 +8,7 @@ import java.sql.Connection;
 public class REG extends Pharmacist{
 
     public void activatePharmacy(Pharmacy pharmacy) throws Exception{
-
-        Class.forName("org.postgresql.Driver");
-        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "Slashrocker1");
-
+        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
         try {
             try {
                 Statement st = con.createStatement();
@@ -27,17 +24,13 @@ public class REG extends Pharmacist{
 
     }
 
-    public void activatePM(PharmacistManager pharmacistManager) throws Exception{
-
-        Class.forName("org.postgresql.Driver");
-        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "Slashrocker1");
-
+    public void activatePM(PharmacistManager pharmacistManager, Pharmacy pharmacy) throws Exception{
+        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
         try {
             try {
                 Statement st = con.createStatement();
-                String queryPM = "INSERT INTO Persona VALUES('" + pharmacistManager.getCF() + "','" + pharmacistManager.getfName() + "','" + pharmacistManager.getlName() + "','" + pharmacistManager.getDOB() + "')";
-                String queryPM1 = "INSERT INTO Personale VALUES('" + pharmacistManager.getCF() + "','" + pharmacistManager.getfName() + "','" + pharmacistManager.getlName() + "','" + pharmacistManager.getDOB() + "')";
-
+                String queryPM = "INSERT INTO Persona VALUES('" + pharmacistManager.getCF() + "','" + pharmacistManager.getfName() + "','" + pharmacistManager.getlName() + "','" + pharmacistManager.getDOB() + "');";
+                String queryPM1 = "insert into Personale values('"+pharmacistManager.getEmail()+"', '"+pharmacistManager.getPwd()+"', '"+pharmacistManager.getCF()+"', 'PM', '"+pharmacy.getName()+"', '"+pharmacy.getAddress()+"', '"+pharmacistManager.getCF()+"');";
                 st.executeUpdate(queryPM);
                 st.executeUpdate(queryPM1);
             } catch (SQLException exe) {
