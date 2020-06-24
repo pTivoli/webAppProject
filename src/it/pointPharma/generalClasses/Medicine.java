@@ -9,7 +9,7 @@ public class Medicine {
     private Integer code;
     private float cost;
 
-    public boolean getReceipt() {
+    public boolean needsReceipt() {
         return receipt;
     }
 

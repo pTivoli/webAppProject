@@ -1,6 +1,5 @@
 package it.pointPharma.generalClasses;
 
-import javax.servlet.http.HttpSession;
 import java.sql.*;
 import java.util.LinkedList;
 import java.time.format.DateTimeFormatter;
