@@ -86,26 +86,59 @@ body{
 #cart{
     width: 30%;
     float: right;
+    padding-right: 30px;
 }
 #cart p{
     padding: 12px 0px 12px 12px;
     background-color: orangered;
-    border-radius: 25px 0px 0px 25px;
+    border-radius: 25px;
     width: auto;
 }
 #cart>p:first-child{
     font-size: 2em;
     padding: 12px 0px 12px 12px;
     background-color: orange;
-    border-radius: 0px 0px 0px 25px;
+    border-radius: 30px;
+    text-align: center;
 }
 #cart>p>button{
-    background-color: orangered;
+    background-color: transparent;
     width: 100%;
     border: 0px;
     cursor: pointer;
     color: black;
-    text-align: left;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2em;
+    text-align: center;
+}
+#registerUser{
+    width: 25%;
+    height: auto;
+    background-color: white;
+    border: 5px solid orange;
+    border-radius: 25px 0px 0px 25px;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 10px;
+}
+#registerUser > input[type=text]{
+    text-align: center;
+    border: 0;
+    border-bottom: 2px solid orange;
+    margin: 5px;
+}
+#registerUser > input[type=date]{
+    text-align: center;
+    border: 0;
+    border-bottom: 2px solid orange;
+    margin: 5px;
+}
+#registerUser button{
+    background-color: orangered;
+    font-size: 1.2em;
+    border: 0;
+    font-weight: lighter;
+    border-radius: 25px 25px 0px 25px;
+    width: 100%;
+    padding: 5px;
 }
