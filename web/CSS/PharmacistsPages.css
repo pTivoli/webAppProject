@@ -114,24 +114,20 @@ body{
 #registerUser{
     width: 25%;
     height: auto;
-    background-color: white;
+    background-color: rgba(255,255,255,0.8);
     border: 5px solid orange;
-    border-radius: 25px 0px 0px 25px;
+    border-radius: 25px 25px 0px 25px;
     font-size: 1.2em;
     text-align: center;
     padding: 10px;
 }
-#registerUser > input[type=text]{
+#registerUser > input[type=text], #registerUser > input[type=date]{
     text-align: center;
-    border: 0;
-    border-bottom: 2px solid orange;
+    border: 2px solid orange;
     margin: 5px;
-}
-#registerUser > input[type=date]{
-    text-align: center;
-    border: 0;
-    border-bottom: 2px solid orange;
-    margin: 5px;
+    background-color: transparent;
+    border-radius: 25px 25px 0px 25px;
+    width: 100%;
 }
 #registerUser button{
     background-color: orangered;
