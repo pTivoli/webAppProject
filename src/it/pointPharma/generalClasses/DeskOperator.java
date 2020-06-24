@@ -19,8 +19,20 @@ public class DeskOperator extends Pharmacist {
                 String queryPurchase;
                 String queryMedPurchase;
                 String mqty;
+                LinkedList<Medicine> examined = new LinkedList<Medicine>();
                 float totalCost = 0;
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("/dd/MM/yyyy HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+
                 for (Medicine m  : medicineLinkedList ){
+                    if(!examined.contains(m)){
+                        examined.add(m);
+                        int quantity = countDuplicates(medicineLinkedList, m);
+                        queryMedPurchase = ("INSERT INTO Acquisto_Farmaco VALUES('" + quantity + "', '" + dtf.format(now) + "', '" + this.getCF() + "', '" + m.getCode() + "'");
+                        st.executeUpdate(queryMedPurchase);
+                    }
+
+
                     totalCost += m.getCost();
                     mqty = ("update magazzino_farmaco as mf " +
                             "set quantita = mf.quantita - 1 " +
@@ -30,13 +42,11 @@ public class DeskOperator extends Pharmacist {
                             "join farmaco on magazzino_farmaco.codiceFarmaco = farmaco.codice " +
                             "where magazzino_farmaco.codiceFarmaco = '" + m.getCode() + "' and farmacia.nome = '" + pharmacy.getName() + "'");
 
+                    st.executeUpdate(mqty);
                 }
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("/dd/MM/yyyy HH:mm:ss");
-                LocalDateTime now = LocalDateTime.now();
-                queryPurchase = ("INSERT INTO Acquisto VALUES('" + dtf + "', '" + this.getCF() + "', '" + this.getEmail() + "', null '" + totalCost + "'");
 
-
-
+                queryPurchase = ("INSERT INTO Acquisto VALUES('" + dtf.format(now) + "', '" + this.getCF() + "', '" + this.getEmail() + "', null '" + totalCost + "'");
+                st.executeUpdate(queryPurchase);
             } catch (SQLException e) {
                 throw new Exception("Error DB");
             }
@@ -44,6 +54,15 @@ public class DeskOperator extends Pharmacist {
             throw new Exception("Error DB");
         }
     }
+
+    public int countDuplicates(LinkedList<Medicine> medicineLinkedList, Medicine m) {
+        int count = 0;
+        for(Medicine check: medicineLinkedList){
+            if(check.getCode() == m.getCode()) { count++; }
+        }
+        return count;
+    }
+
 
     public Timestamp getTime()
     {
