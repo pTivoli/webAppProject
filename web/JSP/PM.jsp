@@ -64,6 +64,27 @@
         <input id="dob"  name="dob" type="date" required><br>
         <button onclick="registerUser()">ADD USER</button>
     </div>
+    <div id="employee_PD_DO">
+        CF<br>
+        <input id="cfP" name="cfP" type="text" required><br>
+        First Name<br>
+        <input id="fnameP"  name="fnameP" type="text" required><br>
+        Last Name<br>
+        <input id="lnameP"  name="lnameP" type="text" required><br>
+        Date Of Birth<br>
+        <input id="dobP"  name="dobP" type="date" required><br>
+        Username<br>
+        <input id="usr"  name="usr" type="text" required><br>
+        Password<br>
+        <input id="pwd"  name="pwd" type="password" required><br>
+        Password confirmation<br>
+        <input id="pwdCheck"  name="pwdCheck" type="password" required><br>
+        Pharmacist Doctor
+        <input type="radio" id="pharmacistDoctor" name="role" value="PD">
+        Desk Operator
+        <input type="radio" id="deskOperator" name="role" value="DO" checked>
+        <button onclick="registerPharmacist()">REGISTER</button>
+    </div>
 </div>
 <script src="JS/JQuery.js"></script>
 <script>
@@ -129,6 +150,26 @@
                 },
                 success: function () {
                     alert("User saved!");
+                }
+            });
+        });
+    }
+    function registerPharmacist() {
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                url: "registerPharmacist.do",
+                data: {
+                    cf:     $("#cfP").val(),
+                    fname:  $("#fnameP").val(),
+                    lname:  $("#lnameP").val(),
+                    dob:    $("#dobP").val(),
+                    usr:    $("#usr").val(),
+                    pwd:    $("#pwd").val(),
+                    role:   $('input[name="role"]:checked').val()
+                },
+                success: function () {
+                    alert("A New Pharmacist has been created successfully!");
                 }
             });
         });
