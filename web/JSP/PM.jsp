@@ -55,7 +55,7 @@
     </div>
     <div id="registerUser">
         CF<br>
-        <input id="cf" name="cf" type="text" pattern="^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$" required><br>
+        <input id="cf" name="cf" type="text" required><br>
         First Name<br>
         <input id="fname"  name="fname" type="text" required><br>
         Last Name<br>
