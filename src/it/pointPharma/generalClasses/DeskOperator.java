@@ -11,7 +11,6 @@ public class DeskOperator extends Pharmacist {
 
     public void sellItems(LinkedList<Medicine> medicineLinkedList, Pharmacy pharmacy) throws Exception {
         try{
-            Class.forName("org.postgresql.Driver");
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "Franci99");
             try {
                 Statement st = con.createStatement();
