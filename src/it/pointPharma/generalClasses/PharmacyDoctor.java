@@ -70,7 +70,6 @@ public class PharmacyDoctor extends DeskOperator{
 
     public boolean registerUser(User user) throws Exception {
         try{
-            Class.forName("org.postgresql.Driver");
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "TivoliPatrick");
             try{
                 Statement st = con.createStatement();
