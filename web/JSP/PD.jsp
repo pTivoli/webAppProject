@@ -150,7 +150,7 @@
         }else if(fname.length == 0){
             alert("First Name is missed");
             return false;
-        }else if(lname.lenght == 0){
+        }else if(lname.length == 0){
             alert("Last Name is missed");
             return false;
         }else if(dob.length == 0){

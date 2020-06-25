@@ -138,21 +138,51 @@
         }
     }
     function registerUser(){
-        $(document).ready(function () {
-            $.ajax({
-                type: "POST",
-                url: "registerUser.do",
-                data: {
-                    cf:     $("#cf").val(),
-                    fname:  $("#fname").val(),
-                    lname:  $("#lname").val(),
-                    dob:    $("#dob").val()
-                },
-                success: function () {
-                    alert("User saved!");
-                }
+        if(validateFormUser() == true) {
+            $(document).ready(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "registerUser.do",
+                    data: {
+                        cf: $("#cf").val(),
+                        fname: $("#fname").val(),
+                        lname: $("#lname").val(),
+                        dob: $("#dob").val()
+                    },
+                    success: function () {
+                        $('#cf').val("");
+                        $('#fname').val("");
+                        $('#lname').val("");
+                        $('#dob').val("");
+                        alert("User saved!");
+                    }
+                });
             });
-        });
+        }
+    }
+    function validateFormUser(){
+        var cf = $("#cf").val();
+        var fname = $("#fname").val();
+        var lname = $("#lname").val();
+        var dob = $("#dob").val();
+        var mask = /^[A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]{1}$/i;
+        if(cf.length == 0) {
+            alert("CF is missed");
+            return false;
+        }else if(fname.length == 0){
+            alert("First Name is missed");
+            return false;
+        }else if(lname.length == 0){
+            alert("Last Name is missed");
+            return false;
+        }else if(dob.length == 0){
+            alert("Date Of Birth is missed");
+            return false;
+        }else if(!mask.test(cf)){
+            alert("CF is not valid");
+            return false;
+        }
+        return true;
     }
     function registerPharmacist() {
         $(document).ready(function () {
