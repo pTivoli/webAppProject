@@ -128,6 +128,10 @@
                         dob: $("#dob").val()
                     },
                     success: function () {
+                        $('#cf').val("");
+                        $('#fname').val("");
+                        $('#lname').val("");
+                        $('#dob').val("");
                         alert("User saved!");
                     }
                 });
@@ -152,7 +156,7 @@
         }else if(dob.length == 0){
             alert("Date Of Birth is missed");
             return false;
-        }else if(!cf.test(mask)){
+        }else if(!mask.test(cf)){
             alert("CF is not valid");
             return false;
         }
