@@ -138,7 +138,11 @@
         }
     }
     function registerUser(){
-        if(validateFormUser() == true) {
+        var cf = $("#cf").val();
+        var fname = $("#fname").val();
+        var lname = $("#lname").val();
+        var dob = $("#dob").val();
+        if(validateFormUser(cf, fname, lname, dob) == true) {
             $(document).ready(function () {
                 $.ajax({
                     type: "POST",
@@ -160,11 +164,7 @@
             });
         }
     }
-    function validateFormUser(){
-        var cf = $("#cf").val();
-        var fname = $("#fname").val();
-        var lname = $("#lname").val();
-        var dob = $("#dob").val();
+    function validateFormUser(cf, fname, lname, dob){
         var mask = /^[A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]{1}$/i;
         if(cf.length == 0) {
             alert("CF is missed");
@@ -184,25 +184,54 @@
         }
         return true;
     }
+    function validatePharmacistData(cf, fname, lname, dob, usr, pwd, pwdCheck){
+        var mask2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if(validateFormUser(cf, fname, lname, dob) == true) {
+            if(usr.length == 0){
+                alert("Email is missed");
+                return false;
+            }else if(pwd.length == 0){
+                alert("Password is missed");
+                return false;
+            }else if(pwd != pwdCheck){
+                alert("Passwords are different");
+                return false;
+            }else if(!mask2.test(pwd)){
+                alert("Passwords should contain minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character");
+                return false;
+            }
+            return true;
+        }else
+            return false;
+    }
     function registerPharmacist() {
-        $(document).ready(function () {
-            $.ajax({
-                type: "POST",
-                url: "registerPharmacist.do",
-                data: {
-                    cf:     $("#cfP").val(),
-                    fname:  $("#fnameP").val(),
-                    lname:  $("#lnameP").val(),
-                    dob:    $("#dobP").val(),
-                    usr:    $("#usr").val(),
-                    pwd:    $("#pwd").val(),
-                    role:   $('input[name="role"]:checked').val()
-                },
-                success: function () {
-                    alert("A New Pharmacist has been created successfully!");
-                }
+        var cf = $("#cfP").val();
+        var fname = $("#fnameP").val();
+        var lname = $("#lnameP").val();
+        var dob = $("#dobP").val();
+        var usr = $("#dobP").val();
+        var pwd = $("#pwd").val();
+        var pwdCheck = $("#pwdCheck").val();
+        if(validatePharmacistData(cf, fname, lname, dob, usr, pwd, pwdCheck) == true) {
+            $(document).ready(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "registerPharmacist.do",
+                    data: {
+                        cf: $("#cfP").val(),
+                        fname: $("#fnameP").val(),
+                        lname: $("#lnameP").val(),
+                        dob: $("#dobP").val(),
+                        usr: $("#usr").val(),
+                        pwd: $("#pwd").val(),
+                        role: $('input[name="role"]:checked').val()
+                    },
+                    success: function () {
+                        alert("A New Pharmacist has been created successfully!");
+                    }
+                });
             });
-        });
+        }
     }
     function createTable(text){
         var ris = "<table>";
