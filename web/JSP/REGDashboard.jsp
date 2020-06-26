@@ -7,7 +7,7 @@
     </head>
     <body>
         <header>
-            Pharmacist Manager Dashboard
+            REG Dashboard
         </header>
         <div class="charts">
             <div id="chartsObj1" class="chartsObj">
