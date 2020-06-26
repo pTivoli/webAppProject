@@ -1,5 +1,7 @@
 package it.pointPharma.beans;
 
+import it.pointPharma.generalClasses.DeskOperator;
+import it.pointPharma.generalClasses.Pharmacist;
 import it.pointPharma.generalClasses.Pharmacy;
 import org.apache.struts.action.*;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +21,12 @@ public class MedicineFinder extends Action {
                 String hint = (String)request.getParameter("hint");
                 HttpSession session = request.getSession(true);
                 Pharmacy ph = (Pharmacy)session.getAttribute("pharmacy");
-                String query = "SELECT distinct farmaco.codice, farmaco.nome from farmaco join Magazzino_Farmaco on Magazzino_Farmaco.codiceFarmaco = farmaco.codice where farmaco.nome ILIKE '%" + hint + "%' and Magazzino_Farmaco.nomeFarmaciaMagazzino = '"+ ph.getName() +"' and Magazzino_Farmaco.indirizzoFarmaciaMagazzino = '"+ ph.getAddress() +"' and Magazzino_Farmaco.cfTitolareFarmaciaMagazzino = '"+ ph.getPharmacyManager().getCF() +"' and scadenza > CURRENT_DATE and obbligoricetta = false";
+                Pharmacist pharmacist = (Pharmacist)session.getAttribute("pharmacist");
+                String query;
+                if(pharmacist instanceof DeskOperator)
+                    query = "SELECT distinct farmaco.codice, farmaco.nome from farmaco join Magazzino_Farmaco on Magazzino_Farmaco.codiceFarmaco = farmaco.codice where farmaco.nome ILIKE '%" + hint + "%' and Magazzino_Farmaco.nomeFarmaciaMagazzino = '"+ ph.getName() +"' and Magazzino_Farmaco.indirizzoFarmaciaMagazzino = '"+ ph.getAddress() +"' and Magazzino_Farmaco.cfTitolareFarmaciaMagazzino = '"+ ph.getPharmacyManager().getCF() +"' and scadenza > CURRENT_DATE and obbligoricetta = false";
+                else
+                    query = "SELECT distinct farmaco.codice, farmaco.nome from farmaco join Magazzino_Farmaco on Magazzino_Farmaco.codiceFarmaco = farmaco.codice where farmaco.nome ILIKE '%" + hint + "%' and Magazzino_Farmaco.nomeFarmaciaMagazzino = '"+ ph.getName() +"' and Magazzino_Farmaco.indirizzoFarmaciaMagazzino = '"+ ph.getAddress() +"' and Magazzino_Farmaco.cfTitolareFarmaciaMagazzino = '"+ ph.getPharmacyManager().getCF() +"' and scadenza > CURRENT_DATE";
                 ResultSet ris = st.executeQuery(query);
                 String risString = "";
                 while(ris.next()){
