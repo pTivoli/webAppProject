@@ -41,5 +41,35 @@
                 scope="request"
                 input="/JSP/PM.jsp"
                 validate="false"></action>
+        <action path="/JSP/getGeneralNumberItems"
+                type="it.pointPharma.dashboardTools.StatFinder"
+                scope="request"
+                input="/JSP/PharmacistManagerDashboard.jsp"
+                validate="false"></action>
+        <action path="/JSP/getPiecesSold"
+                type="it.pointPharma.dashboardTools.StatFinder"
+                scope="request"
+                input="/JSP/PharmacistManagerDashboard.jsp"
+                validate="false"></action>
+        <action path="/JSP/getDrugsMoreSold"
+                type="it.pointPharma.dashboardTools.StatFinder"
+                scope="request"
+                input="/JSP/PharmacistManagerDashboard.jsp"
+                validate="false"></action>
+        <action path="/JSP/getChartPharmacists"
+                type="it.pointPharma.dashboardTools.StatFinder"
+                scope="request"
+                input="/JSP/PharmacistManagerDashboard.jsp"
+                validate="false"></action>
+        <action path="/JSP/getChartPharmacies"
+                type="it.pointPharma.dashboardTools.StatFinder"
+                scope="request"
+                input="/JSP/PharmacistManagerDashboard.jsp"
+                validate="false"></action>
+        <action path="/JSP/getChartNumberDrugsPharmacies"
+                type="it.pointPharma.dashboardTools.StatFinder"
+                scope="request"
+                input="/JSP/PharmacistManagerDashboard.jsp"
+                validate="false"></action>
     </action-mappings>
 </struts-config>

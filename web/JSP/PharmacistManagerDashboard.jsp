@@ -1,3 +1,5 @@
+<%@ page import="it.pointPharma.generalClasses.PharmacistManager" %>
+<%@ page import="it.pointPharma.generalClasses.Pharmacy" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -9,66 +11,158 @@
         <header>
             Pharmacist Manager Dashboard
         </header>
-        <div class="charts">
-            <div id="chartsObj1" class="chartsObj">
-
-            </div>
-            <div id="chartsObj2" class="chartsObj">
-
-            </div>
-            <div id="chartsObj3" class="chartsObj">
-
-            </div>
-            <div id="chartsObj4" class="chartsObj">
-
-            </div>
-        </div>
         <div id="dataTxt">
-            <div class="dataTxtObj"> <p>Prova: </p> <p id="dataTxtObj1">45</p> </div>
-            <div class="dataTxtObj"> <p>Prova: </p> <p id="dataTxtObj2">54</p></div>
+            <div class="dataTxtObj"> <p>General Items Sold: </p> <p id="dataTxtObj1">--</p> </div>
+            <div class="dataTxtObj"> <p>Number of Pieces Sold: </p> <p id="dataTxtObj2">--</p> </div>
+
         </div>
+        <%
+            PharmacistManager deskOp = (PharmacistManager)session.getAttribute("pharmacist");
+            String fname = deskOp.getfName();
+            String lname = deskOp.getlName();
+            String cf = deskOp.getCF();
+            String email = deskOp.getEmail();
 
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            Pharmacy pharm = (Pharmacy)session.getAttribute("pharmacy");
+            String pharmName = pharm.getName();
+            String pharmAddress = pharm.getAddress();
+            String pharmPN = pharm.getPhoneNumber();
+            String pharmCFPM = pharm.getPharmacyManager().getCF();
+            String pharmEmail = pharm.getPharmacyManager().getEmail();
+        %>
+        <script src="../JS/JQuery.js"></script>
         <script>
-            // Load the Visualization API and the corechart package.
-            google.charts.load('current', {'packages':['corechart']});
-
-            // Set a callback to run when the Google Visualization API is loaded.
-            google.charts.setOnLoadCallback(drawChart);
-
-            // Callback that creates and populates a data table,
-            // instantiates the pie chart, passes in the data and
-            // draws it.
-            function drawChart() {
-
-                // Create the data table.
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Topping');
-                data.addColumn('number', 'Slices');
-                data.addRows([
-                    ['Mushrooms', 3],
-                    ['Onions', 1],
-                    ['Olives', 1],
-                    ['Zucchini', 1],
-                    ['Pepperoni', 2]
-                ]);
-
-                // Set chart options
-                var options = {'title':'How Much Pizza I Ate Last Night',
-                    //'width':400,
-                    //'height':300
-                    };
-
-                // Instantiate and draw our chart, passing in some options.
-                var chart1 = new google.visualization.PieChart(document.getElementById('chartsObj1'));
-                var chart2 = new google.visualization.PieChart(document.getElementById('chartsObj2'));
-                var chart3 = new google.visualization.PieChart(document.getElementById('chartsObj3'));
-                var chart4 = new google.visualization.PieChart(document.getElementById('chartsObj4'));
-                chart1.draw(data, options);
-                chart2.draw(data, options);
-                chart3.draw(data, options);
-                chart4.draw(data, options);
+            function getChartNumberDrugsPharmacies(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getChartNumberDrugsPharmacies.do",
+                        data: {
+                            phname: "<%= pharmName%>",
+                            phaddr: "<%= pharmAddress%>",
+                            phpm: "<%= pharmCFPM%>",
+                            stat: "getChartNumberDrugsPharmacies"
+                        },
+                        success: function (responseText) {
+                            var str = responseText.split(";");
+                            var i;
+                            for(i = 0; i < str.length - 1; i+=2){
+                                var obj = document.getElementById("dataTxt").innerHTML;
+                                document.getElementById("dataTxt").innerHTML= obj + "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> </div>";
+                            }
+                        }
+                    });
+                });
             }
+            function getChartPharmacies(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getChartPharmacies.do",
+                        data: {
+                            phname: "<%= pharmName%>",
+                            phaddr: "<%= pharmAddress%>",
+                            phpm: "<%= pharmCFPM%>",
+                            stat: "getChartPharmacies"
+                        },
+                        success: function (responseText) {
+                            var str = responseText.split(";");
+                            var i;
+                            for(i = 0; i < str.length - 1; i+=2){
+                                var obj = document.getElementById("dataTxt").innerHTML;
+                                document.getElementById("dataTxt").innerHTML= obj + "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> </div>";
+                            }
+                        }
+                    });
+                });
+            }
+            function getChartPharmacists(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getChartPharmacists.do",
+                        data: {
+                            phname: "<%= pharmName%>",
+                            phaddr: "<%= pharmAddress%>",
+                            phpm: "<%= pharmCFPM%>",
+                            stat: "getChartPharmacists"
+                        },
+                        success: function (responseText) {
+                            var str = responseText.split(";");
+                            var i;
+                            for(i = 0; i < str.length-1; i+=2){
+                                var obj = document.getElementById("dataTxt").innerHTML;
+                                document.getElementById("dataTxt").innerHTML= obj + "<div class=\"dataTxtObj\"> <p>"+str[i+1]+" </p> <p>"+str[i]+"</p> </div>";
+                            }
+                        }
+                    });
+                });
+            }
+            function getDrugsMoreSold(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getDrugsMoreSold.do",
+                        data: {
+                            phname: "<%= pharmName%>",
+                            phaddr: "<%= pharmAddress%>",
+                            phpm: "<%= pharmCFPM%>",
+                            stat: "getDrugsMoreSold"
+                        },
+                        success: function (responseText) {
+                            var str = responseText.split(";");
+                            var i;
+                            for(i = 0; i < str.length-1; i+=2){
+                                var obj = document.getElementById("dataTxt").innerHTML;
+                                document.getElementById("dataTxt").innerHTML= obj + "<div class=\"dataTxtObj\"> <p>"+str[i+1]+": </p> <p>"+str[i]+"</p> </div>";
+                            }
+                        }
+                    });
+                });
+            }
+            function getGeneralNumberItems(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getGeneralNumberItems.do",
+                        data: {
+                            phname: "<%= pharmName%>",
+                            phaddr: "<%= pharmAddress%>",
+                            phpm: "<%= pharmCFPM%>",
+                            stat: "getGeneralNumberItems"
+                        },
+                        success: function (responseText) {
+                            $("#dataTxtObj1").html(responseText);
+                        }
+                    });
+                });
+            }
+            function getPiecesSold(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getPiecesSold.do",
+                        data: {
+                            phname: "<%= pharmName%>",
+                            phaddr: "<%= pharmAddress%>",
+                            phpm: "<%= pharmCFPM%>",
+                            stat: "getPiecesSold"
+                        },
+                        success: function (responseText) {
+                            $("#dataTxtObj2").html(responseText);
+                        }
+                    });
+                });
+            }
+            $(document).ready(function () {
+                getGeneralNumberItems();
+                getPiecesSold();
+                getDrugsMoreSold();
+                getChartPharmacists();
+                getChartPharmacies();
+                getChartNumberDrugsPharmacies();
+            });
         </script>
+
     </body>
 </html>

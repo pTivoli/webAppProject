@@ -85,6 +85,7 @@
         <input type="radio" id="deskOperator" name="role" value="DO" checked>
         <button onclick="registerPharmacist()">REGISTER</button>
     </div>
+    <a href="JSP/PharmacistManagerDashboard.jsp">MIAO</a>
 </div>
 <script src="JS/JQuery.js"></script>
 <script>
