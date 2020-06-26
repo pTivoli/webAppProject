@@ -67,9 +67,11 @@
 </div>
 <script src="JS/JQuery.js"></script>
 <script>
-    function cookieCart(codeMed, nameMed){
+    var receipt = false;
+    function cookieCart(codeMed, nameMed, receiptMedicine){
         var obj = document.getElementById("objects").innerHTML;
         document.getElementById("objects").innerHTML= obj + "<p>"+nameMed+"</p><br>";
+        if(receiptMedicine == 't') receipt = true;
         if(document.cookie == ""){
             $("#cart button").prop("disabled", false);
             document.cookie = "medicine=" + codeMed + "," + nameMed + ",";
@@ -97,6 +99,9 @@
     }
     function buyFn(){
         if(document.cookie != ""){
+            if(receipt){
+                alert("Ricetta");
+            }
             $(document).ready(function () {
                 $.ajax({
                     type: "POST",
@@ -166,8 +171,8 @@
         var ris = "<table>";
         text = text.split(";");
         var i;
-        for(i = 0; i < text.length-1; i+=2){
-            ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td><td><button onclick=\"cookieCart('" + text[i] + "','" + text[i + 1] + "')\">ADD</button></td></tr>";
+        for(i = 0; i < text.length-1; i+=3){
+            ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td><td><button onclick=\"cookieCart('" + text[i] + "','" + text[i + 1] + "','" + text[i + 2] + "')\">ADD</button></td></tr>";
         }
         ris += "</table>";
         return ris;

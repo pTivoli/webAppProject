@@ -110,7 +110,7 @@
                 var ris = "<table>";
                 text = text.split(";");
                 var i;
-                for(i = 0; i < text.length-1; i+=2){
+                for(i = 0; i < text.length-1; i+=3){
                     ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td><td><button onclick=\"cookieCart('" + text[i] + "','" + text[i + 1] + "')\">ADD</button></td></tr>";
                 }
                 ris += "</table>";
