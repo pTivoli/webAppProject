@@ -227,6 +227,13 @@
                         role: $('input[name="role"]:checked').val()
                     },
                     success: function () {
+                        $('#cfP').val("");
+                        $('#fnameP').val("");
+                        $('#lnameP').val("");
+                        $('#dobP').val("");
+                        $("#usr").val("");
+                        $("#pwd").val("");
+                        $("#pwdCheck").val("");
                         alert("A New Pharmacist has been created successfully!");
                     }
                 });
