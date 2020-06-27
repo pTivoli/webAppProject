@@ -9,7 +9,7 @@ public class PharmacistManager extends PharmacyDoctor{
 
     private void employee(Pharmacist pharmacist, Pharmacy pharmacy) throws Exception {
         try{
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try{
                 Statement st = con.createStatement();
                 String queryUtente = "INSERT INTO Persona VALUES ('"+ pharmacist.getCF() +"','"+ pharmacist.getfName() +"','"+ pharmacist.getlName() +"','"+pharmacist.getDOB()+"');";

@@ -56,7 +56,7 @@ public class StatFinder extends Action{
 
     private Integer getPiecesSold(String phname, String phaddr, String phpm) throws Exception {
         try {
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             Integer result = null;
             try {
                 Statement st = con.createStatement();
@@ -84,7 +84,7 @@ public class StatFinder extends Action{
 
     private Integer getGeneralNumberItems(String phname, String phaddr, String phpm) throws Exception {
         try {
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             Integer result = null;
             try {
                 Statement st = con.createStatement();
@@ -113,7 +113,7 @@ public class StatFinder extends Action{
     private String getDrugsMoreSold(String phname, String phaddr, String phpm) throws Exception{
         try {
             String str = "";
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
                 Statement st = con.createStatement();
                 String query = "select sum(acquisto_farmaco.quantita) as sum , farmaco.nome\n" +
@@ -143,7 +143,7 @@ public class StatFinder extends Action{
     private String getChartPharmacists(String phname, String phaddr, String phpm) throws Exception{
         try {
             String str = "";
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
                 Statement st = con.createStatement();
                 String query = "select sum(acquisto_farmaco.quantita) sum, persona.nome, persona.cognome\n" +
@@ -174,7 +174,7 @@ public class StatFinder extends Action{
     private String getChartPharmacies() throws Exception{
         try {
             String str = "";
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
                 Statement st = con.createStatement();
                 String query = "select sum(totale) sum, personale.nomefarmacia, personale.indirizzofarmacia, personale.cf_titolare_farmacia\n" +

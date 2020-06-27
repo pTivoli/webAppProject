@@ -7,7 +7,7 @@ public class PharmacyDoctor extends DeskOperator{
 
     public void sellItemsWithReceipt(LinkedList<Medicine> medicineLinkedList, User user, Integer codRegDoc, Pharmacy pharmacy, String recipeCode) throws Exception {
         try{
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
                 Statement st = con.createStatement();
                 String checkUser = "select count (codicefiscale)\n" +

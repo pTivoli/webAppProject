@@ -31,7 +31,7 @@ public class FormLoginDBAccess {
             Change the credential in getConnection.
          */
         try {
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
                 Statement st = con.createStatement();
                 String query = "SELECT * FROM Personale JOIN Persona ON Persona.codicefiscale = Personale.personale_cfpersona JOIN Farmacia ON Farmacia.nome = Personale.nomeFarmacia WHERE mail = '" + userDataIn.getEmail() + "'";

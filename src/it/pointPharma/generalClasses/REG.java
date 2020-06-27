@@ -8,7 +8,7 @@ import java.sql.Connection;
 public class REG extends Pharmacist{
 
     public void activatePharmacy(Pharmacy pharmacy) throws Exception{
-        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
         try {
             try {
                 Statement st = con.createStatement();
