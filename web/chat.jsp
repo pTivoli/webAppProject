@@ -18,19 +18,20 @@
     <div>
         <p>Welcome <%= lname + " " + fname + " " + " " + email + "\n"%></p>
         <div class="left-pane" >
-            <!--
-                ajax load chat
-            -->
+            <input type="text" name="receiver" id="recMail" onkeyup="lfReceiver();">
+            <div id="receivers">
+
+            </div>
         </div>
-        <div class="rigth-pane">
-            <div class="TOP">
+        <div id="rigth-pane">
+            <div id="TOP">
 
             </div>
             <div id="rec-Messages">
 
             </div>
             <div class="rigth-foot">
-                <input id="receiver" type="hidden" name="receiver" value="matteo.strawberry@gmail.com">
+                <input id="receiver" type="hidden" name="receiver">
                 <input id="message" type="text" name="message" placeholder="" required/>
                 <button onclick="senF();">Send</button>
             </div>
@@ -48,11 +49,43 @@
                         receiver: $("#receiver").val()
                     },
                     success: function () {
-                        alert("Message sent");
+                        //reload messages
                     }
                 });
             });
         }
+        function lfReceiver() {
+            if($('#recMail').val().length > 0) {
+                $(document).ready(function () {
+                    $.ajax({
+                       type: "POST",
+                       url: "receiverCheck.do" ,
+                        data: {
+                           hint: $('#recMail').val()
+                        },
+                        success: function (responseText) {
+                            $('#receivers').html(createTable(responseText))
+                        }
+                    });
+                });
+            }else {
+                $('#receivers').html("");
+            }
+        }
+    function createTable(text) {
+        var ris = "<table>";
+        text = text.split(";");
+        var i;
+        for(i = 0; i < text.length-1; i++){
+          ris += "<tr><td id=\"td" + i + "\">" + text[i] + "</td><td><button onclick=\"selectReceiver("+i+");\">Select</button></td></tr>";
+        }
+        ris += "</table>";
+        return ris;
+    }
+    function selectReceiver(i) {
+            $("#receiver").attr("value", $("#td"+i).text());
+            $("#TOP").html("Texting to: " + $("#td"+i).text());
+    }
     </script>
 </body>
 </html>

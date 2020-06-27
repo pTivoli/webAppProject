@@ -46,5 +46,11 @@
                 scope="request"
                 input="chat.jsp"
                 validate="false"></action>
+        <action path="/receiverCheck"
+                type="it.pointPharma.beans.receiverCheck"
+                input="chat.jsp"
+                scope="request"
+                validate="false">
+        </action>
     </action-mappings>
 </struts-config>
