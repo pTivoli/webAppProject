@@ -15,11 +15,17 @@ public class DeskOperator extends Pharmacist {
                 String mqty;
                 LinkedList<Medicine> examined = new LinkedList<Medicine>();
                 float totalCost = 0;
+                Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+                String timest = timestamp.toString();
+                queryPurchase = ("INSERT INTO Acquisto VALUES('" + timest + "' , '" + this.getCF() + "', '" + this.getEmail() + "', null ," + totalCost + ")");
+                System.out.println(queryPurchase);
+                st.executeUpdate(queryPurchase);
                 for (Medicine m  : medicineLinkedList ){
                     if(!examined.contains(m)){
                         examined.add(m);
                         int quantity = countDuplicates(medicineLinkedList, m);
-                        queryMedPurchase = ("INSERT INTO Acquisto_Farmaco VALUES('" + quantity + "', CURRENT_TIMESTAMP , '" + this.getCF() + "', '" + m.getCode() + "'");
+                        queryMedPurchase = "INSERT INTO Acquisto_Farmaco VALUES('"+quantity+"', '"+timest+"' , '"+this.getCF()+"', '"+m.getCode()+"')";
+                        System.out.println(queryMedPurchase);
                         st.executeUpdate(queryMedPurchase);
                     }
                     totalCost += m.getCost();
@@ -27,15 +33,21 @@ public class DeskOperator extends Pharmacist {
                             "set quantita = mf.quantita - 1 \n" +
                             "where mf.codiceFarmaco = '" + m.getCode() + "'\n" +
                             "and mf.nomefarmaciamagazzino = '" + pharmacy.getName() + "';";
+                    System.out.println(mqty);
                     st.executeUpdate(mqty);
+
+                    String updateTot = "update Acquisto\n" +
+                            "set totale = "+totalCost+"\n" +
+                            "where timest = '"+timest+"'\n" +
+                            "and cfPersonale = '"+this.getCF()+"'";
+                    st.executeUpdate(updateTot);
+
                 }
-                queryPurchase = ("INSERT INTO Acquisto VALUES(CURRENT_TIMESTAMP , '" + this.getCF() + "', '" + this.getEmail() + "', null '" + totalCost + "'");
-                st.executeUpdate(queryPurchase);
             } catch (SQLException e) {
-                throw new Exception("Error DB");
+                throw new SQLException("Error DB");
             }
         } catch (SQLException e) {
-            throw new Exception("Error DB");
+            throw new SQLException("Error DB");
         }
     }
 
