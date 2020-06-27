@@ -14,6 +14,8 @@
     String lname = user.getlName();
     String fname = user.getfName();
     String email = user.getEmail();
+    Pharmacy ph = (Pharmacy) session.getAttribute("pharmacy");
+    String phName = ph.getName();
 %>
     <div>
         <p>Welcome <%= lname + " " + fname + " " + " " + email + "\n"%></p>
@@ -31,6 +33,7 @@
 
             </div>
             <div class="rigth-foot">
+                <input id="receiverType" type="hidden" name="receiverType">
                 <input id="receiver" type="hidden" name="receiver">
                 <input id="message" type="text" name="message" placeholder="" required/>
                 <button onclick="senF();">Send</button>
@@ -41,6 +44,13 @@
     <script >
         var i;
         function senF() {
+            if($("#receiverType").val() == 0) {
+                messages();
+            }
+            else
+                messagesGroup();
+        }
+        function messages() {
             $(document).ready(function () {
                 $.ajax({
                     type: "POST",
@@ -54,6 +64,20 @@
                     }
                 });
             });
+        }
+        function messagesGroup() {
+            $(document).ready(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "messagesGroup.do",
+                    data: {
+                        message:  $("#message").val()
+                    },
+                    success: function () {
+                        readMessagesGroup();
+                    }
+                });
+        });
         }
         function lfReceiver() {
             if($('#recMail').val().length > 0) {
@@ -85,9 +109,22 @@
     }
     function selectReceiver(inv) {
             i = inv;
-            $("#receiver").attr("value", $("#td"+i).text());
+            $("#rec-Messages").html("");
             $("#TOP").html("Texting to: " + $("#td"+i).text());
-            readMessages(i);
+            if($("#td"+i).text().indexOf("@") > -1)
+                $("#receiverType").attr("value", 0);
+            else
+                $("#receiverType").attr("value", 1);
+            alert($("#receiverType").val());
+            if($("#receiverType").val() == 0) {
+                $("#receiver").attr("value", $("#td"+i).text());
+                $("#receivers").html("");
+                readMessages(i);
+            }
+            else {
+                ("#receivers").html("");
+                readMessagesGroup(i);
+            }
     }
     function readMessages() {
         var receiverMail = $("#td"+i).text();
@@ -105,6 +142,21 @@
             });
         });
     }
+    function readMessagesGroup() {
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                url: "readMessagesGroup.do",
+                data: {
+                    receiver: $("#td"+i).text()
+                },
+                success: function (result) {
+                    $("#rec-Messages").html(createMessages(result))
+                }
+            });
+        });
+    }
+
     function createMessages(text) {
         var ris = "<table>";
         text = text.split(";");

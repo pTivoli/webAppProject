@@ -1,5 +1,6 @@
 package it.pointPharma.beans;
 
+import com.sun.org.apache.regexp.internal.RE;
 import com.sun.org.apache.xerces.internal.util.HTTPInputSource;
 import it.pointPharma.generalClasses.*;
 import org.apache.struts.action.Action;
@@ -17,7 +18,7 @@ public class receiverCheck extends Action {
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         try {
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "pharma", "pass");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
                 Statement st = con.createStatement();
                 String hint = (String)request.getParameter("hint");
@@ -43,6 +44,10 @@ public class receiverCheck extends Action {
                {
                    ris = ris.concat(rs.getString("mail") + ";");
                }
+                if(ph instanceof REG)
+                    ris = ris.concat("PM;");
+                else if(ph instanceof PharmacistManager)
+                    ris = ris.concat(phy.getName() + ";");
                 PrintWriter out = response.getWriter();
                 out.println(ris);
                 out.flush();

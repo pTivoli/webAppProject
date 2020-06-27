@@ -44,18 +44,28 @@
         <action path="/messages"
                 type="it.pointPharma.beans.messages"
                 scope="request"
-                input="/JSP/chat.jsp"
+                input="chat.jsp"
                 validate="false"></action>
         <action path="/receiverCheck"
                 type="it.pointPharma.beans.receiverCheck"
-                input="/JSP/chat.jsp"
+                input="chat.jsp"
                 scope="request"
                 validate="false">
         </action>
         <action path="/readMessages"
-                input="/JSP/chat.jsp"
+                input="chat.jsp"
                 scope="request"
                 type="it.pointPharma.beans.readMessages"
+                validate="false"></action>
+        <action path="/readMessagesGroup"
+            input="chat.jsp"
+            scope="request"
+            type="it.pointPharma.beans.readMessagesGroup"
+            validate="false"/>
+        <action path="/messagesGroup"
+                input="chat.jsp"
+                scope="request"
+                type="it.pointPharma.beans.messagesGroup"
                 validate="false"/>
     </action-mappings>
 </struts-config>

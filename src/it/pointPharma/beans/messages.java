@@ -26,7 +26,7 @@ public class messages extends Action {
         String mailReceiver = (String) request.getParameter("receiver");
         String cfReceiver = "";
         try {
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "pharma", "pass");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
                 Statement st = con.createStatement();
                 String retrieveReceiverInfo = "SELECT * FROM personale WHERE personale.mail='"+mailReceiver+"';";

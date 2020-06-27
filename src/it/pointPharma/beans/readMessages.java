@@ -22,7 +22,7 @@ public class readMessages extends Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         try {
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "pharma", "pass");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
                 Statement st = con.createStatement();
                 HttpSession session = request.getSession(true);
@@ -41,7 +41,7 @@ public class readMessages extends Action {
                         "JOIN messaggio on timestmesssaggio = timest " +
                         "WHERE mailpersonaledest LIKE '" + mail + "%'" +
                         "AND mailpersonalemitt LIKE '" + receiverMail + "%'" +
-                ") res" +
+                        ") res" +
                         " ORDER BY res.timestmesssaggio";
                 ResultSet rs = st.executeQuery(query);
                 String ris = "";
@@ -51,7 +51,6 @@ public class readMessages extends Action {
                     ris = ris.concat(";");
                     ris = ris.concat(rs.getString("testo"));
                     ris = ris.concat(";");
-                    System.err.println(rs.getString(1) + "\n");
                 }
                 PrintWriter out = response.getWriter();
                 out.println(ris);
