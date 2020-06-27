@@ -10,7 +10,7 @@ public class PharmacistManager extends PharmacyDoctor{
     private void employee(Pharmacist pharmacist) throws Exception {
         try{
             Class.forName("org.postgresql.Driver");
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "Slashrocker1");
             try{
                 Statement st = con.createStatement();
                 String queryUtente = "INSERT INTO Persona VALUES ('"+ pharmacist.getCF() +"',' "+ pharmacist.getfName() +"',' "+ pharmacist.getlName() +"','"+pharmacist.getDOB()+"')";

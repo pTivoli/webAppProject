@@ -11,7 +11,7 @@ public class DeskOperator extends Pharmacist {
 
     public void sellItems(LinkedList<Medicine> medicineLinkedList, Pharmacy pharmacy) throws Exception {
         try{
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "Franci99");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "Slashrocker1");
             try {
                 Statement st = con.createStatement();
                 String queryPurchase;
@@ -25,24 +25,21 @@ public class DeskOperator extends Pharmacist {
                     if(!examined.contains(m)){
                         examined.add(m);
                         int quantity = countDuplicates(medicineLinkedList, m);
-                        queryMedPurchase = ("INSERT INTO Acquisto_Farmaco VALUES('" + quantity + "', '" + getTime() + "', '" + this.getCF() + "', '" + m.getCode() + "'");
+                        queryMedPurchase = ("INSERT INTO Acquisto_Farmaco VALUES('" + quantity + "', CURRENT_TIMESTAMP , '" + this.getCF() + "', '" + m.getCode() + "'");
                         st.executeUpdate(queryMedPurchase);
                     }
 
 
                     totalCost += m.getCost();
-                    mqty = ("update magazzino_farmaco as mf " +
-                            "set quantita = mf.quantita - 1 " +
-                            "where mf.codiceFarmaco = (select distinct farmaco.codice " +
-                            "from magazzino_farmaco " +
-                            "join farmacia on magazzino_farmaco.nomeFarmaciaMagazzino = farmacia.nome " +
-                            "join farmaco on magazzino_farmaco.codiceFarmaco = farmaco.codice " +
-                            "where magazzino_farmaco.codiceFarmaco = '" + m.getCode() + "' and farmacia.nome = '" + pharmacy.getName() + "'");
+                    mqty = "update magazzino_farmaco as mf \n" +
+                            "set quantita = mf.quantita - 1 \n" +
+                            "where mf.codiceFarmaco = '" + m.getCode() + "'\n" +
+                            "and mf.nomefarmaciamagazzino = '" + pharmacy.getName() + "';";
 
                     st.executeUpdate(mqty);
                 }
 
-                queryPurchase = ("INSERT INTO Acquisto VALUES('" + getTime() + "', '" + this.getCF() + "', '" + this.getEmail() + "', null '" + totalCost + "'");
+                queryPurchase = ("INSERT INTO Acquisto VALUES(CURRENT_TIMESTAMP , '" + this.getCF() + "', '" + this.getEmail() + "', null '" + totalCost + "'");
                 st.executeUpdate(queryPurchase);
             } catch (SQLException e) {
                 throw new Exception("Error DB");
@@ -60,15 +57,4 @@ public class DeskOperator extends Pharmacist {
         return count;
     }
 
-
-    public Timestamp getTime()
-    {
-        //Date object
-        Date date= new Date();
-        //getTime() returns current time in milliseconds
-        long time = date.getTime();
-        //Passed the milliseconds to constructor of Timestamp class
-        Timestamp ts = new Timestamp(time);
-        return ts;
-    }
 }

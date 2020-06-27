@@ -8,9 +8,9 @@ import java.util.LinkedList;
 
 public class PharmacyDoctor extends DeskOperator{
 
-    public void sellItemsWithReceipt(LinkedList<Medicine> medicineLinkedList, User user, Date date, Integer codRegDoc, Pharmacy pharmacy, String recipeCode) throws Exception {
+    public void sellItemsWithReceipt(LinkedList<Medicine> medicineLinkedList, User user, Integer codRegDoc, Pharmacy pharmacy, String recipeCode) throws Exception {
         try{
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "Franci99");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "Slashrocker1");
             try {
                 Statement st = con.createStatement();
                 String checkUser = "select count (codicefiscale)\n" +
@@ -26,7 +26,7 @@ public class PharmacyDoctor extends DeskOperator{
                     registerUser(user);
                 }
 
-                String queryRecipe = ("INSERT INTO ricetta VALUES('" + recipeCode + "', '" + date + "', '" + user.getCF() + "', '" + codRegDoc + "', '" + this.getCF() + "'");
+                String queryRecipe = ("INSERT INTO ricetta VALUES('" + recipeCode + "', CURRENT_TIMESTAMP , '" + user.getCF() + "', '" + codRegDoc + "', '" + this.getCF() + "'");
                 st.executeUpdate(queryRecipe);
 
                 sellItems(medicineLinkedList, pharmacy);
@@ -42,7 +42,7 @@ public class PharmacyDoctor extends DeskOperator{
 
     public void registerUser(User user) throws Exception {
         try{
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "postgresql", "Slashrocker1");
             try{
                 Statement st = con.createStatement();
                 String queryUtente = "INSERT INTO Persona VALUES ('"+ user.getCF() +"',' "+ user.getfName() +"',' "+ user.getlName() +"','"+user.getDOB()+"')";
