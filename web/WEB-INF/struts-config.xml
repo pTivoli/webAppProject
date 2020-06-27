@@ -16,6 +16,60 @@
             <forward name="PD" path="/JSP/PD.jsp" />
             <forward name="DO" path="/JSP/DO.jsp" />
         </action>
+        <action path="/checkOutMedicines"
+                type="it.pointPharma.beans.MedicineFinder"
+                scope="request"
+                input="/JSP/DO.jsp"
+                validate="false"></action>
+        <action path="/buyMedicines"
+                type="it.pointPharma.beans.SellItemsGeneral"
+                scope="request"
+                input="/JSP/DO.jsp"
+                validate="false"></action>
+        <action path="/registerUser"
+                type="it.pointPharma.beans.RegisterUser"
+                scope="request"
+                input="/JSP/PD.jsp"
+                validate="false"></action>
+        <action path="/registerPharmacyAndPharmacistManager"
+                type="it.pointPharma.beans.RegisterPharmacyAndPharmacistManager"
+                scope="request"
+                input="/JSP/REG.jsp"
+                validate="false"></action>
+        <action path="/registerPharmacist"
+                type="it.pointPharma.beans.registerPharmacist"
+                scope="request"
+                input="/JSP/PM.jsp"
+                validate="false"></action>
+        <action path="/JSP/getGeneralNumberItems"
+                type="it.pointPharma.dashboardTools.StatFinder"
+                scope="request"
+                input="/JSP/PharmacistManagerDashboard.jsp"
+                validate="false"></action>
+        <action path="/JSP/getPiecesSold"
+                type="it.pointPharma.dashboardTools.StatFinder"
+                scope="request"
+                input="/JSP/PharmacistManagerDashboard.jsp"
+                validate="false"></action>
+        <action path="/JSP/getDrugsMoreSold"
+                type="it.pointPharma.dashboardTools.StatFinder"
+                scope="request"
+                input="/JSP/PharmacistManagerDashboard.jsp"
+                validate="false"></action>
+        <action path="/JSP/getChartPharmacists"
+                type="it.pointPharma.dashboardTools.StatFinder"
+                scope="request"
+                input="/JSP/PharmacistManagerDashboard.jsp"
+                validate="false"></action>
+        <action path="/JSP/getChartPharmacies"
+                type="it.pointPharma.dashboardTools.StatFinder"
+                scope="request"
+                input="/JSP/PharmacistManagerDashboard.jsp"
+                validate="false"></action>
+        <action path="/JSP/getChartNumberDrugsPharmacies"
+                type="it.pointPharma.dashboardTools.StatFinder"
+                scope="request"
+                input="/JSP/PharmacistManagerDashboard.jsp"
+                validate="false"></action>
     </action-mappings>
-
 </struts-config>

@@ -1,0 +1,140 @@
+body{
+    background-image: url("../IMG/homePage.webp");
+    background-attachment: fixed;
+}
+#header{
+    width:100%;
+    height: auto;
+    display: block;
+}
+#pharmacist p{
+    padding: 12px;
+    background-color: orangered;
+    border-radius: 0px 25px 25px 0px;
+}
+#pharmacist p:first-child{
+    font-size: 2em;
+    padding: 12px;
+    background-color: orange;
+    border-radius: 0px 0px 25px 0px;
+}
+#pharmacist{
+    width: 40%;
+    float: left;
+}
+#pharmacy{
+    width: 30%;
+    float: right;
+}
+#pharmacy > p{
+    padding: 12px 0px 12px 12px;
+    background-color: orangered;
+    border-radius: 25px 0px 0px 25px;
+    width: auto;
+}
+#pharmacy>p:first-child{
+    font-size: 2em;
+    padding: 12px 0px 12px 12px;
+    background-color: orange;
+    border-radius: 0px 0px 0px 25px;
+}
+#suggestions{
+    width: 75%;
+    margin: auto;
+}
+#suggestions table{
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    border: 5px solid orangered;
+}
+#suggestions td{
+    border: 2px solid grey;
+    padding: 10px;
+}
+#mainContent{
+    width:100%;
+    display: inline-flex;
+}
+#formBox{
+    width: 70%;
+}
+#formBox form{
+    width: 75%;
+    margin: auto;
+}
+#formBox input[type=text]{
+    /*width: 75%;*/
+    width: 100%;
+    background-color: white;
+    border: 0px;
+    border-bottom: 2px solid orange;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+}
+#suggestions button{
+    width: auto;
+    background-color: orange;
+    border: 0px;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px 25px 10px 25px;
+    font-size: 1.2em;
+}
+#cart{
+    width: 30%;
+    float: right;
+    padding-right: 30px;
+}
+#cart p{
+    padding: 12px 0px 12px 12px;
+    background-color: orangered;
+    border-radius: 25px;
+    width: auto;
+}
+#cart>p:first-child{
+    font-size: 2em;
+    padding: 12px 0px 12px 12px;
+    background-color: orange;
+    border-radius: 30px;
+    text-align: center;
+}
+#cart>p>button{
+    background-color: transparent;
+    width: 100%;
+    border: 0px;
+    cursor: pointer;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+}
+#registerUser{
+    width: 25%;
+    height: auto;
+    background-color: rgba(255,255,255,0.8);
+    border: 5px solid orange;
+    border-radius: 25px 25px 0px 25px;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 10px;
+}
+#registerUser > input[type=text], #registerUser > input[type=date]{
+    text-align: center;
+    border: 2px solid orange;
+    margin: 5px;
+    background-color: transparent;
+    border-radius: 25px 25px 0px 25px;
+    width: 100%;
+}
+#registerUser button{
+    background-color: orangered;
+    font-size: 1.2em;
+    border: 0;
+    font-weight: lighter;
+    border-radius: 25px 25px 0px 25px;
+    width: 100%;
+    padding: 5px;
+}
