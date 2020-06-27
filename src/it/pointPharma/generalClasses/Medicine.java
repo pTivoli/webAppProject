@@ -9,6 +9,23 @@ public class Medicine {
     private String code;
     private float cost;
 
+    @Override
+    public boolean equals(Object o) {
+        if(o instanceof  Medicine){
+            Medicine m = (Medicine)o;
+            if(m.getCode() == this.getCode())
+                return true;
+            else
+                return false;
+        }else
+            return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return code.hashCode();
+    }
+
     public boolean getReceipt() {
         return receipt;
     }

@@ -31,9 +31,15 @@ public class SellItemsGeneral extends Action{
     private LinkedList<Medicine> listGenerator(String txtAjaxCall){
         LinkedList<Medicine> med = new LinkedList<Medicine>();
         StringTokenizer str = new StringTokenizer(txtAjaxCall, ",");
-        for(int i = 0; str.hasMoreTokens(); i += 2){
+        boolean first = true;
+        while(str.hasMoreTokens()){
+            String code = str.nextToken();
+            if(first){
+                code = code.substring("medicine=".length());
+                first = false;
+            }
             Medicine tmp = new Medicine();
-            tmp.setCode(str.nextToken());
+            tmp.setCode(code);
             tmp.setName(str.nextToken());
             med.add(tmp);
         }
