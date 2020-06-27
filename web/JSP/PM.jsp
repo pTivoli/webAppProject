@@ -85,6 +85,9 @@
         <input type="radio" id="deskOperator" name="role" value="DO" checked>
         <button onclick="registerPharmacist()">REGISTER</button>
     </div>
+    <div>
+        <button onclick="window.location='chat.jsp'">Chat</button>
+    </div>
 </div>
 <script src="JS/JQuery.js"></script>
 <script>

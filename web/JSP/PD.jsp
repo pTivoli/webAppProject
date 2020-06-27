@@ -64,6 +64,9 @@
         <input id="dob"  name="dob" type="date" required><br>
         <button onclick="registerUser()">Submit</button>
     </div>
+    <div>
+        <button onclick="window.location='chat.jsp'">Chat</button>
+    </div>
 </div>
 <script src="JS/JQuery.js"></script>
 <script>

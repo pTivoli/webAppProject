@@ -54,6 +54,9 @@
                 <p><button onclick="buyFn();" disabled>BUY</button></p><br/>
                 <div id="objects"></div>
             </div>
+            <div>
+                <button onclick="window.location='chat.jsp'">Chat</button>
+            </div>
         </div>
         <script src="JS/JQuery.js"></script>
         <script>

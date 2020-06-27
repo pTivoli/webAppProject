@@ -36,6 +36,9 @@
 
             <button onclick="registerPharmacyAndPharmacistManager()">REGISTER PHARMACY AND HIS PHARMACIST MANAGER</button>
         </div>
+        <div>
+            <button onclick="window.location='chat.jsp'">Chat</button>
+        </div>
         <script src="JS/JQuery.js"></script>
         <script>
             function registerPharmacyAndPharmacistManager() {
