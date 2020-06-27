@@ -41,5 +41,10 @@
                 scope="request"
                 input="/JSP/PM.jsp"
                 validate="false"></action>
+        <action path="/messages"
+                type="it.pointPharma.beans.messages"
+                scope="request"
+                input="chat.jsp"
+                validate="false"></action>
     </action-mappings>
 </struts-config>
