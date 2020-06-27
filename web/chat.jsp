@@ -39,6 +39,7 @@
     </div>
     <script src="JS/JQuery.js"></script>
     <script >
+        var i;
         function senF() {
             $(document).ready(function () {
                 $.ajax({
@@ -49,7 +50,7 @@
                         receiver: $("#receiver").val()
                     },
                     success: function () {
-                        //reload messages
+                        readMessages();
                     }
                 });
             });
@@ -82,9 +83,38 @@
         ris += "</table>";
         return ris;
     }
-    function selectReceiver(i) {
+    function selectReceiver(inv) {
+            i = inv;
             $("#receiver").attr("value", $("#td"+i).text());
             $("#TOP").html("Texting to: " + $("#td"+i).text());
+            readMessages(i);
+    }
+    function readMessages() {
+        var receiverMail = $("#td"+i).text();
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                url: "readMessages.do",
+                data: {
+                    receiverMail: receiverMail
+                },
+                success: function (result) {
+                    $("#rec-Messages").html(createMessages(result))
+                }
+
+            });
+        });
+    }
+    function createMessages(text) {
+        var ris = "<table>";
+        text = text.split(";");
+        var i;
+        for(i = 0; i < text.length-1; i+=2)
+        {
+            ris += "<tr><td>from: " + text[i] + "</td><td> text: " + text[i + 1] + "</td></tr>";
+        }
+        ris += "</table>";
+        return ris;
     }
     </script>
 </body>

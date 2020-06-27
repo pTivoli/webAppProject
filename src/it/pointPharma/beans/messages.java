@@ -35,7 +35,6 @@ public class messages extends Action {
                 {
                     cfReceiver = rs.getString("personale_cfpersona");
                 }
-                //TODO Controllo se posso inviare messaggio.
                 String sendMessage = "INSERT INTO messaggio VALUES ('" + tm + "', '" + message + "', '" + cf + "', '" + email + "');";
                 st.executeUpdate(sendMessage);
                 String receiverUpdate = "INSERT INTO destinatario_messaggio VALUES ('" + cfReceiver + "', '" + mailReceiver + "', '" + cf + "', '" + email + "', '" + tm + "');";

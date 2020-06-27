@@ -35,7 +35,7 @@ public class receiverCheck extends Action {
                }
                else
                {
-                   query = "SELECT mail FROM personale WHERE nomefarmacia LIKE '" + phy.getName() + "' AND mail LIKE '" + hint + "%';";
+                   query = "SELECT mail FROM personale WHERE nomefarmacia LIKE '" + phy.getName() + "' AND mail LIKE '" + hint + "%' AND mail NOT LIKE '" + ph.getEmail() +"';";
                }
                 ResultSet rs = st.executeQuery(query);
                String ris = "";
