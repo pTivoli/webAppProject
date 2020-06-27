@@ -2,6 +2,7 @@ package it.pointPharma.beans;
 
 import it.pointPharma.generalClasses.DeskOperator;
 import it.pointPharma.generalClasses.Medicine;
+import it.pointPharma.generalClasses.Pharmacy;
 import org.apache.struts.action.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +24,7 @@ public class SellItemsGeneral extends Action{
         HttpSession session = request.getSession(true);
         this.listMedicine = this.listGenerator(medicines);
         DeskOperator deskOperator = (DeskOperator)session.getAttribute("pharmacist");
-        deskOperator.sellItems(listMedicine);
+        deskOperator.sellItems(listMedicine, (Pharmacy)session.getAttribute("pharmacy"));
         return null;
     }
 
