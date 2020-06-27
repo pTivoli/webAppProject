@@ -1,6 +1,3 @@
-/* faccio  VCS -> update project, dopo lavoro, dopo committo le modifiche VCS-> commit changes, poi pusho: CCS -> git ->pushamolo
-*/
-
 create table Persona(
   codiceFiscale char(16) primary key,
   nome varchar(20) not null,
@@ -15,27 +12,8 @@ create table Medico(
   foreign key (medico_CFPersona) references Persona(codiceFiscale) on delete cascade on update cascade
 );
 
-create table Ricetta(
-  codiceRicetta varchar(15),
-  data date,
-  codiceFiscale char(16),        --per le persone giuridiche la lunghezza del cf è 16 caratteri
-  ricetta_Codice_Medico varchar(10),
-  ricetta_Medico_Persona char(16),
-  primary key(codiceRicetta, ricetta_Codice_Medico, ricetta_Medico_Persona),
-  foreign key (ricetta_Codice_Medico, ricetta_Medico_Persona) references Medico(codiceRegionale, medico_CFPersona) on delete set null on update cascade
-);
-
 create table Ruolo(
   nome VARCHAR(30) PRIMARY KEY
-);
-
-create table Farmacia(
-  nome VARCHAR(30),
-  indirizzo VARCHAR(30),
-  telefono VARCHAR(15),
-  cfTitolare CHAR(16),
-  mailTitolare VARCHAR(30),
-  PRIMARY KEY (nome, indirizzo, cfTitolare)
 );
 
 create table Personale(
@@ -56,10 +34,32 @@ create table Acquisto(
   cfPersonale CHAR(16),
   mailPersonale varchar(30),
   cfPersona CHAR(16),
-  totale INTEGER,
+  totale decimal(6,2),
   PRIMARY KEY (timest, cfPersonale),
   FOREIGN KEY (cfPersona) REFERENCES Persona(codiceFiscale) on delete set null on update cascade,
   FOREIGN KEY (cfPersonale, mailPersonale) REFERENCES  Personale(personale_CFPersona, mail) on delete set null on update cascade
+);
+
+create table Ricetta(
+  codiceRicetta varchar(15),
+  data date,
+  codiceFiscale char(16),        --per le persone giuridiche la lunghezza del cf è 16 caratteri
+  ricetta_Codice_Medico varchar(10),
+  ricetta_Medico_Persona char(16),
+  acquisto_orario TIMESTAMP,
+  acquisto_cfproprietario CHAR(16),
+  primary key(codiceRicetta, ricetta_Codice_Medico, ricetta_Medico_Persona),
+  FOREIGN KEY (acquisto_orario, acquisto_cfproprietario) REFERENCES Acquisto(timest, cfPersonale),
+  foreign key (ricetta_Codice_Medico, ricetta_Medico_Persona) references Medico(codiceRegionale, medico_CFPersona) on delete set null on update cascade
+);
+
+create table Farmacia(
+  nome VARCHAR(30),
+  indirizzo VARCHAR(30),
+  telefono VARCHAR(15),
+  cfTitolare CHAR(16),
+  mailTitolare VARCHAR(30),
+  PRIMARY KEY (nome, indirizzo, cfTitolare)
 );
 
 create TABLE Magazzino(
@@ -120,3 +120,7 @@ CREATE TABLE Acquisto_Farmaco(
   FOREIGN KEY (timestAcquisto, cfPersonaleAcquisto) REFERENCES Acquisto(timest, cfPersonale) on delete cascade on update cascade,
   FOREIGN KEY (codiceFarmacoAcquisto) REFERENCES Farmaco(Codice) on delete cascade on update cascade
 );
+
+alter table Persona add cf_farmacista_registrante char(16);
+alter table Persona add mail_farmacista_registrante char(30);
+alter table Persona add constraint fk_registratore foreign key (cf_farmacista_registrante, mail_farmacista_registrante) references Personale(personale_cfpersona, mail)
