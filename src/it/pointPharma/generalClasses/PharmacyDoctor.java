@@ -38,7 +38,7 @@ public class PharmacyDoctor extends DeskOperator{
 
     public void registerUser(User user) throws Exception {
         try{
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try{
                 Statement st = con.createStatement();
                 String queryUtente = "INSERT INTO Persona VALUES ('"+user.getCF()+"','"+user.getfName()+"','"+user.getlName()+"','"+user.getDOB()+"');";

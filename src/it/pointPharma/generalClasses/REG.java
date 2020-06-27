@@ -25,7 +25,7 @@ public class REG extends Pharmacist{
     }
 
     public void activatePM(PharmacistManager pharmacistManager, Pharmacy pharmacy) throws Exception{
-        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
         try {
             try {
                 Statement st = con.createStatement();

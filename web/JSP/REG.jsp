@@ -36,6 +36,10 @@
 
             <button onclick="registerPharmacyAndPharmacistManager()">REGISTER PHARMACY AND HIS PHARMACIST MANAGER</button>
         </div>
+
+        <input type=button onClick="location.href='JSP/REGDashboard.jsp'" value='click here'>
+
+        </div>
         <script src="JS/JQuery.js"></script>
         <script>
             function registerPharmacyAndPharmacistManager() {

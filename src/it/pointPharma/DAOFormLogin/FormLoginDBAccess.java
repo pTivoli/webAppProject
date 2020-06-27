@@ -34,7 +34,7 @@ public class FormLoginDBAccess {
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
                 Statement st = con.createStatement();
-                String query = "SELECT * FROM Personale JOIN Persona ON Persona.codicefiscale = Personale.personale_cfpersona JOIN Farmacia ON Farmacia.nome = Personale.nomeFarmacia WHERE mail = '" + userDataIn.getEmail() + "'";
+                String query = "SELECT * FROM Personale JOIN Persona ON Persona.codicefiscale = Personale.personale_cfpersona LEFT JOIN Farmacia ON Farmacia.nome = Personale.nomeFarmacia WHERE mail = '" + userDataIn.getEmail() + "'";
                 ResultSet ris = st.executeQuery(query);
 
                 //Pharmacist attributes

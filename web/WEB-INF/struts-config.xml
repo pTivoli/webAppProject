@@ -71,5 +71,6 @@
                 scope="request"
                 input="/JSP/PharmacistManagerDashboard.jsp"
                 validate="false"></action>
+
     </action-mappings>
 </struts-config>

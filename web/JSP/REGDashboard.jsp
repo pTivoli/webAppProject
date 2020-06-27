@@ -1,3 +1,6 @@
+<%@ page import="it.pointPharma.generalClasses.REG" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.LinkedList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -9,66 +12,153 @@
         <header>
             REG Dashboard
         </header>
-        <div class="charts">
-            <div id="chartsObj1" class="chartsObj">
 
-            </div>
-            <div id="chartsObj2" class="chartsObj">
-
-            </div>
-            <div id="chartsObj3" class="chartsObj">
-
-            </div>
-            <div id="chartsObj4" class="chartsObj">
-
-            </div>
-        </div>
         <div id="dataTxt">
-            <div class="dataTxtObj"> <p>Prova: </p> <p id="dataTxtObj1">45</p> </div>
-            <div class="dataTxtObj"> <p>Prova: </p> <p id="dataTxtObj2">54</p></div>
+            <div class="dataTxtObj"> <p>Prova1: </p> <p id="dataTxtObj1">45</p> </div>
+            <div class="dataTxtObj"> <p>Prova2: </p> <p id="dataTxtObj2">54</p></div>
         </div>
 
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script>
-            // Load the Visualization API and the corechart package.
-            google.charts.load('current', {'packages':['corechart']});
+        <%
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
+            try {
+                Statement st = con.createStatement();
+                String queryPharmacies = "SELECT distinct nome\n" +
+                        "from farmacia order by nome asc;";
+                ResultSet ris = st.executeQuery(queryPharmacies);
 
-            // Set a callback to run when the Google Visualization API is loaded.
-            google.charts.setOnLoadCallback(drawChart);
+                LinkedList<String> pharmacies = new LinkedList<>();
 
-            // Callback that creates and populates a data table,
-            // instantiates the pie chart, passes in the data and
-            // draws it.
-            function drawChart() {
+                while(ris.next()){
+                    pharmacies.add(ris.getString("nome"));
+                }
 
-                // Create the data table.
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Topping');
-                data.addColumn('number', 'Slices');
-                data.addRows([
-                    ['Mushrooms', 3],
-                    ['Onions', 1],
-                    ['Olives', 1],
-                    ['Zucchini', 1],
-                    ['Pepperoni', 2]
-                ]);
-
-                // Set chart options
-                var options = {'title':'How Much Pizza I Ate Last Night',
-                    //'width':400,
-                    //'height':300
-                    };
-
-                // Instantiate and draw our chart, passing in some options.
-                var chart1 = new google.visualization.PieChart(document.getElementById('chartsObj1'));
-                var chart2 = new google.visualization.PieChart(document.getElementById('chartsObj2'));
-                var chart3 = new google.visualization.PieChart(document.getElementById('chartsObj3'));
-                var chart4 = new google.visualization.PieChart(document.getElementById('chartsObj4'));
-                chart1.draw(data, options);
-                chart2.draw(data, options);
-                chart3.draw(data, options);
-                chart4.draw(data, options);
+            } catch (SQLException e) {
+                throw new Exception("Error DB");
             }
+
+        %>
+
+        <script src="../JS/JQuery.js"></script>
+
+        <script>
+            function getChartNumberDrugsPharmacies(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getChartNumberDrugsPharmacies.do",
+                        data: {
+
+                            stat: "getChartNumberDrugsPharmacies"
+                        },
+                        success: function (responseText) {
+                            var str = responseText.split(";");
+                            var i;
+                            for(i = 0; i < str.length - 1; i+=2){
+                                var obj = document.getElementById("dataTxt").innerHTML;
+                                document.getElementById("dataTxt").innerHTML= obj + "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> </div>";
+                            }
+                        }
+                    });
+                });
+            }
+            function getChartPharmacies(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getChartPharmacies.do",
+                        data: {
+                            stat: "getChartPharmacies"
+                        },
+                        success: function (responseText) {
+                            var str = responseText.split(";");
+                            var i;
+                            for(i = 0; i < str.length - 1; i+=2){
+                                var obj = document.getElementById("dataTxt").innerHTML;
+                                document.getElementById("dataTxt").innerHTML= obj + "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> </div>";
+                            }
+                        }
+                    });
+                });
+            }
+            function getChartPharmacists(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getChartPharmacists.do",
+                        data: {
+
+                            stat: "getChartPharmacists"
+                        },
+                        success: function (responseText) {
+                            var str = responseText.split(";");
+                            var i;
+                            for(i = 0; i < str.length-1; i+=2){
+                                var obj = document.getElementById("dataTxt").innerHTML;
+                                document.getElementById("dataTxt").innerHTML= obj + "<div class=\"dataTxtObj\"> <p>"+str[i+1]+" </p> <p>"+str[i]+"</p> </div>";
+                            }
+                        }
+                    });
+                });
+            }
+            function getDrugsMoreSold(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getDrugsMoreSold.do",
+                        data: {
+
+                            stat: "getDrugsMoreSold"
+                        },
+                        success: function (responseText) {
+                            var str = responseText.split(";");
+                            var i;
+                            for(i = 0; i < str.length-1; i+=2){
+                                var obj = document.getElementById("dataTxt").innerHTML;
+                                document.getElementById("dataTxt").innerHTML= obj + "<div class=\"dataTxtObj\"> <p>"+str[i+1]+": </p> <p>"+str[i]+"</p> </div>";
+                            }
+                        }
+                    });
+                });
+            }
+            function getGeneralNumberItems(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getGeneralNumberItems.do",
+                        data: {
+
+                            stat: "getGeneralNumberItems"
+                        },
+                        success: function (responseText) {
+                            $("#dataTxtObj1").html(responseText);
+                        }
+                    });
+                });
+            }
+            function getPiecesSold(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getPiecesSold.do",
+                        data: {
+
+                            stat: "getPiecesSold"
+                        },
+                        success: function (responseText) {
+                            $("#dataTxtObj2").html(responseText);
+                        }
+                    });
+                });
+            }
+            $(document).ready(function () {
+                getGeneralNumberItems();
+                getPiecesSold();
+                getDrugsMoreSold();
+                getChartPharmacists();
+                getChartPharmacies();
+                getChartNumberDrugsPharmacies();
+            });
         </script>
+
     </body>
 </html>

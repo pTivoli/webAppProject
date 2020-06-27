@@ -199,7 +199,7 @@ public class StatFinder extends Action{
     private String getChartNumberDrugsPharmacies() throws Exception{ //df
         try {
             String str = "";
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
                 Statement st = con.createStatement();
                 String query = "select count(*) count, nomefarmaciamagazzino, indirizzofarmaciamagazzino, cftitolarefarmaciamagazzino\n" +
