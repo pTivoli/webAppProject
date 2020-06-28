@@ -52,11 +52,13 @@
         <p>CART</p><br/>
             <div id="formReceipt">
                 Codice Ricetta<br>
-                <input type="text"/><br>
+                <input type="text" id="codRec"/><br>
                 Data Ricetta<br>
-                <input type="date"/><br>
+                <input type="date" id="dateRec"/><br>
                 Codice Medico<br>
-                <input type="text"/><br>
+                <input type="text" id="codDocRec"/><br>
+                CF<br>
+                <input type="text" id="cfRec"><br>
                 <button onclick="">Save Receipt</button>
             </div>
         <p><button onclick="buyFn();" disabled>BUY</button></p><br/>
@@ -114,20 +116,44 @@
         if(document.cookie != ""){
             if(receipt){
                 alert("Ricetta");
+                var codRec = $("#codRec").val();
+                var dateRec = $("#dateRec").val();
+                var codDocRec = $("#codDocRec").val();
+                var cfRec = $("#cfRec").val();
+                if(codRec == "" || dateRec == "" || codDocRec == "" || cfRec == ""){
+                    alert("You must insert the data of the receipt before buying everything!");
+                    return;
+                }
+                var mask = /^[A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]{1}$/i;
+                if(!mask.test(cfRec)){
+                    alert("CF is not valid");
+                    return;
+                }
             }
             $(document).ready(function () {
                 $.ajax({
                     type: "POST",
                     url: "buyMedicines.do",
                     data: {
-                        medicine: document.cookie
+                        medicine: document.cookie,
+                        codRec: $("#codRec").val(),
+                        dateRec: $("#dateRec").val(),
+                        codDocRec: $("#codDocRec").val(),
+                        cfRec: $("#cfRec").val()
                     },
-                    success: function () {
-                        alert("All the medicines are bought!");
-                        document.cookie = "medicine=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-                        $('#suggestions').html("");
-                        $('#medicine').val("");
-                        document.getElementById("objects").innerHTML = "";
+                    success: function (responseText) {
+                        if(responseText != "") {
+                            alert(responseText);
+                        }
+                        else {
+                            alert("All the medicines are bought!");
+                            document.cookie = "medicine=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+                            $('#suggestions').html("");
+                            $('#medicine').val("");
+                            document.getElementById("objects").innerHTML = "";
+                            $("#formReceipt").css("height", "0px");
+                            $("#formReceipt").css("display", "none");
+                        }
                     }
                 });
             });
