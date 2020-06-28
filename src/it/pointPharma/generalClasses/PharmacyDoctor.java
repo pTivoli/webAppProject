@@ -53,14 +53,20 @@ public class PharmacyDoctor extends DeskOperator{
         try{
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try{
+                System.out.println(user.getCF());
                 Statement st = con.createStatement();
+                if(exists("persona", "codicefiscale", user.getCF())){
+                    con.close();
+                    throw new IllegalArgumentException("This user still exists in the DB");
+                }
                 String queryUtente = "INSERT INTO Persona VALUES ('"+user.getCF()+"','"+user.getfName()+"','"+user.getlName()+"','"+user.getDOB()+"');";
+                System.out.println(queryUtente);
                 st.executeUpdate(queryUtente);
             }catch(SQLException ex){
                 throw new Exception("Error DB");
             }
             con.close();
-        }catch(Exception e){
+        }catch(SQLException ex){
             throw new Exception("Error DB");
         }
     }
@@ -71,7 +77,8 @@ public class PharmacyDoctor extends DeskOperator{
             int count = 0;
             try{
                 Statement st = con.createStatement();
-                String query = "SELECT count(*) as count from "+table+" where "+field+" = '"+value+"';";
+                String query = "SELECT count(*) as count from "+table+" where "+field+" ILIKE '"+value+"';";
+                System.out.println(query);
                 ResultSet r = st.executeQuery(query);
                 r.next();
                 count = r.getInt("count");

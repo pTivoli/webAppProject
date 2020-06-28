@@ -22,7 +22,13 @@ public class RegisterUser extends Action {
         usr.setDOB(dob);
         HttpSession session = request.getSession(true);
         PharmacyDoctor pharmacyDoctor = (PharmacyDoctor)session.getAttribute("pharmacist");
-        pharmacyDoctor.registerUser(usr);
+        try {
+            pharmacyDoctor.registerUser(usr);
+        }catch (Exception e){
+            PrintWriter out = response.getWriter();
+            out.println(e.getMessage());
+            out.flush();
+        }
         return null;
     }
 }

@@ -59,7 +59,6 @@
                 <input type="text" id="codDocRec"/><br>
                 CF<br>
                 <input type="text" id="cfRec"><br>
-                <button onclick="">Save Receipt</button>
             </div>
         <p><button onclick="buyFn();" disabled>BUY</button></p><br/>
         <div id="objects"></div>
@@ -115,7 +114,6 @@
     function buyFn(){
         if(document.cookie != ""){
             if(receipt){
-                alert("Ricetta");
                 var codRec = $("#codRec").val();
                 var dateRec = $("#dateRec").val();
                 var codDocRec = $("#codDocRec").val();
@@ -171,12 +169,16 @@
                         lname: $("#lname").val(),
                         dob: $("#dob").val()
                     },
-                    success: function () {
-                        $('#cf').val("");
-                        $('#fname').val("");
-                        $('#lname').val("");
-                        $('#dob').val("");
-                        alert("User saved!");
+                    success: function (responseText) {
+                        if(responseText != ""){
+                            alert(responseText);
+                        }else {
+                            $('#cf').val("");
+                            $('#fname').val("");
+                            $('#lname').val("");
+                            $('#dob').val("");
+                            alert("User saved!");
+                        }
                     }
                 });
             });
