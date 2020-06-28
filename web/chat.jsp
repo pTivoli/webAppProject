@@ -114,14 +114,13 @@
                 $("#receiverType").attr("value", 0);
             else
                 $("#receiverType").attr("value", 1);
-            alert($("#receiverType").val());
             if($("#receiverType").val() == 0) {
                 $("#receiver").attr("value", $("#td"+i).text());
                 $("#receivers").html("");
                 readMessages();
             }
             else {
-                ("#receivers").html("");
+                $("#receivers").html("");
                 readMessagesGroup();
             }
     }
