@@ -35,12 +35,14 @@ public class readMessages extends Action {
                         "JOIN messaggio on timestmesssaggio = timest " +
                         "WHERE mailpersonaledest LIKE '" + receiverMail + "%'" +
                         "AND mailpersonalemitt LIKE '" + mail + "%'" +
+                        " AND groupchat='false'" +
                         "UNION " +
                         "SELECT mailpersonalemitt, timestmesssaggio, testo " +
                         "FROM destinatario_messaggio " +
                         "JOIN messaggio on timestmesssaggio = timest " +
                         "WHERE mailpersonaledest LIKE '" + mail + "%'" +
                         "AND mailpersonalemitt LIKE '" + receiverMail + "%'" +
+                        " AND groupchat='false'" +
                         ") res" +
                         " ORDER BY res.timestmesssaggio";
                 ResultSet rs = st.executeQuery(query);

@@ -14,8 +14,6 @@
     String lname = user.getlName();
     String fname = user.getfName();
     String email = user.getEmail();
-    Pharmacy ph = (Pharmacy) session.getAttribute("pharmacy");
-    String phName = ph.getName();
 %>
     <div>
         <p>Welcome <%= lname + " " + fname + " " + " " + email + "\n"%></p>
@@ -35,7 +33,7 @@
             <div class="rigth-foot">
                 <input id="receiverType" type="hidden" name="receiverType">
                 <input id="receiver" type="hidden" name="receiver">
-                <input id="message" type="text" name="message" placeholder="" required/>
+                <input id="message" type="text" name="message" placeholder="message" required/>
                 <button onclick="senF();">Send</button>
             </div>
         </div>
@@ -47,8 +45,9 @@
             if($("#receiverType").val() == 0) {
                 messages();
             }
-            else
+            else if($("#receiverType").val() == 1) {
                 messagesGroup();
+            }
         }
         function messages() {
             $(document).ready(function () {
@@ -119,11 +118,11 @@
             if($("#receiverType").val() == 0) {
                 $("#receiver").attr("value", $("#td"+i).text());
                 $("#receivers").html("");
-                readMessages(i);
+                readMessages();
             }
             else {
                 ("#receivers").html("");
-                readMessagesGroup(i);
+                readMessagesGroup();
             }
     }
     function readMessages() {

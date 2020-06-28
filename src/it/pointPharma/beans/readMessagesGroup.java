@@ -26,32 +26,28 @@ public class readMessagesGroup extends Action {
                 Statement st = con.createStatement();
                 String query = "";
                 if(ph instanceof REG)
-                    query = "SELECT personale_cfpersona FROM personale WHERE ruolopersonale='PM'";
+                    query = "SELECT DISTINCT mailpersonalemitt, timestmesssaggio, testo" +
+                            " FROM destinatario_messaggio" +
+                            " JOIN messaggio ON timestmesssaggio = timest" +
+                            " JOIN personale ON cfpersonaledest = personale_cfpersona" +
+                            " WHERE mailpersonalemitt LIKE '=" + ph.getEmail() + "'" +
+                            " AND groupchat = 'true'" +
+                            " AND ruolopersonale='PM'" +
+                            " ORDER BY timestmesssaggio";
                 else
-                    query = "SELECT personale_cfpersona FROM personale WHERE nomefarmacia LIKE '" + phy.getName() + "';";
+                    query = "SELECT DISTINCT mailpersonalemitt, timestmesssaggio, testo" +
+                            " FROM destinatario_messaggio" +
+                            " JOIN messaggio ON timestmesssaggio = timest" +
+                            " JOIN personale ON cfpersonaledest = personale_cfpersona" +
+                            " WHERE mailpersonalemitt LIKE '" + ph.getEmail() + "%'" +
+                            " AND groupchat = 'true'" +
+                            " AND nomefarmacia='" + phy.getName() + "'" +
+                            " ORDER BY timestmesssaggio";
                 ResultSet rs = st.executeQuery(query);
                 String ris = "";
                 while (rs.next())
                 {
-                    String queryInt = "SELECT mailpersonalemitt, timestmesssaggio, testo FROM (" +
-                            "SELECT mailpersonalemitt, timestmesssaggio, testo " +
-                            "FROM destinatario_messaggio " +
-                            "JOIN messaggio on timestmesssaggio = timest " +
-                            "WHERE cfpersonaledest LIKE '" + rs.getString(0) + "%'" +
-                            "AND mailpersonalemitt LIKE '" + ph.getEmail() + "%'" +
-                            "UNION " +
-                            "SELECT mailpersonalemitt, timestmesssaggio, testo " +
-                            "FROM destinatario_messaggio " +
-                            "JOIN messaggio on timestmesssaggio = timest " +
-                            "WHERE mailpersonaledest LIKE '" + ph.getEmail() + "%'" +
-                            "AND cfpersonaledest LIKE '" + rs.getString(0) + "%'" +
-                            ") res" +
-                            " ORDER BY res.timestmesssaggio";
-                    ResultSet rs2 = st.executeQuery(queryInt);
-                    while(rs2.next())
-                    {
-                        ris = ris.concat(rs2.getString(0) + ";" + rs2.getString(1) + ";");
-                    }
+                    ris = ris.concat(rs.getString("mailpersonalemitt") + ";" + rs.getString("testo") + ";");
                 }
                 PrintWriter out = response.getWriter();
                 out.println(ris);

@@ -51,7 +51,8 @@ public class messagesGroup extends Action {
                             mail + "','" +
                             ph.getCF() + "','" +
                             ph.getEmail() + "','" +
-                            ts + "');"                            ;
+                            ts + "','" +
+                            true + "');";
                     st2.executeUpdate(receiverMessage);
                 }
             } catch (SQLException e)

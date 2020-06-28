@@ -37,7 +37,7 @@ public class messages extends Action {
                 }
                 String sendMessage = "INSERT INTO messaggio VALUES ('" + tm + "', '" + message + "', '" + cf + "', '" + email + "');";
                 st.executeUpdate(sendMessage);
-                String receiverUpdate = "INSERT INTO destinatario_messaggio VALUES ('" + cfReceiver + "', '" + mailReceiver + "', '" + cf + "', '" + email + "', '" + tm + "');";
+                String receiverUpdate = "INSERT INTO destinatario_messaggio VALUES ('" + cfReceiver + "', '" + mailReceiver + "', '" + cf + "', '" + email + "', '" + tm + "', 'false');";
                 st.executeUpdate(receiverUpdate);
             }catch (SQLException e){
                 throw new Exception("Errore DB");
