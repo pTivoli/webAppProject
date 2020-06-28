@@ -29,6 +29,7 @@
             String pharmPN = pharm.getPhoneNumber();
             String pharmCFPM = pharm.getPharmacyManager().getCF();
             String pharmEmail = pharm.getPharmacyManager().getEmail();
+
         %>
         <script src="../JS/JQuery.js"></script>
         <script>

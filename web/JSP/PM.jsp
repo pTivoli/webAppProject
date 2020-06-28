@@ -256,7 +256,7 @@
         var fname = $("#fnameP").val();
         var lname = $("#lnameP").val();
         var dob = $("#dobP").val();
-        var usr = $("#dobP").val();
+        var usr = $("#usr").val();
         var pwd = $("#pwd").val();
         var pwdCheck = $("#pwdCheck").val();
         if(validatePharmacistData(cf, fname, lname, dob, usr, pwd, pwdCheck) == true) {
