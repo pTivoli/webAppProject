@@ -89,13 +89,13 @@
         <input id="pwd"  name="pwd" type="password" required><br>
         Password confirmation<br>
         <input id="pwdCheck"  name="pwdCheck" type="password" required><br>
-        Pharmacist Doctor
-        <input type="radio" id="pharmacistDoctor" name="role" value="PD">
-        Desk Operator
-        <input type="radio" id="deskOperator" name="role" value="DO" checked>
-        <button onclick="registerPharmacist()">REGISTER</button>
+        Pharmacist Doctor<br>
+        <input type="radio" id="pharmacistDoctor" name="role" value="PD"><br>
+        Desk Operator<br>
+        <input type="radio" id="deskOperator" name="role" value="DO" checked><br>
+        <button onclick="registerPharmacist()">REGISTER</button><br>
     </div>
-    <a href="JSP/PharmacistManagerDashboard.jsp">MIAO</a>
+    <a href="JSP/PharmacistManagerDashboard.jsp" id="dashboardButton">D<br>A<br>S<br>H<br>B<br>O<br>A<br>R<br>D<br></a>
 </div>
 <script src="JS/JQuery.js"></script>
 <script>
@@ -273,15 +273,19 @@
                         pwd: $("#pwd").val(),
                         role: $('input[name="role"]:checked').val()
                     },
-                    success: function () {
-                        $('#cfP').val("");
-                        $('#fnameP').val("");
-                        $('#lnameP').val("");
-                        $('#dobP').val("");
-                        $("#usr").val("");
-                        $("#pwd").val("");
-                        $("#pwdCheck").val("");
-                        alert("A New Pharmacist has been created successfully!");
+                    success: function (responseText) {
+                        if(responseText != ""){
+                            alert(responseText);
+                        }else {
+                            $('#cfP').val("");
+                            $('#fnameP').val("");
+                            $('#lnameP').val("");
+                            $('#dobP').val("");
+                            $("#usr").val("");
+                            $("#pwd").val("");
+                            $("#pwdCheck").val("");
+                            alert("A New Pharmacist has been created successfully!");
+                        }
                     }
                 });
             });
