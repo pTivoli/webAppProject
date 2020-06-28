@@ -46,9 +46,9 @@
                         success: function (responseText) {
                             var str = responseText.split(";");
                             var i;
+                            document.getElementById("dataTxt").innerHTML += "<div id='getChartNumberDrugsPharmacies'></div>";
                             for(i = 0; i < str.length - 1; i+=2){
-                                var obj = document.getElementById("dataTxt").innerHTML;
-                                document.getElementById("dataTxt").innerHTML= obj + "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> </div>";
+                                document.getElementById("getChartNumberDrugsPharmacies").innerHTML += "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> </div>";
                             }
                         }
                     });
@@ -68,9 +68,9 @@
                         success: function (responseText) {
                             var str = responseText.split(";");
                             var i;
+                            document.getElementById("dataTxt").innerHTML += "<div id='getChartPharmacies'></div>";
                             for(i = 0; i < str.length - 1; i+=2){
-                                var obj = document.getElementById("dataTxt").innerHTML;
-                                document.getElementById("dataTxt").innerHTML= obj + "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> </div>";
+                                document.getElementById("getChartPharmacies").innerHTML += "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> </div>";
                             }
                         }
                     });
@@ -90,9 +90,9 @@
                         success: function (responseText) {
                             var str = responseText.split(";");
                             var i;
+                            document.getElementById("dataTxt").innerHTML += "<div id='getChartPharmacists'></div>";
                             for(i = 0; i < str.length-1; i+=2){
-                                var obj = document.getElementById("dataTxt").innerHTML;
-                                document.getElementById("dataTxt").innerHTML= obj + "<div class=\"dataTxtObj\"> <p>"+str[i+1]+" </p> <p>"+str[i]+"</p> </div>";
+                                document.getElementById("getChartPharmacists").innerHTML += "<div class=\"dataTxtObj\"> <p>"+str[i+1]+" </p> <p>"+str[i]+"</p> </div>";
                             }
                         }
                     });
@@ -112,9 +112,9 @@
                         success: function (responseText) {
                             var str = responseText.split(";");
                             var i;
+                            document.getElementById("dataTxt").innerHTML += "<div id='getDrugsMoreSold'></div>";
                             for(i = 0; i < str.length-1; i+=2){
-                                var obj = document.getElementById("dataTxt").innerHTML;
-                                document.getElementById("dataTxt").innerHTML= obj + "<div class=\"dataTxtObj\"> <p>"+str[i+1]+": </p> <p>"+str[i]+"</p> </div>";
+                                document.getElementById("getDrugsMoreSold").innerHTML += "<div class=\"dataTxtObj\"> <p>"+str[i+1]+": </p> <p>"+str[i]+"</p> </div>";
                             }
                         }
                     });
@@ -157,6 +157,7 @@
             $(document).ready(function () {
                 getGeneralNumberItems();
                 getPiecesSold();
+
                 getDrugsMoreSold();
                 getChartPharmacists();
                 getChartPharmacies();
