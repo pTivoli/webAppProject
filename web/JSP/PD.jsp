@@ -50,6 +50,15 @@
     </div>
     <div id="cart">
         <p>CART</p><br/>
+            <div id="formReceipt">
+                Codice Ricetta<br>
+                <input type="text"/><br>
+                Data Ricetta<br>
+                <input type="date"/><br>
+                Codice Medico<br>
+                <input type="text"/><br>
+                <button onclick="">Save Receipt</button>
+            </div>
         <p><button onclick="buyFn();" disabled>BUY</button></p><br/>
         <div id="objects"></div>
     </div>
@@ -71,7 +80,11 @@
     function cookieCart(codeMed, nameMed, receiptMedicine){
         var obj = document.getElementById("objects").innerHTML;
         document.getElementById("objects").innerHTML= obj + "<p>"+nameMed+"</p><br>";
-        if(receiptMedicine == 't') receipt = true;
+        if(receiptMedicine == 't'){
+            receipt = true;
+            $("#formReceipt").css("display", "block");
+            $("#formReceipt").css("height", "50%");
+        }
         if(document.cookie == ""){
             $("#cart button").prop("disabled", false);
             document.cookie = "medicine=" + codeMed + "," + nameMed + ",";

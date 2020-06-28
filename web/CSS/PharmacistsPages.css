@@ -111,7 +111,7 @@ body{
     font-size: 1.2em;
     text-align: center;
 }
-#registerUser{
+#registerUser, #formReceipt{
     width: 25%;
     height: auto;
     background-color: rgba(255,255,255,0.8);
@@ -121,7 +121,7 @@ body{
     text-align: center;
     padding: 10px;
 }
-#registerUser > input[type=text], #registerUser > input[type=date]{
+#registerUser > input[type=text], #registerUser > input[type=date], #formReceipt > input[type=text], #formReceipt > input[type=date]{
     text-align: center;
     border: 2px solid orange;
     margin: 5px;
@@ -129,7 +129,7 @@ body{
     border-radius: 25px 25px 0px 25px;
     width: 100%;
 }
-#registerUser button{
+#registerUser button, #formReceipt button{
     background-color: orangered;
     font-size: 1.2em;
     border: 0;
@@ -137,4 +137,15 @@ body{
     border-radius: 25px 25px 0px 25px;
     width: 100%;
     padding: 5px;
+}
+#formReceipt{
+    width: auto;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    display: none;
+    height: 0px;
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    overflow: hidden;
 }
