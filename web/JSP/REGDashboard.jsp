@@ -16,8 +16,10 @@
         </header>
 
         <div id="dataTxt">
-            <div class="dataTxtObj"> <p>Prova1: </p> <p id="dataTxtObj1">--</p> </div>
-            <div class="dataTxtObj"> <p>Prova2: </p> <p id="dataTxtObj2">--</p></div>
+            <div class="dataTxtObj"> <p>Pharmacies: </p><p id="dataTxtObj1"></p> </div>
+            <div class="dataTxtObj"> <p>Sales: </p> <p id="dataTxtObj2"></p></div>
+            <div class="dataTxtObj"> <p>Most Sold Medicine: </p> <p id="dataTxtObj3"></p></div>
+            <div class="dataTxtObj"> <p>PlaceHolder: </p> <p id="dataTxtObj4"></p></div>
         </div>
 
         <%
@@ -46,12 +48,69 @@
                             stat: "getTotalSalesPerPharmacy"
                         },
                         success: function(responseText){
+                            var str = responseText.split(";");
+                            var i;
+                            document.getElementById("dataTxtObj2").innerHTML += "<div id='getTotalSalesPerPharmacy'></div>";
+                            for(i = 0; i < str.length - 2; i += 3){
+                                document.getElementById("getTotalSalesPerPharmacy").innerHTML  += "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> <p>" + str[i + 2] + "</p> </div>";
+                            }
+                        }
+                    });
+                });
+            }
+            function getPharmacyInfo(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getPharmacyInfo.do",
+                        data: {
+                            regFName: "<%= regFName%>",
+                            regLName: "<%= regLName%>",
+                            regCF: "<%= regCF%>",
+                            regEmail: "<%= regEmail%>",
+                            regDoB: "<%= regDoB%>",
+                            stat: "getPharmacyInfo"
+                        },
+                        success: function(responseText){
+                            var str = responseText.split(";");
+                            var i;
+                            document.getElementById("dataTxtObj1").innerHTML += "<div id='getPharmacyInfo'></div>";
+                            for(i = 0; i < str.length - 3; i += 4){
+                                document.getElementById("getPharmacyInfo").innerHTML  += "<div class=\"dataTxtObj\"> <p>" + str[i] + "</p> <p>" + str[i+1] + " " + str[i+2] +"</p> <p>" + str[i+3] + "</p></div>";
+                            }
+                        }
+                    });
+                });
+            }
+            function getMostSoldMeds(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getTotalSalesPerPharmacy.do",
+                        data: {
+                            regFName: "<%= regFName%>",
+                            regLName: "<%= regLName%>",
+                            regCF: "<%= regCF%>",
+                            regEmail: "<%= regEmail%>",
+                            regDoB: "<%= regDoB%>",
+                            stat: "getMostSoldMeds"
+                        },
+                        success: function(responseText){
+                            var str = responseText.split(";");
+                            var i = 0;
+                            document.getElementById("dataTxtObj3").innerHTML += "<div id='getMostSoldMeds'></div>";
+                            document.getElementById("getMostSoldMeds").innerHTML  += "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p></div>";
 
                         }
-                    })
-                })
+                    });
+                });
             }
 
+            $(document).ready(function () {
+                getPharmacyInfo();
+                getTotalSalesPerPharmacy();
+                getMostSoldMeds();
+            });
 
         </script>
 

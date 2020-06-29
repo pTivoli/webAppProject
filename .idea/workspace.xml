@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/it/pointPharma/dashboardTools/RegStatFinder.java" />
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="REGDashboard views all pharmacies with PM+email, top selling pharmacies+sales, top selling medicine">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/CSS/dashboards.css" afterPath="$PROJECT_DIR$/web/CSS/dashboards.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/PM.jsp" afterPath="$PROJECT_DIR$/web/JSP/PM.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/PharmacistManagerDashboard.jsp" afterPath="$PROJECT_DIR$/web/JSP/PharmacistManagerDashboard.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/it/pointPharma/dashboardTools/RegStatFinder.java" afterPath="$PROJECT_DIR$/src/it/pointPharma/dashboardTools/RegStatFinder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/REGDashboard.jsp" afterPath="$PROJECT_DIR$/web/JSP/REGDashboard.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/struts-config.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/struts-config.xml" />
     </list>
@@ -28,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="REGDashboard.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="REGDashboard.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/JSP/REGDashboard.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="45" column="59" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="59" />
+            <state relative-caret-position="196">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -41,40 +38,36 @@
       <file leaf-file-name="RegStatFinder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/it/pointPharma/dashboardTools/RegStatFinder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="95" column="34" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1593394749597" expanded="true" signature="1975:2313" ph="select nomef... " />
+                <marker date="1593394749597" expanded="true" signature="3174:3404" ph="select nomef... " />
+                <marker date="1593394749597" expanded="true" signature="4284:4760" ph="select sum(a... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DDL.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DDL.sql">
+      <file leaf-file-name="struts-config.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/struts-config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="36" column="8" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="8" />
+            <state relative-caret-position="-1376">
+              <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DML.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DML.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-128">
-              <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-              <folding />
-            </state>
+          <provider editor-type-id="com.intellij.struts.diagram.DiagramEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="StatFinder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/it/pointPharma/dashboardTools/StatFinder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="62" column="30" selection-start-line="61" selection-start-column="16" selection-end-line="62" selection-end-column="30" />
+            <state relative-caret-position="308">
+              <caret line="139" column="9" selection-start-line="112" selection-start-column="4" selection-end-line="139" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1593293865325" expanded="true" signature="2610:3162" ph="select sum(a... " />
@@ -88,24 +81,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="struts-config.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/struts-config.xml">
+      <file leaf-file-name="DDL.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DDL.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="75" column="51" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="51" />
+            <state relative-caret-position="672">
+              <caret line="36" column="8" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="8" />
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="com.intellij.struts.diagram.DiagramEditorProvider">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="PharmacistManagerDashboard.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/JSP/PharmacistManagerDashboard.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="152" column="65" selection-start-line="152" selection-start-column="65" selection-end-line="152" selection-end-column="65" />
+            <state relative-caret-position="135">
+              <caret line="127" column="51" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -149,10 +139,10 @@
         <option value="$PROJECT_DIR$/web/CSS/dashboards.css" />
         <option value="$PROJECT_DIR$/web/JSP/PM.jsp" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/dashboardTools/StatFinder.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/struts-config.xml" />
-        <option value="$PROJECT_DIR$/web/JSP/REGDashboard.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/PharmacistManagerDashboard.jsp" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/dashboardTools/RegStatFinder.java" />
+        <option value="$PROJECT_DIR$/web/JSP/REGDashboard.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/struts-config.xml" />
       </list>
     </option>
   </component>
@@ -236,6 +226,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pointPharma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pointPharma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beans" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -882,7 +912,7 @@
       <option name="presentableId" value="Default" />
       <updated>1593291363330</updated>
       <workItem from="1593291364971" duration="13098000" />
-      <workItem from="1593336584368" duration="17284000" />
+      <workItem from="1593336584368" duration="30209000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -891,11 +921,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593301483590</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="work started for REGDashboard and RegStatFinder">
+      <created>1593379617616</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1593379617616</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30382000" />
+    <option name="totallyTimeSpent" value="43307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1013" extended-state="6" />
@@ -903,7 +940,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16728625" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18091698" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -911,7 +948,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16976456" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24039653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29739776" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Struts Assistant" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -945,7 +982,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg" />
-    <option name="LAST_COMMIT_MESSAGE" value="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg" />
+    <MESSAGE value="work started for REGDashboard and RegStatFinder" />
+    <MESSAGE value="REGDashboard views all pharmacies with PM+email, top selling pharmacies+sales, top selling medicine" />
+    <option name="LAST_COMMIT_MESSAGE" value="REGDashboard views all pharmacies with PM+email, top selling pharmacies+sales, top selling medicine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1205,29 +1244,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/struts-config.xml">
+    <entry file="file://$PROJECT_DIR$/web/JS/JQuery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="75" column="51" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="-288">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.struts.diagram.DiagramEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/PharmacistManagerDashboard.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="152" column="65" selection-start-line="152" selection-start-column="65" selection-end-line="152" selection-end-column="65" />
+        <state relative-caret-position="135">
+          <caret line="127" column="51" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DML.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="29" column="147" selection-start-line="29" selection-start-column="131" selection-end-line="29" selection-end-column="147" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DDL.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="36" column="8" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/it/pointPharma/dashboardTools/StatFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="62" column="30" selection-start-line="61" selection-start-column="16" selection-end-line="62" selection-end-column="30" />
+        <state relative-caret-position="308">
+          <caret line="139" column="9" selection-start-line="112" selection-start-column="4" selection-end-line="139" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1593293865325" expanded="true" signature="2610:3162" ph="select sum(a... " />
@@ -1240,38 +1294,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DDL.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="36" column="8" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DML.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-128">
-          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/pointPharma/dashboardTools/RegStatFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="95" column="34" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1593394749597" expanded="true" signature="1975:2313" ph="select nomef... " />
+            <marker date="1593394749597" expanded="true" signature="3174:3404" ph="select nomef... " />
+            <marker date="1593394749597" expanded="true" signature="4284:4760" ph="select sum(a... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/REGDashboard.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="45" column="59" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="59" />
+        <state relative-caret-position="196">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/struts-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1376">
+          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.struts.diagram.DiagramEditorProvider">
+        <state />
       </provider>
     </entry>
   </component>
