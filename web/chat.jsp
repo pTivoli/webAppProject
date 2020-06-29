@@ -18,7 +18,7 @@
     <div>
         <p>Welcome <%= lname + " " + fname + " " + " " + email + "\n"%></p>
         <div class="left-pane" >
-            <input type="text" name="receiver" id="recMail" onkeyup="lfReceiver();">
+            <input type="text" name="receiver" id="recMail" autocomplete="off" onpaste="return false;" onkeyup="lfReceiver();">
             <div id="receivers">
 
             </div>
@@ -33,7 +33,7 @@
             <div class="rigth-foot">
                 <input id="receiverType" type="hidden" name="receiverType">
                 <input id="receiver" type="hidden" name="receiver">
-                <input id="message" type="text" name="message" placeholder="message" required/>
+                <input id="message" type="text" name="message" placeholder="message" autocomplete="off" onpaste="return false;" required/>
                 <button onclick="senF();">Send</button>
             </div>
         </div>

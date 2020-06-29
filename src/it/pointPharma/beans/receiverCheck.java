@@ -26,6 +26,7 @@ public class receiverCheck extends Action {
                 Pharmacy phy = (Pharmacy)session.getAttribute("pharmacy");
                 Pharmacist ph = (Pharmacist)session.getAttribute("pharmacist");
                 String query = "";
+                if(request.getParameter("message").contains("%")) return null;
                if(ph instanceof REG)
                {
                    query = "SELECT mail FROM personale WHERE ruolopersonale='PM' AND mail LIKE '" + hint + "%';";
