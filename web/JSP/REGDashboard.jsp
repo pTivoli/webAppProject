@@ -7,7 +7,7 @@
 <html>
     <head>
         <title>Dashboard</title>
-        <link rel="stylesheet" href="../CSS/dashboards.css"/>
+        <link rel="stylesheet" href="../CSS/dashboardREG.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
