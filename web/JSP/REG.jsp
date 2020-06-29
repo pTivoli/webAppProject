@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
-        <title>
-            REG
-        </title>
+        <title>REG</title>
+        <link rel="stylesheet" href="CSS/Stylesheet.css"/>
+        <link rel="stylesheet" href="CSS/PharmacistsPages.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <h1>REG Page!</h1>

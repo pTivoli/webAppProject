@@ -1,13 +1,9 @@
 <%@ page import="it.pointPharma.generalClasses.REG" %>
-<%@ page import="java.sql.*" %>
-<%@ page import="java.util.LinkedList" %>
-<%@ page import="it.pointPharma.generalClasses.Pharmacy" %>
-<%@ page import="it.pointPharma.generalClasses.PharmacistManager" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
         <title>Dashboard</title>
-        <link rel="stylesheet" href="../CSS/dashboardREG.css"/>
+        <link rel="stylesheet" type="text/css" href="../CSS/REGDashboard.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
@@ -15,11 +11,33 @@
             REG Dashboard
         </header>
 
-        <div id="dataTxt">
-            <div class="dataTxtObj"> <p>Pharmacies: </p><p id="dataTxtObj1"></p> </div>
-            <div class="dataTxtObj"> <p>Sales: </p> <p id="dataTxtObj2"></p></div>
-            <div class="dataTxtObj"> <p>Most Sold Medicine: </p> <p id="dataTxtObj3"></p></div>
-            <div class="dataTxtObj"> <p>PlaceHolder: </p> <p id="dataTxtObj4"></p></div>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-item-header" id="aic1">See All Pharmacies</div>
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        <div class="dataTxtObj"> <p id="dataTxtObj1"></p> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-item-header" id="aic2">See Total Sales from All Pharmacies</div>
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        <div class="dataTxtObj"><p id="dataTxtObj2"></p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-item-header" id="aic3">Most Sold Medicine</div>
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        <div class="dataTxtObj"><p id="dataTxtObj3"></p></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <%
@@ -32,6 +50,24 @@
         %>
 
         <script src="../JS/JQuery.js"></script>
+
+        <script>
+
+            $(function(){
+                $('#aic1').on('click', function(){
+                    $('#aic1').toggleClass("active");
+                });
+
+                $('#aic2').on('click', function(){
+                    $('#aic2').toggleClass("active");
+                });
+
+                $('#aic3').on('click', function(){
+                    $('#aic3').toggleClass("active");
+                });
+            });
+
+        </script>
 
         <script>
             function getTotalSalesPerPharmacy(){
