@@ -23,25 +23,37 @@ public class messages extends Action {
         String message = (String) request.getParameter("message");
         Date d = new Date();
         Timestamp tm = new Timestamp(d.getTime());
-        String mailReceiver = (String) request.getParameter("receiver");
+        String receiver = (String) request.getParameter("receiver");
+        String receiverMail;
         String cfReceiver = "";
         try {
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
-            try {
-                Statement st = con.createStatement();
-                String retrieveReceiverInfo = "SELECT * FROM personale WHERE personale.mail='"+mailReceiver+"';";
+            Statement st = con.createStatement();
+            if(receiver.equals("REG"))
+            {
+                String retrieveReceiverInfo = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale='REG'";
                 ResultSet rs = st.executeQuery(retrieveReceiverInfo);
-                while (rs.next())
-                {
+                while (rs.next()) {
                     cfReceiver = rs.getString("personale_cfpersona");
+                    receiver = rs.getString("mail");
                 }
-                String sendMessage = "INSERT INTO messaggio VALUES ('" + tm + "', '" + message + "', '" + cf + "', '" + email + "');";
-                st.executeUpdate(sendMessage);
-                String receiverUpdate = "INSERT INTO destinatario_messaggio VALUES ('" + cfReceiver + "', '" + mailReceiver + "', '" + cf + "', '" + email + "', '" + tm + "', 'false');";
-                st.executeUpdate(receiverUpdate);
-            }catch (SQLException e){
-                throw new Exception("Errore DB");
             }
+            else {
+                try {
+                    String retrieveReceiverInfo = "SELECT personale_cfpersona, mail FROM personale WHERE personale.mail='" + receiver + "';";
+                    ResultSet rs = st.executeQuery(retrieveReceiverInfo);
+                    while (rs.next()) {
+                        cfReceiver = rs.getString("personale_cfpersona");
+                        receiver = rs.getString("mail");
+                    }
+                } catch (SQLException e) {
+                    throw new Exception("Errore DB");
+                }
+            }
+            String sendMessage = "INSERT INTO messaggio VALUES ('" + tm + "', '" + message + "', '" + cf + "', '" + email + "');";
+            st.executeUpdate(sendMessage);
+            String receiverUpdate = "INSERT INTO destinatario_messaggio VALUES ('" + cfReceiver + "', '" + receiver + "', '" + cf + "', '" + email + "', '" + tm + "', 'false');";
+            st.executeUpdate(receiverUpdate);
         }catch (SQLException e){
             throw new Exception("Errore ACCESSO");
         }

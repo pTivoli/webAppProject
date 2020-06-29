@@ -112,8 +112,11 @@
             $("#TOP").html("Texting to: " + $("#td"+i).text());
             if($("#td"+i).text().indexOf("@") > -1)
                 $("#receiverType").attr("value", 0);
-            else
+            else if($("#td"+i).text().indexOf("@") > 0)
                 $("#receiverType").attr("value", 1);
+            else
+                $("#receiverType").attr("value", 0);
+            alert($("#receiverType").attr("value"));
             if($("#receiverType").val() == 0) {
                 $("#receiver").attr("value", $("#td"+i).text());
                 $("#receivers").html("");
@@ -131,7 +134,7 @@
                 type: "POST",
                 url: "readMessages.do",
                 data: {
-                    receiverMail: receiverMail
+                    receiver: receiverMail
                 },
                 success: function (result) {
                     $("#rec-Messages").html(createMessages(result))

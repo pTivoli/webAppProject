@@ -28,12 +28,12 @@ public class readMessages extends Action {
                 HttpSession session = request.getSession(true);
                 Pharmacist ph = (Pharmacist)session.getAttribute("pharmacist");
                 String mail = ph.getEmail();
-                String receiverMail = request.getParameter("receiverMail");
+                String receiver = request.getParameter("receiver");
                 String query = "SELECT mailpersonalemitt, timestmesssaggio, testo FROM (" +
                         "SELECT mailpersonalemitt, timestmesssaggio, testo " +
                         "FROM destinatario_messaggio " +
                         "JOIN messaggio on timestmesssaggio = timest " +
-                        "WHERE mailpersonaledest LIKE '" + receiverMail + "%'" +
+                        "WHERE mailpersonaledest LIKE '" + receiver + "%'" +
                         "AND mailpersonalemitt LIKE '" + mail + "%'" +
                         " AND groupchat='false'" +
                         "UNION " +
@@ -41,7 +41,7 @@ public class readMessages extends Action {
                         "FROM destinatario_messaggio " +
                         "JOIN messaggio on timestmesssaggio = timest " +
                         "WHERE mailpersonaledest LIKE '" + mail + "%'" +
-                        "AND mailpersonalemitt LIKE '" + receiverMail + "%'" +
+                        "AND mailpersonalemitt LIKE '" + receiver + "%'" +
                         " AND groupchat='false'" +
                         ") res" +
                         " ORDER BY res.timestmesssaggio";

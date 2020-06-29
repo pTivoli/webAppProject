@@ -26,7 +26,7 @@ public class receiverCheck extends Action {
                 Pharmacy phy = (Pharmacy)session.getAttribute("pharmacy");
                 Pharmacist ph = (Pharmacist)session.getAttribute("pharmacist");
                 String query = "";
-                if(request.getParameter("message").contains("%")) return null;
+                if(request.getParameter("hint").contains("%")) return null;
                if(ph instanceof REG)
                {
                    query = "SELECT mail FROM personale WHERE ruolopersonale='PM' AND mail LIKE '" + hint + "%';";
@@ -45,10 +45,17 @@ public class receiverCheck extends Action {
                {
                    ris = ris.concat(rs.getString("mail") + ";");
                }
-                if(ph instanceof REG)
-                    ris = ris.concat("PM;");
-                else if(ph instanceof PharmacistManager)
-                    ris = ris.concat(phy.getName() + ";");
+                if(ph instanceof REG) {
+                    if ("PM".contains(hint.toUpperCase())) {
+                        ris = ris.concat("PM;");
+                    }
+                }
+                else if(ph instanceof PharmacistManager) {
+                    if (phy.getName().toLowerCase().contains(hint.toLowerCase()))
+                        ris = ris.concat(phy.getName() + ";");
+                    if("REG".contains(hint.toUpperCase()))
+                        ris = ris.concat("REG;");
+                }
                 PrintWriter out = response.getWriter();
                 out.println(ris);
                 out.flush();
