@@ -150,6 +150,12 @@
                 }else
                     return false;
             }
+            $(document).ready(function () {
+                $("#header").css("width", "100%");
+                $("#header").css("color", "black");
+                $("#openChat").css("border-radius", "50px 50px 50px 0px");
+                $("#openDashboard").css("border-radius", "50px");
+            });
         </script>
     </body>
 </html>
