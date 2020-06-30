@@ -48,7 +48,7 @@ public class PharmacyDoctor extends DeskOperator{
                     con.close();
                     throw new IllegalArgumentException("This user still exists in the DB");
                 }
-                String queryUtente = "INSERT INTO Persona VALUES ('"+user.getCF()+"','"+user.getfName()+"','"+user.getlName()+"','"+user.getDOB()+"');";
+                String queryUtente = "INSERT INTO Persona VALUES ('"+user.getCF()+"','"+user.getfName()+"','"+user.getlName()+"','"+user.getDOB()+"', '"+this.getCF()+"', '"+this.getEmail()+"');";
                 st.executeUpdate(queryUtente);
             }catch(SQLException ex){
                 throw new Exception("Error DB");
