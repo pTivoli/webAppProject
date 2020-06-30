@@ -2,7 +2,7 @@ create table Persona(
   codiceFiscale char(16) primary key,
   nome varchar(20) not null,
   cognome varchar(20) not null,
-  dataNascita date
+  dataNascita date,
 );
 
 create table Medico(

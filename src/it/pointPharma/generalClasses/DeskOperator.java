@@ -18,16 +18,17 @@ public class DeskOperator extends Pharmacist {
                 Timestamp timestamp = new Timestamp(System.currentTimeMillis());
                 String timest = timestamp.toString();
                 queryPurchase = ("INSERT INTO Acquisto VALUES('" + timest + "' , '" + this.getCF() + "', '" + this.getEmail() + "', null ," + totalCost + ")");
-                System.out.println(queryPurchase);
+                //System.out.println(queryPurchase);
                 st.executeUpdate(queryPurchase);
                 for (Medicine m  : medicineLinkedList ){
-                    if(!examined.contains(m)){
+                    if(!(isIn(m, examined))){
                         examined.add(m);
                         int quantity = countDuplicates(medicineLinkedList, m);
                         queryMedPurchase = "INSERT INTO Acquisto_Farmaco VALUES('"+quantity+"', '"+timest+"' , '"+this.getCF()+"', '"+m.getCode()+"')";
-                        System.out.println(queryMedPurchase);
+                        //System.out.println(queryMedPurchase);
                         st.executeUpdate(queryMedPurchase);
                     }
+
                     totalCost += m.getCost();
                     mqty = "update magazzino_farmaco as mf \n" +
                             "set quantita = mf.quantita - 1 \n" +
@@ -59,4 +60,12 @@ public class DeskOperator extends Pharmacist {
         return count;
     }
 
+    private boolean isIn(Medicine m, LinkedList<Medicine> examined){
+        for(Medicine in : examined){
+            if(m.getCode() == in.getCode()){
+                return true;
+            }
+        }
+        return false;
+    }
 }
