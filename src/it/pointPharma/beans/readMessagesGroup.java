@@ -55,30 +55,41 @@ public class readMessagesGroup extends Action {
                     ResultSet rs2 = st2.executeQuery(retrieveReceivers);
                     while (rs2.next())
                     {
-                        query = "SELECT DISTINCT res.mailpersonalemitt, res.timestmesssaggio, res.testo FROM (" +
-                                "SELECT mailpersonalemitt, timestmesssaggio, testo " +
-                                "FROM destinatario_messaggio " +
-                                "JOIN messaggio on timestmesssaggio = timest " +
-                                "WHERE mailpersonaledest LIKE '" + rs2.getString("mail") + "%'" +
-                                "AND mailpersonalemitt LIKE '" + ph.getEmail() + "%'" +
-                                " AND groupchat='true'" +
-                                "UNION " +
-                                "SELECT mailpersonalemitt, timestmesssaggio, testo " +
-                                "FROM destinatario_messaggio " +
-                                "JOIN messaggio on timestmesssaggio = timest " +
-                                "WHERE mailpersonaledest LIKE '" + ph.getEmail() + "%'" +
-                                "AND mailpersonalemitt LIKE '" + rs2.getString("mail") + "%'" +
-                                " AND groupchat='true'" +
-                                ") res" +
-                                " ORDER BY res.timestmesssaggio";
-                        ResultSet rs = st.executeQuery(query);
-                        while (rs.next())
+                        if(rs2.getString("mail").equals(ph.getEmail()))
                         {
-                            ris = ris.concat(rs.getString("mailpersonalemitt") + ";" + rs.getString("testo") + ";");
+                            query = "SELECT mailpersonalemitt, timestmesssaggio, testo " +
+                                    "FROM destinatario_messaggio " +
+                                    "JOIN messaggio on timestmesssaggio = timest " +
+                                    "AND mailpersonalemitt LIKE '" + rs2.getString("mail") + "'" +
+                                    " AND groupchat='true'" +
+                                    "ORDER BY timestmesssaggio";
+                        } else
+                            query = "SELECT DISTINCT res.mailpersonalemitt, res.timestmesssaggio, res.testo FROM (" +
+                                    "SELECT mailpersonalemitt, timestmesssaggio, testo " +
+                                    "FROM destinatario_messaggio " +
+                                    "JOIN messaggio on timestmesssaggio = timest " +
+                                    "WHERE mailpersonaledest LIKE '" + rs2.getString("mail") + "%'" +
+                                    "AND mailpersonalemitt LIKE '" + ph.getEmail() + "%'" +
+                                    " AND groupchat='true'" +
+                                    "UNION " +
+                                    "SELECT mailpersonalemitt, timestmesssaggio, testo " +
+                                    "FROM destinatario_messaggio " +
+                                    "JOIN messaggio on timestmesssaggio = timest " +
+                                    "WHERE mailpersonaledest LIKE '" + ph.getEmail() + "%'" +
+                                    "AND mailpersonalemitt LIKE '" + rs2.getString("mail") + "%'" +
+                                    " AND groupchat='true'" +
+                                    ") res" +
+                                    " ORDER BY res.timestmesssaggio";
+
+                        if(ph instanceof PharmacyDoctor || ph instanceof DeskOperator) {
+                            ResultSet rs = st.executeQuery(query);
+                            while (rs.next()) {
+                                ris = ris.concat(rs.getString("mailpersonalemitt") + ";" + rs.getString("testo") + ";");
+                            }
                         }
                     }
                 }
-                if(ph instanceof REG || ph instanceof PharmacyDoctor) {
+                if(ph instanceof REG || ph instanceof PharmacistManager) {
                     ResultSet rs = st.executeQuery(query);
                     while (rs.next()) {
                         ris = ris.concat(rs.getString("mailpersonalemitt") + ";" + rs.getString("testo") + ";");
