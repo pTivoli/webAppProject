@@ -3,43 +3,39 @@
     <head>
         <title>REG</title>
         <link rel="stylesheet" href="CSS/Stylesheet.css"/>
-        <link rel="stylesheet" href="CSS/PharmacistsPages.css">
+        <link rel="stylesheet" href="CSS/REGStylesheet.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>REG Page!</h1>
-        <div id="registerPharmacyAndPharmacistManager">
-            PHARMACIST MANAGER DATA<br><br>
-
-            CF<br>
-            <input id="cf" name="cf" type="text" required><br>
-            First Name<br>
-            <input id="fname"  name="fname" type="text" required><br>
-            Last Name<br>
-            <input id="lname"  name="lname" type="text" required><br>
-            Date Of Birth<br>
-            <input id="dob"  name="dob" type="date" required><br>
-            Username<br>
-            <input id="usr"  name="usr" type="text" required><br>
-            Password<br>
-            <input id="pwd"  name="pwd" type="password" required><br>
-            Password confirmation<br>
-            <input id="pwdCheck"  name="pwdCheck" type="password" required><br>
-
-            PHARMACY DATA<br><br>
-
-            Pharmacy Name<br>
-            <input id="phname"  name="phname" type="text" required><br>
-            Pharmacy Address<br>
-            <input id="phaddr"  name="phaddr" type="text" required><br>
-            Pharmacy Phone Number<br>
-            <input id="phtel"  name="phtel" type="tel" required><br><br>
-
-            <button onclick="registerPharmacyAndPharmacistManager()">REGISTER PHARMACY AND HIS PHARMACIST MANAGER</button>
-        </div>
-
-        <input type=button onClick="location.href='JSP/REGDashboard.jsp'" value='click here'>
-
+        <h1 id="header">REG Page!</h1>
+        <div id="mainContent">
+            <div id="registerPharmacyAndPharmacistManager">
+                PHARMACIST MANAGER DATA<br><br>
+                CF<br>
+                <input id="cf" name="cf" type="text"><br>
+                First Name<br>
+                <input id="fname"  name="fname" type="text"><br>
+                Last Name<br>
+                <input id="lname"  name="lname" type="text"><br>
+                Date Of Birth<br>
+                <input id="dob"  name="dob" type="date"><br>
+                Username<br>
+                <input id="usr"  name="usr" type="text"><br>
+                Password<br>
+                <input id="pwd"  name="pwd" type="password"><br>
+                Password confirmation<br>
+                <input id="pwdCheck"  name="pwdCheck" type="password"><br>
+                PHARMACY DATA<br><br>
+                Pharmacy Name<br>
+                <input id="phname"  name="phname" type="text"><br>
+                Pharmacy Address<br>
+                <input id="phaddr"  name="phaddr" type="text"><br>
+                Pharmacy Phone Number<br>
+                <input id="phtel"  name="phtel" type="tel"><br><br>
+                <button onclick="registerPharmacyAndPharmacistManager()">REGISTER PHARMACY AND HIS PHARMACIST MANAGER</button>
+            </div>
+            <button onClick="location.href='JSP/REGDashboard.jsp'" id="openDashboard">DASHBOARD</button><br>
+            <button onClick="location.href='JSP/REGDashboard.jsp'" id="openChat">START CHATTING</button>
         </div>
         <script src="JS/JQuery.js"></script>
         <script>
