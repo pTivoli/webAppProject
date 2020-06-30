@@ -37,6 +37,12 @@ public class RegStatFinder extends Action {
             out.println(result);
             out.flush();
         }
+        if(stat.equals("getRecipesPerPharmacy")){
+            String result = this.getRecipesPerPharmacy();
+            PrintWriter out = response.getWriter();
+            out.println(result);
+            out.flush();
+        }
 
         return null;
     }
@@ -117,4 +123,27 @@ public class RegStatFinder extends Action {
         } catch (SQLException e) {
             throw new Exception("Error DB");
         }
-}}
+    }
+    private String getRecipesPerPharmacy() throws Exception{
+        try {
+            String str = "";
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
+            try {
+                Statement st = con.createStatement();
+                String query = "select nomefarmacia, count(nomefarmacia) from ricetta join personale\n" +
+                        "on ricetta.ricetta_Medico_Persona = personale.personale_CFPersona\n" +
+                        "group by nomefarmacia";
+                ResultSet ris = st.executeQuery(query);
+                while(ris.next()){
+                    str = str.concat(ris.getString("nomefarmacia") + ";" + ris.getString("count") + ";");
+                }
+            } catch (SQLException e) {
+                throw new Exception("Error DB");
+            }
+            con.close();
+            return str;
+        } catch (SQLException e) {
+            throw new Exception("Error DB");
+        }
+    }
+}
