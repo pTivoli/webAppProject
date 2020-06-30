@@ -96,6 +96,7 @@
         <button onclick="registerPharmacist()">REGISTER</button><br>
     </div>
     <a href="JSP/PharmacistManagerDashboard.jsp" id="dashboardButton">D<br>A<br>S<br>H<br>B<br>O<br>A<br>R<br>D<br></a>
+    <a href="www.gooogle.it" id="openChat3">C<br>H<br>A<br>T<br></a>
 </div>
 <script src="JS/JQuery.js"></script>
 <script>

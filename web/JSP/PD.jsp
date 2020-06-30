@@ -74,6 +74,7 @@
         <input id="dob"  name="dob" type="date" required><br>
         <button onclick="registerUser()">Submit</button>
     </div>
+    <a href="www.gooogle.it" id="openChat2">C<br>H<br>A<br>T<br></a>
 </div>
 <script src="JS/JQuery.js"></script>
 <script>
