@@ -112,10 +112,10 @@
             i = inv;
             $("#rec-Messages").html("");
             $("#TOP").html("Texting to: " + $("#td"+i).text());
-            if($("#td"+i).text().indexOf("@") > 0 || $("#td"+i).text().indexOf("REG") > 0)
-                $("#receiverType").attr("value", 0);
-            else
+            if($("#td"+i).text().indexOf("@") < 0 && $("#td"+i).text() !== "REG")
                 $("#receiverType").attr("value", 1);
+            else
+                $("#receiverType").attr("value", 0);
             alert($("#receiverType").attr("value"));
             if($("#receiverType").val() == 0) {
                 $("#receiver").attr("value", $("#td"+i).text());
