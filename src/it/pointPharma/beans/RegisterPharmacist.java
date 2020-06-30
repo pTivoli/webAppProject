@@ -16,13 +16,14 @@ public class RegisterPharmacist extends Action{
         HttpSession session = request.getSession(true);
         PharmacistManager pm = (PharmacistManager) session.getAttribute("pharmacist");
         Pharmacy ph = (Pharmacy) session.getAttribute("pharmacy");
-        String role = (String)request.getParameter("role");
-        String cf = (String)request.getParameter("cf");
-        String fname = (String)request.getParameter("fname");
-        String lname = (String)request.getParameter("lname");
-        String dob = (String)request.getParameter("dob");
-        String usr = (String)request.getParameter("usr");
-        String pwd = (String)request.getParameter("pwd");
+        String role     =   (String)request.getParameter("role");
+        System.out.println(role);
+        String cf       =   (String)request.getParameter("cf");
+        String fname    =   (String)request.getParameter("fname");
+        String lname    =   (String)request.getParameter("lname");
+        String dob      =   (String)request.getParameter("dob");
+        String usr      =   (String)request.getParameter("usr");
+        String pwd      =   (String)request.getParameter("pwd");
         if(role.equals("DO")){
             DeskOperator deskOperator = new DeskOperator();
             deskOperator.setCF(cf);

@@ -264,7 +264,6 @@
         var usr = $("#usr").val();
         var pwd = $("#pwd").val();
         var pwdCheck = $("#pwdCheck").val();
-        var role;
         if(validatePharmacistData(cf, fname, lname, dob, usr, pwd, pwdCheck) == true) {
             $(document).ready(function () {
                 $.ajax({
@@ -277,7 +276,7 @@
                         dob: $("#dobP").val(),
                         usr: $("#usr").val(),
                         pwd: $("#pwd").val(),
-                        role: $('input[name="role"]:checked').val()
+                        role: $("input[name=role]:checked").val()
                     },
                     success: function (responseText) {
                         if(responseText != ""){
