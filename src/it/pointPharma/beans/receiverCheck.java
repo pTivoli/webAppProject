@@ -56,6 +56,14 @@ public class receiverCheck extends Action {
                     if("REG".contains(hint.toUpperCase()))
                         ris = ris.concat("REG;");
                 }
+                else if (ph instanceof PharmacyDoctor) {
+                    if("PD".contains(hint.toUpperCase()))
+                        ris = ris.concat("PD;");
+                }
+                else {
+                    if("DO".contains(hint.toUpperCase()))
+                        ris = ris.concat("DO;");
+                }
                 PrintWriter out = response.getWriter();
                 out.println(ris);
                 out.flush();

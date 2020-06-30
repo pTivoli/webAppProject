@@ -24,38 +24,37 @@ public class messages extends Action {
         Date d = new Date();
         Timestamp tm = new Timestamp(d.getTime());
         String receiver = (String) request.getParameter("receiver");
-        String receiverMail;
         String cfReceiver = "";
         try {
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
-            Statement st = con.createStatement();
-            if(receiver.equals("REG"))
-            {
-                String retrieveReceiverInfo = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale='REG'";
-                ResultSet rs = st.executeQuery(retrieveReceiverInfo);
-                while (rs.next()) {
-                    cfReceiver = rs.getString("personale_cfpersona");
-                    receiver = rs.getString("mail");
+            try {
+                Statement st = con.createStatement();
+                if(receiver.equals("REG"))
+                {
+                    String retrieveReceiverInfo = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale='REG'";
+                    ResultSet rs = st.executeQuery(retrieveReceiverInfo);
+                    while (rs.next()) {
+                        cfReceiver = rs.getString("personale_cfpersona");
+                        receiver = rs.getString("mail");
+                    }
                 }
-            }
-            else {
-                try {
+                else {
                     String retrieveReceiverInfo = "SELECT personale_cfpersona, mail FROM personale WHERE personale.mail='" + receiver + "';";
                     ResultSet rs = st.executeQuery(retrieveReceiverInfo);
                     while (rs.next()) {
                         cfReceiver = rs.getString("personale_cfpersona");
                         receiver = rs.getString("mail");
                     }
-                } catch (SQLException e) {
-                    throw new Exception("Errore DB");
                 }
+                String sendMessage = "INSERT INTO messaggio VALUES ('" + tm + "', '" + message + "', '" + cf + "', '" + email + "');";
+                st.executeUpdate(sendMessage);
+                String receiverUpdate = "INSERT INTO destinatario_messaggio VALUES ('" + cfReceiver + "', '" + receiver + "', '" + cf + "', '" + email + "', '" + tm + "', 'false');";
+                st.executeUpdate(receiverUpdate);
+            } catch (SQLException e) {
+                throw new Exception("Errore DB");
             }
-            String sendMessage = "INSERT INTO messaggio VALUES ('" + tm + "', '" + message + "', '" + cf + "', '" + email + "');";
-            st.executeUpdate(sendMessage);
-            String receiverUpdate = "INSERT INTO destinatario_messaggio VALUES ('" + cfReceiver + "', '" + receiver + "', '" + cf + "', '" + email + "', '" + tm + "', 'false');";
-            st.executeUpdate(receiverUpdate);
         }catch (SQLException e){
-            throw new Exception("Errore ACCESSO");
+            throw new Exception("Errore DB");
         }
         return null;
     }

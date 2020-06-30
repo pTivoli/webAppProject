@@ -1,8 +1,6 @@
 package it.pointPharma.beans;
 
-import it.pointPharma.generalClasses.Pharmacist;
-import it.pointPharma.generalClasses.Pharmacy;
-import it.pointPharma.generalClasses.REG;
+import it.pointPharma.generalClasses.*;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -25,6 +23,7 @@ public class readMessagesGroup extends Action {
             try {
                 Statement st = con.createStatement();
                 String query = "";
+                String ris = "";
                 if(ph instanceof REG)
                     query = "SELECT DISTINCT mailpersonalemitt, timestmesssaggio, testo" +
                             " FROM destinatario_messaggio" +
@@ -34,7 +33,7 @@ public class readMessagesGroup extends Action {
                             " AND groupchat = 'true'" +
                             " AND ruolopersonale='PM'" +
                             " ORDER BY timestmesssaggio";
-                else
+                else if(ph instanceof PharmacistManager)
                     query = "SELECT DISTINCT mailpersonalemitt, timestmesssaggio, testo" +
                             " FROM destinatario_messaggio" +
                             " JOIN messaggio ON timestmesssaggio = timest" +
@@ -43,11 +42,47 @@ public class readMessagesGroup extends Action {
                             " AND groupchat = 'true'" +
                             " AND nomefarmacia='" + phy.getName() + "'" +
                             " ORDER BY timestmesssaggio";
-                ResultSet rs = st.executeQuery(query);
-                String ris = "";
-                while (rs.next())
+                else
                 {
-                    ris = ris.concat(rs.getString("mailpersonalemitt") + ";" + rs.getString("testo") + ";");
+                    String retrieveReceivers = "";
+                    if(ph instanceof PharmacyDoctor)
+                        retrieveReceivers = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale = 'PD'" +
+                                "AND nomefarmacia = '" + phy.getName() + "';";
+                    else
+                        retrieveReceivers = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale = 'DO'"+
+                                "AND nomefarmacia = '" + phy.getName() + "';";
+                    Statement st2 = con.createStatement();
+                    ResultSet rs2 = st2.executeQuery(retrieveReceivers);
+                    while (rs2.next())
+                    {
+                        query = "SELECT DISTINCT res.mailpersonalemitt, res.timestmesssaggio, res.testo FROM (" +
+                                "SELECT mailpersonalemitt, timestmesssaggio, testo " +
+                                "FROM destinatario_messaggio " +
+                                "JOIN messaggio on timestmesssaggio = timest " +
+                                "WHERE mailpersonaledest LIKE '" + rs2.getString("mail") + "%'" +
+                                "AND mailpersonalemitt LIKE '" + ph.getEmail() + "%'" +
+                                " AND groupchat='true'" +
+                                "UNION " +
+                                "SELECT mailpersonalemitt, timestmesssaggio, testo " +
+                                "FROM destinatario_messaggio " +
+                                "JOIN messaggio on timestmesssaggio = timest " +
+                                "WHERE mailpersonaledest LIKE '" + ph.getEmail() + "%'" +
+                                "AND mailpersonalemitt LIKE '" + rs2.getString("mail") + "%'" +
+                                " AND groupchat='true'" +
+                                ") res" +
+                                " ORDER BY res.timestmesssaggio";
+                        ResultSet rs = st.executeQuery(query);
+                        while (rs.next())
+                        {
+                            ris = ris.concat(rs.getString("mailpersonalemitt") + ";" + rs.getString("testo") + ";");
+                        }
+                    }
+                }
+                if(ph instanceof REG || ph instanceof PharmacyDoctor) {
+                    ResultSet rs = st.executeQuery(query);
+                    while (rs.next()) {
+                        ris = ris.concat(rs.getString("mailpersonalemitt") + ";" + rs.getString("testo") + ";");
+                    }
                 }
                 PrintWriter out = response.getWriter();
                 out.println(ris);

@@ -3,18 +3,20 @@
 <%@ page import="it.pointPharma.generalClasses.Pharmacist" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Chat</title>
-    <link rel="stylesheet" href="CSS/Stylesheet.css">
-</head>
-<body>
+
 <%
     Pharmacist user = (Pharmacist) session.getAttribute("pharmacist");
     String lname = user.getlName();
     String fname = user.getfName();
     String email = user.getEmail();
 %>
+
+<html>
+<head>
+    <title><%=lname + " " + fname + "'s chat"%></title>
+    <link rel="stylesheet" href="CSS/Stylesheet.css">
+</head>
+<body>
     <div>
         <p>Welcome <%= lname + " " + fname + " " + " " + email + "\n"%></p>
         <div class="left-pane" >
@@ -110,12 +112,10 @@
             i = inv;
             $("#rec-Messages").html("");
             $("#TOP").html("Texting to: " + $("#td"+i).text());
-            if($("#td"+i).text().indexOf("@") > -1)
+            if($("#td"+i).text().indexOf("@") > 0 || $("#td"+i).text().indexOf("REG") > 0)
                 $("#receiverType").attr("value", 0);
-            else if($("#td"+i).text().indexOf("@") > 0)
-                $("#receiverType").attr("value", 1);
             else
-                $("#receiverType").attr("value", 0);
+                $("#receiverType").attr("value", 1);
             alert($("#receiverType").attr("value"));
             if($("#receiverType").val() == 0) {
                 $("#receiver").attr("value", $("#td"+i).text());

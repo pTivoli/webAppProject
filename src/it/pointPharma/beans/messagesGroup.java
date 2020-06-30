@@ -1,9 +1,6 @@
 package it.pointPharma.beans;
 
-import it.pointPharma.generalClasses.Pharmacist;
-import it.pointPharma.generalClasses.PharmacistManager;
-import it.pointPharma.generalClasses.Pharmacy;
-import it.pointPharma.generalClasses.REG;
+import it.pointPharma.generalClasses.*;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -34,6 +31,11 @@ public class messagesGroup extends Action {
                     retrieveReceiversInfo = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale='PM'";
                 else if(ph instanceof PharmacistManager)
                     retrieveReceiversInfo = "SELECT personale_cfpersona, mail FROM personale WHERE nomefarmacia LIKE '" + phy.getName() + "';";
+                else if(ph instanceof PharmacyDoctor)
+                    retrieveReceiversInfo = "SELECT personale_cfpersona, mail FROM personale WHERE nomefarmacia LIKE '" + phy.getName() + "'" +
+                            "AND ruolopersonale = 'PD';";
+                else if(ph instanceof DeskOperator)
+                    retrieveReceiversInfo = "SELECT personale_cfpersona, mail FROM personale WHERE nomefarmacia LIKE '" + phy.getName() + "'" + "AND ruolopersonale LIKE 'DO';";
                 ResultSet rs = st.executeQuery(retrieveReceiversInfo);
                 String messageQuery = "INSERT INTO messaggio VALUES ('" +
                         ts + "', '" +
