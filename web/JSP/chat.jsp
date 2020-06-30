@@ -41,7 +41,7 @@
         </div>
     </div>
     <script src="../JS/JQuery.js"></script>
-    <script >
+    <script>
         var i;
         function senF() {
             if($("#receiverType").val() == 0) {
@@ -55,7 +55,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: "POST",
-                    url: "messages.do",
+                    url: "../messages.do",
                     data: {
                         message:  $("#message").val(),
                         receiver: $("#receiver").val()
@@ -70,7 +70,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: "POST",
-                    url: "messagesGroup.do",
+                    url: "../messagesGroup.do",
                     data: {
                         message:  $("#message").val()
                     },
@@ -85,7 +85,7 @@
                 $(document).ready(function () {
                     $.ajax({
                        type: "POST",
-                       url: "receiverCheck.do" ,
+                       url: "../receiverCheck.do" ,
                         data: {
                            hint: $('#recMail').val()
                         },
@@ -132,7 +132,7 @@
         $(document).ready(function () {
             $.ajax({
                 type: "POST",
-                url: "readMessages.do",
+                url: "../readMessages.do",
                 data: {
                     receiver: receiverMail
                 },
@@ -147,7 +147,7 @@
         $(document).ready(function () {
             $.ajax({
                 type: "POST",
-                url: "readMessagesGroup.do",
+                url: "../readMessagesGroup.do",
                 data: {
                     receiver: $("#td"+inv).text()
                 },

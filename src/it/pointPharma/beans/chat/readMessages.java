@@ -2,7 +2,6 @@ package it.pointPharma.beans.chat;
 
 import it.pointPharma.generalClasses.Pharmacist;
 import it.pointPharma.generalClasses.Pharmacy;
-import javafx.beans.property.ReadOnlySetProperty;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
