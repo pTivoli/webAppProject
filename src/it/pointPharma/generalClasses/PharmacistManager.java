@@ -1,24 +1,27 @@
 package it.pointPharma.generalClasses;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class PharmacistManager extends PharmacyDoctor{
 
     private void employee(Pharmacist pharmacist, Pharmacy pharmacy) throws Exception {
         try{
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "postgres", "TivoliPatrick");
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try{
                 Statement st = con.createStatement();
-                String queryUtente = "INSERT INTO Persona VALUES ('"+ pharmacist.getCF() +"','"+ pharmacist.getfName() +"','"+ pharmacist.getlName() +"','"+pharmacist.getDOB()+"');";
+                if(!exists("persona", "codicefiscale", pharmacist.getCF())){
+                    String queryUtente = "INSERT INTO Persona VALUES ('"+ pharmacist.getCF() +"','"+ pharmacist.getfName() +"','"+ pharmacist.getlName() +"','"+pharmacist.getDOB()+"');";
+                    st.executeUpdate(queryUtente);
+                }
+                if(exists("personale", "mail", pharmacist.getEmail())){
+                    con.close();
+                    throw new IllegalArgumentException("This pharmacist still exists in the DB");
+                }
                 String queryPersonale;
                 if(pharmacist instanceof DeskOperator)
                     queryPersonale = "INSERT INTO Personale VALUES ('"+pharmacist.getEmail()+"','"+pharmacist.getPwd()+"','"+pharmacist.getCF()+"','DO', '"+pharmacy.getName()+"', '"+pharmacy.getAddress()+"', '"+pharmacy.getPharmacyManager().getCF()+"');";
                 else
                     queryPersonale = "INSERT INTO Personale VALUES ('"+pharmacist.getEmail()+"','"+pharmacist.getPwd()+"','"+pharmacist.getCF()+"','PD', '"+pharmacy.getName()+"', '"+pharmacy.getAddress()+"', '"+pharmacy.getPharmacyManager().getCF()+"');";
-                st.executeUpdate(queryUtente);
                 st.executeUpdate(queryPersonale);
             }catch(SQLException ex){
                 throw new Exception("Error DB");
@@ -45,7 +48,23 @@ public class PharmacistManager extends PharmacyDoctor{
         }
     }
 
-
-    /* STATISTICS */
-
+    private boolean exists(String table, String field, String value) throws SQLException {
+        try {
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
+            int count = 0;
+            try{
+                Statement st = con.createStatement();
+                String query = "SELECT count(*) as count from "+table+" where "+field+" ILIKE '"+value+"';";
+                st.executeQuery(query);
+                ResultSet r = st.executeQuery(query);
+                r.next();
+                count = r.getInt("count");
+            }catch (SQLException e){
+                throw e;
+            }
+            return count != 0;
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
 }

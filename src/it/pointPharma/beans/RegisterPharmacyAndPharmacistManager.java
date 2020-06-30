@@ -7,6 +7,7 @@ import org.apache.struts.action.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.PrintWriter;
 
 public class RegisterPharmacyAndPharmacistManager extends Action{
 
@@ -26,8 +27,14 @@ public class RegisterPharmacyAndPharmacistManager extends Action{
         ph.setPharmacyManager(pm);
         HttpSession session = request.getSession(true);
         REG reg = (REG)session.getAttribute("pharmacist");
-        reg.activatePM(pm, ph);
-        reg.activatePharmacy(ph);
+        try{
+            reg.activatePM(pm, ph);
+            reg.activatePharmacy(ph);
+        }catch(Exception e){
+            PrintWriter out = response.getWriter();
+            out.write(e.getMessage());
+            out.flush();
+        }
         return null;
     }
 

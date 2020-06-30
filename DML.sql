@@ -1,16 +1,14 @@
 --Persona
-INSERT INTO persona VALUES ('TVLPTR67L59A856P', 'Patrich', 'Tivoli', '13/06/1999');
-INSERT INTO persona VALUES ('XBSBVZ69M12H785L', 'Matteo', 'Montinaro', '10/06/1999');
-INSERT INTO persona VALUES ('HTNTCU65S54G532R', 'Francesco', 'Ferramosca', '10/06/1999');
-INSERT INTO persona VALUES ('GVDLRG40R55L093B', 'Dario', 'Lampa', '23/04/2000');
-INSERT INTO persona VALUES ('SPLGDT91B51D385R', 'Rosa', 'Monte', '12/03/2000');
-INSERT INTO persona VALUES ('PBFNDV66D46A202L', 'Bianca', 'Neve', '30/05/2000');
-INSERT into persona VALUES ('DWAZZL90P66E868A', 'Matteo', 'Russo', '21/12/1998');
-INSERT into persona VALUES ('ZBWRGN88R31F826O', 'Davide', 'Lanza', '12/06/1999');
-INSERT INTO persona VALUES ('QSPPTL31H46A087H', 'Maria Assunta', 'Salonti', '10/12/1996');
-INSERT INTO persona VALUES ('NFQXHC75S14F130W', 'Fabrizio', 'Perazzo', '23/05/1998');
-INSERT into persona VALUES ('LTFDCT70T49E748U', 'Lorenzo', 'Appetito', '19/09/1999');
-INSERT into persona VALUES ('BHNYNM85R56F883S', 'Andrea', 'Bacca', '28/07/2997');
+INSERT INTO persona VALUES ('TVLPTR67L59A856P', 'Patrich', 'Tivoli', '13/06/1999', null, null);
+INSERT INTO persona VALUES ('XBSBVZ69M12H785L', 'Matteo', 'Montinaro', '10/06/1999', null, null);
+INSERT INTO persona VALUES ('HTNTCU65S54G532R', 'Francesco', 'Ferramosca', '10/06/1999', null, null);
+INSERT into persona VALUES ('DWAZZL90P66E868A', 'Matteo', 'Russo', '21/12/1998', null, null);
+INSERT into persona VALUES ('ZBWRGN88R31F826O', 'Davide', 'Lanza', '12/06/1999', null, null);
+INSERT INTO persona VALUES ('QSPPTL31H46A087H', 'Maria Assunta', 'Salonti', '10/12/1996', null, null);
+INSERT INTO persona VALUES ('NFQXHC75S14F130W', 'Fabrizio', 'Perazzo', '23/05/1998', null, null);
+INSERT into persona VALUES ('LTFDCT70T49E748U', 'Lorenzo', 'Appetito', '19/09/1999', null, null);
+INSERT into persona VALUES ('BHNYNM85R56F883S', 'Andrea', 'Bacca', '28/07/2997', null, null);
+insert into persona VALUES ('SLVNNI66L99E213T', 'MatteinoSalvino', 'Puglia', '10/01/1970', null, null);
 
 --Medico
 INSERT INTO medico VALUES ('02ssdd', 'TVLPTR67L59A856P');
@@ -38,11 +36,16 @@ INSERT INTO personale VALUES ('fabri.peroloo@gmail.com', 'persona5', 'NFQXHC75S1
 INSERT INTO personale VALUES ('matteyo.montinaro23@gmail.com', 'lovemunchy', 'XBSBVZ69M12H785L', 'PM', 'Ciafarm', 'Via Garibaldi 23', 'XBSBVZ69M12H785L');
 INSERT INTO personale VALUES ('lore.appe@gmail.com', 'lovelega', 'LTFDCT70T49E748U', 'PD', 'Ciafarm', 'Via Garibaldi 23', 'XBSBVZ69M12H785L');
 INSERT INTO personale VALUES ('andrea.blasf@gimail.com', 'germano1', 'BHNYNM85R56F883S', 'DO', 'Ciafarm', 'Via Garibaldi 23', 'XBSBVZ69M12H785L');
+INSERT INTO personale VALUES ('aiutiamoli.acasaloro@gmail.com', 'ruspa', 'SLVNNI66L99E213T', 'REG');
 
 --Farmacia
 INSERT INTO farmacia VALUES ('Pharmaon', 'Via Fiume 1', '03215566767', 'TVLPTR67L59A856P', 'patrich.tivolotty@gmail.com');
 INSERT INTO farmacia VALUES ('Ciafarm', 'Via Garibaldi 23', '03334567897', 'XBSBVZ69M12H785L', 'matteyo.montinaro23@gmail.com');
 INSERT INTO farmacia VALUES ('Farmahappy', 'Via Garda 32', '03245676324', 'HTNTCU65S54G532R', 'francesco.ferra99@gmail.com');
+
+INSERT INTO persona VALUES ('GVDLRG40R55L093B', 'Dario', 'Lampa', '23/04/2000', 'NFQXHC75S14F130W', 'fabri.peroloo@gmail.com');
+INSERT INTO persona VALUES ('SPLGDT91B51D385R', 'Rosa', 'Monte', '12/03/2000', 'DWAZZL90P66E868A', 'matteo.strawberry@gmail.com');
+INSERT INTO persona VALUES ('PBFNDV66D46A202L', 'Bianca', 'Neve', '30/05/2000', 'BHNYNM85R56F883S', 'andrea.blasf@gimail.com');
 
 --Acquisto
 INSERT INTO acquisto VALUES ('22-02-2019 19:10:25-07', 'BHNYNM85R56F883S', 'andrea.blasf@gimail.com', 'PBFNDV66D46A202L', 50.67);

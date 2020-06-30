@@ -111,7 +111,7 @@ body{
     font-size: 1.2em;
     text-align: center;
 }
-#registerUser{
+#registerUser, #formReceipt, #employee_PD_DO{
     width: 25%;
     height: auto;
     background-color: rgba(255,255,255,0.8);
@@ -121,7 +121,13 @@ body{
     text-align: center;
     padding: 10px;
 }
-#registerUser > input[type=text], #registerUser > input[type=date]{
+#registerUser > input[type=text],
+#registerUser > input[type=date],
+#formReceipt > input[type=text],
+#formReceipt > input[type=date],
+#employee_PD_DO > input[type=text],
+#employee_PD_DO > input[type=date],
+#employee_PD_DO > input[type=password] {
     text-align: center;
     border: 2px solid orange;
     margin: 5px;
@@ -129,7 +135,9 @@ body{
     border-radius: 25px 25px 0px 25px;
     width: 100%;
 }
-#registerUser button{
+#registerUser button,
+#formReceipt button,
+#employee_PD_DO button{
     background-color: orangered;
     font-size: 1.2em;
     border: 0;
@@ -137,4 +145,78 @@ body{
     border-radius: 25px 25px 0px 25px;
     width: 100%;
     padding: 5px;
+}
+#formReceipt{
+    width: auto;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    display: none;
+    height: 0px;
+    transition-property: height;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    overflow: hidden;
+}
+#employee_PD_DO{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#dashboardButton{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size: 2em;
+    text-decoration: none;
+    color: black;
+    background-color: orange;
+    padding: 25px;
+    border-radius: 25px 0px 0px 25px;
+    transition: background-color 1s;
+    transition-timing-function: ease-out;
+}
+#dashboardButton:hover{
+    background-color: red;
+}
+#cart > p{
+    background-color: orangered;
+    transition: background-color 1s;
+    transition-timing-function: ease-out;
+}
+#cart > p:hover{
+    background-color: violet;
+}
+#registerUser button, #formReceipt button, #employee_PD_DO button{
+    background-color: orangered;
+    transition: background-color 1s;
+    transition-timing-function: ease-out;
+}
+#registerUser button:hover, #formReceipt button:hover, #employee_PD_DO button:hover{
+    background-color: violet;
+}
+#openChat, #openChat2, #openChat3{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+    background-color: dodgerblue;
+    padding: 25px;
+    border: 0;
+    border-radius: 25px 0px 0px 25px;
+    transition: 0.5s;
+    transition-timing-function: ease-out;
+    transition-property: background-color;
+}
+#openChat:hover, #openChat2:hover{
+    background-color: violet;
+}
+#openChat2{
+    margin-left: 30px;
+}
+#openChat3{
+    border-radius: 0px;
 }

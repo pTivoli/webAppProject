@@ -54,9 +54,7 @@
                 <p><button onclick="buyFn();" disabled>BUY</button></p><br/>
                 <div id="objects"></div>
             </div>
-            <div>
-                <button onclick="window.location='chat.jsp'">Chat</button>
-            </div>
+            <a href="www.google.it" id="openChat">C<br>H<br>A<br>T<br></a>
         </div>
         <script src="JS/JQuery.js"></script>
         <script>
@@ -113,7 +111,7 @@
                 var ris = "<table>";
                 text = text.split(";");
                 var i;
-                for(i = 0; i < text.length-1; i+=2){
+                for(i = 0; i < text.length-1; i+=3){
                     ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td><td><button onclick=\"cookieCart('" + text[i] + "','" + text[i + 1] + "')\">ADD</button></td></tr>";
                 }
                 ris += "</table>";

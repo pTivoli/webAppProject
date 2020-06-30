@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>PharmaPoint - Desk Operator</title>
+    <title>PharmaPoint - Pharmacist Doctor</title>
     <link rel="stylesheet" href="CSS/Stylesheet.css"/>
     <link rel="stylesheet" href="CSS/PharmacistsPages.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,6 +50,16 @@
     </div>
     <div id="cart">
         <p>CART</p><br/>
+            <div id="formReceipt">
+                Codice Ricetta<br>
+                <input type="text" id="codRec"/><br>
+                Data Ricetta<br>
+                <input type="date" id="dateRec"/><br>
+                Codice Medico<br>
+                <input type="text" id="codDocRec"/><br>
+                CF<br>
+                <input type="text" id="cfRec"><br>
+            </div>
         <p><button onclick="buyFn();" disabled>BUY</button></p><br/>
         <div id="objects"></div>
     </div>
@@ -64,15 +74,19 @@
         <input id="dob"  name="dob" type="date" required><br>
         <button onclick="registerUser()">Submit</button>
     </div>
-    <div>
-        <button onclick="window.location='chat.jsp'">Chat</button>
-    </div>
+    <a href="www.gooogle.it" id="openChat2">C<br>H<br>A<br>T<br></a>
 </div>
 <script src="JS/JQuery.js"></script>
 <script>
-    function cookieCart(codeMed, nameMed){
+    var receipt = false;
+    function cookieCart(codeMed, nameMed, receiptMedicine){
         var obj = document.getElementById("objects").innerHTML;
         document.getElementById("objects").innerHTML= obj + "<p>"+nameMed+"</p><br>";
+        if(receiptMedicine == 't'){
+            receipt = true;
+            $("#formReceipt").css("display", "block");
+            $("#formReceipt").css("height", "50%");
+        }
         if(document.cookie == ""){
             $("#cart button").prop("disabled", false);
             document.cookie = "medicine=" + codeMed + "," + nameMed + ",";
@@ -90,7 +104,6 @@
                         hint: $('#medicine').val()
                     },
                     success: function (responseText) {
-                        //$('#suggestions').text(responseText);
                         $('#suggestions').html(createTable(responseText));
                     }
                 });
@@ -101,47 +114,111 @@
     }
     function buyFn(){
         if(document.cookie != ""){
+            if(receipt){
+                var codRec = $("#codRec").val();
+                var dateRec = $("#dateRec").val();
+                var codDocRec = $("#codDocRec").val();
+                var cfRec = $("#cfRec").val();
+                if(codRec == "" || dateRec == "" || codDocRec == "" || cfRec == ""){
+                    alert("You must insert the data of the receipt before buying everything!");
+                    return;
+                }
+                var mask = /^[A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]{1}$/i;
+                if(!mask.test(cfRec)){
+                    alert("CF is not valid");
+                    return;
+                }
+            }
             $(document).ready(function () {
                 $.ajax({
                     type: "POST",
                     url: "buyMedicines.do",
                     data: {
-                        medicine: document.cookie
+                        medicine: document.cookie,
+                        codRec: $("#codRec").val(),
+                        dateRec: $("#dateRec").val(),
+                        codDocRec: $("#codDocRec").val(),
+                        cfRec: $("#cfRec").val()
                     },
-                    success: function () {
-                        alert("All the medicines are bought!");
-                        document.cookie = "medicine=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-                        $('#suggestions').html("");
-                        $('#medicine').val("");
-                        document.getElementById("objects").innerHTML = "";
+                    success: function (responseText) {
+                        if(responseText != "") {
+                            alert(responseText);
+                        }
+                        else {
+                            alert("All the medicines are bought!");
+                            document.cookie = "medicine=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+                            $('#suggestions').html("");
+                            $('#medicine').val("");
+                            $('#codRec').val("");
+                            $('#dateRec').val("");
+                            $('#codDocRec').val("");
+                            $('#cfRec').val("");
+                            document.getElementById("objects").innerHTML = "";
+                            $("#formReceipt").css("height", "0px");
+                            $("#formReceipt").css("display", "none");
+                        }
                     }
                 });
             });
         }
     }
     function registerUser(){
-        $(document).ready(function () {
-            $.ajax({
-                type: "POST",
-                url: "registerUser.do",
-                data: {
-                    cf:     $("#cf").val(),
-                    fname:  $("#fname").val(),
-                    lname:  $("#lname").val(),
-                    dob:    $("#dob").val()
-                },
-                success: function () {
-                    alert("User saved!");
-                }
+        if(validateFormUser() == true) {
+            $(document).ready(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "registerUser.do",
+                    data: {
+                        cf: $("#cf").val(),
+                        fname: $("#fname").val(),
+                        lname: $("#lname").val(),
+                        dob: $("#dob").val()
+                    },
+                    success: function (responseText) {
+                        if(responseText != ""){
+                            alert(responseText);
+                        }else {
+                            $('#cf').val("");
+                            $('#fname').val("");
+                            $('#lname').val("");
+                            $('#dob').val("");
+                            alert("User saved!");
+                        }
+                    }
+                });
             });
-        });
+        }
+    }
+    function validateFormUser(){
+        var cf = $("#cf").val();
+        var fname = $("#fname").val();
+        var lname = $("#lname").val();
+        var dob = $("#dob").val();
+        var mask = /^[A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]{1}$/i;
+        if(cf.length == 0) {
+            alert("CF is missed");
+            return false;
+        }else if(fname.length == 0){
+            alert("First Name is missed");
+            return false;
+        }else if(lname.length == 0){
+            alert("Last Name is missed");
+            return false;
+        }else if(dob.length == 0){
+            alert("Date Of Birth is missed");
+            return false;
+        }else if(!mask.test(cf)){
+            alert("CF is not valid");
+            return false;
+        }
+        return true;
     }
     function createTable(text){
         var ris = "<table>";
         text = text.split(";");
         var i;
-        for(i = 0; i < text.length-1; i+=2){
-            ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td><td><button onclick=\"cookieCart('" + text[i] + "','" + text[i + 1] + "')\">ADD</button></td></tr>";
+        for(i = 0; i < text.length-1; i+=3){
+            ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td><td><button onclick=\"cookieCart('" + text[i] + "','" + text[i + 1] + "','" + text[i + 2] + "')\">ADD</button></td></tr>";
         }
         ris += "</table>";
         return ris;
