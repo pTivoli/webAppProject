@@ -38,6 +38,9 @@
             <button onClick="location.href='JSP/REGDashboard.jsp'" id="openDashboard">DASHBOARD</button><br>
             <button onClick="location.href='JSP/REGDashboard.jsp'" id="openChat">START CHATTING</button>
         </div>
+        <div>
+            <button onclick="window.location='chat.jsp'">Chat</button>
+        </div>
         <script src="JS/JQuery.js"></script>
         <script>
             function registerPharmacyAndPharmacistManager() {
