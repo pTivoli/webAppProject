@@ -14,7 +14,7 @@
 <html>
 <head>
     <title><%=lname + " " + fname + "'s chat"%></title>
-    <link rel="stylesheet" href="CSS/Stylesheet.css">
+    <link rel="stylesheet" href="../CSS/Stylesheet.css">
 </head>
 <body>
     <div>
@@ -40,7 +40,7 @@
             </div>
         </div>
     </div>
-    <script src="JS/JQuery.js"></script>
+    <script src="../JS/JQuery.js"></script>
     <script >
         var i;
         function senF() {

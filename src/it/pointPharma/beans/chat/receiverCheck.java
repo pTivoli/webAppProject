@@ -1,4 +1,4 @@
-package it.pointPharma.beans;
+package it.pointPharma.beans.chat;
 
 import com.sun.org.apache.regexp.internal.RE;
 import com.sun.org.apache.xerces.internal.util.HTTPInputSource;

@@ -1,4 +1,4 @@
-package it.pointPharma.beans;
+package it.pointPharma.beans.chat;
 
 import it.pointPharma.generalClasses.Pharmacist;
 import org.apache.struts.action.Action;
