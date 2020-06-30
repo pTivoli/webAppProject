@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/it/pointPharma/beans/SellItemsGeneral.java" afterPath="$PROJECT_DIR$/src/it/pointPharma/beans/SellItemsGeneral.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/it/pointPharma/generalClasses/DeskOperator.java" afterPath="$PROJECT_DIR$/src/it/pointPharma/generalClasses/DeskOperator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacyDoctor.java" afterPath="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacyDoctor.java" />
-    </list>
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -762,7 +757,7 @@
       <workItem from="1593336584368" duration="30252000" />
       <workItem from="1593423255473" duration="24010000" />
       <workItem from="1593504729434" duration="16873000" />
-      <workItem from="1593525812974" duration="5166000" />
+      <workItem from="1593525812974" duration="5314000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -848,11 +843,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593522830876</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Sell Items and Sell Items with Receipt updated [the new DB structure allow us to track the pharmacists that sell a set of medicines]">
+      <created>1593531113841</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1593531113841</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89399000" />
+    <option name="totallyTimeSpent" value="89547000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="691" extended-state="6" />
@@ -943,7 +945,8 @@
     <MESSAGE value="UX upgraded with the chat button" />
     <MESSAGE value="Button added to open the reg form&#10;" />
     <MESSAGE value="Text accordion header changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Text accordion header changed" />
+    <MESSAGE value="Sell Items and Sell Items with Receipt updated [the new DB structure allow us to track the pharmacists that sell a set of medicines]" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sell Items and Sell Items with Receipt updated [the new DB structure allow us to track the pharmacists that sell a set of medicines]" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
