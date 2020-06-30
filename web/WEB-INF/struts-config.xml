@@ -88,6 +88,11 @@
                 scope="request"
                 input="/JSP/REGDashboard.jsp"
                 validate="false"></action>
+        <action path="/JSP/getRecipesPerPharmacy"
+                type="it.pointPharma.dashboardTools.RegStatFinder"
+                scope="request"
+                input="/JSP/REGDashboard.jsp"
+                validate="false"></action>
 
     </action-mappings>
 </struts-config>

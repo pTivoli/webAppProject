@@ -5,7 +5,7 @@
     url('../FONTS/Montserrat-Light.ttf') format('truetype');
 }
 
-body{
+html, body{
     margin: 0;
     padding: 0;
     display: flex;
@@ -16,7 +16,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     background-image: url("../IMG/chat.webp");
     background-size: cover;
-
+    scroll-behavior: smooth;
 }
 
 .accordion{
@@ -60,7 +60,7 @@ body{
     display: none;
     padding: 1rem;
     line-height: 1.5rem;
-    border-top: 1px solid;
+    border-top: 2px solid;
     border-image: linear-gradient(to right, green, yellow) 1;
 }
 

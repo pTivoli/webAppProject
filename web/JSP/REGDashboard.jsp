@@ -13,7 +13,9 @@
 
         <div class="accordion">
             <div class="accordion-item">
-                <div class="accordion-item-header" id="aic1">See All Pharmacies</div>
+                <div class="accordion-item-header" id="aic1">
+                    <a href="#aic1">See All Pharmacies</a>
+                </div>
                 <div class="accordion-item-body">
                     <div class="accordion-item-body-content">
                         <div class="dataTxtObj"> <p id="dataTxtObj1"></p> </div>
@@ -22,7 +24,9 @@
             </div>
 
             <div class="accordion-item">
-                <div class="accordion-item-header" id="aic2">See Total Sales from All Pharmacies</div>
+                <div class="accordion-item-header" id="aic2">
+                    <a href="#aic2">See Total Sales from All Pharmacies</a>
+                </div>
                 <div class="accordion-item-body">
                     <div class="accordion-item-body-content">
                         <div class="dataTxtObj"><p id="dataTxtObj2"></p></div>
@@ -31,10 +35,23 @@
             </div>
 
             <div class="accordion-item">
-                <div class="accordion-item-header" id="aic3">Most Sold Medicine</div>
+                <div class="accordion-item-header" id="aic3">
+                    <a href="#aic3">Most Sold Medicine</a>
+                </div>
                 <div class="accordion-item-body">
                     <div class="accordion-item-body-content">
                         <div class="dataTxtObj"><p id="dataTxtObj3"></p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-item-header" id="aic4">
+                    <a href="#aic4">Recipes per Pharmacy</a>
+                </div>
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        <div class="dataTxtObj"><p id="dataTxtObj4"></p></div>
                     </div>
                 </div>
             </div>
@@ -64,6 +81,9 @@
 
                 $('#aic3').on('click', function(){
                     $('#aic3').toggleClass("active");
+                });
+                $('#aic4').on('click', function(){
+                    $('#aic4').toggleClass("active");
                 });
             });
 
@@ -141,11 +161,36 @@
                     });
                 });
             }
+            function getRecipesPerPharmacy(){
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "getRecipesPerPharmacy.do",
+                        data: {
+                            regFName: "<%= regFName%>",
+                            regLName: "<%= regLName%>",
+                            regCF: "<%= regCF%>",
+                            regEmail: "<%= regEmail%>",
+                            regDoB: "<%= regDoB%>",
+                            stat: "getRecipesPerPharmacy"
+                        },
+                        success: function(responseText){
+                            var str = responseText.split(";");
+                            var i;
+                            document.getElementById("dataTxtObj4").innerHTML += "<div id='getRecipesPerPharmacy'></div>";
+                            for(i = 0; i < str.length - 1; i += 2){
+                                document.getElementById("getRecipesPerPharmacy").innerHTML  += "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> </div>";
+                            }
+                        }
+                    });
+                });
+            }
 
             $(document).ready(function () {
                 getPharmacyInfo();
                 getTotalSalesPerPharmacy();
                 getMostSoldMeds();
+                getRecipesPerPharmacy();
             });
 
         </script>
