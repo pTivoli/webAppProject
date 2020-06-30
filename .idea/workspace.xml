@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/CSS/REGStylesheet.css" afterPath="$PROJECT_DIR$/web/CSS/REGStylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/REG.jsp" afterPath="$PROJECT_DIR$/web/JSP/REG.jsp" />
-    </list>
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -771,7 +767,7 @@
       <workItem from="1593291364971" duration="13098000" />
       <workItem from="1593336584368" duration="30252000" />
       <workItem from="1593423255473" duration="24010000" />
-      <workItem from="1593504729434" duration="15307000" />
+      <workItem from="1593504729434" duration="15375000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -836,11 +832,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593516670562</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Button added to open the reg form&#10;">
+      <created>1593522371546</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1593522371546</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82667000" />
+    <option name="totallyTimeSpent" value="82735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="691" extended-state="6" />
@@ -929,7 +932,8 @@
     <MESSAGE value="REG's UX updated" />
     <MESSAGE value="Funny animations added" />
     <MESSAGE value="UX upgraded with the chat button" />
-    <option name="LAST_COMMIT_MESSAGE" value="UX upgraded with the chat button" />
+    <MESSAGE value="Button added to open the reg form&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Button added to open the reg form&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
