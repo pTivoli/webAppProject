@@ -44,6 +44,7 @@ button{
     font-size: 1.2em;
     background-image: url("../IMG/homePage.webp");
     background-size: cover;
+    height: 100%;
 }
 #registerPharmacyAndPharmacistManager{
     margin: 25px;
@@ -52,6 +53,9 @@ button{
     text-align: center;
     background-color: white;
     width: 100%;
+    display: none;
+    max-height: 0px;
+    transition: max-height 0.5s ease-in;
 }
 
 #registerPharmacyAndPharmacistManager input{
@@ -66,7 +70,7 @@ button{
     box-shadow: 0px 0px #888;
     transition: 0.5s;
     transition-timing-function: ease-out;
-    transition-property: box-shadow;
+    transition-property: box-shadow, height;
 }
 #registerPharmacyAndPharmacistManager input:hover{
     box-shadow: 10px 10px #888;
@@ -81,7 +85,7 @@ button{
     margin-bottom: 25px;
 }
 
-#openDashboard{
+#openDashboard, #openRegForm{
     background-color: orange;
     width: 100%;
     height: auto;
@@ -90,6 +94,7 @@ button{
     border-radius: 0px;
     font-size: 2em;
     margin: 25px;
+    font-weight: lighter;
 }
 
 #openChat{
@@ -101,6 +106,7 @@ button{
     border-radius: 0px 0px 0px 0px;
     font-size: 2em;
     margin: 25px;
+    font-weight: lighter;
 }
 
 #openChat, #openDashboard, #registerPharmacyAndPharmacistManager button{

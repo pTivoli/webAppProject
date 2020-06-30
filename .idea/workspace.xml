@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/CSS/PharmacistsPages.css" afterPath="$PROJECT_DIR$/web/CSS/PharmacistsPages.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/DO.jsp" afterPath="$PROJECT_DIR$/web/JSP/DO.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/PD.jsp" afterPath="$PROJECT_DIR$/web/JSP/PD.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/PM.jsp" afterPath="$PROJECT_DIR$/web/JSP/PM.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/CSS/REGStylesheet.css" afterPath="$PROJECT_DIR$/web/CSS/REGStylesheet.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/REG.jsp" afterPath="$PROJECT_DIR$/web/JSP/REG.jsp" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,34 +24,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="PharmacistsPages.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/CSS/PharmacistsPages.css">
+      <file leaf-file-name="REGStylesheet.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/CSS/REGStylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="173" column="15" selection-start-line="173" selection-start-column="15" selection-end-line="173" selection-end-column="15" />
+            <state relative-caret-position="217">
+              <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PM.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="96" column="10" selection-start-line="96" selection-start-column="10" selection-end-line="96" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PD.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/JSP/PD.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
-              <folding>
-                <element signature="n#script#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -102,12 +78,12 @@
         <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacyDoctor.java" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/REG.java" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/beans/RegisterPharmacyAndPharmacistManager.java" />
-        <option value="$PROJECT_DIR$/web/CSS/REGStylesheet.css" />
-        <option value="$PROJECT_DIR$/web/JSP/REG.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/DO.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/PD.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/PM.jsp" />
         <option value="$PROJECT_DIR$/web/CSS/PharmacistsPages.css" />
+        <option value="$PROJECT_DIR$/web/JSP/REG.jsp" />
+        <option value="$PROJECT_DIR$/web/CSS/REGStylesheet.css" />
       </list>
     </option>
   </component>
@@ -795,7 +771,7 @@
       <workItem from="1593291364971" duration="13098000" />
       <workItem from="1593336584368" duration="30252000" />
       <workItem from="1593423255473" duration="24010000" />
-      <workItem from="1593504729434" duration="11664000" />
+      <workItem from="1593504729434" duration="15307000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -853,11 +829,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593513971633</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="UX upgraded with the chat button">
+      <created>1593516670562</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1593516670562</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79024000" />
+    <option name="totallyTimeSpent" value="82667000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="691" extended-state="6" />
@@ -945,7 +928,8 @@
     <MESSAGE value="REG's UE updated" />
     <MESSAGE value="REG's UX updated" />
     <MESSAGE value="Funny animations added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Funny animations added" />
+    <MESSAGE value="UX upgraded with the chat button" />
+    <option name="LAST_COMMIT_MESSAGE" value="UX upgraded with the chat button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1281,34 +1265,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/REGDashboard.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1261">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/PharmacistManagerDashboard.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="165" column="15" selection-start-line="157" selection-start-column="12" selection-end-line="165" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/REG.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="156" column="33" selection-start-line="156" selection-start-column="33" selection-end-line="156" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/CSS/REGStylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="89" column="22" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1339,16 +1299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/PD.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
-          <folding>
-            <element signature="n#script#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
@@ -1359,8 +1309,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/CSS/PharmacistsPages.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="173" column="15" selection-start-line="173" selection-start-column="15" selection-end-line="173" selection-end-column="15" />
+        <state relative-caret-position="222">
+          <caret line="221" column="1" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/PD.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+          <folding>
+            <element signature="n#script#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/REGDashboard.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/REG.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="163" column="55" selection-start-line="163" selection-start-column="55" selection-end-line="163" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/CSS/REGStylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
           <folding />
         </state>
       </provider>

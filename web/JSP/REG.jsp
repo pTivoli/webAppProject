@@ -9,7 +9,8 @@
     <body>
         <h1 id="header">REG Page!</h1>
         <div id="mainContent">
-            <div id="registerPharmacyAndPharmacistManager">
+            <button id="openRegForm" onclick="openForm()">REGISTER PM & PHARMACY</button>
+            <div id="registerPharmacyAndPharmacistManager"><br>
                 PHARMACIST MANAGER DATA<br><br>
                 CF<br>
                 <input id="cf" name="cf" type="text"><br>
@@ -24,7 +25,7 @@
                 Password<br>
                 <input id="pwd"  name="pwd" type="password"><br>
                 Password confirmation<br>
-                <input id="pwdCheck"  name="pwdCheck" type="password"><br>
+                <input id="pwdCheck"  name="pwdCheck" type="password"><br><br>
                 PHARMACY DATA<br><br>
                 Pharmacy Name<br>
                 <input id="phname"  name="phname" type="text"><br>
@@ -155,7 +156,14 @@
                 $("#header").css("color", "black");
                 $("#openChat").css("border-radius", "50px 50px 50px 0px");
                 $("#openDashboard").css("border-radius", "50px");
+                $("#openRegForm").css("border-radius", "50px");
             });
+            function openForm(){
+                $("#openRegForm").css("display", "none");
+                $("#mainContent").css("height", "auto");
+                $("#registerPharmacyAndPharmacistManager").css("display", "block");
+                $("#registerPharmacyAndPharmacistManager").css("max-height", "1030px");
+            }
         </script>
     </body>
 </html>
