@@ -101,9 +101,9 @@
     function createTable(text) {
         var ris = "<table>";
         text = text.split(";");
-        var i;
-        for(i = 0; i < text.length-1; i++){
-          ris += "<tr><td id=\"td" + i + "\">" + text[i] + "</td><td><button onclick=\"selectReceiver("+i+");\">Select</button></td></tr>";
+        var j;
+        for(j = 0; j < text.length-1; j++){
+          ris += "<tr><td id=\"td" + j + "\">" + text[j] + "</td><td><button onclick=\"selectReceiver("+j+");\">Select</button></td></tr>";
         }
         ris += "</table>";
         return ris;
@@ -111,12 +111,11 @@
     function selectReceiver(inv) {
             i = inv;
             $("#rec-Messages").html("");
-            $("#TOP").html("Texting to: " + $("#td"+i).text());
+            $("#TOP").html("Texting to: <b>" + $("#td"+i).text() + "</b>");
             if($("#td"+i).text().indexOf("@") < 0 && $("#td"+i).text() !== "REG")
                 $("#receiverType").attr("value", 1);
             else
                 $("#receiverType").attr("value", 0);
-            alert($("#receiverType").attr("value"));
             if($("#receiverType").val() == 0) {
                 $("#receiver").attr("value", $("#td"+i).text());
                 $("#receivers").html("");
@@ -126,9 +125,10 @@
                 $("#receivers").html("");
                 readMessagesGroup();
             }
+            $("#recMail").val("");
     }
     function readMessages() {
-        var receiverMail = $("#td"+i).text();
+        var receiverMail = $("#Top b").html();
         $(document).ready(function () {
             $.ajax({
                 type: "POST",
@@ -143,13 +143,13 @@
             });
         });
     }
-    function readMessagesGroup() {
+    function readMessagesGroup(inv) {
         $(document).ready(function () {
             $.ajax({
                 type: "POST",
                 url: "readMessagesGroup.do",
                 data: {
-                    receiver: $("#td"+i).text()
+                    receiver: $("#td"+inv).text()
                 },
                 success: function (result) {
                     $("#rec-Messages").html(createMessages(result))
