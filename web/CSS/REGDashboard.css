@@ -42,6 +42,8 @@ html, body{
     align-items: center;
     position: relative;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 
 .accordion-item-header::after {

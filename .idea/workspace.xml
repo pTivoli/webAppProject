@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="" />
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/IMG/chat.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/CSS/REGDashboard.css" afterPath="$PROJECT_DIR$/web/CSS/REGDashboard.css" />
+    </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="REGStylesheet.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/CSS/REGStylesheet.css">
+      <file leaf-file-name="REGDashboard.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/JSP/REGDashboard.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+            <state relative-caret-position="-869">
+              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="REGDashboard.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/CSS/REGDashboard.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -70,7 +84,6 @@
         <option value="$PROJECT_DIR$/web/CSS/dashboards.css" />
         <option value="$PROJECT_DIR$/web/CSS/dashboardREG.css" />
         <option value="$PROJECT_DIR$/web/JSP/REGDashboard.jsp" />
-        <option value="$PROJECT_DIR$/web/CSS/REGDashboard.css" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacyDoctor.java" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/REG.java" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/beans/RegisterPharmacyAndPharmacistManager.java" />
@@ -80,6 +93,7 @@
         <option value="$PROJECT_DIR$/web/CSS/PharmacistsPages.css" />
         <option value="$PROJECT_DIR$/web/JSP/REG.jsp" />
         <option value="$PROJECT_DIR$/web/CSS/REGStylesheet.css" />
+        <option value="$PROJECT_DIR$/web/CSS/REGDashboard.css" />
       </list>
     </option>
   </component>
@@ -767,7 +781,7 @@
       <workItem from="1593291364971" duration="13098000" />
       <workItem from="1593336584368" duration="30252000" />
       <workItem from="1593423255473" duration="24010000" />
-      <workItem from="1593504729434" duration="15375000" />
+      <workItem from="1593504729434" duration="15777000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -839,11 +853,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593522371546</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Button added to open the reg form&#10;">
+      <created>1593522408541</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1593522408541</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82735000" />
+    <option name="totallyTimeSpent" value="83137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="691" extended-state="6" />
@@ -1285,14 +1306,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/CSS/REGDashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/DO.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -1329,14 +1342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/REGDashboard.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/REG.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -1349,6 +1354,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/REGDashboard.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-869">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/CSS/REGDashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
           <folding />
         </state>
       </provider>
