@@ -232,10 +232,14 @@
         return true;
     }
     function validatePharmacistData(cf, fname, lname, dob, usr, pwd, pwdCheck){
+        var mask = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
         var mask2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
         if(validateFormUser(cf, fname, lname, dob) == true) {
             if(usr.length == 0){
                 alert("Email is missed");
+                return false;
+            }else if(!mask.test(usr)){
+                alert("Email format not valid");
                 return false;
             }else if(pwd.length == 0){
                 alert("Password is missed");
@@ -284,7 +288,7 @@
                             $("#usr").val("");
                             $("#pwd").val("");
                             $("#pwdCheck").val("");
-                            alert("A New Pharmacist has been created successfully!");
+                            alert("A new pharmacist has been created successfully!");
                         }
                     }
                 });

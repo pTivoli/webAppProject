@@ -10,18 +10,6 @@ public class PharmacyDoctor extends DeskOperator{
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
                 Statement st = con.createStatement();
-                /*String checkUser = "select count (codicefiscale)\n" +
-                        "from persona\n" +
-                        "where codicefiscale = '" + user.getCF() + "'";
-                ResultSet ris = st.executeQuery(checkUser);
-                int checkDB = 0;
-                while(ris.next()){
-                    checkDB = Integer.parseInt(ris.getString("count"));
-                }
-
-                if(checkDB == 0){
-                    registerUser(user);
-                }*/
                 if(!exists("persona", "codicefiscale", user.getCF())){
                     con.close();
                     throw new IllegalArgumentException("This user does not exists in the DB, please, insert it");

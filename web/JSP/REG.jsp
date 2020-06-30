@@ -70,18 +70,22 @@
                                 phaddr: $("#phaddr").val(),
                                 phtel: $("#phtel").val()
                             },
-                            success: function () {
-                                $('#cfP').val("");
-                                $('#fnameP').val("");
-                                $('#lnameP').val("");
-                                $('#dobP').val("");
-                                $("#usr").val("");
-                                $("#pwd").val("");
-                                $("#pwdCheck").val("");
-                                $("#phname").val("");
-                                $("#phaddr").val("");
-                                $("#phtel").val("");
-                                alert("A New Pharmacy has been created successfully!");
+                            success: function (responseText) {
+                                if(responseText != ""){
+                                    alert(responseText);
+                                }else {
+                                    $('#cf').val("");
+                                    $('#fname').val("");
+                                    $('#lname').val("");
+                                    $('#dob').val("");
+                                    $("#usr").val("");
+                                    $("#pwd").val("");
+                                    $("#pwdCheck").val("");
+                                    $("#phname").val("");
+                                    $("#phaddr").val("");
+                                    $("#phtel").val("");
+                                    alert("A new pharmacy has been created successfully!");
+                                }
                             }
                         });
                     });
@@ -127,10 +131,14 @@
                 return true;
             }
             function validatePharmacistData(cf, fname, lname, dob, usr, pwd, pwdCheck){
+                var mask = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
                 var mask2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
                 if(validateFormUser(cf, fname, lname, dob) == true) {
                     if(usr.length == 0){
                         alert("Email is missed");
+                        return false;
+                    }else if(!mask.test(usr)){
+                        alert("Email format not valid");
                         return false;
                     }else if(pwd.length == 0){
                         alert("Password is missed");

@@ -148,6 +148,10 @@
                             document.cookie = "medicine=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
                             $('#suggestions').html("");
                             $('#medicine').val("");
+                            $('#codRec').val("");
+                            $('#dateRec').val("");
+                            $('#codDocRec').val("");
+                            $('#cfRec').val("");
                             document.getElementById("objects").innerHTML = "";
                             $("#formReceipt").css("height", "0px");
                             $("#formReceipt").css("display", "none");
