@@ -171,9 +171,8 @@ body{
     text-decoration: none;
     color: black;
     background-color: orange;
-    padding-left: 20px;
+    padding: 25px;
     border-radius: 25px 0px 0px 25px;
-    padding-right: 15px;
     transition: background-color 1s;
     transition-timing-function: ease-out;
 }
@@ -195,4 +194,29 @@ body{
 }
 #registerUser button:hover, #formReceipt button:hover, #employee_PD_DO button:hover{
     background-color: violet;
+}
+#openChat, #openChat2, #openChat3{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+    background-color: dodgerblue;
+    padding: 25px;
+    border: 0;
+    border-radius: 25px 0px 0px 25px;
+    transition: 0.5s;
+    transition-timing-function: ease-out;
+    transition-property: background-color;
+}
+#openChat:hover, #openChat2:hover{
+    background-color: violet;
+}
+#openChat2{
+    margin-left: 30px;
+}
+#openChat3{
+    border-radius: 0px;
 }

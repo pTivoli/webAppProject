@@ -54,6 +54,7 @@
                 <p><button onclick="buyFn();" disabled>BUY</button></p><br/>
                 <div id="objects"></div>
             </div>
+            <a href="www.google.it" id="openChat">C<br>H<br>A<br>T<br></a>
         </div>
         <script src="JS/JQuery.js"></script>
         <script>

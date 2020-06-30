@@ -3,43 +3,39 @@
     <head>
         <title>REG</title>
         <link rel="stylesheet" href="CSS/Stylesheet.css"/>
-        <link rel="stylesheet" href="CSS/PharmacistsPages.css">
+        <link rel="stylesheet" href="CSS/REGStylesheet.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>REG Page!</h1>
-        <div id="registerPharmacyAndPharmacistManager">
-            PHARMACIST MANAGER DATA<br><br>
-
-            CF<br>
-            <input id="cf" name="cf" type="text" required><br>
-            First Name<br>
-            <input id="fname"  name="fname" type="text" required><br>
-            Last Name<br>
-            <input id="lname"  name="lname" type="text" required><br>
-            Date Of Birth<br>
-            <input id="dob"  name="dob" type="date" required><br>
-            Username<br>
-            <input id="usr"  name="usr" type="text" required><br>
-            Password<br>
-            <input id="pwd"  name="pwd" type="password" required><br>
-            Password confirmation<br>
-            <input id="pwdCheck"  name="pwdCheck" type="password" required><br>
-
-            PHARMACY DATA<br><br>
-
-            Pharmacy Name<br>
-            <input id="phname"  name="phname" type="text" required><br>
-            Pharmacy Address<br>
-            <input id="phaddr"  name="phaddr" type="text" required><br>
-            Pharmacy Phone Number<br>
-            <input id="phtel"  name="phtel" type="tel" required><br><br>
-
-            <button onclick="registerPharmacyAndPharmacistManager()">REGISTER PHARMACY AND HIS PHARMACIST MANAGER</button>
-        </div>
-
-        <input type=button onClick="location.href='JSP/REGDashboard.jsp'" value='click here'>
-
+        <h1 id="header">REG Page!</h1>
+        <div id="mainContent">
+            <div id="registerPharmacyAndPharmacistManager">
+                PHARMACIST MANAGER DATA<br><br>
+                CF<br>
+                <input id="cf" name="cf" type="text"><br>
+                First Name<br>
+                <input id="fname"  name="fname" type="text"><br>
+                Last Name<br>
+                <input id="lname"  name="lname" type="text"><br>
+                Date Of Birth<br>
+                <input id="dob"  name="dob" type="date"><br>
+                Username<br>
+                <input id="usr"  name="usr" type="text"><br>
+                Password<br>
+                <input id="pwd"  name="pwd" type="password"><br>
+                Password confirmation<br>
+                <input id="pwdCheck"  name="pwdCheck" type="password"><br>
+                PHARMACY DATA<br><br>
+                Pharmacy Name<br>
+                <input id="phname"  name="phname" type="text"><br>
+                Pharmacy Address<br>
+                <input id="phaddr"  name="phaddr" type="text"><br>
+                Pharmacy Phone Number<br>
+                <input id="phtel"  name="phtel" type="tel"><br><br>
+                <button onclick="registerPharmacyAndPharmacistManager()">REGISTER PHARMACY AND HIS PHARMACIST MANAGER</button>
+            </div>
+            <button onClick="location.href='JSP/REGDashboard.jsp'" id="openDashboard">DASHBOARD</button><br>
+            <button onClick="location.href='JSP/REGDashboard.jsp'" id="openChat">START CHATTING</button>
         </div>
         <script src="JS/JQuery.js"></script>
         <script>
@@ -70,18 +66,22 @@
                                 phaddr: $("#phaddr").val(),
                                 phtel: $("#phtel").val()
                             },
-                            success: function () {
-                                $('#cfP').val("");
-                                $('#fnameP').val("");
-                                $('#lnameP').val("");
-                                $('#dobP').val("");
-                                $("#usr").val("");
-                                $("#pwd").val("");
-                                $("#pwdCheck").val("");
-                                $("#phname").val("");
-                                $("#phaddr").val("");
-                                $("#phtel").val("");
-                                alert("A New Pharmacy has been created successfully!");
+                            success: function (responseText) {
+                                if(responseText != ""){
+                                    alert(responseText);
+                                }else {
+                                    $('#cf').val("");
+                                    $('#fname').val("");
+                                    $('#lname').val("");
+                                    $('#dob').val("");
+                                    $("#usr").val("");
+                                    $("#pwd").val("");
+                                    $("#pwdCheck").val("");
+                                    $("#phname").val("");
+                                    $("#phaddr").val("");
+                                    $("#phtel").val("");
+                                    alert("A new pharmacy has been created successfully!");
+                                }
                             }
                         });
                     });
@@ -127,10 +127,14 @@
                 return true;
             }
             function validatePharmacistData(cf, fname, lname, dob, usr, pwd, pwdCheck){
+                var mask = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
                 var mask2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
                 if(validateFormUser(cf, fname, lname, dob) == true) {
                     if(usr.length == 0){
                         alert("Email is missed");
+                        return false;
+                    }else if(!mask.test(usr)){
+                        alert("Email format not valid");
                         return false;
                     }else if(pwd.length == 0){
                         alert("Password is missed");
@@ -146,6 +150,12 @@
                 }else
                     return false;
             }
+            $(document).ready(function () {
+                $("#header").css("width", "100%");
+                $("#header").css("color", "black");
+                $("#openChat").css("border-radius", "50px 50px 50px 0px");
+                $("#openDashboard").css("border-radius", "50px");
+            });
         </script>
     </body>
 </html>

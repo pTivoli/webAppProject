@@ -74,6 +74,7 @@
         <input id="dob"  name="dob" type="date" required><br>
         <button onclick="registerUser()">Submit</button>
     </div>
+    <a href="www.gooogle.it" id="openChat2">C<br>H<br>A<br>T<br></a>
 </div>
 <script src="JS/JQuery.js"></script>
 <script>
@@ -148,6 +149,10 @@
                             document.cookie = "medicine=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
                             $('#suggestions').html("");
                             $('#medicine').val("");
+                            $('#codRec').val("");
+                            $('#dateRec').val("");
+                            $('#codDocRec').val("");
+                            $('#cfRec').val("");
                             document.getElementById("objects").innerHTML = "";
                             $("#formReceipt").css("height", "0px");
                             $("#formReceipt").css("display", "none");
