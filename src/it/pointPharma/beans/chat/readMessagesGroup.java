@@ -25,23 +25,23 @@ public class readMessagesGroup extends Action {
                 String query = "";
                 String ris = "";
                 if(ph instanceof REG)
-                    query = "SELECT DISTINCT mailpersonalemitt, timestmesssaggio, testo" +
+                    query = "SELECT DISTINCT mailpersonalemitt, timestmessaggio, testo" +
                             " FROM destinatario_messaggio" +
-                            " JOIN messaggio ON timestmesssaggio = timest" +
+                            " JOIN messaggio ON timestmessaggio = timest" +
                             " JOIN personale ON cfpersonaledest = personale_cfpersona" +
-                            " WHERE mailpersonalemitt LIKE '=" + ph.getEmail() + "'" +
+                            " WHERE mailpersonalemitt LIKE '" + ph.getEmail() + "'" +
                             " AND groupchat = 'true'" +
                             " AND ruolopersonale='PM'" +
-                            " ORDER BY timestmesssaggio";
+                            " ORDER BY timestmessaggio";
                 else if(ph instanceof PharmacistManager)
-                    query = "SELECT DISTINCT mailpersonalemitt, timestmesssaggio, testo" +
+                    query = "SELECT DISTINCT mailpersonalemitt, timestmessaggio, testo" +
                             " FROM destinatario_messaggio" +
-                            " JOIN messaggio ON timestmesssaggio = timest" +
+                            " JOIN messaggio ON timestmessaggio = timest" +
                             " JOIN personale ON cfpersonaledest = personale_cfpersona" +
                             " WHERE mailpersonalemitt LIKE '" + ph.getEmail() + "%'" +
                             " AND groupchat = 'true'" +
                             " AND nomefarmacia='" + phy.getName() + "'" +
-                            " ORDER BY timestmesssaggio";
+                            " ORDER BY timestmessaggio";
                 else
                 {
                     String retrieveReceivers = "";
@@ -57,29 +57,29 @@ public class readMessagesGroup extends Action {
                     {
                         if(rs2.getString("mail").equals(ph.getEmail()))
                         {
-                            query = "SELECT mailpersonalemitt, timestmesssaggio, testo " +
+                            query = "SELECT mailpersonalemitt, timestmessaggio, testo " +
                                     "FROM destinatario_messaggio " +
-                                    "JOIN messaggio on timestmesssaggio = timest " +
+                                    "JOIN messaggio on timestmessaggio = timest " +
                                     "AND mailpersonalemitt LIKE '" + rs2.getString("mail") + "'" +
                                     " AND groupchat='true'" +
-                                    "ORDER BY timestmesssaggio";
+                                    "ORDER BY timestmessaggio";
                         } else
-                            query = "SELECT DISTINCT res.mailpersonalemitt, res.timestmesssaggio, res.testo FROM (" +
-                                    "SELECT mailpersonalemitt, timestmesssaggio, testo " +
+                            query = "SELECT DISTINCT res.mailpersonalemitt, res.timestmessaggio, res.testo FROM (" +
+                                    "SELECT mailpersonalemitt, timestmessaggio, testo " +
                                     "FROM destinatario_messaggio " +
-                                    "JOIN messaggio on timestmesssaggio = timest " +
+                                    "JOIN messaggio on timestmessaggio = timest " +
                                     "WHERE mailpersonaledest LIKE '" + rs2.getString("mail") + "%'" +
                                     "AND mailpersonalemitt LIKE '" + ph.getEmail() + "%'" +
                                     " AND groupchat='true'" +
                                     "UNION " +
-                                    "SELECT mailpersonalemitt, timestmesssaggio, testo " +
+                                    "SELECT mailpersonalemitt, timestmessaggio, testo " +
                                     "FROM destinatario_messaggio " +
-                                    "JOIN messaggio on timestmesssaggio = timest " +
+                                    "JOIN messaggio on timestmessaggio = timest " +
                                     "WHERE mailpersonaledest LIKE '" + ph.getEmail() + "%'" +
                                     "AND mailpersonalemitt LIKE '" + rs2.getString("mail") + "%'" +
                                     " AND groupchat='true'" +
                                     ") res" +
-                                    " ORDER BY res.timestmesssaggio";
+                                    " ORDER BY res.timestmessaggio";
 
                         if(ph instanceof PharmacyDoctor || ph instanceof DeskOperator) {
                             ResultSet rs = st.executeQuery(query);

@@ -2,6 +2,7 @@ package it.pointPharma.beans.chat;
 
 import it.pointPharma.generalClasses.Pharmacist;
 import it.pointPharma.generalClasses.Pharmacy;
+import it.pointPharma.generalClasses.REG;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -28,22 +29,22 @@ public class readMessages extends Action {
                 Pharmacist ph = (Pharmacist)session.getAttribute("pharmacist");
                 String mail = ph.getEmail();
                 String receiver = request.getParameter("receiver");
-                String query = "SELECT mailpersonalemitt, timestmesssaggio, testo FROM (" +
-                        "SELECT mailpersonalemitt, timestmesssaggio, testo " +
+                String query = "SELECT mailpersonalemitt, timestmessaggio, testo FROM (" +
+                        "SELECT mailpersonalemitt, timestmessaggio, testo " +
                         "FROM destinatario_messaggio " +
-                        "JOIN messaggio on timestmesssaggio = timest " +
+                        "JOIN messaggio on timestmessaggio = timest " +
                         "WHERE mailpersonaledest LIKE '" + receiver + "%'" +
                         "AND mailpersonalemitt LIKE '" + mail + "%'" +
                         " AND groupchat='false'" +
                         "UNION " +
-                        "SELECT mailpersonalemitt, timestmesssaggio, testo " +
+                        "SELECT mailpersonalemitt, timestmessaggio, testo " +
                         "FROM destinatario_messaggio " +
-                        "JOIN messaggio on timestmesssaggio = timest " +
+                        "JOIN messaggio on timestmessaggio = timest " +
                         "WHERE mailpersonaledest LIKE '" + mail + "%'" +
                         "AND mailpersonalemitt LIKE '" + receiver + "%'" +
                         " AND groupchat='false'" +
                         ") res" +
-                        " ORDER BY res.timestmesssaggio";
+                        " ORDER BY res.timestmessaggio";
                 ResultSet rs = st.executeQuery(query);
                 String ris = "";
                 while(rs.next())
