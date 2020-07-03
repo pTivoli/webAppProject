@@ -15,6 +15,7 @@
 <head>
     <title><%=lname + " " + fname + "'s chat"%></title>
     <link rel="stylesheet" href="../CSS/Stylesheet.css">
+    <link rel="stylesheet" href="../CSS/ChatStylesheet.css">
 </head>
 <body>
     <div>

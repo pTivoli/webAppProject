@@ -25,12 +25,12 @@ public class DeskOperator extends Pharmacist {
                     queryPurchase = ("INSERT INTO Acquisto VALUES('" + timest + "' , '" + this.getCF() + "', '" + this.getEmail() + "', '"+cf+"' ," + totalCost + ")");
                 st.executeUpdate(queryPurchase);
                 for (Medicine m  : medicineLinkedList ){
-                    if(!examined.contains(m)){
+                    if(!equals(m)) {
                         examined.add(m);
                         int quantity = countDuplicates(medicineLinkedList, m);
-                        queryMedPurchase = "INSERT INTO Acquisto_Farmaco VALUES('"+quantity+"', '"+timest+"' , '"+this.getCF()+"', '"+m.getCode()+"')";
+                        queryMedPurchase = "INSERT INTO Acquisto_Farmaco VALUES('" + quantity + "', '" + timest + "' , '" + this.getCF() + "', '" + m.getCode() + "')";
                         st.executeUpdate(queryMedPurchase);
-                        String queryFindCost = "select prezzo from farmaco where codice='"+m.getCode()+"';";
+                        String queryFindCost = "select prezzo from farmaco where codice='" + m.getCode() + "';";
                         ResultSet r = st.executeQuery(queryFindCost);
                         r.next();
                         m.setCost(r.getFloat("prezzo"));
@@ -64,4 +64,13 @@ public class DeskOperator extends Pharmacist {
         return count;
     }
 
+    public boolean isIn(LinkedList<Medicine> med, Medicine m){
+        for(Medicine m2 : med) {
+            if (m2 == m)
+                return true;
+            else
+                return false;
+        }
+        return false;
+    }
 }
