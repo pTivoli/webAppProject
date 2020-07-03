@@ -4,7 +4,6 @@
     url('../FONTS/montserrat-light-webfont.woff2') format('woff2'),
     url('../FONTS/Montserrat-Light.ttf') format('truetype');
 }
-
 html, body{
     margin: 0;
     padding: 0;
@@ -14,9 +13,20 @@ html, body{
     flex-direction: column;
     align-items: left;
     font-family: 'Montserrat', sans-serif;
-    background-image: url("../IMG/chat.webp");
+    background-image: url("../IMG/homePage.webp");
     background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     scroll-behavior: smooth;
+}
+
+header{
+    width: 100%;
+    background-color: orange;
+    text-align: center;
+    font-size: 2em;
+    font-weight: lighter;
+    padding: 10px 0px 10px 0px;
 }
 
 .accordion{
@@ -42,6 +52,16 @@ html, body{
     align-items: center;
     position: relative;
     cursor: pointer;
+    background-color: white;
+    transition: 0.5s background-color ease-out;
+}
+.accordion-item-header:hover{
+    background-color: #aaa;
+}
+
+.accordion-item-header a{
+    text-decoration: none;
+    color: black;
 }
 
 .accordion-item-header::after {

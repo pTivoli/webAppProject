@@ -96,7 +96,7 @@
         <button onclick="registerPharmacist()">REGISTER</button><br>
     </div>
     <a href="JSP/PharmacistManagerDashboard.jsp" id="dashboardButton">D<br>A<br>S<br>H<br>B<br>O<br>A<br>R<br>D<br></a>
-    <a href="www.gooogle.it" id="openChat3">C<br>H<br>A<br>T<br></a>
+    <a href="JSP/chat.jsp" id="openChat3">C<br>H<br>A<br>T<br></a>
 </div>
 <script src="JS/JQuery.js"></script>
 <script>
@@ -276,7 +276,7 @@
                         dob: $("#dobP").val(),
                         usr: $("#usr").val(),
                         pwd: $("#pwd").val(),
-                        role: $('input[name="role"]:checked').val()
+                        role: $("input[name=role]:checked").val()
                     },
                     success: function (responseText) {
                         if(responseText != ""){

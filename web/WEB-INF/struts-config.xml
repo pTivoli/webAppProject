@@ -41,6 +41,32 @@
                 scope="request"
                 input="/JSP/PM.jsp"
                 validate="false"></action>
+        <action path="/messages"
+                type="it.pointPharma.beans.chat.messages"
+                scope="request"
+                input="/JSP/chat.jsp"
+                validate="false"></action>
+        <action path="/receiverCheck"
+                type="it.pointPharma.beans.chat.receiverCheck"
+                input="/JSP/chat.jsp"
+                scope="request"
+                validate="false">
+        </action>
+        <action path="/readMessages"
+                input="/JSP/chat.jsp"
+                scope="request"
+                type="it.pointPharma.beans.chat.readMessages"
+                validate="false"></action>
+        <action path="/readMessagesGroup"
+            input="/JSP/chat.jsp"
+            scope="request"
+            type="it.pointPharma.beans.chat.readMessagesGroup"
+            validate="false"/>
+        <action path="/messagesGroup"
+                input="/JSP/chat.jsp"
+                scope="request"
+                type="it.pointPharma.beans.chat.messagesGroup"
+                validate="false"/>
         <action path="/JSP/getGeneralNumberItems"
                 type="it.pointPharma.dashboardTools.StatFinder"
                 scope="request"
@@ -71,8 +97,6 @@
                 scope="request"
                 input="/JSP/PharmacistManagerDashboard.jsp"
                 validate="false"></action>
-
-        <!-- REG -->
         <action path="/JSP/getTotalSalesPerPharmacy"
                 type="it.pointPharma.dashboardTools.RegStatFinder"
                 scope="request"
@@ -93,6 +117,5 @@
                 scope="request"
                 input="/JSP/REGDashboard.jsp"
                 validate="false"></action>
-
     </action-mappings>
 </struts-config>

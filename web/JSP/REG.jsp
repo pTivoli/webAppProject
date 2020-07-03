@@ -36,7 +36,7 @@
                 <button onclick="registerPharmacyAndPharmacistManager()">REGISTER PHARMACY AND HIS PHARMACIST MANAGER</button>
             </div>
             <button onClick="location.href='JSP/REGDashboard.jsp'" id="openDashboard">DASHBOARD</button><br>
-            <button onClick="location.href='JSP/REGDashboard.jsp'" id="openChat">START CHATTING</button>
+            <button onClick="location.href='JSP/chat.jsp'" id="openChat">START CHATTING</button>
         </div>
         <script src="JS/JQuery.js"></script>
         <script>

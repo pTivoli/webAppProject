@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class DeskOperator extends Pharmacist {
 
-    public void sellItems(LinkedList<Medicine> medicineLinkedList, Pharmacy pharmacy) throws Exception {
+    public void sellItems(LinkedList<Medicine> medicineLinkedList, Pharmacy pharmacy, Timestamp timestamp, String cf) throws Exception {
         try{
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
@@ -15,26 +15,31 @@ public class DeskOperator extends Pharmacist {
                 String mqty;
                 LinkedList<Medicine> examined = new LinkedList<Medicine>();
                 float totalCost = 0;
-                Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+                if(timestamp == null){
+                    timestamp = new Timestamp(System.currentTimeMillis());
+                }
                 String timest = timestamp.toString();
-                queryPurchase = ("INSERT INTO Acquisto VALUES('" + timest + "' , '" + this.getCF() + "', '" + this.getEmail() + "', null ," + totalCost + ")");
-                //System.out.println(queryPurchase);
+                if(cf == "")
+                    queryPurchase = ("INSERT INTO Acquisto VALUES('" + timest + "' , '" + this.getCF() + "', '" + this.getEmail() + "', null ," + totalCost + ")");
+                else
+                    queryPurchase = ("INSERT INTO Acquisto VALUES('" + timest + "' , '" + this.getCF() + "', '" + this.getEmail() + "', '"+cf+"' ," + totalCost + ")");
                 st.executeUpdate(queryPurchase);
                 for (Medicine m  : medicineLinkedList ){
-                    if(!(isIn(m, examined))){
+                    if(!examined.contains(m)){
                         examined.add(m);
                         int quantity = countDuplicates(medicineLinkedList, m);
                         queryMedPurchase = "INSERT INTO Acquisto_Farmaco VALUES('"+quantity+"', '"+timest+"' , '"+this.getCF()+"', '"+m.getCode()+"')";
-                        //System.out.println(queryMedPurchase);
                         st.executeUpdate(queryMedPurchase);
+                        String queryFindCost = "select prezzo from farmaco where codice='"+m.getCode()+"';";
+                        ResultSet r = st.executeQuery(queryFindCost);
+                        r.next();
+                        m.setCost(r.getFloat("prezzo"));
                     }
-
                     totalCost += m.getCost();
                     mqty = "update magazzino_farmaco as mf \n" +
                             "set quantita = mf.quantita - 1 \n" +
                             "where mf.codiceFarmaco = '" + m.getCode() + "'\n" +
                             "and mf.nomefarmaciamagazzino = '" + pharmacy.getName() + "';";
-                    System.out.println(mqty);
                     st.executeUpdate(mqty);
 
                     String updateTot = "update Acquisto\n" +
@@ -42,7 +47,6 @@ public class DeskOperator extends Pharmacist {
                             "where timest = '"+timest+"'\n" +
                             "and cfPersonale = '"+this.getCF()+"'";
                     st.executeUpdate(updateTot);
-
                 }
             } catch (SQLException e) {
                 throw new SQLException("Error DB");
@@ -60,12 +64,4 @@ public class DeskOperator extends Pharmacist {
         return count;
     }
 
-    private boolean isIn(Medicine m, LinkedList<Medicine> examined){
-        for(Medicine in : examined){
-            if(m.getCode() == in.getCode()){
-                return true;
-            }
-        }
-        return false;
-    }
 }

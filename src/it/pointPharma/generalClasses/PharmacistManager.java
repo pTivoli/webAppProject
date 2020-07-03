@@ -18,10 +18,11 @@ public class PharmacistManager extends PharmacyDoctor{
                     throw new IllegalArgumentException("This pharmacist still exists in the DB");
                 }
                 String queryPersonale;
-                if(pharmacist instanceof DeskOperator)
-                    queryPersonale = "INSERT INTO Personale VALUES ('"+pharmacist.getEmail()+"','"+pharmacist.getPwd()+"','"+pharmacist.getCF()+"','DO', '"+pharmacy.getName()+"', '"+pharmacy.getAddress()+"', '"+pharmacy.getPharmacyManager().getCF()+"');";
-                else
-                    queryPersonale = "INSERT INTO Personale VALUES ('"+pharmacist.getEmail()+"','"+pharmacist.getPwd()+"','"+pharmacist.getCF()+"','PD', '"+pharmacy.getName()+"', '"+pharmacy.getAddress()+"', '"+pharmacy.getPharmacyManager().getCF()+"');";
+                if(pharmacist instanceof PharmacyDoctor) {
+                    queryPersonale = "INSERT INTO Personale VALUES ('" + pharmacist.getEmail() + "','" + pharmacist.getPwd() + "','" + pharmacist.getCF() + "','PD', '" + pharmacy.getName() + "', '" + pharmacy.getAddress() + "', '" + pharmacy.getPharmacyManager().getCF() + "');";
+                }else {
+                    queryPersonale = "INSERT INTO Personale VALUES ('" + pharmacist.getEmail() + "','" + pharmacist.getPwd() + "','" + pharmacist.getCF() + "','DO', '" + pharmacy.getName() + "', '" + pharmacy.getAddress() + "', '" + pharmacy.getPharmacyManager().getCF() + "');";
+                }
                 st.executeUpdate(queryPersonale);
             }catch(SQLException ex){
                 throw new Exception("Error DB");

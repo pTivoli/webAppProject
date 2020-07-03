@@ -1,11 +1,12 @@
 package it.pointPharma.generalClasses;
 
+import javax.servlet.http.HttpSession;
 import java.sql.*;
 import java.util.LinkedList;
 
 public class PharmacyDoctor extends DeskOperator{
 
-    public void sellItemsWithReceipt(LinkedList<Medicine> medicineLinkedList, User user, String codRegDoc, Pharmacy pharmacy, String recipeCode) throws Exception {
+    public void sellItemsWithReceipt(LinkedList<Medicine> medicineLinkedList, User user, String codRegDoc, Pharmacy pharmacy, String recipeCode, String dateRec) throws Exception {
         try{
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try {
@@ -22,13 +23,14 @@ public class PharmacyDoctor extends DeskOperator{
                     con.close();
                     throw new IllegalArgumentException("This doctor does not exists in the DB");
                 }
+                Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+                String timest = timestamp.toString();
+                sellItems(medicineLinkedList, pharmacy, timestamp, user.getCF());
                 if(recipeCode != null) {
-                    String queryRecipe ="INSERT INTO ricetta VALUES('" + recipeCode + "', CURRENT_TIMESTAMP , '" + user.getCF() + "', '" + codRegDoc + "', \n" +
-                            "(select medico_cfpersona from medico where codiceregionale= '" + codRegDoc + "'));";
-                    System.out.print(queryRecipe);
+                    String queryRecipe ="INSERT INTO ricetta VALUES('" + recipeCode + "', '"+dateRec+"' , '" + user.getCF() + "', '" + codRegDoc + "', \n" +
+                            "(select medico_cfpersona from medico where codiceregionale= '" + codRegDoc + "'), '"+timest+"', '"+this.getCF()+"');";
                     st.executeUpdate(queryRecipe);
                 }
-                sellItems(medicineLinkedList, pharmacy);
             } catch (SQLException e) {
                 throw new Exception("Error DB");
             }
@@ -41,14 +43,12 @@ public class PharmacyDoctor extends DeskOperator{
         try{
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             try{
-                System.out.println(user.getCF());
                 Statement st = con.createStatement();
                 if(exists("persona", "codicefiscale", user.getCF())){
                     con.close();
                     throw new IllegalArgumentException("This user still exists in the DB");
                 }
-                String queryUtente = "INSERT INTO Persona VALUES ('"+user.getCF()+"','"+user.getfName()+"','"+user.getlName()+"','"+user.getDOB()+"');";
-                System.out.println(queryUtente);
+                String queryUtente = "INSERT INTO Persona VALUES ('"+user.getCF()+"','"+user.getfName()+"','"+user.getlName()+"','"+user.getDOB()+"', '"+this.getCF()+"', '"+this.getEmail()+"');";
                 st.executeUpdate(queryUtente);
             }catch(SQLException ex){
                 throw new Exception("Error DB");
@@ -66,7 +66,6 @@ public class PharmacyDoctor extends DeskOperator{
             try{
                 Statement st = con.createStatement();
                 String query = "SELECT count(*) as count from "+table+" where "+field+" ILIKE '"+value+"';";
-                System.out.println(query);
                 ResultSet r = st.executeQuery(query);
                 r.next();
                 count = r.getInt("count");
