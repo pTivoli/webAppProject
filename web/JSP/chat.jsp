@@ -56,11 +56,13 @@
     <script>
         var i;
         function senF() {
-            if($("#receiverType").val() == 0) {
-                messages();
-            }
-            else if($("#receiverType").val() == 1) {
-                messagesGroup();
+            if($('#message').val() != "" && $('#message').val().trim().length != 0){
+                if ($("#receiverType").val() == 0) {
+                    messages();
+                }
+                else if ($("#receiverType").val() == 1) {
+                    messagesGroup();
+                }
             }
         }
         function messages() {
@@ -199,9 +201,7 @@
     $('#message').keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
-            if($('#message').val() != "") {
-                senF();
-            }
+            senF();
         }
     });
     </script>
