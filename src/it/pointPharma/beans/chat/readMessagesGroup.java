@@ -46,7 +46,8 @@ public class readMessagesGroup extends Action {
                 {
                     String retrieveReceivers = "";
                     if((ph instanceof DeskOperator) && request.getParameter("receiver").equals(phy.getName()))
-                        retrieveReceivers = "SELECT personale_cfpersona, mail FROM personale WHERE nomefarmacia = '" + phy.getName() + "';";
+                        retrieveReceivers = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale = 'PM'" +
+                                "AND nomefarmacia = '" + phy.getName() + "';";
                     else if(ph instanceof PharmacyDoctor)
                         retrieveReceivers = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale = 'PD'" +
                                 "AND nomefarmacia = '" + phy.getName() + "';";
