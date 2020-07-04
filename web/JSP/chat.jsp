@@ -1,7 +1,6 @@
 <%@ page import="it.pointPharma.generalClasses.User" %>
 <%@ page import="it.pointPharma.generalClasses.Pharmacy" %>
 <%@ page import="it.pointPharma.generalClasses.Pharmacist" %>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
@@ -14,7 +13,6 @@
 <html>
 <head>
     <title><%=lname + " " + fname + "'s chat"%></title>
-    <link rel="stylesheet" href="../CSS/Stylesheet.css">
     <link rel="stylesheet" href="../CSS/ChatStylesheet.css">
 </head>
 <body>

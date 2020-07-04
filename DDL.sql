@@ -2,7 +2,7 @@ create table Persona(
   codiceFiscale char(16) primary key,
   nome varchar(20) not null,
   cognome varchar(20) not null,
-  dataNascita date,
+  dataNascita date
 );
 
 create table Medico(
@@ -123,7 +123,6 @@ CREATE TABLE Acquisto_Farmaco(
 
 alter table Persona add cf_farmacista_registrante char(16);
 alter table Persona add mail_farmacista_registrante char(30);
-alter table Persona add constraint fk_registratore foreign key (cf_farmacista_registrante, mail_farmacista_registrante) references Personale(personale_cfpersona, mail)
-
+alter table Persona add constraint fk_registratore foreign key (cf_farmacista_registrante, mail_farmacista_registrante) references Personale(personale_cfpersona, mail);
 alter table destinatario_messaggio rename column timestmesssaggio to timestmessaggio;
 alter table destinatario_messaggio add column groupchat boolean not null;
