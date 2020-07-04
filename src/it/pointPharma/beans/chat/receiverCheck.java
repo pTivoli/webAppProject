@@ -29,15 +29,15 @@ public class receiverCheck extends Action {
                 if(request.getParameter("hint").contains("%")) return null;
                if(ph instanceof REG)
                {
-                   query = "SELECT nomefarmacia FROM personale WHERE ruolopersonale='PM' AND lower(nomefarmacia) LIKE '" + hint.toLowerCase() + "%';";
+                   query = "SELECT nomefarmacia FROM personale WHERE ruolopersonale='PM' AND lower(nomefarmacia) LIKE '%" + hint.toLowerCase() + "%';";
                }
                else if(ph instanceof PharmacistManager)
                {
-                   query = "SELECT mail FROM personale WHERE cf_titolare_farmacia='" + ph.getCF() + "' AND mail NOT LIKE '" + ph.getEmail() + "' AND mail LIKE '" + hint + "%';";
+                   query = "SELECT mail FROM personale WHERE cf_titolare_farmacia='" + ph.getCF() + "' AND mail NOT LIKE '" + ph.getEmail() + "' AND mail LIKE '%" + hint + "%';";
                }
                else
                {
-                   query = "SELECT mail FROM personale WHERE nomefarmacia LIKE '" + phy.getName() + "' AND mail LIKE '" + hint + "%' AND mail NOT LIKE '" + ph.getEmail() +"';";
+                   query = "SELECT mail FROM personale WHERE nomefarmacia LIKE '" + phy.getName() + "' AND mail LIKE '%" + hint + "%' AND mail NOT LIKE '" + ph.getEmail() +"';";
                }
                 ResultSet rs = st.executeQuery(query);
                String ris = "";
