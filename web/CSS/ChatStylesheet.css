@@ -35,6 +35,27 @@ p {
     height: 50px;
     width: 90%;
     text-align: center;
-    background-color:#f0f0f0;
+    text-shadow: 2px 2px 5px green;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
+button {
+    color: hotpink;
+    hover: color: hotpink;
+    background-color: lightgreen;
+    opacity: 1.0;
+}
+
+#recMail {
+
+}
+
+#top {
+    background-color: #ffffff;
+    opacity: 0.6;
+    width: max-content;
+    width: max-content;
+    margin-top: 10px;
+    margin-bottom: auto;
+}

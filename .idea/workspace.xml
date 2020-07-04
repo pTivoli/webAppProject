@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/CSS/ChatStylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/webAppProject_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/webAppProject_war_exploded.xml" />
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="first step of the creation of ChatStylesheet">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/it/pointPharma/generalClasses/DeskOperator.java" afterPath="$PROJECT_DIR$/src/it/pointPharma/generalClasses/DeskOperator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/chat.jsp" afterPath="$PROJECT_DIR$/web/JSP/chat.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/CSS/ChatStylesheet.css" afterPath="$PROJECT_DIR$/web/CSS/ChatStylesheet.css" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,13 +22,14 @@
     <favorites_list name="webAppProject" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="DeskOperator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/DeskOperator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
+            <state relative-caret-position="572">
               <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
               <folding>
+                <element signature="imports" expanded="false" />
                 <marker date="1593786298578" expanded="true" signature="985:1107" ph="INSERT INTO Acquisto... " />
                 <marker date="1593786298578" expanded="true" signature="1170:1296" ph="INSERT INTO Acquisto... " />
                 <marker date="1593786298578" expanded="true" signature="1607:1728" ph="INSERT INTO Acquisto_Farmaco... " />
@@ -46,9 +44,26 @@
       <file leaf-file-name="ChatStylesheet.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/CSS/ChatStylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+            <state relative-caret-position="131">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messagesGroup.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/pointPharma/beans/chat/messagesGroup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding>
+                <marker date="1593783196998" expanded="true" signature="1326:1399" ph="SELECT perso... personale" />
+                <marker date="1593783196998" expanded="true" signature="1504:1599" ph="SELECT perso... personale" />
+                <marker date="1593783196998" expanded="true" signature="1702:1855" ph="SELECT perso... personale" />
+                <marker date="1593783196998" expanded="true" signature="1956:2084" ph="SELECT perso... personale" />
+                <marker date="1593783196998" expanded="true" signature="2198:2426" ph="INSERT INTO messaggio... " />
+                <marker date="1593783196998" expanded="true" signature="2757:3069" ph="INSERT INTO destinatario_messaggio... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,7 +91,7 @@
       <file leaf-file-name="chat.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/JSP/chat.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
+            <state relative-caret-position="374">
               <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
               <folding />
             </state>
@@ -86,9 +101,24 @@
       <file leaf-file-name="Medicine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/Medicine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-71">
+            <state relative-caret-position="88">
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="e#548#549#0" expanded="false" />
+                <element signature="e#586#587#0" expanded="false" />
+                <element signature="e#621#622#0" expanded="false" />
+                <element signature="e#651#652#0" expanded="false" />
+                <element signature="e#810#811#0" expanded="false" />
+                <element signature="e#850#851#0" expanded="false" />
+                <element signature="e#881#882#0" expanded="false" />
+                <element signature="e#908#909#0" expanded="false" />
+                <element signature="e#948#949#0" expanded="false" />
+                <element signature="e#980#981#0" expanded="false" />
+                <element signature="e#1011#1012#0" expanded="false" />
+                <element signature="e#1038#1039#0" expanded="false" />
+                <element signature="e#1078#1079#0" expanded="false" />
+                <element signature="e#1110#1111#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -232,6 +262,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -392,9 +424,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -926,7 +956,8 @@
       <workItem from="1593504729434" duration="16873000" />
       <workItem from="1593525812974" duration="7036000" />
       <workItem from="1593546353241" duration="5774000" />
-      <workItem from="1593783219279" duration="6017000" />
+      <workItem from="1593783219279" duration="6102000" />
+      <workItem from="1593848438171" duration="3606000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -1040,11 +1071,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593552704608</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="first step of the creation of ChatStylesheet">
+      <created>1593789369216</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1593789369216</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103060000" />
+    <option name="totallyTimeSpent" value="106751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
@@ -1059,8 +1097,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39028776" sideWeight="0.5030303" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37938845" sideWeight="0.4969697" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45503598" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37938845" sideWeight="0.4969697" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Struts Assistant" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1138,7 +1176,8 @@
     <MESSAGE value="Sell Items and Sell Items with Receipt updated [the new DB structure allow us to track the pharmacists that sell a set of medicines]" />
     <MESSAGE value="Register User updated for the new DB structure" />
     <MESSAGE value="URI's updated for the chat feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="URI's updated for the chat feature" />
+    <MESSAGE value="first step of the creation of ChatStylesheet" />
+    <option name="LAST_COMMIT_MESSAGE" value="first step of the creation of ChatStylesheet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1149,17 +1188,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/struts-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1248">
-          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.struts.diagram.DiagramEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/pointPharma/dashboardTools/StatFinder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4288">
@@ -1244,7 +1272,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="18" column="120" selection-start-line="18" selection-start-column="120" selection-end-line="18" selection-end-column="120" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1362,7 +1389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
           <caret line="27" column="100" selection-start-line="27" selection-start-column="100" selection-end-line="27" selection-end-column="100" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1458,7 +1484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="103" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1466,7 +1491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1474,15 +1498,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="38" column="61" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/DeskOperator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="572">
           <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
           <folding>
+            <element signature="imports" expanded="false" />
             <marker date="1593786298578" expanded="true" signature="985:1107" ph="INSERT INTO Acquisto... " />
             <marker date="1593786298578" expanded="true" signature="1170:1296" ph="INSERT INTO Acquisto... " />
             <marker date="1593786298578" expanded="true" signature="1607:1728" ph="INSERT INTO Acquisto_Farmaco... " />
@@ -1495,9 +1519,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/Medicine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
+        <state relative-caret-position="88">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#548#549#0" expanded="false" />
+            <element signature="e#586#587#0" expanded="false" />
+            <element signature="e#621#622#0" expanded="false" />
+            <element signature="e#651#652#0" expanded="false" />
+            <element signature="e#810#811#0" expanded="false" />
+            <element signature="e#850#851#0" expanded="false" />
+            <element signature="e#881#882#0" expanded="false" />
+            <element signature="e#908#909#0" expanded="false" />
+            <element signature="e#948#949#0" expanded="false" />
+            <element signature="e#980#981#0" expanded="false" />
+            <element signature="e#1011#1012#0" expanded="false" />
+            <element signature="e#1038#1039#0" expanded="false" />
+            <element signature="e#1078#1079#0" expanded="false" />
+            <element signature="e#1110#1111#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1505,14 +1544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4862">
           <caret line="221" column="1" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/chat.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1525,6 +1556,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/chat.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/CSS/dashboards.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -1533,10 +1572,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/beans/chat/messagesGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <marker date="1593783196998" expanded="true" signature="1326:1399" ph="SELECT perso... personale" />
+            <marker date="1593783196998" expanded="true" signature="1504:1599" ph="SELECT perso... personale" />
+            <marker date="1593783196998" expanded="true" signature="1702:1855" ph="SELECT perso... personale" />
+            <marker date="1593783196998" expanded="true" signature="1956:2084" ph="SELECT perso... personale" />
+            <marker date="1593783196998" expanded="true" signature="2198:2426" ph="INSERT INTO messaggio... " />
+            <marker date="1593783196998" expanded="true" signature="2757:3069" ph="INSERT INTO destinatario_messaggio... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/CSS/ChatStylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+        <state relative-caret-position="131">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding />
         </state>
       </provider>
