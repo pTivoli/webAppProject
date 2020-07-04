@@ -4,58 +4,160 @@
     url('../FONTS/montserrat-light-webfont.woff2') format('woff2'),
     url('../FONTS/Montserrat-Light.ttf') format('truetype');
 }
-
-html, body{
+html,body{
     margin: 0;
     padding: 0;
-    display: inline-flex;
     width: 100%;
     height: 100%;
-    flex-direction: column;
-    align-items: center;
+    overflow: hidden;
+}
+body{
     font-family: 'Montserrat', sans-serif;
-    background-image: url("../IMG/chat.webp");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    scroll-behavior: smooth;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    align-content: center;
 }
-
-header{
+body>div{
+    width:100%;
+    height: 100%;
+}
+#header{
     width: 100%;
-    height: 50px;
-    text-align: center;
+    height: auto;
     font-size: 2em;
-    background-color: orange;
-}
-
-p {
     color: black;
-    border-style: inset;
-    height: 50px;
-    width: 90%;
-    text-align: center;
-    text-shadow: 2px 2px 5px green;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    background-color: orange;
+    padding: 5px 0px 5px 0px;
+    overflow: hidden;
 }
-
-button {
-    color: hotpink;
-    hover: color: hotpink;
-    background-color: lightgreen;
-    opacity: 1.0;
+#container{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row;
+    align-content: center;
+    width: 100%;
+    height: 82vh;
 }
-
-#recMail {
-
+.left-pane{
+    width: 25%;
+    height: 100%;
+    border-right: 1px solid grey;
 }
-
-#top {
-    background-color: #ffffff;
-    opacity: 0.6;
-    width: max-content;
-    width: max-content;
-    margin-top: 10px;
-    margin-bottom: auto;
+#right-pane{
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    background-image: url("../IMG/chat.webp");
+}
+#TOP{
+    background-color: #eee;
+    font-size: 1.5em;
+    color: black;
+    font-weight: lighter;
+    padding: 10px;
+    padding-left: 30px;
+}
+#recmail{
+    width: 100%;
+    border: 0px;
+    border-bottom: 1px solid grey;
+    font-size: 1.5em;
+    color: black;
+    font-weight: lighter;
+    padding: 10px;
+}
+#receivers{
+    width: 100%;
+    height: 100%;
+    font-size: 1.2em;
+    font-weight: lighter;
+}
+#receivers button{
+    background-color: transparent;
+    border: 0;
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: black;
+    width: 100%;
+    transition: 0.5s background-color ease-in;
+    padding: 20px;
+}
+#receivers button:hover{
+    background-color: #eee;
+}
+#receivers table td:first-child{
+    display: none;
+}
+.right-foot{
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #eee;
+    font-weight: lighter;
+    padding: 10px 0px 10px 0px;
+}
+#message{
+    background-color: white;
+    color: black;
+    font-size: 1.2em;
+    border: 0;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-weight: lighter;
+    width: 80%;
+}
+.right-foot button{
+    background-color: orange;
+    color: black;
+    font-size: 1.2em;
+    border: 0;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-weight: lighter;
+    cursor: pointer;
+    transition: 0.5s background-color ease-in;
+}
+.right-foot button:hover{
+    background-color: forestgreen;
+}
+#rec-Messages{
+    height: inherit;
+}
+#TOP, .right-foot{
+    display: none;
+}
+#textMessagesBox{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    overflow: scroll;
+}
+.message{
+    background-color: dodgerblue;
+    border: 0;
+    border-radius: 0px 25px 25px 0px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.message p{
+    font-size: 1.2em;
+    display: inline-block;
+    clear: both;
+    float: left;
+    margin: 5px;
+}
+.message p:first-child{
+    font-size: 0.6em;
+    font-weight: bold;
+    margin: 5px 25px 0px 20px;
+}
+.message:first-child{
+    border-radius: 25px 25px 25px 0px;
+}
+.message:last-of-type{
+    border-radius: 0px 25px 25px 25px;
 }
