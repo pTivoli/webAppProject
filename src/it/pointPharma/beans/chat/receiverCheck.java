@@ -29,21 +29,24 @@ public class receiverCheck extends Action {
                 if(request.getParameter("hint").contains("%")) return null;
                if(ph instanceof REG)
                {
-                   query = "SELECT mail FROM personale WHERE ruolopersonale='PM' AND mail LIKE '" + hint + "%';";
+                   query = "SELECT nomefarmacia FROM personale WHERE ruolopersonale='PM' AND lower(nomefarmacia) LIKE '%" + hint.toLowerCase() + "%';";
                }
                else if(ph instanceof PharmacistManager)
                {
-                   query = "SELECT mail FROM personale WHERE cf_titolare_farmacia='" + ph.getCF() + "' AND mail NOT LIKE '" + ph.getEmail() + "' AND mail LIKE '" + hint + "%';";
+                   query = "SELECT mail FROM personale WHERE cf_titolare_farmacia='" + ph.getCF() + "' AND mail NOT LIKE '" + ph.getEmail() + "' AND mail LIKE '%" + hint + "%';";
                }
                else
                {
-                   query = "SELECT mail FROM personale WHERE nomefarmacia LIKE '" + phy.getName() + "' AND mail LIKE '" + hint + "%' AND mail NOT LIKE '" + ph.getEmail() +"';";
+                   query = "SELECT mail FROM personale WHERE nomefarmacia LIKE '" + phy.getName() + "' AND mail LIKE '%" + hint + "%' AND mail NOT LIKE '" + ph.getEmail() +"';";
                }
                 ResultSet rs = st.executeQuery(query);
                String ris = "";
                while (rs.next())
                {
-                   ris = ris.concat(rs.getString("mail") + ";");
+                   if(ph instanceof REG)
+                    ris = ris.concat(rs.getString("nomefarmacia") + ";");
+                   else
+                       ris = ris.concat(rs.getString("mail") + ";");
                }
                 if(ph instanceof REG) {
                     if ("PM".contains(hint.toUpperCase())) {
@@ -51,8 +54,6 @@ public class receiverCheck extends Action {
                     }
                 }
                 else if(ph instanceof PharmacistManager) {
-                    if (phy.getName().toLowerCase().contains(hint.toLowerCase()))
-                        ris = ris.concat(phy.getName() + ";");
                     if("REG".contains(hint.toUpperCase()))
                         ris = ris.concat("REG;");
                 }
@@ -64,6 +65,10 @@ public class receiverCheck extends Action {
                     if("DO".contains(hint.toUpperCase()))
                         ris = ris.concat("DO;");
                 }
+                if(ph instanceof REG);
+                else
+                    if (phy.getName().toLowerCase().contains(hint.toLowerCase()))
+                        ris = ris.concat(phy.getName() + ";");
                 PrintWriter out = response.getWriter();
                 out.println(ris);
                 out.flush();

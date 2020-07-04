@@ -1,6 +1,4 @@
-<%@ page import="it.pointPharma.generalClasses.User" %>
-<%@ page import="it.pointPharma.generalClasses.Pharmacy" %>
-<%@ page import="it.pointPharma.generalClasses.Pharmacist" %>
+<%@ page import="it.pointPharma.generalClasses.*" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -9,35 +7,48 @@
     String lname = user.getlName();
     String fname = user.getfName();
     String email = user.getEmail();
+    Pharmacy pharmacy = (Pharmacy) session.getAttribute("pharmacy");
+    String phName = pharmacy.getName();
+    String role = "";
+    if(user instanceof PharmacistManager)
+        role = "PD";
+    if(user instanceof REG) {
+        role = "REG";
+    }
 %>
 
 <html>
 <head>
-    <title><%=lname + " " + fname + "'s chat"%></title>
-    <link rel="stylesheet" href="../CSS/Stylesheet.css">
+    <title><%=fname + " " + lname + "'s chat"%></title>
     <link rel="stylesheet" href="../CSS/ChatStylesheet.css">
 </head>
 <body>
     <div>
-        <p>Welcome <%= lname + " " + fname + " " + " " + email + "\n"%></p>
-        <div class="left-pane" >
-            <input type="text" name="receiver" id="recMail" autocomplete="off" onpaste="return false;" onkeyup="lfReceiver();">
-            <div id="receivers">
-
-            </div>
+        <div id="header">
+            <p>Welcome <%= fname + " " + lname %></p>
         </div>
-        <div id="rigth-pane">
-            <div id="TOP">
+        <div id="container">
+            <div class="left-pane" >
+                <input type="text" name="receiver" id="recMail" placeholder="Search" autocomplete="off" onpaste="return false;" onkeyup="lfReceiver();">
+                <div id="receivers">
 
+                </div>
             </div>
-            <div id="rec-Messages">
+            <div id="right-pane">
+                <div id="TOP">
 
-            </div>
-            <div class="rigth-foot">
-                <input id="receiverType" type="hidden" name="receiverType">
-                <input id="receiver" type="hidden" name="receiver">
-                <input id="message" type="text" name="message" placeholder="message" autocomplete="off" onpaste="return false;" required/>
-                <button onclick="senF();">Send</button>
+                </div>
+                <div id="rec-Messages">
+
+                </div>
+                <div class="right-foot">
+                    <input id="receiverType" type="hidden" name="receiverType">
+                    <input id="mitType" type="hidden" value='<%=role%>'>
+                    <input id="pharmacy" type="hidden" name="pharmacy" value="<%=phName%>">
+                    <input id="receiver" type="hidden" name="receiver">
+                    <input id="message" type="text" name="message" placeholder="Write a message here..." autocomplete="off" onpaste="return false;" required/>
+                    <button id="send" onclick="senF();" disabled>Send</button>
+                </div>
             </div>
         </div>
     </div>
@@ -63,6 +74,7 @@
                     },
                     success: function () {
                         readMessages();
+                        $('#message').val("");
                     }
                 });
             });
@@ -77,6 +89,7 @@
                     },
                     success: function () {
                         readMessagesGroup();
+                        $('#message').val("");
                     }
                 });
         });
@@ -104,16 +117,19 @@
         text = text.split(";");
         var j;
         for(j = 0; j < text.length-1; j++){
-          ris += "<tr><td id=\"td" + j + "\">" + text[j] + "</td><td><button onclick=\"selectReceiver("+j+");\">Select</button></td></tr>";
+          ris += "<tr><td id=\"td" + j + "\">" + text[j] + "</td><td><button onclick=\"selectReceiver("+j+");\">"+text[j]+"</button></td></tr>";
         }
         ris += "</table>";
         return ris;
     }
     function selectReceiver(inv) {
             i = inv;
+            $("#TOP").css("display", "block");
+            $(".right-foot").css("display", "block");
+            $("#send").prop("disabled", false);
             $("#rec-Messages").html("");
-            $("#TOP").html("Texting to: <b>" + $("#td"+i).text() + "</b>");
-            if($("#td"+i).text().indexOf("@") < 0 && $("#td"+i).text() !== "REG")
+            $("#TOP").html("<b>" + $("#td"+i).text() + "</b>");
+            if($("#TOP b").html().indexOf("@") < 0 && $("#td"+i).text() !== "REG" && $("#mitType").val() !== "REG" || $("#td"+i).text() === "PM")
                 $("#receiverType").attr("value", 1);
             else
                 $("#receiverType").attr("value", 0);
@@ -124,6 +140,8 @@
             }
             else {
                 $("#receivers").html("");
+                if($("#TOP b").html() === $("#pharmacy").val() && ($("#mitType").val() !== "PD" && $("#mitType").val() !== "REG"))
+                   $("#send").prop("disabled", true);
                 readMessagesGroup();
             }
             $("#recMail").val("");
@@ -138,7 +156,7 @@
                     receiver: receiverMail
                 },
                 success: function (result) {
-                    $("#rec-Messages").html(createMessages(result))
+                    $("#rec-Messages").html(createMessages(result));
                 }
 
             });
@@ -150,26 +168,36 @@
                 type: "POST",
                 url: "../readMessagesGroup.do",
                 data: {
-                    receiver: $("#td"+inv).text()
+                    receiver: $("#TOP b").html()
                 },
                 success: function (result) {
-                    $("#rec-Messages").html(createMessages(result))
+                    $("#rec-Messages").html(createMessages(result));
                 }
             });
         });
     }
 
     function createMessages(text) {
-        var ris = "<table>";
+        var ris = '<div id="textMessagesBox">';
         text = text.split(";");
         var i;
         for(i = 0; i < text.length-1; i+=2)
         {
-            ris += "<tr><td>from: " + text[i] + "</td><td> text: " + text[i + 1] + "</td></tr>";
+            //ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td></tr>";
+            //ris += text[i] + "<br>" + text[i+1];
+            ris += "<div class='message'><p>" + text[i] + "</p><p>" + text[i + 1] + "</p></div><br>";
         }
-        ris += "</table>";
+        ris += '</div>';
         return ris;
     }
+    $('#message').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            if($('#message').val.length != "") {
+                senF();
+            }
+        }
+    });
     </script>
 </body>
 </html>
