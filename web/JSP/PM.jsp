@@ -101,7 +101,16 @@
 <script src="JS/JQuery.js"></script>
 <script>
     var receipt = false;
-    function cookieCart(codeMed, nameMed, receiptMedicine){
+    var totPriceMed;
+    $(document).ready(function () {
+        if(document.cookie != ""){
+            document.cookie = "medicine=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        }
+        totPriceMed = 0;
+    });
+    function cookieCart(codeMed, nameMed, receiptMedicine, priceMed){
+        totPriceMed += priceMed;
+        $("#cart button").html("BUY - " + totPriceMed + "€");
         var obj = document.getElementById("objects").innerHTML;
         document.getElementById("objects").innerHTML= obj + "<p>"+nameMed+"</p><br>";
         if(receiptMedicine == 't'){
@@ -172,6 +181,7 @@
                             document.cookie = "medicine=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
                             $('#suggestions').html("");
                             $('#medicine').val("");
+                            $("#cart button").html("BUY");
                             document.getElementById("objects").innerHTML = "";
                             $("#formReceipt").css("height", "0px");
                             $("#formReceipt").css("display", "none");
@@ -300,8 +310,8 @@
         var ris = "<table>";
         text = text.split(";");
         var i;
-        for(i = 0; i < text.length-1; i+=3){
-            ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td><td><button onclick=\"cookieCart('" + text[i] + "','" + text[i + 1] + "','" + text[i + 2] + "')\">ADD</button></td></tr>";
+        for(i = 0; i < text.length-1; i+=4){
+            ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td><td>" + text[i + 2] + "</td><td><button onclick=\"cookieCart('" + text[i] + "','" + text[i + 1] + "','" + text[i + 3] + "', "+text[i+2]+")\">ADD</button></td></tr>";
         }
         ris += "</table>";
         return ris;
