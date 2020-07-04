@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/CSS/ChatStylesheet.css" afterPath="$PROJECT_DIR$/web/CSS/ChatStylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/chat.jsp" afterPath="$PROJECT_DIR$/web/JSP/chat.jsp" />
-    </list>
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +23,8 @@
       <file leaf-file-name="chat.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/JSP/chat.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+            <state relative-caret-position="342">
+              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -818,7 +814,7 @@
       <workItem from="1593504729434" duration="16873000" />
       <workItem from="1593525812974" duration="7036000" />
       <workItem from="1593546353241" duration="6473000" />
-      <workItem from="1593852208295" duration="10093000" />
+      <workItem from="1593852208295" duration="10249000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -946,11 +942,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593853557484</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Stylesheet for the Chat platform">
+      <created>1593865977548</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1593865977550</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107835000" />
+    <option name="totallyTimeSpent" value="107991000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="683" extended-state="6" />
@@ -1046,7 +1049,8 @@
     <MESSAGE value="URI's updated for the chat feature" />
     <MESSAGE value="Bug PM/DO on the PM's page solved" />
     <MESSAGE value="minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
+    <MESSAGE value="Stylesheet for the Chat platform" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stylesheet for the Chat platform" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1436,14 +1440,14 @@
         <state relative-caret-position="232">
           <caret line="102" column="49" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
           <folding>
-            <marker date="1593852293506" expanded="true" signature="1217:1757" ph="SELECT DISTI... destinatario_messaggio" />
-            <marker date="1593852293506" expanded="true" signature="1846:2404" ph="SELECT DISTI... destinatario_messaggio" />
-            <marker date="1593852293506" expanded="true" signature="2595:2749" ph="SELECT perso... personale" />
-            <marker date="1593852293506" expanded="true" signature="2823:2976" ph="SELECT perso... personale" />
-            <marker date="1593852293506" expanded="true" signature="3308:3736" ph="SELECT mailp... destinatario_messaggio" />
-            <marker date="1593852293506" expanded="true" signature="3807:5044" ph="SELECT DISTI... mailpersonalemitt" />
-            <marker date="1593852293506" expanded="true" signature="3924:4382" ph="SELECT mailp... destinatario_messaggio" />
-            <marker date="1593852293506" expanded="true" signature="4470:4928" ph="SELECT mailp... destinatario_messaggio" />
+            <marker date="1593865991407" expanded="true" signature="1217:1757" ph="SELECT DISTI... destinatario_messaggio" />
+            <marker date="1593865991407" expanded="true" signature="1846:2404" ph="SELECT DISTI... destinatario_messaggio" />
+            <marker date="1593865991407" expanded="true" signature="2595:2749" ph="SELECT perso... personale" />
+            <marker date="1593865991407" expanded="true" signature="3186:3230" ph="SELECT perso... personale" />
+            <marker date="1593865991407" expanded="true" signature="3562:3990" ph="SELECT mailp... destinatario_messaggio" />
+            <marker date="1593865991407" expanded="true" signature="4061:5298" ph="SELECT DISTI... mailpersonalemitt" />
+            <marker date="1593865991407" expanded="true" signature="4178:4636" ph="SELECT mailp... destinatario_messaggio" />
+            <marker date="1593865991407" expanded="true" signature="4724:5182" ph="SELECT mailp... destinatario_messaggio" />
           </folding>
         </state>
       </provider>
@@ -1474,8 +1478,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/chat.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state relative-caret-position="342">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
           <folding />
         </state>
       </provider>
