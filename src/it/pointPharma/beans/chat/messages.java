@@ -1,6 +1,7 @@
 package it.pointPharma.beans.chat;
 
 import it.pointPharma.generalClasses.Pharmacist;
+import it.pointPharma.generalClasses.REG;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -39,7 +40,10 @@ public class messages extends Action {
                     }
                 }
                 else {
-                    String retrieveReceiverInfo = "SELECT personale_cfpersona, mail FROM personale WHERE personale.mail='" + receiver + "';";
+                    String retrieveReceiverInfo;
+                    if(ph instanceof REG)
+                        retrieveReceiverInfo = "SELECT personale_cfpersona, mail FROM personale WHERE personale.nomefarmacia='" + receiver + "' and ruolopersonale = 'PM' ;";
+                    else retrieveReceiverInfo = "SELECT personale_cfpersona, mail FROM personale WHERE personale.mail='" + receiver + "';";
                     ResultSet rs = st.executeQuery(retrieveReceiverInfo);
                     while (rs.next()) {
                         cfReceiver = rs.getString("personale_cfpersona");

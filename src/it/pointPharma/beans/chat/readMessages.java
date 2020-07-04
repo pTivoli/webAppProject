@@ -28,7 +28,24 @@ public class readMessages extends Action {
                 HttpSession session = request.getSession(true);
                 Pharmacist ph = (Pharmacist)session.getAttribute("pharmacist");
                 String mail = ph.getEmail();
-                String receiver = request.getParameter("receiver");
+                String receiver = "";
+                if(ph instanceof REG) {
+                    String query = "SELECT mail FROM personale WHERE nomefarmacia LIKE '" + request.getParameter("receiver") + "' AND ruolopersonale = 'PM';";
+                    Statement s2 = con.createStatement();
+                    ResultSet rs = s2.executeQuery(query);
+                    while (rs.next())
+                        receiver = rs.getString("mail");
+                }
+                else receiver = request.getParameter("receiver");
+                if(receiver.equals("REG"))
+                {
+                    String query = "SELECT mail from personale where ruolopersonale = 'REG' ;";
+
+                    Statement s2 = con.createStatement();
+                    ResultSet st2 = s2.executeQuery(query);
+                    while (st2.next())
+                        receiver = st2.getString("mail");
+                }
                 String query = "SELECT mailpersonalemitt, timestmessaggio, testo FROM (" +
                         "SELECT mailpersonalemitt, timestmessaggio, testo " +
                         "FROM destinatario_messaggio " +

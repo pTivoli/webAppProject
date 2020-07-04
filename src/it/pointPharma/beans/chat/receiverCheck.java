@@ -29,7 +29,7 @@ public class receiverCheck extends Action {
                 if(request.getParameter("hint").contains("%")) return null;
                if(ph instanceof REG)
                {
-                   query = "SELECT mail FROM personale WHERE ruolopersonale='PM' AND mail LIKE '" + hint + "%';";
+                   query = "SELECT nomefarmacia FROM personale WHERE ruolopersonale='PM' AND lower(nomefarmacia) LIKE '" + hint.toLowerCase() + "%';";
                }
                else if(ph instanceof PharmacistManager)
                {
@@ -43,7 +43,10 @@ public class receiverCheck extends Action {
                String ris = "";
                while (rs.next())
                {
-                   ris = ris.concat(rs.getString("mail") + ";");
+                   if(ph instanceof REG)
+                    ris = ris.concat(rs.getString("nomefarmacia") + ";");
+                   else
+                       ris = ris.concat(rs.getString("mail") + ";");
                }
                 if(ph instanceof REG) {
                     if ("PM".contains(hint.toUpperCase())) {
@@ -62,8 +65,10 @@ public class receiverCheck extends Action {
                     if("DO".contains(hint.toUpperCase()))
                         ris = ris.concat("DO;");
                 }
-                if (phy.getName().toLowerCase().contains(hint.toLowerCase()))
-                    ris = ris.concat(phy.getName() + ";");
+                if(ph instanceof REG);
+                else
+                    if (phy.getName().toLowerCase().contains(hint.toLowerCase()))
+                        ris = ris.concat(phy.getName() + ";");
                 PrintWriter out = response.getWriter();
                 out.println(ris);
                 out.flush();

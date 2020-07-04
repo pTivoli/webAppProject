@@ -1,7 +1,4 @@
-<%@ page import="it.pointPharma.generalClasses.User" %>
-<%@ page import="it.pointPharma.generalClasses.Pharmacy" %>
-<%@ page import="it.pointPharma.generalClasses.Pharmacist" %>
-<%@ page import="it.pointPharma.generalClasses.PharmacistManager" %>
+<%@ page import="it.pointPharma.generalClasses.*" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -15,6 +12,9 @@
     String role = "";
     if(user instanceof PharmacistManager)
         role = "PD";
+    if(user instanceof REG) {
+        role = "REG";
+    }
 %>
 
 <html>
@@ -41,7 +41,7 @@
             </div>
             <div class="rigth-foot">
                 <input id="receiverType" type="hidden" name="receiverType">
-                <input id="mitType" type="hidden", value="<%=role%>">
+                <input id="mitType" type="hidden" value='<%=role%>'>
                 <input id="pharmacy" type="hidden" name="pharmacy" value="<%=phName%>">
                 <input id="receiver" type="hidden" name="receiver">
                 <input id="message" type="text" name="message" placeholder="message" autocomplete="off" onpaste="return false;" required/>
@@ -122,7 +122,7 @@
             $("#send").prop("disabled", false);
             $("#rec-Messages").html("");
             $("#TOP").html("Texting to: <b>" + $("#td"+i).text() + "</b>");
-            if($("#td"+i).text().indexOf("@") < 0 && $("#td"+i).text() !== "REG")
+            if($("#TOP b").html().indexOf("@") < 0 && $("#td"+i).text() !== "REG" && $("#mitType").val() !== "REG" || $("#td"+i).text() === "PM")
                 $("#receiverType").attr("value", 1);
             else
                 $("#receiverType").attr("value", 0);
@@ -133,8 +133,8 @@
             }
             else {
                 $("#receivers").html("");
-                if($("#TOP b").html() === $("#pharmacy").val() && $("#mitType").val() !== "PD")
-                    $("#send").prop("disabled", true);
+                if($("#TOP b").html() === $("#pharmacy").val() && ($("#mitType").val() !== "PD" && $("#mitType").val() !== "REG"))
+                   $("#send").prop("disabled", true);
                 readMessagesGroup();
             }
             $("#recMail").val("");
