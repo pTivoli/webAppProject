@@ -157,12 +157,15 @@
                 },
                 success: function (result) {
                     $("#rec-Messages").html(createMessages(result));
+                    $("#textMessagesBox").animate({
+                        scrollTop: $(".message:last-of-type").offset().top
+                    }, 1000);
                 }
 
             });
         });
     }
-    function readMessagesGroup(inv) {
+    function readMessagesGroup() {
         $(document).ready(function () {
             $.ajax({
                 type: "POST",
@@ -172,6 +175,9 @@
                 },
                 success: function (result) {
                     $("#rec-Messages").html(createMessages(result));
+                    $("#textMessagesBox").animate({
+                        scrollTop: $(".message:last-of-type").offset().top
+                    }, 1000);
                 }
             });
         });
