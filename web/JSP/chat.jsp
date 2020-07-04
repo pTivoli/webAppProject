@@ -1,6 +1,7 @@
 <%@ page import="it.pointPharma.generalClasses.User" %>
 <%@ page import="it.pointPharma.generalClasses.Pharmacy" %>
 <%@ page import="it.pointPharma.generalClasses.Pharmacist" %>
+<%@ page import="it.pointPharma.generalClasses.PharmacistManager" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -9,6 +10,11 @@
     String lname = user.getlName();
     String fname = user.getfName();
     String email = user.getEmail();
+    Pharmacy pharmacy = (Pharmacy) session.getAttribute("pharmacy");
+    String phName = pharmacy.getName();
+    String role = "";
+    if(user instanceof PharmacistManager)
+        role = "PD";
 %>
 
 <html>
@@ -35,9 +41,11 @@
             </div>
             <div class="rigth-foot">
                 <input id="receiverType" type="hidden" name="receiverType">
+                <input id="mitType" type="hidden", value="<%=role%>">
+                <input id="pharmacy" type="hidden" name="pharmacy" value="<%=phName%>">
                 <input id="receiver" type="hidden" name="receiver">
                 <input id="message" type="text" name="message" placeholder="message" autocomplete="off" onpaste="return false;" required/>
-                <button onclick="senF();">Send</button>
+                <button id="send" onclick="senF();" disabled>Send</button>
             </div>
         </div>
     </div>
@@ -111,6 +119,7 @@
     }
     function selectReceiver(inv) {
             i = inv;
+            $("#send").prop("disabled", false);
             $("#rec-Messages").html("");
             $("#TOP").html("Texting to: <b>" + $("#td"+i).text() + "</b>");
             if($("#td"+i).text().indexOf("@") < 0 && $("#td"+i).text() !== "REG")
@@ -124,6 +133,8 @@
             }
             else {
                 $("#receivers").html("");
+                if($("#TOP b").html() === $("#pharmacy").val() && $("#mitType").val() !== "PD")
+                    $("#send").prop("disabled", true);
                 readMessagesGroup();
             }
             $("#recMail").val("");
@@ -150,7 +161,7 @@
                 type: "POST",
                 url: "../readMessagesGroup.do",
                 data: {
-                    receiver: $("#td"+inv).text()
+                    receiver: $("#TOP b").html()
                 },
                 success: function (result) {
                     $("#rec-Messages").html(createMessages(result))

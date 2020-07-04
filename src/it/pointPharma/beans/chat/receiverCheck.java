@@ -51,8 +51,6 @@ public class receiverCheck extends Action {
                     }
                 }
                 else if(ph instanceof PharmacistManager) {
-                    if (phy.getName().toLowerCase().contains(hint.toLowerCase()))
-                        ris = ris.concat(phy.getName() + ";");
                     if("REG".contains(hint.toUpperCase()))
                         ris = ris.concat("REG;");
                 }
@@ -64,6 +62,8 @@ public class receiverCheck extends Action {
                     if("DO".contains(hint.toUpperCase()))
                         ris = ris.concat("DO;");
                 }
+                if (phy.getName().toLowerCase().contains(hint.toLowerCase()))
+                    ris = ris.concat(phy.getName() + ";");
                 PrintWriter out = response.getWriter();
                 out.println(ris);
                 out.flush();
