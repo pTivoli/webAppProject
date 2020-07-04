@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="" />
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="Stylesheet for the Chat platform">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/CSS/ChatStylesheet.css" afterPath="$PROJECT_DIR$/web/CSS/ChatStylesheet.css" />
+    </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="chat.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/JSP/chat.jsp">
+      <file leaf-file-name="ChatStylesheet.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/CSS/ChatStylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+            <state relative-caret-position="220">
+              <caret line="124" column="34" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -89,8 +92,8 @@
         <option value="$PROJECT_DIR$/src/it/pointPharma/beans/RegisterPharmacist.java" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java" />
         <option value="$PROJECT_DIR$/DDL.sql" />
-        <option value="$PROJECT_DIR$/web/CSS/ChatStylesheet.css" />
         <option value="$PROJECT_DIR$/web/JSP/chat.jsp" />
+        <option value="$PROJECT_DIR$/web/CSS/ChatStylesheet.css" />
       </list>
     </option>
   </component>
@@ -814,7 +817,7 @@
       <workItem from="1593504729434" duration="16873000" />
       <workItem from="1593525812974" duration="7036000" />
       <workItem from="1593546353241" duration="6473000" />
-      <workItem from="1593852208295" duration="10249000" />
+      <workItem from="1593852208295" duration="10807000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -949,11 +952,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593865977550</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Stylesheet for the Chat platform">
+      <created>1593866110074</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1593866110074</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107991000" />
+    <option name="totallyTimeSpent" value="108549000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="683" extended-state="6" />
@@ -1468,18 +1478,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/CSS/ChatStylesheet.css">
+    <entry file="file://$PROJECT_DIR$/web/JSP/chat.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
+        <state relative-caret-position="75">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/chat.jsp">
+    <entry file="file://$PROJECT_DIR$/web/CSS/ChatStylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        <state relative-caret-position="220">
+          <caret line="124" column="34" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
           <folding />
         </state>
       </provider>
