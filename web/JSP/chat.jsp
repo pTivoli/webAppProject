@@ -159,7 +159,7 @@
                     $("#rec-Messages").html(createMessages(result));
                     $("#textMessagesBox").animate({
                         scrollTop: $(".message:last-of-type").offset().top
-                    }, 1);
+                    }, 0);
                 }
 
             });
