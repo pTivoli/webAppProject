@@ -59,7 +59,7 @@ public class DeskOperator extends Pharmacist {
     public int countDuplicates(LinkedList<Medicine> medicineLinkedList, Medicine m) {
         int count = 0;
         for(Medicine check: medicineLinkedList){
-            if(check.getCode() == m.getCode()) { count++; }
+            if(check.getCode().equals(m.getCode())) { count++; }
         }
         return count;
     }
