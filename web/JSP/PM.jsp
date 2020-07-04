@@ -112,7 +112,7 @@
         totPriceMed += priceMed;
         $("#cart button").html("BUY - " + totPriceMed + "€");
         var obj = document.getElementById("objects").innerHTML;
-        document.getElementById("objects").innerHTML= obj + "<p>"+nameMed+"</p><br>";
+        document.getElementById("objects").innerHTML= "<p>"+nameMed+"</p><br>" + obj;
         if(receiptMedicine == 't'){
             receipt = true;
             $("#formReceipt").css("display", "block");
