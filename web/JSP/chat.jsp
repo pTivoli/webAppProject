@@ -12,30 +12,34 @@
 
 <html>
 <head>
-    <title><%=lname + " " + fname + "'s chat"%></title>
+    <title><%= fname + " " + lname + "'s chat"%></title>
     <link rel="stylesheet" href="../CSS/ChatStylesheet.css">
 </head>
 <body>
     <div>
-        <p>Welcome <%= lname + " " + fname + " " + " " + email + "\n"%></p>
-        <div class="left-pane" >
-            <input type="text" name="receiver" id="recMail" autocomplete="off" onpaste="return false;" onkeyup="lfReceiver();">
-            <div id="receivers">
-
-            </div>
+        <div id="header">
+            <p>Welcome <%= fname + " " + lname %></p>
         </div>
-        <div id="rigth-pane">
-            <div id="TOP">
+        <div id="container">
+            <div class="left-pane" >
+                <input type="text" name="receiver" id="recMail" placeholder="Search" autocomplete="off" onpaste="return false;" onkeyup="lfReceiver();">
+                <div id="receivers">
 
+                </div>
             </div>
-            <div id="rec-Messages">
+            <div id="right-pane">
+                <div id="TOP">
 
-            </div>
-            <div class="rigth-foot">
-                <input id="receiverType" type="hidden" name="receiverType">
-                <input id="receiver" type="hidden" name="receiver">
-                <input id="message" type="text" name="message" placeholder="message" autocomplete="off" onpaste="return false;" required/>
-                <button onclick="senF();">Send</button>
+                </div>
+                <div id="rec-Messages">
+
+                </div>
+                <div class="right-foot">
+                    <input id="receiverType" type="hidden" name="receiverType">
+                    <input id="receiver" type="hidden" name="receiver">
+                    <input id="message" type="text" name="message" placeholder="Write a message..." autocomplete="off" onpaste="return false;" required/>
+                    <button onclick="senF();">Send</button>
+                </div>
             </div>
         </div>
     </div>
@@ -102,15 +106,18 @@
         text = text.split(";");
         var j;
         for(j = 0; j < text.length-1; j++){
-          ris += "<tr><td id=\"td" + j + "\">" + text[j] + "</td><td><button onclick=\"selectReceiver("+j+");\">Select</button></td></tr>";
+          ris += "<tr><td id=\"td" + j + "\">" + text[j] + "</td><td><button class='buttonReceivers' onclick='selectReceiver("+j+");'>" + text[j] + "</button></td></tr>";
+            //ris += "<br>";
         }
-        ris += "</table>";
+        ris+="</table>";
         return ris;
     }
     function selectReceiver(inv) {
             i = inv;
+            $("#TOP").css("display", "block");
+            $(".right-foot").css("display", "block");
             $("#rec-Messages").html("");
-            $("#TOP").html("Texting to: <b>" + $("#td"+i).text() + "</b>");
+            $("#TOP").html($("#td"+i).text());
             if($("#td"+i).text().indexOf("@") < 0 && $("#td"+i).text() !== "REG")
                 $("#receiverType").attr("value", 1);
             else
