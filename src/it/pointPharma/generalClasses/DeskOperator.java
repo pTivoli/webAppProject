@@ -25,7 +25,7 @@ public class DeskOperator extends Pharmacist {
                     queryPurchase = ("INSERT INTO Acquisto VALUES('" + timest + "' , '" + this.getCF() + "', '" + this.getEmail() + "', '"+cf+"' ," + totalCost + ")");
                 st.executeUpdate(queryPurchase);
                 for (Medicine m  : medicineLinkedList ){
-                    if(!equals(m)) {
+                    if(!(isIn(examined, m.getCode()))) {
                         examined.add(m);
                         int quantity = countDuplicates(medicineLinkedList, m);
                         queryMedPurchase = "INSERT INTO Acquisto_Farmaco VALUES('" + quantity + "', '" + timest + "' , '" + this.getCF() + "', '" + m.getCode() + "')";
@@ -64,13 +64,23 @@ public class DeskOperator extends Pharmacist {
         return count;
     }
 
-    public boolean isIn(LinkedList<Medicine> med, Medicine m){
-        for(Medicine m2 : med) {
-            if (m2 == m)
+    public boolean isIn(LinkedList<Medicine> med, String m){
+        for(Medicine mp : med) {
+            if (mp.getCode().equals(m)) {
                 return true;
-            else
-                return false;
+            }
         }
         return false;
     }
+
+    /*public boolean contains(Object o){
+        if(o instanceof  Medicine){
+            Medicine m = (Medicine)o;
+            if(m.getCode() == ((Medicine) o).getCode())
+                return true;
+            else
+                return false;
+        }else
+            return false;
+    }*/
 }
