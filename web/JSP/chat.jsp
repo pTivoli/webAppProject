@@ -1,6 +1,5 @@
-<%@ page import="it.pointPharma.generalClasses.User" %>
-<%@ page import="it.pointPharma.generalClasses.Pharmacy" %>
-<%@ page import="it.pointPharma.generalClasses.Pharmacist" %>
+<%@ page import="it.pointPharma.generalClasses.*" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
@@ -8,38 +7,45 @@
     String lname = user.getlName();
     String fname = user.getfName();
     String email = user.getEmail();
+    Pharmacy pharmacy = (Pharmacy) session.getAttribute("pharmacy");
+    String phName = pharmacy.getName();
+    String role = "";
+    if(user instanceof PharmacistManager)
+        role = "PD";
+    if(user instanceof REG) {
+        role = "REG";
+    }
 %>
 
 <html>
 <head>
-    <title><%= fname + " " + lname + "'s chat"%></title>
+    <title><%=lname + " " + fname + "'s chat"%></title>
+    <link rel="stylesheet" href="../CSS/Stylesheet.css">
     <link rel="stylesheet" href="../CSS/ChatStylesheet.css">
 </head>
 <body>
     <div>
-        <div id="header">
-            <p>Welcome <%= fname + " " + lname %></p>
-        </div>
-        <div id="container">
-            <div class="left-pane" >
-                <input type="text" name="receiver" id="recMail" placeholder="Search" autocomplete="off" onpaste="return false;" onkeyup="lfReceiver();">
-                <div id="receivers">
+        <p>Welcome <%= lname + " " + fname + " " + " " + email + "\n"%></p>
+        <div class="left-pane" >
+            <input type="text" name="receiver" id="recMail" autocomplete="off" onpaste="return false;" onkeyup="lfReceiver();">
+            <div id="receivers">
 
-                </div>
             </div>
-            <div id="right-pane">
-                <div id="TOP">
+        </div>
+        <div id="rigth-pane">
+            <div id="TOP">
 
-                </div>
-                <div id="rec-Messages">
+            </div>
+            <div id="rec-Messages">
 
-                </div>
-                <div class="right-foot">
-                    <input id="receiverType" type="hidden" name="receiverType">
-                    <input id="receiver" type="hidden" name="receiver">
-                    <input id="message" type="text" name="message" placeholder="Write a message..." autocomplete="off" onpaste="return false;" required/>
-                    <button onclick="senF();">Send</button>
-                </div>
+            </div>
+            <div class="rigth-foot">
+                <input id="receiverType" type="hidden" name="receiverType">
+                <input id="mitType" type="hidden" value='<%=role%>'>
+                <input id="pharmacy" type="hidden" name="pharmacy" value="<%=phName%>">
+                <input id="receiver" type="hidden" name="receiver">
+                <input id="message" type="text" name="message" placeholder="message" autocomplete="off" onpaste="return false;" required/>
+                <button id="send" onclick="senF();" disabled>Send</button>
             </div>
         </div>
     </div>
@@ -106,19 +112,17 @@
         text = text.split(";");
         var j;
         for(j = 0; j < text.length-1; j++){
-          ris += "<tr><td id=\"td" + j + "\">" + text[j] + "</td><td><button class='buttonReceivers' onclick='selectReceiver("+j+");'>" + text[j] + "</button></td></tr>";
-            //ris += "<br>";
+          ris += "<tr><td id=\"td" + j + "\">" + text[j] + "</td><td><button onclick=\"selectReceiver("+j+");\">Select</button></td></tr>";
         }
-        ris+="</table>";
+        ris += "</table>";
         return ris;
     }
     function selectReceiver(inv) {
             i = inv;
-            $("#TOP").css("display", "block");
-            $(".right-foot").css("display", "block");
+            $("#send").prop("disabled", false);
             $("#rec-Messages").html("");
-            $("#TOP").html($("#td"+i).text());
-            if($("#td"+i).text().indexOf("@") < 0 && $("#td"+i).text() !== "REG")
+            $("#TOP").html("Texting to: <b>" + $("#td"+i).text() + "</b>");
+            if($("#TOP b").html().indexOf("@") < 0 && $("#td"+i).text() !== "REG" && $("#mitType").val() !== "REG" || $("#td"+i).text() === "PM")
                 $("#receiverType").attr("value", 1);
             else
                 $("#receiverType").attr("value", 0);
@@ -129,6 +133,8 @@
             }
             else {
                 $("#receivers").html("");
+                if($("#TOP b").html() === $("#pharmacy").val() && ($("#mitType").val() !== "PD" && $("#mitType").val() !== "REG"))
+                   $("#send").prop("disabled", true);
                 readMessagesGroup();
             }
             $("#recMail").val("");
@@ -155,7 +161,7 @@
                 type: "POST",
                 url: "../readMessagesGroup.do",
                 data: {
-                    receiver: $("#td"+inv).text()
+                    receiver: $("#TOP b").html()
                 },
                 success: function (result) {
                     $("#rec-Messages").html(createMessages(result))

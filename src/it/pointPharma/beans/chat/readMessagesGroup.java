@@ -45,12 +45,12 @@ public class readMessagesGroup extends Action {
                 else
                 {
                     String retrieveReceivers = "";
-                    if(ph instanceof PharmacyDoctor)
-                        retrieveReceivers = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale = 'PD'" +
-                                "AND nomefarmacia = '" + phy.getName() + "';";
-                    else
-                        retrieveReceivers = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale = 'DO'"+
-                                "AND nomefarmacia = '" + phy.getName() + "';";
+                    if((ph instanceof DeskOperator) && request.getParameter("receiver").equals(phy.getName()))
+                        retrieveReceivers = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale = 'PM'" + "AND nomefarmacia = '" + phy.getName() + "';";
+                    else if(ph instanceof PharmacyDoctor)
+                        retrieveReceivers = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale = 'PD'" + "AND nomefarmacia = '" + phy.getName() + "';";
+                    else if(ph instanceof DeskOperator)
+                        retrieveReceivers = "SELECT personale_cfpersona, mail FROM personale WHERE ruolopersonale = 'DO'"+ "AND nomefarmacia = '" + phy.getName() + "';";
                     Statement st2 = con.createStatement();
                     ResultSet rs2 = st2.executeQuery(retrieveReceivers);
                     while (rs2.next())
