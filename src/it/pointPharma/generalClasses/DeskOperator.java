@@ -24,10 +24,11 @@ public class DeskOperator extends Pharmacist {
                 else
                     queryPurchase = ("INSERT INTO Acquisto VALUES('" + timest + "' , '" + this.getCF() + "', '" + this.getEmail() + "', '"+cf+"' ," + totalCost + ")");
                 st.executeUpdate(queryPurchase);
+                int quantity = 0;
                 for (Medicine m  : medicineLinkedList ){
                     if(!(isIn(examined, m.getCode()))) {
                         examined.add(m);
-                        int quantity = countDuplicates(medicineLinkedList, m);
+                        quantity = countDuplicates(medicineLinkedList, m);
                         queryMedPurchase = "INSERT INTO Acquisto_Farmaco VALUES('" + quantity + "', '" + timest + "' , '" + this.getCF() + "', '" + m.getCode() + "')";
                         st.executeUpdate(queryMedPurchase);
                         String queryFindCost = "select prezzo from farmaco where codice='" + m.getCode() + "';";
@@ -35,7 +36,8 @@ public class DeskOperator extends Pharmacist {
                         r.next();
                         m.setCost(r.getFloat("prezzo"));
                     }
-                    totalCost += m.getCost();
+                    for(int i = 0; i < quantity; i++)
+                        totalCost += m.getCost();
                     mqty = "update magazzino_farmaco as mf \n" +
                             "set quantita = mf.quantita - 1 \n" +
                             "where mf.codiceFarmaco = '" + m.getCode() + "'\n" +
