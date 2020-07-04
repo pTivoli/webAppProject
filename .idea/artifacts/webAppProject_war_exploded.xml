@@ -7,7 +7,6 @@
           <element id="module-output" name="webAppProject" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="jstl-1.2" />
           <element id="library" level="project" name="struts1" />
         </element>
       </element>
