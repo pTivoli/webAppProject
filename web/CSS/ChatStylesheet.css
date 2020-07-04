@@ -130,3 +130,34 @@ body>div{
 #TOP, .right-foot{
     display: none;
 }
+#textMessagesBox{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    overflow: scroll;
+}
+.message{
+    background-color: dodgerblue;
+    border: 0;
+    border-radius: 0px 25px 25px 0px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.message p{
+    font-size: 1.2em;
+    display: inline-block;
+    clear: both;
+    float: left;
+    margin: 5px;
+}
+.message p:first-child{
+    font-size: 0.6em;
+    font-weight: bold;
+    margin: 5px 25px 0px 20px;
+}
+.message:first-child{
+    border-radius: 25px 25px 25px 0px;
+}
+.message:last-of-type{
+    border-radius: 0px 25px 25px 25px;
+}
