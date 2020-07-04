@@ -156,7 +156,7 @@
                     receiver: receiverMail
                 },
                 success: function (result) {
-                    $("#rec-Messages").html(createMessages(result))
+                    $("#rec-Messages").html(createMessages(result));
                 }
 
             });
@@ -171,7 +171,7 @@
                     receiver: $("#TOP b").html()
                 },
                 success: function (result) {
-                    $("#rec-Messages").html(createMessages(result))
+                    $("#rec-Messages").html(createMessages(result));
                 }
             });
         });

@@ -125,7 +125,7 @@ body>div{
     background-color: forestgreen;
 }
 #rec-Messages{
-    height: inherit;
+    height: 64vh;
 }
 #TOP, .right-foot{
     display: none;
@@ -160,4 +160,5 @@ body>div{
 }
 .message:last-of-type{
     border-radius: 0px 25px 25px 25px;
+    margin-bottom: 50px;
 }
