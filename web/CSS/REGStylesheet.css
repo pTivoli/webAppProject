@@ -114,7 +114,7 @@ button{
     font-weight: lighter;
 }
 
-#openChat, #openDashboard, #registerPharmacyAndPharmacistManager button{
+#openChat, #openDashboard, #openRegForm, #registerPharmacyAndPharmacistManager button{
     transition: 0.5s;
     transition-timing-function: ease-out;
     transition-property: background-color, border-radius;
@@ -126,4 +126,8 @@ button{
 
 #openDashboard:hover, #registerPharmacyAndPharmacistManager button:hover{
     background-color: red;
+}
+
+#openRegForm:hover{
+    background-color: greenyellow;
 }

@@ -162,7 +162,7 @@
                 $("#openRegForm").css("display", "none");
                 $("#mainContent").css("height", "auto");
                 $("#registerPharmacyAndPharmacistManager").css("display", "block");
-                $("#registerPharmacyAndPharmacistManager").css("max-height", "1030px");
+                $("#registerPharmacyAndPharmacistManager").css("max-height", "2033px");
             }
         </script>
     </body>
