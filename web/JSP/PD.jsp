@@ -166,6 +166,7 @@
                             document.getElementById("objects").innerHTML = "";
                             $("#formReceipt").css("height", "0px");
                             $("#formReceipt").css("display", "none");
+                            totPriceMed = 0.0;
                         }
                     }
                 });
