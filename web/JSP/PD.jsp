@@ -164,8 +164,14 @@
                             $('#cfRec').val("");
                             $("#cart button").html("BUY");
                             document.getElementById("objects").innerHTML = "";
+                            document.getElementById("codRec").innerHTML = "";
+                            document.getElementById("dateRec").innerHTML = "";
+                            document.getElementById("codDocRec").innerHTML = "";
+                            document.getElementById("cfRec").innerHTML = "";
                             $("#formReceipt").css("height", "0px");
                             $("#formReceipt").css("display", "none");
+                            totPriceMed = 0.0;
+                            receipt = false;
                         }
                     }
                 });

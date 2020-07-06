@@ -112,6 +112,7 @@
                                 $('#medicine').val("");
                                 $("#cart button").html("BUY");
                                 document.getElementById("objects").innerHTML = "";
+                                totPriceMed = 0.0;
                             }
                         });
                     });
