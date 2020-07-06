@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/DO.jsp" afterPath="$PROJECT_DIR$/web/JSP/DO.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/PD.jsp" afterPath="$PROJECT_DIR$/web/JSP/PD.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/PM.jsp" afterPath="$PROJECT_DIR$/web/JSP/PM.jsp" />
-    </list>
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,7 +25,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="415">
               <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="50" />
-              <folding />
+              <folding>
+                <marker date="1594041274058" expanded="true" signature="195:5795" ph="..." />
+                <marker date="1594041274058" expanded="true" signature="482:5787" ph="..." />
+                <marker date="1594041274058" expanded="true" signature="2487:5775" ph="..." />
+                <marker date="1594041274058" expanded="true" signature="4241:5242" ph="{...}" />
+                <marker date="1594041274058" expanded="true" signature="4284:5228" ph="{...}" />
+                <marker date="1594041274058" expanded="true" signature="4336:5208" ph="{...}" />
+                <marker date="1594041274058" expanded="true" signature="4369:5184" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
+                <marker date="1594041274058" expanded="true" signature="4639:5158" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,7 +44,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
               <caret line="168" column="46" selection-start-line="168" selection-start-column="46" selection-end-line="168" selection-end-column="46" />
-              <folding />
+              <folding>
+                <marker date="1594041274002" expanded="true" signature="197:9091" ph="..." />
+                <marker date="1594041274002" expanded="true" signature="460:9083" ph="..." />
+                <marker date="1594041274002" expanded="true" signature="2921:9075" ph="..." />
+                <marker date="1594041274002" expanded="true" signature="4524:6822" ph="{...}" />
+                <marker date="1594041274002" expanded="true" signature="4559:6816" ph="{...}" />
+                <marker date="1594041274002" expanded="true" signature="5292:6804" ph="{...}" />
+                <marker date="1594041274002" expanded="true" signature="5317:6788" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
+                <marker date="1594041274002" expanded="true" signature="5765:6770" ph="{...}" />
+                <marker date="1594041274002" expanded="true" signature="5920:6748" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -772,7 +786,7 @@
       <workItem from="1593783219279" duration="6102000" />
       <workItem from="1593848438171" duration="11231000" />
       <workItem from="1593880254354" duration="3689000" />
-      <workItem from="1594041115762" duration="143000" />
+      <workItem from="1594041115762" duration="289000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -956,11 +970,18 @@
       <option name="project" value="LOCAL" />
       <updated>1593883882520</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Now after that the transaction is completed, the total price is set at 0.">
+      <created>1594041380228</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1594041380228</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118208000" />
+    <option name="totallyTimeSpent" value="118354000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="691" extended-state="6" />
@@ -1058,7 +1079,8 @@
     <MESSAGE value="finally the sell items function is been fixed by FraHackerino" />
     <MESSAGE value="Now the prices are showed" />
     <MESSAGE value="minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
+    <MESSAGE value="Now after that the transaction is completed, the total price is set at 0." />
+    <option name="LAST_COMMIT_MESSAGE" value="Now after that the transaction is completed, the total price is set at 0." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1237,6 +1259,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1290,6 +1313,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1332,6 +1356,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1340,6 +1365,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <marker date="1593883744675" expanded="true" signature="985:1107" ph="INSERT INTO Acquisto... " />
+            <marker date="1593883744675" expanded="true" signature="1170:1296" ph="INSERT INTO Acquisto... " />
+            <marker date="1593883744675" expanded="true" signature="1627:1748" ph="INSERT INTO Acquisto_Farmaco... " />
+            <marker date="1593883744675" expanded="true" signature="1859:1920" ph="select prezz... farmaco" />
+            <marker date="1593883744675" expanded="true" signature="2269:2541" ph="update magaz... " />
+            <marker date="1593883744675" expanded="true" signature="2630:2839" ph="update Acqui... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1410,7 +1443,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="50" />
-          <folding />
+          <folding>
+            <marker date="1594041274058" expanded="true" signature="195:5795" ph="..." />
+            <marker date="1594041274058" expanded="true" signature="482:5787" ph="..." />
+            <marker date="1594041274058" expanded="true" signature="2487:5775" ph="..." />
+            <marker date="1594041274058" expanded="true" signature="4241:5242" ph="{...}" />
+            <marker date="1594041274058" expanded="true" signature="4284:5228" ph="{...}" />
+            <marker date="1594041274058" expanded="true" signature="4336:5208" ph="{...}" />
+            <marker date="1594041274058" expanded="true" signature="4369:5184" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
+            <marker date="1594041274058" expanded="true" signature="4639:5158" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1418,7 +1460,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="168" column="46" selection-start-line="168" selection-start-column="46" selection-end-line="168" selection-end-column="46" />
-          <folding />
+          <folding>
+            <marker date="1594041274002" expanded="true" signature="197:9091" ph="..." />
+            <marker date="1594041274002" expanded="true" signature="460:9083" ph="..." />
+            <marker date="1594041274002" expanded="true" signature="2921:9075" ph="..." />
+            <marker date="1594041274002" expanded="true" signature="4524:6822" ph="{...}" />
+            <marker date="1594041274002" expanded="true" signature="4559:6816" ph="{...}" />
+            <marker date="1594041274002" expanded="true" signature="5292:6804" ph="{...}" />
+            <marker date="1594041274002" expanded="true" signature="5317:6788" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
+            <marker date="1594041274002" expanded="true" signature="5765:6770" ph="{...}" />
+            <marker date="1594041274002" expanded="true" signature="5920:6748" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
