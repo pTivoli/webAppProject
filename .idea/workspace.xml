@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="" />
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/PD.jsp" afterPath="$PROJECT_DIR$/web/JSP/PD.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/PM.jsp" afterPath="$PROJECT_DIR$/web/JSP/PM.jsp" />
+    </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,18 +27,9 @@
       <file leaf-file-name="DO.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/JSP/DO.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="50" />
-              <folding>
-                <marker date="1594041274058" expanded="true" signature="195:5795" ph="..." />
-                <marker date="1594041274058" expanded="true" signature="482:5787" ph="..." />
-                <marker date="1594041274058" expanded="true" signature="2487:5775" ph="..." />
-                <marker date="1594041274058" expanded="true" signature="4241:5242" ph="{...}" />
-                <marker date="1594041274058" expanded="true" signature="4284:5228" ph="{...}" />
-                <marker date="1594041274058" expanded="true" signature="4336:5208" ph="{...}" />
-                <marker date="1594041274058" expanded="true" signature="4369:5184" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
-                <marker date="1594041274058" expanded="true" signature="4639:5158" ph="{...}" />
-              </folding>
+            <state relative-caret-position="127">
+              <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -42,19 +37,9 @@
       <file leaf-file-name="PD.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/JSP/PD.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="168" column="46" selection-start-line="168" selection-start-column="46" selection-end-line="168" selection-end-column="46" />
-              <folding>
-                <marker date="1594041274002" expanded="true" signature="197:9091" ph="..." />
-                <marker date="1594041274002" expanded="true" signature="460:9083" ph="..." />
-                <marker date="1594041274002" expanded="true" signature="2921:9075" ph="..." />
-                <marker date="1594041274002" expanded="true" signature="4524:6822" ph="{...}" />
-                <marker date="1594041274002" expanded="true" signature="4559:6816" ph="{...}" />
-                <marker date="1594041274002" expanded="true" signature="5292:6804" ph="{...}" />
-                <marker date="1594041274002" expanded="true" signature="5317:6788" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
-                <marker date="1594041274002" expanded="true" signature="5765:6770" ph="{...}" />
-                <marker date="1594041274002" expanded="true" signature="5920:6748" ph="{...}" />
-              </folding>
+            <state relative-caret-position="163">
+              <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="169" selection-end-column="76" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,8 +47,8 @@
       <file leaf-file-name="PM.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="187" column="46" selection-start-line="187" selection-start-column="46" selection-end-line="187" selection-end-column="46" />
+            <state relative-caret-position="144">
+              <caret line="188" column="76" selection-start-line="188" selection-start-column="76" selection-end-line="188" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -786,7 +771,7 @@
       <workItem from="1593783219279" duration="6102000" />
       <workItem from="1593848438171" duration="11231000" />
       <workItem from="1593880254354" duration="3689000" />
-      <workItem from="1594041115762" duration="289000" />
+      <workItem from="1594041115762" duration="816000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -977,11 +962,18 @@
       <option name="project" value="LOCAL" />
       <updated>1594041380228</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Now after that the transaction is completed, the total price is set at 0.">
+      <created>1594041432329</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1594041432329</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118354000" />
+    <option name="totallyTimeSpent" value="118881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="691" extended-state="6" />
@@ -989,6 +981,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38489208" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291367" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -996,7 +989,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45503598" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21621622" sideWeight="0.4969697" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21582733" sideWeight="0.4969697" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Struts Assistant" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1013,7 +1006,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38489208" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291367" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1441,43 +1433,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/DO.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="114" column="32" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="50" />
-          <folding>
-            <marker date="1594041274058" expanded="true" signature="195:5795" ph="..." />
-            <marker date="1594041274058" expanded="true" signature="482:5787" ph="..." />
-            <marker date="1594041274058" expanded="true" signature="2487:5775" ph="..." />
-            <marker date="1594041274058" expanded="true" signature="4241:5242" ph="{...}" />
-            <marker date="1594041274058" expanded="true" signature="4284:5228" ph="{...}" />
-            <marker date="1594041274058" expanded="true" signature="4336:5208" ph="{...}" />
-            <marker date="1594041274058" expanded="true" signature="4369:5184" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
-            <marker date="1594041274058" expanded="true" signature="4639:5158" ph="{...}" />
-          </folding>
+        <state relative-caret-position="127">
+          <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/PD.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="168" column="46" selection-start-line="168" selection-start-column="46" selection-end-line="168" selection-end-column="46" />
-          <folding>
-            <marker date="1594041274002" expanded="true" signature="197:9091" ph="..." />
-            <marker date="1594041274002" expanded="true" signature="460:9083" ph="..." />
-            <marker date="1594041274002" expanded="true" signature="2921:9075" ph="..." />
-            <marker date="1594041274002" expanded="true" signature="4524:6822" ph="{...}" />
-            <marker date="1594041274002" expanded="true" signature="4559:6816" ph="{...}" />
-            <marker date="1594041274002" expanded="true" signature="5292:6804" ph="{...}" />
-            <marker date="1594041274002" expanded="true" signature="5317:6788" ph="{&quot;type&quot;: &quot;POST&quot;...}" />
-            <marker date="1594041274002" expanded="true" signature="5765:6770" ph="{...}" />
-            <marker date="1594041274002" expanded="true" signature="5920:6748" ph="{...}" />
-          </folding>
+        <state relative-caret-position="163">
+          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="169" selection-end-column="76" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="187" column="46" selection-start-line="187" selection-start-column="46" selection-end-line="187" selection-end-column="46" />
+        <state relative-caret-position="144">
+          <caret line="188" column="76" selection-start-line="188" selection-start-column="76" selection-end-line="188" selection-end-column="76" />
           <folding />
         </state>
       </provider>
