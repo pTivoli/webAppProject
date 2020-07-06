@@ -24,7 +24,7 @@ body>div{
 }
 #header{
     width: 100%;
-    height: auto;
+    height: 120px;
     font-size: 2em;
     color: black;
     background-color: orange;
