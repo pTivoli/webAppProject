@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/PD.jsp" afterPath="$PROJECT_DIR$/web/JSP/PD.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/PM.jsp" afterPath="$PROJECT_DIR$/web/JSP/PM.jsp" />
     </list>
@@ -37,8 +36,8 @@
       <file leaf-file-name="PD.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/JSP/PD.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="169" selection-end-column="76" />
+            <state relative-caret-position="18">
+              <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -47,8 +46,8 @@
       <file leaf-file-name="PM.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="188" column="76" selection-start-line="188" selection-start-column="76" selection-end-line="188" selection-end-column="76" />
+            <state relative-caret-position="216">
+              <caret line="192" column="44" selection-start-line="192" selection-start-column="44" selection-end-line="192" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -771,7 +770,7 @@
       <workItem from="1593783219279" duration="6102000" />
       <workItem from="1593848438171" duration="11231000" />
       <workItem from="1593880254354" duration="3689000" />
-      <workItem from="1594041115762" duration="816000" />
+      <workItem from="1594041115762" duration="933000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -969,11 +968,18 @@
       <option name="project" value="LOCAL" />
       <updated>1594041432329</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Reset form receipt after buying the medicines">
+      <created>1594041993579</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1594041993579</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118881000" />
+    <option name="totallyTimeSpent" value="118998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="691" extended-state="6" />
@@ -1072,7 +1078,8 @@
     <MESSAGE value="Now the prices are showed" />
     <MESSAGE value="minor changes" />
     <MESSAGE value="Now after that the transaction is completed, the total price is set at 0." />
-    <option name="LAST_COMMIT_MESSAGE" value="Now after that the transaction is completed, the total price is set at 0." />
+    <MESSAGE value="Reset form receipt after buying the medicines" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reset form receipt after buying the medicines" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1441,16 +1448,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/PD.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="169" selection-end-column="76" />
+        <state relative-caret-position="18">
+          <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="188" column="76" selection-start-line="188" selection-start-column="76" selection-end-line="188" selection-end-column="76" />
+        <state relative-caret-position="216">
+          <caret line="192" column="44" selection-start-line="192" selection-start-column="44" selection-end-line="192" selection-end-column="44" />
           <folding />
         </state>
       </provider>

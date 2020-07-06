@@ -190,6 +190,7 @@
                             $("#formReceipt").css("height", "0px");
                             $("#formReceipt").css("display", "none");
                             totPriceMed = 0.0;
+                            receipt = false;
                         }
                     }
                 });
