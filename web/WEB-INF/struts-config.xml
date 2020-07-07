@@ -117,5 +117,15 @@
                 scope="request"
                 input="/JSP/REGDashboard.jsp"
                 validate="false"></action>
+        <action path="/checkOutMedicinesForPharamacy"
+                type="it.pointPharma.beans.MedicineFinderForPM"
+                scope="request"
+                input="/JSP/OrderMedicines.jsp"
+                validate="false"></action>
+        <action path="/buyMedicinesForPharmacy"
+                type="it.pointPharma.beans.OrderMedicinePerPharmacy"
+                scope="request"
+                input="/JSP/OrderMedicines.jsp"
+                validate="false"></action>
     </action-mappings>
 </struts-config>
