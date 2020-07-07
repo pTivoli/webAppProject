@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="color changes in REG CSS">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/CSS/REGStylesheet.css" afterPath="$PROJECT_DIR$/web/CSS/REGStylesheet.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/CSS/REGDashboard.css" afterPath="$PROJECT_DIR$/web/CSS/REGDashboard.css" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -92,11 +92,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="REGStylesheet.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="REGStylesheet.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/CSS/REGStylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="443">
               <caret line="131" column="34" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="REGDashboard.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/CSS/REGDashboard.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -171,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/it/pointPharma/beans/RegisterPharmacist.java" />
         <option value="$PROJECT_DIR$/web/JSP/chat.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/REGDashboard.jsp" />
-        <option value="$PROJECT_DIR$/web/CSS/REGDashboard.css" />
         <option value="$PROJECT_DIR$/web/CSS/ChatStylesheet.css" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/REG.jsp" />
@@ -181,6 +190,7 @@
         <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/beans/OrderMedicinePerPharmacy.java" />
         <option value="$PROJECT_DIR$/web/CSS/REGStylesheet.css" />
+        <option value="$PROJECT_DIR$/web/CSS/REGDashboard.css" />
       </list>
     </option>
   </component>
@@ -1120,7 +1130,7 @@
       <workItem from="1593707470341" duration="4497000" />
       <workItem from="1594039029899" duration="4999000" />
       <workItem from="1594064960699" duration="3826000" />
-      <workItem from="1594150789443" duration="7556000" />
+      <workItem from="1594150789443" duration="7935000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -1262,11 +1272,18 @@
       <option name="project" value="LOCAL" />
       <updated>1594156961156</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="color changes in REG CSS">
+      <created>1594158756377</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1594158756377</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119033000" />
+    <option name="totallyTimeSpent" value="119412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1013" extended-state="6" />
@@ -1333,7 +1350,8 @@
     <MESSAGE value="chat header css improved" />
     <MESSAGE value="restockMedicine method created in PM" />
     <MESSAGE value="OrderMedsPerPharmacy class created and calls restockMedicine from PM" />
-    <option name="LAST_COMMIT_MESSAGE" value="OrderMedsPerPharmacy class created and calls restockMedicine from PM" />
+    <MESSAGE value="color changes in REG CSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="color changes in REG CSS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1551,13 +1569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/CSS/REGDashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="928">
-          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/pointPharma/formBeans/UserData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -1753,6 +1764,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
           <caret line="131" column="34" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/CSS/REGDashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
           <folding />
         </state>
       </provider>
