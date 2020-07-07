@@ -97,7 +97,7 @@
     </div>
     <a href="JSP/PharmacistManagerDashboard.jsp" id="dashboardButton">D<br>A<br>S<br>H<br>B<br>O<br>A<br>R<br>D<br></a>
     <a href="JSP/chat.jsp" id="openChat3">C<br>H<br>A<br>T<br></a>
-    <a href="JSP/OrderMedicines.jsp" id="">MEDICINES<br></a>
+    <a href="JSP/OrderMedicines.jsp" id="openMedicine">M<br>E<br>D<br>I<br>C<br>I<br>N<br>E<br>S<br></a>
 </div>
 <script src="JS/JQuery.js"></script>
 <script>

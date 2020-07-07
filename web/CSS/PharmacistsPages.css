@@ -195,7 +195,7 @@ body{
 #registerUser button:hover, #formReceipt button:hover, #employee_PD_DO button:hover{
     background-color: violet;
 }
-#openChat, #openChat2, #openChat3{
+#openChat, #openChat2, #openChat3, #openMedicine{
     display: flex;
     justify-content: center;
     align-content: center;
@@ -211,7 +211,7 @@ body{
     transition-timing-function: ease-out;
     transition-property: background-color;
 }
-#openChat:hover, #openChat2:hover{
+#openChat:hover, #openChat2:hover, #openChat3:hover, #openMedicine:hover{
     background-color: violet;
 }
 #openChat2{
@@ -219,4 +219,8 @@ body{
 }
 #openChat3{
     border-radius: 0px;
+}
+#openMedicine{
+    border-radius: 0px;
+    background-color: forestgreen;
 }
