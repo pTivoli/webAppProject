@@ -70,7 +70,7 @@ public class PharmacistManager extends PharmacyDoctor{
         }
     }
 
-    private void restockMedicine(LinkedList<Medicine> medList, Pharmacy pharmacy) throws Exception{
+    public void restockMedicine(LinkedList<Medicine> medList, Pharmacy pharmacy) throws Exception{
         try{
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             int count;
@@ -97,4 +97,6 @@ public class PharmacistManager extends PharmacyDoctor{
             throw new Exception("Error DB");
         }
     }
+
+
 }

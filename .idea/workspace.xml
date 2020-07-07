@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="chat header css improved">
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/it/pointPharma/beans/OrderMedicinePerPharmacy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/it/pointPharma/beans/SellItemsGeneral.java" afterPath="$PROJECT_DIR$/src/it/pointPharma/beans/SellItemsGeneral.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java" afterPath="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/REG.jsp" afterPath="$PROJECT_DIR$/web/JSP/REG.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,45 +45,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeskOperator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/DeskOperator.java">
+      <file leaf-file-name="PharmacistManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+            <state relative-caret-position="352">
+              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding>
-                <marker date="1594039043400" expanded="true" signature="985:1107" ph="INSERT INTO Acquisto... " />
-                <marker date="1594039043400" expanded="true" signature="1170:1296" ph="INSERT INTO Acquisto... " />
-                <marker date="1594039043400" expanded="true" signature="1657:1778" ph="INSERT INTO Acquisto_Farmaco... " />
-                <marker date="1594039043400" expanded="true" signature="1889:1950" ph="select prezz... farmaco" />
-                <marker date="1594039043400" expanded="true" signature="2269:2541" ph="update magaz... " />
-                <marker date="1594039043400" expanded="true" signature="2630:2839" ph="update Acqui... " />
+                <element signature="imports" expanded="true" />
+                <marker date="1594156922530" expanded="true" signature="582:723" ph="INSERT INTO Persona... " />
+                <marker date="1594156922530" expanded="true" signature="1153:1391" ph="INSERT INTO Personale... " />
+                <marker date="1594156922530" expanded="true" signature="1457:1695" ph="INSERT INTO Personale... " />
+                <marker date="1594156922530" expanded="true" signature="2822:2895" ph="SELECT count... " />
+                <marker date="1594156922530" expanded="true" signature="3679:3758" ph="select count... " />
+                <marker date="1594156922530" expanded="true" signature="3679:3807" ph="select count... " />
+                <marker date="1594156922530" expanded="true" signature="3679:3826" ph="select count... " />
+                <marker date="1594156922530" expanded="true" signature="4070:4113" ph="insert into magazzino_farmaco... " />
+                <marker date="1594156922530" expanded="true" signature="4070:4143" ph="insert into magazzino_farmaco... " />
+                <marker date="1594156922530" expanded="true" signature="4070:4176" ph="insert into magazzino_farmaco... " />
+                <marker date="1594156922530" expanded="true" signature="4070:4200" ph="insert into magazzino_farmaco... " />
+                <marker date="1594156922530" expanded="true" signature="4070:4221" ph="insert into magazzino_farmaco... " />
+                <marker date="1594156922530" expanded="true" signature="4343:4431" ph="update magaz... " />
+                <marker date="1594156922530" expanded="true" signature="4343:4484" ph="update magaz... " />
+                <marker date="1594156922530" expanded="true" signature="4343:4511" ph="update magaz... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PharmacistManager.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java">
+      <file leaf-file-name="SellItemsGeneral.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/pointPharma/beans/SellItemsGeneral.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
-              <caret line="86" column="85" selection-start-line="86" selection-start-column="85" selection-end-line="86" selection-end-column="85" />
+            <state relative-caret-position="384">
+              <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="52" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderMedicinePerPharmacy.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/it/pointPharma/beans/OrderMedicinePerPharmacy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="436">
+              <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1594155693775" expanded="true" signature="582:723" ph="INSERT INTO Persona... " />
-                <marker date="1594155693775" expanded="true" signature="1153:1391" ph="INSERT INTO Personale... " />
-                <marker date="1594155693775" expanded="true" signature="1457:1695" ph="INSERT INTO Personale... " />
-                <marker date="1594155693775" expanded="true" signature="2822:2895" ph="SELECT count... " />
-                <marker date="1594155693775" expanded="true" signature="3680:3759" ph="select count... " />
-                <marker date="1594155693775" expanded="true" signature="3680:3808" ph="select count... " />
-                <marker date="1594155693775" expanded="true" signature="3680:3827" ph="select count... " />
-                <marker date="1594155693775" expanded="true" signature="4071:4114" ph="insert into magazzino_farmaco... " />
-                <marker date="1594155693775" expanded="true" signature="4071:4144" ph="insert into magazzino_farmaco... " />
-                <marker date="1594155693775" expanded="true" signature="4071:4177" ph="insert into magazzino_farmaco... " />
-                <marker date="1594155693775" expanded="true" signature="4071:4201" ph="insert into magazzino_farmaco... " />
-                <marker date="1594155693775" expanded="true" signature="4071:4222" ph="insert into magazzino_farmaco... " />
-                <marker date="1594155693775" expanded="true" signature="4344:4432" ph="update magaz... " />
-                <marker date="1594155693775" expanded="true" signature="4344:4485" ph="update magaz... " />
-                <marker date="1594155693775" expanded="true" signature="4344:4512" ph="update magaz... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="REG.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/REG.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="703">
+              <caret line="48" column="42" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="42" />
+              <folding>
+                <marker date="1593519786095" expanded="true" signature="460:653" ph="select count... " />
+                <marker date="1593519786095" expanded="true" signature="999:1224" ph="INSERT INTO Farmacia... " />
+                <marker date="1593519786095" expanded="true" signature="1951:2129" ph="INSERT INTO Persona... " />
+                <marker date="1593519786095" expanded="true" signature="2461:2686" ph="insert into Personale... " />
+                <marker date="1593519786095" expanded="true" signature="3339:3412" ph="SELECT count... " />
               </folding>
             </state>
           </provider>
@@ -94,8 +115,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -133,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/REG.java" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/beans/RegisterPharmacyAndPharmacistManager.java" />
         <option value="$PROJECT_DIR$/web/CSS/PharmacistsPages.css" />
-        <option value="$PROJECT_DIR$/src/it/pointPharma/beans/SellItemsGeneral.java" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacyDoctor.java" />
         <option value="$PROJECT_DIR$/web/JSP/DO.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/PD.jsp" />
@@ -149,7 +169,10 @@
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/REG.jsp" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/DeskOperator.java" />
+        <option value="$PROJECT_DIR$/src/it/pointPharma/beans/chat/OrderMedicinePerPharmacy.java" />
+        <option value="$PROJECT_DIR$/src/it/pointPharma/beans/SellItemsGeneral.java" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java" />
+        <option value="$PROJECT_DIR$/src/it/pointPharma/beans/OrderMedicinePerPharmacy.java" />
       </list>
     </option>
   </component>
@@ -388,6 +411,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="beans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pointPharma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -931,7 +980,7 @@
       <workItem from="1593707470341" duration="4497000" />
       <workItem from="1594039029899" duration="4999000" />
       <workItem from="1594064960699" duration="3826000" />
-      <workItem from="1594150789443" duration="4716000" />
+      <workItem from="1594150789443" duration="5942000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -1059,11 +1108,18 @@
       <option name="project" value="LOCAL" />
       <updated>1594044008289</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="restockMedicine method created in PM">
+      <created>1594155736265</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1594155736265</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116193000" />
+    <option name="totallyTimeSpent" value="117419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1013" extended-state="6" />
@@ -1128,7 +1184,8 @@
     <MESSAGE value="URI's updated for the chat feature" />
     <MESSAGE value="register PM and Pharmacy bubble adjusted + added color" />
     <MESSAGE value="chat header css improved" />
-    <option name="LAST_COMMIT_MESSAGE" value="chat header css improved" />
+    <MESSAGE value="restockMedicine method created in PM" />
+    <option name="LAST_COMMIT_MESSAGE" value="restockMedicine method created in PM" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1139,13 +1196,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/dashboardTools/StatFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4288">
-          <caret line="139" column="9" selection-start-line="112" selection-start-column="4" selection-end-line="139" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DDL.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1152">
@@ -1270,13 +1320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/beans/SellItemsGeneral.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="27" column="100" selection-start-line="27" selection-start-column="100" selection-end-line="27" selection-end-column="100" />
         </state>
       </provider>
     </entry>
@@ -1422,20 +1465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/REG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1536">
-          <caret line="48" column="42" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="42" />
-          <folding>
-            <marker date="1593519786095" expanded="true" signature="460:653" ph="select count... " />
-            <marker date="1593519786095" expanded="true" signature="999:1224" ph="INSERT INTO Farmacia... " />
-            <marker date="1593519786095" expanded="true" signature="1951:2129" ph="INSERT INTO Persona... " />
-            <marker date="1593519786095" expanded="true" signature="2461:2686" ph="insert into Personale... " />
-            <marker date="1593519786095" expanded="true" signature="3339:3412" ph="SELECT count... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/pointPharma/beans/RegisterPharmacyAndPharmacistManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -1522,27 +1551,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/REG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="48" column="42" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="42" />
+          <folding>
+            <marker date="1593519786095" expanded="true" signature="460:653" ph="select count... " />
+            <marker date="1593519786095" expanded="true" signature="999:1224" ph="INSERT INTO Farmacia... " />
+            <marker date="1593519786095" expanded="true" signature="1951:2129" ph="INSERT INTO Persona... " />
+            <marker date="1593519786095" expanded="true" signature="2461:2686" ph="insert into Personale... " />
+            <marker date="1593519786095" expanded="true" signature="3339:3412" ph="SELECT count... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="86" column="85" selection-start-line="86" selection-start-column="85" selection-end-line="86" selection-end-column="85" />
+        <state relative-caret-position="352">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1594155693775" expanded="true" signature="582:723" ph="INSERT INTO Persona... " />
-            <marker date="1594155693775" expanded="true" signature="1153:1391" ph="INSERT INTO Personale... " />
-            <marker date="1594155693775" expanded="true" signature="1457:1695" ph="INSERT INTO Personale... " />
-            <marker date="1594155693775" expanded="true" signature="2822:2895" ph="SELECT count... " />
-            <marker date="1594155693775" expanded="true" signature="3680:3759" ph="select count... " />
-            <marker date="1594155693775" expanded="true" signature="3680:3808" ph="select count... " />
-            <marker date="1594155693775" expanded="true" signature="3680:3827" ph="select count... " />
-            <marker date="1594155693775" expanded="true" signature="4071:4114" ph="insert into magazzino_farmaco... " />
-            <marker date="1594155693775" expanded="true" signature="4071:4144" ph="insert into magazzino_farmaco... " />
-            <marker date="1594155693775" expanded="true" signature="4071:4177" ph="insert into magazzino_farmaco... " />
-            <marker date="1594155693775" expanded="true" signature="4071:4201" ph="insert into magazzino_farmaco... " />
-            <marker date="1594155693775" expanded="true" signature="4071:4222" ph="insert into magazzino_farmaco... " />
-            <marker date="1594155693775" expanded="true" signature="4344:4432" ph="update magaz... " />
-            <marker date="1594155693775" expanded="true" signature="4344:4485" ph="update magaz... " />
-            <marker date="1594155693775" expanded="true" signature="4344:4512" ph="update magaz... " />
+            <marker date="1594156922530" expanded="true" signature="582:723" ph="INSERT INTO Persona... " />
+            <marker date="1594156922530" expanded="true" signature="1153:1391" ph="INSERT INTO Personale... " />
+            <marker date="1594156922530" expanded="true" signature="1457:1695" ph="INSERT INTO Personale... " />
+            <marker date="1594156922530" expanded="true" signature="2822:2895" ph="SELECT count... " />
+            <marker date="1594156922530" expanded="true" signature="3679:3758" ph="select count... " />
+            <marker date="1594156922530" expanded="true" signature="3679:3807" ph="select count... " />
+            <marker date="1594156922530" expanded="true" signature="3679:3826" ph="select count... " />
+            <marker date="1594156922530" expanded="true" signature="4070:4113" ph="insert into magazzino_farmaco... " />
+            <marker date="1594156922530" expanded="true" signature="4070:4143" ph="insert into magazzino_farmaco... " />
+            <marker date="1594156922530" expanded="true" signature="4070:4176" ph="insert into magazzino_farmaco... " />
+            <marker date="1594156922530" expanded="true" signature="4070:4200" ph="insert into magazzino_farmaco... " />
+            <marker date="1594156922530" expanded="true" signature="4070:4221" ph="insert into magazzino_farmaco... " />
+            <marker date="1594156922530" expanded="true" signature="4343:4431" ph="update magaz... " />
+            <marker date="1594156922530" expanded="true" signature="4343:4484" ph="update magaz... " />
+            <marker date="1594156922530" expanded="true" signature="4343:4511" ph="update magaz... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/beans/SellItemsGeneral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="52" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/beans/OrderMedicinePerPharmacy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

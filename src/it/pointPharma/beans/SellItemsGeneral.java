@@ -26,27 +26,27 @@ public class SellItemsGeneral extends Action{
         if(codRec == null || codRec.equals("")){
             DeskOperator deskOperator = (DeskOperator)session.getAttribute("pharmacist");
             deskOperator.sellItems(listMedicine, (Pharmacy)session.getAttribute("pharmacy"), null, "");
-        }else{
-            String dateRec = (String)request.getParameter("dateRec");
+        }else {
+            String dateRec = (String) request.getParameter("dateRec");
             String codDocRec = (String) request.getParameter("codDocRec");
-            String cfRec = (String)request.getParameter("cfRec");
-            Pharmacist pharmacist = (Pharmacist)session.getAttribute("pharmacist");
+            String cfRec = (String) request.getParameter("cfRec");
+            Pharmacist pharmacist = (Pharmacist) session.getAttribute("pharmacist");
             User user = new User();
             user.setCF(cfRec);
-            if(pharmacist instanceof  PharmacistManager){
-                PharmacistManager pharmacistManager = (PharmacistManager)pharmacist;
+            if (pharmacist instanceof PharmacistManager) {
+                PharmacistManager pharmacistManager = (PharmacistManager) pharmacist;
                 try {
                     pharmacistManager.sellItemsWithReceipt(this.listMedicine, user, codDocRec, (Pharmacy) session.getAttribute("pharmacy"), codRec, dateRec);
-                }catch (Exception e){
+                } catch (Exception e) {
                     PrintWriter out = response.getWriter();
                     out.println(e.getMessage());
                     out.flush();
                 }
-            }else{
-                PharmacyDoctor pharmacyDoctor = (PharmacyDoctor)pharmacist;
+            } else {
+                PharmacyDoctor pharmacyDoctor = (PharmacyDoctor) pharmacist;
                 try {
                     pharmacyDoctor.sellItemsWithReceipt(this.listMedicine, user, codDocRec, (Pharmacy) session.getAttribute("pharmacy"), codRec, dateRec);
-                }catch (Exception e){
+                } catch (Exception e) {
                     PrintWriter out = response.getWriter();
                     out.println(e.getMessage());
                     out.flush();
