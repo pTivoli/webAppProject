@@ -25,7 +25,7 @@
         <p>LOGIN</p>
         <form action="login.do" method="POST">
             E-MAIL<br>
-            <input type="email" name="email" placeholder="example@contoso.com" required><br>
+            <input type="email" name="email" placeholder="email@example.com" required><br>
             PASSWORD<br>
             <input type="password" name="password" placeholder="********" required><br>
             <input type="submit" value="SUBMIT"><br>

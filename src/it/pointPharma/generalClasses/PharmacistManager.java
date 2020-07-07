@@ -1,6 +1,7 @@
 package it.pointPharma.generalClasses;
 
 import java.sql.*;
+import java.util.LinkedList;
 
 public class PharmacistManager extends PharmacyDoctor{
 
@@ -66,6 +67,34 @@ public class PharmacistManager extends PharmacyDoctor{
             return count != 0;
         } catch (SQLException e) {
             throw e;
+        }
+    }
+
+    private void restockMedicine(LinkedList<Medicine> medList, Pharmacy pharmacy) throws Exception{
+        try{
+            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
+            int count;
+            try{
+                for(Medicine m : medList) {
+                    Statement st = con.createStatement();
+                    String query = "select count(*) as count from magazzino_farmaco where nomefarmaciamagazzino = '" + pharmacy.getName() + "' and codicefarmaco = '" + m.getCode() +"'";
+                    ResultSet r = st.executeQuery(query);
+                    r.next();
+                    count = r.getInt("count");
+
+                    if (count == 0) { //medicine is not in table at all
+                        query = "insert into magazzino_farmaco VALUES('1', '" + pharmacy.getName() + "', '" + pharmacy.getAddress() + "', '" + this.getCF() + "', '" + m.getCode() + "')";
+                    } else { //medicine is found in table and needs to be incremented
+                        query = "update magazzino_farmaco as mf set quantita = mf.quantita + 1 where mf.codicefarmaco = '" + m.getCode() + "' and mf.nomefarmaciamagazzino = '" + pharmacy.getName() + "'";
+                    }
+                    st.executeUpdate(query);
+                }
+            }catch(SQLException ex){
+                throw new Exception("Error DB");
+            }
+            con.close();
+        }catch(SQLException e){
+            throw new Exception("Error DB");
         }
     }
 }

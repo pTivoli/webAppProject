@@ -33,7 +33,7 @@
                 <input id="phaddr"  name="phaddr" type="text"><br>
                 Pharmacy Phone Number<br>
                 <input id="phtel"  name="phtel" type="tel"><br><br>
-                <button onclick="registerPharmacyAndPharmacistManager()">REGISTER PHARMACY AND HIS PHARMACIST MANAGER</button>
+                <button onclick="registerPharmacyAndPharmacistManager()">REGISTER PHARMACY AND ITS PHARMACIST MANAGER</button>
             </div>
             <button onClick="location.href='JSP/REGDashboard.jsp'" id="openDashboard">DASHBOARD</button><br>
             <button onClick="location.href='JSP/chat.jsp'" id="openChat">START CHATTING</button>
