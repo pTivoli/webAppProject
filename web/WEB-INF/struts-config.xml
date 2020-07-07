@@ -117,12 +117,12 @@
                 scope="request"
                 input="/JSP/REGDashboard.jsp"
                 validate="false"></action>
-        <action path="/checkOutMedicinesForPharamacy"
+        <action path="/JSP/checkOutMedicinesForPharamacy"
                 type="it.pointPharma.beans.MedicineFinderForPM"
                 scope="request"
                 input="/JSP/OrderMedicines.jsp"
                 validate="false"></action>
-        <action path="/buyMedicinesForPharmacy"
+        <action path="/JSP/buyMedicinesForPharmacy"
                 type="it.pointPharma.beans.OrderMedicinePerPharmacy"
                 scope="request"
                 input="/JSP/OrderMedicines.jsp"

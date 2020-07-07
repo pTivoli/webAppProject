@@ -4,8 +4,8 @@
 <html>
 <head>
     <title>PharmaPoint - Desk Operator</title>
-    <link rel="stylesheet" href="CSS/Stylesheet.css"/>
-    <link rel="stylesheet" href="CSS/PharmacistsPages.css">
+    <link rel="stylesheet" href="../CSS/Stylesheet.css"/>
+    <link rel="stylesheet" href="../CSS/PharmacistsPages.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -56,17 +56,17 @@
     </div>
     <a href="JSP/chat.jsp" id="openChat">C<br>H<br>A<br>T<br></a>
 </div>
-<script src="JS/JQuery.js"></script>
+<script src="../JS/JQuery.js"></script>
 <script>
     var totPriceMed;
     $(document).ready(function () {
         if(document.cookie != ""){
             document.cookie = "medicine=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
         }
-        totPriceMed = 0;
+        totPriceMed = 0.0;
     });
     function cookieCart(codeMed, nameMed, priceFn){
-        totPriceMed += priceFn;
+        totPriceMed += parseFloat(priceFn);
         var obj = document.getElementById("objects").innerHTML;
         document.getElementById("objects").innerHTML= "<p>"+nameMed+"</p><br>" + obj;
         $("#cart button").html("BUY - " + totPriceMed + "€");
