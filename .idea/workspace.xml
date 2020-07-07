@@ -4,7 +4,6 @@
     <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/OrderMedicines.jsp" afterPath="$PROJECT_DIR$/web/JSP/OrderMedicines.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/struts-config.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/struts-config.xml" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,8 +26,8 @@
       <file leaf-file-name="OrderMedicines.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/JSP/OrderMedicines.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+            <state relative-caret-position="198">
+              <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -985,7 +984,7 @@
       <workItem from="1593848438171" duration="11231000" />
       <workItem from="1593880254354" duration="3689000" />
       <workItem from="1594041115762" duration="1059000" />
-      <workItem from="1594152991705" duration="4657000" />
+      <workItem from="1594152991705" duration="5042000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -1204,11 +1203,18 @@
       <option name="project" value="LOCAL" />
       <updated>1594157199265</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Now the PM can buy the medicines for the pharmacy">
+      <created>1594157710723</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1594157710723</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123781000" />
+    <option name="totallyTimeSpent" value="124166000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="27" width="1312" height="741" extended-state="6" />
@@ -1695,8 +1701,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/OrderMedicines.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+        <state relative-caret-position="198">
+          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
           <folding />
         </state>
       </provider>
