@@ -54,7 +54,7 @@
         <p><button onclick="buyFn();" disabled>BUY</button></p><br/>
         <div id="objects"></div>
     </div>
-    <a href="JSP/chat.jsp" id="openChat">C<br>H<br>A<br>T<br></a>
+    <a href="../JSP/chat.jsp" id="openChat">C<br>H<br>A<br>T<br></a>
 </div>
 <script src="../JS/JQuery.js"></script>
 <script>
