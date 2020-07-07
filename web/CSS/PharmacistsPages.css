@@ -1,6 +1,7 @@
 body{
     background-image: url("../IMG/homePage.webp");
     background-attachment: fixed;
+
 }
 #header{
     width:100%;
@@ -177,23 +178,25 @@ body{
     transition-timing-function: ease-out;
 }
 #dashboardButton:hover{
-    background-color: red;
+    background-color: #e66b00;
 }
 #cart > p{
-    background-color: orangered;
+    background-color: #ff4500 ;
     transition: background-color 1s;
     transition-timing-function: ease-out;
 }
+
 #cart > p:hover{
-    background-color: violet;
+    background-color: #FF6A33;
 }
+
 #registerUser button, #formReceipt button, #employee_PD_DO button{
     background-color: orangered;
     transition: background-color 1s;
     transition-timing-function: ease-out;
 }
 #registerUser button:hover, #formReceipt button:hover, #employee_PD_DO button:hover{
-    background-color: violet;
+    background-color: #FF6A33;
 }
 #openChat, #openChat2, #openChat3, #openMedicine{
     display: flex;
@@ -203,7 +206,7 @@ body{
     text-decoration: none;
     color: black;
     font-size: 2em;
-    background-color: dodgerblue;
+    background-color: #1E90FF;
     padding: 25px;
     border: 0;
     border-radius: 25px 0px 0px 25px;
@@ -211,8 +214,8 @@ body{
     transition-timing-function: ease-out;
     transition-property: background-color;
 }
-#openChat:hover, #openChat2:hover, #openChat3:hover, #openMedicine:hover{
-    background-color: violet;
+#openChat:hover, #openChat2:hover, #openChat3:hover{
+    background-color: #1873CC;
 }
 #openChat2{
     margin-left: 30px;
@@ -222,5 +225,8 @@ body{
 }
 #openMedicine{
     border-radius: 0px;
-    background-color: forestgreen;
+    background-color: #4EA24E;
+}
+#openMedicine:hover{
+    background-color: #228B22 ;
 }

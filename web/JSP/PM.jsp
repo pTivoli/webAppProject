@@ -60,7 +60,7 @@
             CF<br>
             <input type="text" id="cfRec"><br>
         </div>
-        <p><button onclick="buyFn();" disabled>BUY</button></p><br/>
+        <p><button onclick="buyFn();" disabled class="buyBTN">BUY</button></p><br/>
         <div id="objects"></div>
     </div>
     <div id="registerUser">
