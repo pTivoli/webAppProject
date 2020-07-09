@@ -277,7 +277,7 @@
                 alert("Passwords are different");
                 return false;
             }else if(!mask2.test(pwd)){
-                alert("Passwords should contain minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character");
+                alert("Passwords must:\n\u2022 Be at least 8 characters\n\u2022 Have at least one uppercase letter\n\u2022 Have at least one lowercase letter\n\u2022 Have at least one number\n\u2022 Have at least one special character");
                 return false;
             }
             return true;

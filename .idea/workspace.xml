@@ -36,8 +36,8 @@
       <file leaf-file-name="REG.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/JSP/REG.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2240">
-              <caret line="139" column="33" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
+            <state relative-caret-position="128">
+              <caret line="151" column="243" selection-start-line="151" selection-start-column="30" selection-end-line="151" selection-end-column="243" />
               <folding />
             </state>
           </provider>
@@ -46,8 +46,8 @@
       <file leaf-file-name="PM.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3565">
-              <caret line="85" column="14" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
+            <state relative-caret-position="-991">
+              <caret line="279" column="235" selection-start-line="279" selection-start-column="235" selection-end-line="279" selection-end-column="235" />
               <folding />
             </state>
           </provider>
@@ -891,7 +891,7 @@
       <workItem from="1594161824467" duration="251000" />
       <workItem from="1594223157873" duration="5741000" />
       <workItem from="1594284405509" duration="2512000" />
-      <workItem from="1594287136375" duration="1563000" />
+      <workItem from="1594287136375" duration="2037000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -1166,11 +1166,18 @@
       <option name="project" value="LOCAL" />
       <updated>1594288345649</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="PM debugged">
+      <created>1594288732365</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1594288732365</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135898000" />
+    <option name="totallyTimeSpent" value="136372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1013" extended-state="6" />
@@ -1250,7 +1257,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="REG's form completely validated" />
     <MESSAGE value="REG's UE updated" />
     <MESSAGE value="REG's UX updated" />
     <MESSAGE value="Funny animations added" />
@@ -1275,7 +1281,8 @@
     <MESSAGE value="repushing again ignore this" />
     <MESSAGE value="REG.jsp alert changes" />
     <MESSAGE value="repush v 2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="repush v 2.0" />
+    <MESSAGE value="PM debugged" />
+    <option name="LAST_COMMIT_MESSAGE" value="PM debugged" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1624,16 +1631,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/REG.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2240">
-          <caret line="139" column="33" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
+        <state relative-caret-position="128">
+          <caret line="151" column="243" selection-start-line="151" selection-start-column="30" selection-end-line="151" selection-end-column="243" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3565">
-          <caret line="85" column="14" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
+        <state relative-caret-position="-991">
+          <caret line="279" column="235" selection-start-line="279" selection-start-column="235" selection-end-line="279" selection-end-column="235" />
           <folding />
         </state>
       </provider>
