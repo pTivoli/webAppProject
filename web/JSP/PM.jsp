@@ -161,6 +161,12 @@
                     alert("CF is not valid");
                     return;
                 }
+                var dateRecCheck = new Date(dateRec);
+                var today = new Date();
+                if (dateRecCheck > today) {
+                    alert("Date of the receipt not valid!");
+                    return;
+                }
             }
             $(document).ready(function () {
                 $.ajax({
@@ -231,6 +237,8 @@
     }
     function validateFormUser(cf, fname, lname, dob){
         var mask = /^[A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]{1}$/i;
+        var dateCheck = new Date(dob);
+        var today = new Date();
         if(cf.length == 0) {
             alert("CF is missed");
             return false;
@@ -245,6 +253,9 @@
             return false;
         }else if(!mask.test(cf)){
             alert("CF is not valid");
+            return false;
+        }else if (dateCheck > today) {
+            alert("Date of the birth not valid!");
             return false;
         }
         return true;
