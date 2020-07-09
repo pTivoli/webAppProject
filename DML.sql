@@ -8,7 +8,7 @@ INSERT INTO persona VALUES ('QSPPTL31H46A087H', 'Maria Assunta', 'Salonti', '10/
 INSERT INTO persona VALUES ('NFQXHC75S14F130W', 'Fabrizio', 'Perazzo', '23/05/1998', null, null);
 INSERT into persona VALUES ('LTFDCT70T49E748U', 'Lorenzo', 'Appetito', '19/09/1999', null, null);
 INSERT into persona VALUES ('BHNYNM85R56F883S', 'Andrea', 'Bacca', '28/07/2997', null, null);
-insert into persona VALUES ('SLVNNI66L99E213T', 'MatteinoSalvino', 'Puglia', '10/01/1970', null, null);
+insert into persona VALUES ('REGPMN00A00A000A', 'Regione', 'Piemonte', '10/01/1970', null, null);
 
 --Medico
 INSERT INTO medico VALUES ('02ssdd', 'TVLPTR67L59A856P');
@@ -36,7 +36,7 @@ INSERT INTO personale VALUES ('fabri.peroloo@gmail.com', 'persona5', 'NFQXHC75S1
 INSERT INTO personale VALUES ('matteyo.montinaro23@gmail.com', 'lovemunchy', 'XBSBVZ69M12H785L', 'PM', 'Ciafarm', 'Via Garibaldi 23', 'XBSBVZ69M12H785L');
 INSERT INTO personale VALUES ('lore.appe@gmail.com', 'lovelega', 'LTFDCT70T49E748U', 'PD', 'Ciafarm', 'Via Garibaldi 23', 'XBSBVZ69M12H785L');
 INSERT INTO personale VALUES ('andrea.blasf@gimail.com', 'germano1', 'BHNYNM85R56F883S', 'DO', 'Ciafarm', 'Via Garibaldi 23', 'XBSBVZ69M12H785L');
-INSERT INTO personale VALUES ('aiutiamoli.acasaloro@gmail.com', 'ruspa', 'SLVNNI66L99E213T', 'REG');
+INSERT INTO personale VALUES ('regione@piemonte.it', 'RegionePiemonte1$', 'REGPMN00A00A000A', 'REG');
 
 --Farmacia
 INSERT INTO farmacia VALUES ('Pharmaon', 'Via Fiume 1', '03215566767', 'TVLPTR67L59A856P', 'patrich.tivolotty@gmail.com');
