@@ -52,7 +52,7 @@
             <!--get chart pharmacists-->
             <div class="accordion-item">
                 <div class="accordion-item-header" id="aic4">
-                    <a href="#aic4">See all Pharmacists</a>
+                    <a href="#aic4">See Chart Best Sellers</a>
                 </div>
                 <div class="accordion-item-body">
                     <div class="accordion-item-body-content">
@@ -76,7 +76,7 @@
             <!--get chart number drug pharmacies-->
             <div class="accordion-item">
                 <div class="accordion-item-header" id="aic6">
-                    <a href="#aic6">Sinceramente non so cosa vuol dire questo hahahah</a>
+                    <a href="#aic6">Number of medicines sold per pharmacy</a>
                 </div>
                 <div class="accordion-item-body">
                     <div class="accordion-item-body-content">
@@ -147,6 +147,7 @@
                             var str = responseText.split(";");
                             var i;
                             document.getElementById("dataTxtObj6").innerHTML += "<div id='getChartNumberDrugsPharmacies'></div>";
+                            document.getElementById("getChartNumberDrugsPharmacies").innerHTML += "<div class=\"dataTxtObj\"> <p>Pharmacy</p> <p>Number</p> </div>";
                             for(i = 0; i < str.length - 1; i+=2){
                                 document.getElementById("getChartNumberDrugsPharmacies").innerHTML += "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> </div>";
                             }
@@ -169,6 +170,7 @@
                             var str = responseText.split(";");
                             var i;
                             document.getElementById("dataTxtObj5").innerHTML += "<div id='getChartPharmacies'></div>";
+                            document.getElementById("getChartPharmacies").innerHTML += "<div class=\"dataTxtObj\"> <p>Pharmacy</p> <p>Amount</p> </div>";
                             for(i = 0; i < str.length - 1; i+=2){
                                 document.getElementById("getChartPharmacies").innerHTML += "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> </div>";
                             }
@@ -191,6 +193,7 @@
                             var str = responseText.split(";");
                             var i;
                             document.getElementById("dataTxtObj4").innerHTML += "<div id='getChartPharmacists'></div>";
+                            document.getElementById("getChartPharmacists").innerHTML += "<div class=\"dataTxtObj\"> <p>Last Name</p> <p>First Name</p> </div>";
                             for(i = 0; i < str.length-1; i+=2){
                                 document.getElementById("getChartPharmacists").innerHTML += "<div class=\"dataTxtObj\"> <p>"+str[i+1]+" </p> <p>"+str[i]+"</p> </div>";
                             }
@@ -213,8 +216,9 @@
                             var str = responseText.split(";");
                             var i;
                             document.getElementById("dataTxtObj3").innerHTML += "<div id='getDrugsMoreSold'></div>";
+                            document.getElementById("getDrugsMoreSold").innerHTML += "<div class=\"dataTxtObj\"> <p>Name</p> <p>Quantity</p> </div>";
                             for(i = 0; i < str.length-1; i+=2){
-                                document.getElementById("getDrugsMoreSold").innerHTML += "<div class=\"dataTxtObj\"> <p>"+str[i+1]+": </p> <p>"+str[i]+"</p> </div>";
+                                document.getElementById("getDrugsMoreSold").innerHTML += "<div class=\"dataTxtObj\"> <p>"+str[i+1]+"</p> <p>"+str[i]+"</p> </div>";
                             }
                         }
                     });
