@@ -83,7 +83,7 @@
         <input id="lnameP"  name="lnameP" type="text" required><br>
         Date Of Birth<br>
         <input id="dobP"  name="dobP" type="date" required><br>
-        Username<br>
+        E-mail<br>
         <input id="usr"  name="usr" type="text" required><br>
         Password<br>
         <input id="pwd"  name="pwd" type="password" required><br>

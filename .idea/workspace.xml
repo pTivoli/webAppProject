@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="" />
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/PM.jsp" afterPath="$PROJECT_DIR$/web/JSP/PM.jsp" />
+    </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,41 +23,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DO.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/JSP/DO.jsp">
+      <file leaf-file-name="REGDashboard.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/JSP/REGDashboard.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1237">
-              <caret line="131" column="17" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
+            <state relative-caret-position="383">
+              <caret line="108" column="8" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PD.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/JSP/PD.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="139" column="16" selection-start-line="139" selection-start-column="16" selection-end-line="144" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PM.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="256" column="9" selection-start-line="256" selection-start-column="9" selection-end-line="259" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="REG.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="REG.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/JSP/REG.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1691">
-              <caret line="131" column="17" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
+            <state relative-caret-position="2240">
+              <caret line="139" column="33" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PM.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3565">
+              <caret line="85" column="14" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -123,8 +116,8 @@
         <option value="$PROJECT_DIR$/web/JSP/PharmacistManagerDashboard.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/DO.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/PD.jsp" />
-        <option value="$PROJECT_DIR$/web/JSP/PM.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/REG.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/PM.jsp" />
       </list>
     </option>
   </component>
@@ -142,10 +135,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
-    <option name="y" value="27" />
-    <option name="width" value="1312" />
-    <option name="height" value="741" />
+    <option name="width" value="1920" />
+    <option name="height" value="1013" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -195,8 +186,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -249,6 +238,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,7 +265,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/it/pointPharma/generalClasses/DeskOperator.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/JSP/REG.jsp</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -898,7 +890,8 @@
       <workItem from="1594159194391" duration="679000" />
       <workItem from="1594161824467" duration="251000" />
       <workItem from="1594223157873" duration="5741000" />
-      <workItem from="1594284405509" duration="4062000" />
+      <workItem from="1594284405509" duration="2512000" />
+      <workItem from="1594287136375" duration="1563000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -1152,49 +1145,35 @@
       <option name="project" value="LOCAL" />
       <updated>1594286184740</updated>
     </task>
-    <task id="LOCAL-00037" summary="Minor changes">
-      <created>1594286954558</created>
+    <task id="LOCAL-00037" summary="repushing again ignore this">
+      <created>1594287177672</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1594286954558</updated>
+      <updated>1594287177672</updated>
     </task>
-    <task id="LOCAL-00038" summary="Minor changes">
-      <created>1594288090211</created>
+    <task id="LOCAL-00038" summary="REG.jsp alert changes">
+      <created>1594288314783</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1594288090211</updated>
+      <updated>1594288314783</updated>
     </task>
-    <task id="LOCAL-00039" summary="Minor changes">
-      <created>1594288120931</created>
+    <task id="LOCAL-00039" summary="repush v 2.0">
+      <created>1594288345649</created>
       <option name="number" value="00039" />
       <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1594288120931</updated>
+      <updated>1594288345649</updated>
     </task>
-    <task id="LOCAL-00040" summary="Minor changes">
-      <created>1594288293012</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1594288293012</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Minor changes">
-      <created>1594288464236</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1594288464236</updated>
-    </task>
-    <option name="localTasksCounter" value="42" />
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135885000" />
+    <option name="totallyTimeSpent" value="135898000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="27" width="1312" height="741" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1013" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1203,23 +1182,23 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291367" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20957096" sideWeight="0.5063191" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39028776" sideWeight="0.5030303" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45379537" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20957096" sideWeight="0.4936809" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42874846" sideWeight="0.4969697" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4535316" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Struts Assistant" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2969984" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29685807" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1271,9 +1250,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="work started for REGDashboard and RegStatFinder" />
-    <MESSAGE value="REGDashboard views all pharmacies with PM+email, top selling pharmacies+sales, top selling medicine" />
-    <MESSAGE value="background img .webp for chat uploaded" />
     <MESSAGE value="REG's form completely validated" />
     <MESSAGE value="REG's UE updated" />
     <MESSAGE value="REG's UX updated" />
@@ -1296,7 +1272,10 @@
     <MESSAGE value="minor changes" />
     <MESSAGE value="REG changed" />
     <MESSAGE value="Minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes" />
+    <MESSAGE value="repushing again ignore this" />
+    <MESSAGE value="REG.jsp alert changes" />
+    <MESSAGE value="repush v 2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="repush v 2.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1530,13 +1509,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/REGDashboard.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="108" column="8" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/pointPharma/beans/MedicineFinderForPM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -1555,14 +1527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1593865991407" expanded="true" signature="1358:1477" ph="SELECT mail personale" />
-            <marker date="1593865991407" expanded="true" signature="1874:1929" ph="SELECT mail personale" />
-            <marker date="1593865991407" expanded="true" signature="2200:3194" ph="SELECT mailp... mailpersonalemitt" />
-            <marker date="1593865991407" expanded="true" signature="2284:2661" ph="SELECT mailp... destinatario_messaggio" />
-            <marker date="1593865991407" expanded="true" signature="2725:3102" ph="SELECT mailp... destinatario_messaggio" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1570,13 +1534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <marker date="1593865991407" expanded="true" signature="1482:1556" ph="SELECT perso... personale" />
-            <marker date="1593865991407" expanded="true" signature="2006:2127" ph="SELECT perso... personale" />
-            <marker date="1593865991407" expanded="true" signature="2181:2268" ph="SELECT perso... personale" />
-            <marker date="1593865991407" expanded="true" signature="2595:2688" ph="INSERT INTO messaggio... " />
-            <marker date="1593865991407" expanded="true" signature="2780:2918" ph="INSERT INTO destinatario_messaggio... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1592,11 +1549,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="70" column="62" selection-start-line="70" selection-start-column="62" selection-end-line="70" selection-end-column="62" />
-          <folding>
-            <marker date="1594288104908" expanded="true" signature="1466:1586" ph="SELECT nomef... personale" />
-            <marker date="1594288104908" expanded="true" signature="1708:1855" ph="SELECT mail personale" />
-            <marker date="1594288104908" expanded="true" signature="1941:2087" ph="SELECT mail personale" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1604,15 +1557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
           <caret line="57" column="55" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1593551464193" expanded="true" signature="1326:1399" ph="SELECT perso... personale" />
-            <marker date="1593551464193" expanded="true" signature="1504:1599" ph="SELECT perso... personale" />
-            <marker date="1593551464193" expanded="true" signature="1702:1855" ph="SELECT perso... personale" />
-            <marker date="1593551464193" expanded="true" signature="1956:2084" ph="SELECT perso... personale" />
-            <marker date="1593551464193" expanded="true" signature="2198:2426" ph="INSERT INTO messaggio... " />
-            <marker date="1593551464193" expanded="true" signature="2757:3069" ph="INSERT INTO destinatario_messaggio... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1620,18 +1564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1593865991407" expanded="true" signature="1217:1757" ph="SELECT DISTI... destinatario_messaggio" />
-            <marker date="1593865991407" expanded="true" signature="1846:2404" ph="SELECT DISTI... destinatario_messaggio" />
-            <marker date="1593865991407" expanded="true" signature="2653:2775" ph="SELECT perso... personale" />
-            <marker date="1593865991407" expanded="true" signature="2882:3004" ph="SELECT perso... personale" />
-            <marker date="1593865991407" expanded="true" signature="3109:3230" ph="SELECT perso... personale" />
-            <marker date="1593865991407" expanded="true" signature="3562:3990" ph="SELECT mailp... destinatario_messaggio" />
-            <marker date="1593865991407" expanded="true" signature="4061:5298" ph="SELECT DISTI... mailpersonalemitt" />
-            <marker date="1593865991407" expanded="true" signature="4178:4636" ph="SELECT mailp... destinatario_messaggio" />
-            <marker date="1593865991407" expanded="true" signature="4724:5182" ph="SELECT mailp... destinatario_messaggio" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1647,7 +1579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="87" column="37" selection-start-line="87" selection-start-column="37" selection-end-line="87" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1669,32 +1600,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/DO.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1237">
-          <caret line="131" column="17" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
+        <state relative-caret-position="3968">
+          <caret line="124" column="16" selection-start-line="124" selection-start-column="16" selection-end-line="124" selection-end-column="106" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/PD.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="139" column="16" selection-start-line="139" selection-start-column="16" selection-end-line="144" selection-end-column="17" />
+        <state relative-caret-position="7520">
+          <caret line="235" column="98" selection-start-line="235" selection-start-column="98" selection-end-line="235" selection-end-column="98" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
+    <entry file="file://$PROJECT_DIR$/web/JSP/REGDashboard.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="256" column="9" selection-start-line="256" selection-start-column="9" selection-end-line="259" selection-end-column="9" />
+        <state relative-caret-position="383">
+          <caret line="108" column="8" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/REG.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1691">
-          <caret line="131" column="17" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
+        <state relative-caret-position="2240">
+          <caret line="139" column="33" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3565">
+          <caret line="85" column="14" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
           <folding />
         </state>
       </provider>
