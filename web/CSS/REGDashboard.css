@@ -107,6 +107,10 @@ header{
     color: #FF5D4F;
 }
 .dataTxtObj p:nth-child(2){
-    color: #364D4D;
+    color: seagreen;
+    font-weight: bold;
+}
+.dataTxtObj p:nth-child(3){
+    color: dodgerblue;
     font-weight: bold;
 }
