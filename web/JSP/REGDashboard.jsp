@@ -18,7 +18,11 @@
                 </div>
                 <div class="accordion-item-body">
                     <div class="accordion-item-body-content">
-                        <div class="dataTxtObj"> <p id="dataTxtObj1"></p> </div>
+                        <div class="dataTxtObj">
+
+                            <p id="dataTxtObj1">
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,6 +111,7 @@
                             var str = responseText.split(";");
                             var i;
                             document.getElementById("dataTxtObj2").innerHTML += "<div id='getTotalSalesPerPharmacy'></div>";
+                            document.getElementById("getTotalSalesPerPharmacy").innerHTML += "<div class=\"dataTxtObj\"> <p>Pharmacy:</p> <p>Amount:</p> <p>Total Sales:</p> </div>";
                             for(i = 0; i < str.length - 2; i += 3){
                                 document.getElementById("getTotalSalesPerPharmacy").innerHTML  += "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> <p>" + str[i + 2] + "</p> </div>";
                             }
@@ -131,6 +136,7 @@
                             var str = responseText.split(";");
                             var i;
                             document.getElementById("dataTxtObj1").innerHTML += "<div id='getPharmacyInfo'></div>";
+                            document.getElementById("getPharmacyInfo").innerHTML += "<div class=\"dataTxtObj\"> <p>Pharmacy:</p> <p>PM:</p> <p>PM e-mail:</p> </div>";
                             for(i = 0; i < str.length - 3; i += 4){
                                 document.getElementById("getPharmacyInfo").innerHTML  += "<div class=\"dataTxtObj\"> <p>" + str[i] + "</p> <p>" + str[i+1] + " " + str[i+2] +"</p> <p>" + str[i+3] + "</p></div>";
                             }
@@ -155,6 +161,7 @@
                             var str = responseText.split(";");
                             var i = 0;
                             document.getElementById("dataTxtObj3").innerHTML += "<div id='getMostSoldMeds'></div>";
+                            document.getElementById("getMostSoldMeds").innerHTML += "<div class=\"dataTxtObj\"> <p>Amount:</p> <p>Medicine:</p></div>";
                             document.getElementById("getMostSoldMeds").innerHTML  += "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p></div>";
 
                         }
@@ -178,6 +185,7 @@
                             var str = responseText.split(";");
                             var i;
                             document.getElementById("dataTxtObj4").innerHTML += "<div id='getRecipesPerPharmacy'></div>";
+                            document.getElementById("getRecipesPerPharmacy").innerHTML += "<div class=\"dataTxtObj\"> <p>Pharmacy:</p> <p>Total Recipes:</p></div>";
                             for(i = 0; i < str.length - 1; i += 2){
                                 document.getElementById("getRecipesPerPharmacy").innerHTML  += "<div class=\"dataTxtObj\"> <p>"+str[i]+"</p> <p>"+str[i + 1]+"</p> </div>";
                             }

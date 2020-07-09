@@ -27,27 +27,27 @@ public class receiverCheck extends Action {
                 Pharmacist ph = (Pharmacist)session.getAttribute("pharmacist");
                 String query = "";
                 if(request.getParameter("hint").contains("%")) return null;
-               if(ph instanceof REG)
-               {
+                if(ph instanceof REG)
+                {
                    query = "SELECT nomefarmacia FROM personale WHERE ruolopersonale='PM' AND lower(nomefarmacia) LIKE '%" + hint.toLowerCase() + "%';";
-               }
-               else if(ph instanceof PharmacistManager)
-               {
+                }
+                else if(ph instanceof PharmacistManager)
+                {
                    query = "SELECT mail FROM personale WHERE cf_titolare_farmacia='" + ph.getCF() + "' AND mail NOT LIKE '" + ph.getEmail() + "' AND mail LIKE '%" + hint + "%';";
-               }
-               else
-               {
+                }
+                else
+                {
                    query = "SELECT mail FROM personale WHERE nomefarmacia LIKE '" + phy.getName() + "' AND mail LIKE '%" + hint + "%' AND mail NOT LIKE '" + ph.getEmail() +"';";
-               }
+                }
                 ResultSet rs = st.executeQuery(query);
-               String ris = "";
-               while (rs.next())
-               {
-                   if(ph instanceof REG)
-                    ris = ris.concat(rs.getString("nomefarmacia") + ";");
-                   else
-                       ris = ris.concat(rs.getString("mail") + ";");
-               }
+                String ris = "";
+                while (rs.next())
+                {
+                    if(ph instanceof REG)
+                        ris = ris.concat(rs.getString("nomefarmacia") + ";");
+                    else
+                        ris = ris.concat(rs.getString("mail") + ";");
+                }
                 if(ph instanceof REG) {
                     if ("PM".contains(hint.toUpperCase())) {
                         ris = ris.concat("PM;");
