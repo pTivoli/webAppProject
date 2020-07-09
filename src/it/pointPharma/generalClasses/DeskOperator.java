@@ -19,7 +19,7 @@ public class DeskOperator extends Pharmacist {
                     timestamp = new Timestamp(System.currentTimeMillis());
                 }
                 String timest = timestamp.toString();
-                if(cf == "")
+                if("".equals(cf))
                     queryPurchase = ("INSERT INTO Acquisto VALUES('" + timest + "' , '" + this.getCF() + "', '" + this.getEmail() + "', null ," + totalCost + ")");
                 else
                     queryPurchase = ("INSERT INTO Acquisto VALUES('" + timest + "' , '" + this.getCF() + "', '" + this.getEmail() + "', '"+cf+"' ," + totalCost + ")");
