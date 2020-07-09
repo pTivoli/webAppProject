@@ -123,18 +123,24 @@
     }
     function buyFn(){
         if(document.cookie != ""){
-            if(receipt){
+            if(receipt) {
                 var codRec = $("#codRec").val();
                 var dateRec = $("#dateRec").val();
                 var codDocRec = $("#codDocRec").val();
                 var cfRec = $("#cfRec").val();
-                if(codRec == "" || dateRec == "" || codDocRec == "" || cfRec == ""){
+                if (codRec == "" || dateRec == "" || codDocRec == "" || cfRec == "") {
                     alert("You must insert the data of the receipt before buying everything!");
                     return;
                 }
                 var mask = /^[A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]{1}$/i;
-                if(!mask.test(cfRec)){
+                if (!mask.test(cfRec)) {
                     alert("CF is not valid");
+                    return;
+                }
+                var dateRecCheck = new Date(dateRec);
+                var today = new Date();
+                if (dateRecCheck > today) {
+                    alert("Date of the receipt not valid!");
                     return;
                 }
             }
@@ -211,6 +217,8 @@
         var lname = $("#lname").val();
         var dob = $("#dob").val();
         var mask = /^[A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]{1}$/i;
+        var dateCheck = new Date(dob);
+        var today = new Date();
         if(cf.length == 0) {
             alert("CF is missed");
             return false;
@@ -225,6 +233,9 @@
             return false;
         }else if(!mask.test(cf)){
             alert("CF is not valid");
+            return false;
+        }else if (dateCheck > today) {
+            alert("Date of the birth not valid!");
             return false;
         }
         return true;
