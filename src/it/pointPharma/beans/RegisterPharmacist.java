@@ -17,7 +17,7 @@ public class RegisterPharmacist extends Action{
         PharmacistManager pm = (PharmacistManager) session.getAttribute("pharmacist");
         Pharmacy ph = (Pharmacy) session.getAttribute("pharmacy");
         String role     =   (String)request.getParameter("role");
-        System.out.println(role);
+        //System.out.println(role);
         String cf       =   (String)request.getParameter("cf");
         String fname    =   (String)request.getParameter("fname");
         String lname    =   (String)request.getParameter("lname");
