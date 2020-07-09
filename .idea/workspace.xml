@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/PM.jsp" afterPath="$PROJECT_DIR$/web/JSP/PM.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java" afterPath="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,31 +23,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="REGDashboard.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/JSP/REGDashboard.jsp">
+      <file leaf-file-name="DML.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DML.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="108" column="8" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
+            <state relative-caret-position="-408">
+              <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="REG.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/JSP/REG.jsp">
+      <file leaf-file-name="REG.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/REG.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="151" column="243" selection-start-line="151" selection-start-column="30" selection-end-line="151" selection-end-column="243" />
+            <state relative-caret-position="367">
+              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+              <folding>
+                <marker date="1593519786095" expanded="true" signature="460:653" ph="select count... " />
+                <marker date="1593519786095" expanded="true" signature="999:1224" ph="INSERT INTO Farmacia... " />
+                <marker date="1593519786095" expanded="true" signature="1951:2129" ph="INSERT INTO Persona... " />
+                <marker date="1593519786095" expanded="true" signature="2461:2686" ph="insert into Personale... " />
+                <marker date="1593519786095" expanded="true" signature="3339:3412" ph="SELECT count... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PharmacistManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+              <folding>
+                <marker date="1594290732394" expanded="true" signature="582:723" ph="INSERT INTO Persona... " />
+                <marker date="1594290732394" expanded="true" signature="1153:1391" ph="INSERT INTO Personale... " />
+                <marker date="1594290732394" expanded="true" signature="1457:1695" ph="INSERT INTO Personale... " />
+                <marker date="1594290732394" expanded="true" signature="2822:2895" ph="SELECT count... " />
+                <marker date="1594290732394" expanded="true" signature="3627:3689" ph="select count... " />
+                <marker date="1594290732394" expanded="true" signature="3627:3742" ph="select count... " />
+                <marker date="1594290732394" expanded="true" signature="3627:3799" ph="select count... " />
+                <marker date="1594290732394" expanded="true" signature="3627:3820" ph="select count... " />
+                <marker date="1594290732394" expanded="true" signature="4045:4075" ph="insert into magazzino... " />
+                <marker date="1594290732394" expanded="true" signature="4045:4104" ph="insert into magazzino... " />
+                <marker date="1594290732394" expanded="true" signature="4045:4136" ph="insert into magazzino... " />
+                <marker date="1594290732394" expanded="true" signature="4045:4158" ph="insert into magazzino_farmaco... " />
+                <marker date="1594290732394" expanded="true" signature="4298:4445" ph="select count... " />
+                <marker date="1594290732394" expanded="true" signature="4679:4830" ph="insert into magazzino_farmaco... " />
+                <marker date="1594290732394" expanded="true" signature="4952:5120" ph="update magaz... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderMedicinePerPharmacy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/pointPharma/beans/OrderMedicinePerPharmacy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="23" column="68" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PM.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PM.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-991">
-              <caret line="279" column="235" selection-start-line="279" selection-start-column="235" selection-end-line="279" selection-end-column="235" />
+            <state relative-caret-position="961">
+              <caret line="322" column="19" selection-start-line="322" selection-start-column="19" selection-end-line="322" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -101,7 +143,6 @@
         <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacyDoctor.java" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/beans/chat/readMessages.java" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/beans/RegisterPharmacist.java" />
-        <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java" />
         <option value="$PROJECT_DIR$/web/CSS/ChatStylesheet.css" />
         <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/DeskOperator.java" />
         <option value="$PROJECT_DIR$/web/JSP/chat.jsp" />
@@ -118,6 +159,7 @@
         <option value="$PROJECT_DIR$/web/JSP/PD.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/REG.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/PM.jsp" />
+        <option value="$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java" />
       </list>
     </option>
   </component>
@@ -233,6 +275,68 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="JSP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pointPharma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generalClasses" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pointPharma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webAppProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pointPharma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beans" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -891,7 +995,7 @@
       <workItem from="1594161824467" duration="251000" />
       <workItem from="1594223157873" duration="5741000" />
       <workItem from="1594284405509" duration="2512000" />
-      <workItem from="1594287136375" duration="2037000" />
+      <workItem from="1594287136375" duration="3595000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -1173,11 +1277,18 @@
       <option name="project" value="LOCAL" />
       <updated>1594288732365</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Password alert in PM adjusted">
+      <created>1594289198940</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1594289198940</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136372000" />
+    <option name="totallyTimeSpent" value="137930000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1013" extended-state="6" />
@@ -1192,7 +1303,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39028776" sideWeight="0.5030303" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42874846" sideWeight="0.4969697" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42503098" sideWeight="0.4969697" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4535316" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1257,7 +1368,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="REG's UE updated" />
     <MESSAGE value="REG's UX updated" />
     <MESSAGE value="Funny animations added" />
     <MESSAGE value="UX upgraded with the chat button" />
@@ -1282,7 +1392,8 @@
     <MESSAGE value="REG.jsp alert changes" />
     <MESSAGE value="repush v 2.0" />
     <MESSAGE value="PM debugged" />
-    <option name="LAST_COMMIT_MESSAGE" value="PM debugged" />
+    <MESSAGE value="Password alert in PM adjusted" />
+    <option name="LAST_COMMIT_MESSAGE" value="Password alert in PM adjusted" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1293,13 +1404,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/pointPharma/beans/RegisterPharmacist.java" />
     <entry file="file://$PROJECT_DIR$/src/it/pointPharma/formBeans/UserData.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1372,13 +1476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/REG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/CSS/REGStylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -1411,13 +1508,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1589,14 +1679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DML.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1621,9 +1703,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="961">
+          <caret line="322" column="19" selection-start-line="322" selection-start-column="19" selection-end-line="322" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/REGDashboard.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
+        <state relative-caret-position="3456">
           <caret line="108" column="8" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
           <folding />
         </state>
@@ -1631,17 +1721,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/REG.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
+        <state relative-caret-position="3488">
           <caret line="151" column="243" selection-start-line="151" selection-start-column="30" selection-end-line="151" selection-end-column="243" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/PM.jsp">
+    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/beans/OrderMedicinePerPharmacy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-991">
-          <caret line="279" column="235" selection-start-line="279" selection-start-column="235" selection-end-line="279" selection-end-column="235" />
+        <state relative-caret-position="160">
+          <caret line="23" column="68" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="68" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/REG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding>
+            <marker date="1593519786095" expanded="true" signature="460:653" ph="select count... " />
+            <marker date="1593519786095" expanded="true" signature="999:1224" ph="INSERT INTO Farmacia... " />
+            <marker date="1593519786095" expanded="true" signature="1951:2129" ph="INSERT INTO Persona... " />
+            <marker date="1593519786095" expanded="true" signature="2461:2686" ph="insert into Personale... " />
+            <marker date="1593519786095" expanded="true" signature="3339:3412" ph="SELECT count... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DML.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/pointPharma/generalClasses/PharmacistManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+          <folding>
+            <marker date="1594290732394" expanded="true" signature="582:723" ph="INSERT INTO Persona... " />
+            <marker date="1594290732394" expanded="true" signature="1153:1391" ph="INSERT INTO Personale... " />
+            <marker date="1594290732394" expanded="true" signature="1457:1695" ph="INSERT INTO Personale... " />
+            <marker date="1594290732394" expanded="true" signature="2822:2895" ph="SELECT count... " />
+            <marker date="1594290732394" expanded="true" signature="3627:3689" ph="select count... " />
+            <marker date="1594290732394" expanded="true" signature="3627:3742" ph="select count... " />
+            <marker date="1594290732394" expanded="true" signature="3627:3799" ph="select count... " />
+            <marker date="1594290732394" expanded="true" signature="3627:3820" ph="select count... " />
+            <marker date="1594290732394" expanded="true" signature="4045:4075" ph="insert into magazzino... " />
+            <marker date="1594290732394" expanded="true" signature="4045:4104" ph="insert into magazzino... " />
+            <marker date="1594290732394" expanded="true" signature="4045:4136" ph="insert into magazzino... " />
+            <marker date="1594290732394" expanded="true" signature="4045:4158" ph="insert into magazzino_farmaco... " />
+            <marker date="1594290732394" expanded="true" signature="4298:4445" ph="select count... " />
+            <marker date="1594290732394" expanded="true" signature="4679:4830" ph="insert into magazzino_farmaco... " />
+            <marker date="1594290732394" expanded="true" signature="4952:5120" ph="update magaz... " />
+          </folding>
         </state>
       </provider>
     </entry>

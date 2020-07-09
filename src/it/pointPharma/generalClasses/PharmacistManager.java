@@ -75,10 +75,21 @@ public class PharmacistManager extends PharmacyDoctor{
             Connection con = DriverManager.getConnection("jdbc:postgresql://localhost/PharmaPoint", "PharmaPointDBAccess", "PharmaPointDBAccess");
             int count;
             try{
+                Statement st = con.createStatement();
+                String query = "select count(*) as count from magazzino where nomefarmacia = '" + pharmacy.getName() + "' and indirizzofarmacia = '" + pharmacy.getAddress() + "' and cftitolarefarmacia = '" + this.getCF() + "'";
+
+                ResultSet r = st.executeQuery(query);
+                r.next();
+                count = r.getInt("count");
+
+                if (count == 0) { //medicine is not in table at all
+                    query = "insert into magazzino values('" + pharmacy.getName() + "','" + pharmacy.getAddress() + "','" + this.getCF() + "')";
+                    st.executeUpdate(query);
+                }
+
                 for(Medicine m : medList) {
-                    Statement st = con.createStatement();
-                    String query = "select count(*) as count from magazzino_farmaco where nomefarmaciamagazzino = '" + pharmacy.getName() + "' and codicefarmaco = '" + m.getCode() +"'";
-                    ResultSet r = st.executeQuery(query);
+                    query = "select count(*) as count from magazzino_farmaco where nomefarmaciamagazzino = '" + pharmacy.getName() + "' and codicefarmaco = '" + m.getCode() +"'";
+                    r = st.executeQuery(query);
                     r.next();
                     count = r.getInt("count");
 
