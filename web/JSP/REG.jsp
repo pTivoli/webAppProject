@@ -20,7 +20,7 @@
                 <input id="lname"  name="lname" type="text"><br>
                 Date Of Birth<br>
                 <input id="dob"  name="dob" type="date"><br>
-                Username<br>
+                E-mail<br>
                 <input id="usr"  name="usr" type="text"><br>
                 Password<br>
                 <input id="pwd"  name="pwd" type="password"><br>
@@ -92,13 +92,13 @@
                 var maskTel = /^[0-9]{10,11}$/;
                 if(validatePharmacistData(cf, fname, lname, dob, usr, pwd, pwdCheck) == true) {
                     if(phname.length == 0){
-                        alert("Pharmacy name is missed");
+                        alert("Pharmacy name is missing");
                         return false;
                     }else if(phaddr.length == 0){
-                        alert("Pharmacy address is missed");
+                        alert("Pharmacy address is missing");
                         return false;
                     }else if(phtel.length == 0){
-                        alert("Pharmacy phone number is missed");
+                        alert("Pharmacy phone number is missing");
                         return false;
                     }else if(!maskTel.test(phtel)){
                         alert("Pharmacy phone number is not valid");
@@ -110,16 +110,16 @@
             function validateFormUser(cf, fname, lname, dob){
                 var mask = /^[A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]{1}$/i;
                 if(cf.length == 0) {
-                    alert("CF is missed");
+                    alert("CF is missing");
                     return false;
                 }else if(fname.length == 0){
-                    alert("First Name is missed");
+                    alert("First Name is missing");
                     return false;
                 }else if(lname.length == 0){
-                    alert("Last Name is missed");
+                    alert("Last Name is missing");
                     return false;
                 }else if(dob.length == 0){
-                    alert("Date Of Birth is missed");
+                    alert("Date Of Birth is missing");
                     return false;
                 }else if(!mask.test(cf)){
                     alert("CF is not valid");
@@ -132,19 +132,19 @@
                 var mask2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
                 if(validateFormUser(cf, fname, lname, dob) == true) {
                     if(usr.length == 0){
-                        alert("Email is missed");
+                        alert("E-mail is missing");
                         return false;
                     }else if(!mask.test(usr)){
-                        alert("Email format not valid");
+                        alert("E-mail format not valid");
                         return false;
                     }else if(pwd.length == 0){
-                        alert("Password is missed");
+                        alert("Password is missing");
                         return false;
                     }else if(pwd != pwdCheck){
-                        alert("Passwords are different");
+                        alert("Passwords do not match");
                         return false;
                     }else if(!mask2.test(pwd)){
-                        alert("Passwords should contain minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character");
+                        alert("Passwords must:\n\u2022 Be at least 8 characters\n\u2022 Have at least one uppercase letter\n\u2022 Have at least one lowercase letter\n\u2022 Have at least one number\n\u2022 Have at least one special character");
                         return false;
                     }
                     return true;
