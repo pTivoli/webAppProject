@@ -233,6 +233,7 @@
         var ris = "<table>";
         text = text.split(";");
         var i;
+        ris += "<tr><td>Code</td><td>Name</td><td>Price</td><td><button>Chart</button></td></tr>";
         for(i = 0; i < text.length-1; i+=4){
             ris += "<tr><td>" + text[i] + "</td><td>" + text[i + 1] + "</td><td>" + text[i + 2] + "</td><td><button onclick=\"cookieCart('" + text[i] + "','" + text[i + 1] + "','" + text[i + 3] + "', "+text[i+2]+")\">ADD</button></td></tr>";
         }
