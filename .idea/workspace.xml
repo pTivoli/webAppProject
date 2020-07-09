@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JSP/REG.jsp" afterPath="$PROJECT_DIR$/web/JSP/REG.jsp" />
-    </list>
+    <list default="true" id="147d22c8-eff8-465d-ac16-3c4a59ff5841" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -770,7 +767,7 @@
       <workItem from="1594161824467" duration="251000" />
       <workItem from="1594223157873" duration="5741000" />
       <workItem from="1594284405509" duration="2512000" />
-      <workItem from="1594287136375" duration="1154000" />
+      <workItem from="1594287136375" duration="1191000" />
     </task>
     <task id="LOCAL-00001" summary="created button in reg that brings to dashboard,&#10;query in login fixed and functioning for reg">
       <created>1593301483590</created>
@@ -1031,11 +1028,18 @@
       <option name="project" value="LOCAL" />
       <updated>1594287177672</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="REG.jsp alert changes">
+      <created>1594288314783</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1594288314783</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135489000" />
+    <option name="totallyTimeSpent" value="135526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1013" extended-state="6" />
@@ -1115,7 +1119,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="REGDashboard views all pharmacies with PM+email, top selling pharmacies+sales, top selling medicine" />
     <MESSAGE value="background img .webp for chat uploaded" />
     <MESSAGE value="REG's form completely validated" />
     <MESSAGE value="REG's UE updated" />
@@ -1140,7 +1143,8 @@
     <MESSAGE value="REG changed" />
     <MESSAGE value="Minor changes" />
     <MESSAGE value="repushing again ignore this" />
-    <option name="LAST_COMMIT_MESSAGE" value="repushing again ignore this" />
+    <MESSAGE value="REG.jsp alert changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="REG.jsp alert changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
